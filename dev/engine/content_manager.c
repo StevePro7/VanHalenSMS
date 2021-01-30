@@ -1,6 +1,7 @@
 #include "content_manager.h"
 #include "global_manager.h"
 #include "..\devkit\_sms_manager.h"
+#include "..\banks\bank15.h"
 #include "..\gfx.h"
 
 #define FONT_TILES		0
@@ -20,6 +21,13 @@ void engine_content_manager_load_tiles()
 	//devkit_SMS_setBGPaletteColor( 15, 3, 3, 3 );
 }
 
+void engine_content_manager_load_splash()
+{
+	devkit_SMS_mapROMBank( splash__tiles__psgcompr_bank );
+	devkit_SMS_loadPSGaidencompressedTiles( splash__tiles__psgcompr, SPLASH_TILES );
+	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) splash__tilemap__stmcompr );
+	devkit_SMS_loadBGPalette( ( void * ) splash__palette__bin );
+}
 
 // Sprites.
 void engine_content_manager_load_sprites()

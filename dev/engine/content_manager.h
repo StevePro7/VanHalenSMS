@@ -3,6 +3,7 @@
 
 // Tiles.
 void engine_content_manager_load_tiles();
+void engine_content_manager_load_splash();
 
 // Sprites.
 void engine_content_manager_load_sprites();
