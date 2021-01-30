@@ -10,7 +10,7 @@ void screen_record_screen_load()
 {
 	devkit_SMS_displayOff();
 	//engine_asm_manager_clear_VRAM();
-	engine_record_manager_load( 1 );
+	engine_record_manager_load( 11 );
 	devkit_SMS_displayOn();
 
 	//engine_font_manager_draw_text( "RECORD SCREEN!!", 2, 10 );
