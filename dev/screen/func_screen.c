@@ -4,7 +4,7 @@
 
 void screen_func_screen_load()
 {
-	engine_font_manager_draw_text( "FUNC SCREEN!!", 2, 10 );
+	engine_font_manager_draw_text( "FUNC SCREEN...!!", 2, 10 );
 }
 
 void screen_func_screen_update( unsigned char *screen_type )

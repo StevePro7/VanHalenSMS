@@ -81,6 +81,7 @@ banks\bank9.rel banks\bank10.rel banks\bank11.rel banks\bank12.rel banks\bank13.
 devkit\_sms_manager.rel ^
 devkit\_snd_manager.rel ^
 engine\asm_manager.rel ^
+engine\audio_manager.rel ^
 engine\content_manager.rel ^
 engine\delay_manager.rel ^
 engine\enum_manager.rel ^
