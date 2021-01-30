@@ -1,0 +1,45 @@
+XL2
+H 9 areas E global symbols
+M content_manager
+O -mz80
+S _VanHalenTitle__tilemap__stmcompr Ref0000
+S _devkit_SMS_loadSTMcompressedTileMap Ref0000
+S _sprites__palette__bin Ref0000
+S _devkit_SMS_loadBGPalette Ref0000
+S _VanHalenTitle__palette__bin Ref0000
+S _devkit_SMS_loadPSGaidencompressedTiles Ref0000
+S _font__tiles__psgcompr Ref0000
+S .__.ABS. Def0000
+S _sprites__tiles__psgcompr Ref0000
+S _VanHalenTitle__tiles__psgcompr Ref0000
+S _devkit_SMS_setBGPaletteColor Ref0000
+S _devkit_SMS_loadSpritePalette Ref0000
+A _CODE size 51 flags 0 addr 0
+S _engine_content_manager_load_sprites Def003B
+S _engine_content_manager_load_tiles Def0000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 21 00 00 E5 21 00 00 E5 CD 00 00 F1 21
+R 00 00 00 00 02 07 06 00 02 0B 05 00
+T 0D 00 40 00 E3 21 00 00 E5 CD 00 00 F1 F1 01
+R 00 00 00 00 02 06 09 00 02 0A 05 00
+T 1A 00 00 00 C5 21 00 00 E5 CD 00 00 F1 F1 01
+R 00 00 00 00 02 02 00 00 02 0A 01 00
+T 27 00 00 00 C5 CD 00 00 F1 21 03 03 E5 2E 0F E5
+R 00 00 00 00 02 02 04 00 02 06 03 00
+T 35 00 CD 00 00 F1 F1 C9
+R 00 00 00 00 02 03 0A 00
+T 3B 00
+R 00 00 00 00
+T 3B 00 21 20 01 E5 21 00 00 E5 CD 00 00 F1 F1 01
+R 00 00 00 00 02 07 08 00 02 0B 05 00
+T 49 00 00 00 C5 CD 00 00 F1 C9
+R 00 00 00 00 02 02 02 00 02 06 0B 00
