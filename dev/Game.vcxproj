@@ -161,6 +161,7 @@
     <ClCompile Include="devkit\_sms_manager.c" />
     <ClCompile Include="devkit\_snd_manager.c" />
     <ClCompile Include="engine\asm_manager.c" />
+    <ClCompile Include="engine\audio_manager.c" />
     <ClCompile Include="engine\content_manager.c" />
     <ClCompile Include="engine\delay_manager.c" />
     <ClCompile Include="engine\enum_manager.c" />
@@ -175,6 +176,7 @@
     <ClCompile Include="gfx.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="object\record_object.c" />
+    <ClCompile Include="psg.c" />
     <ClCompile Include="screen\detail_screen.c" />
     <ClCompile Include="screen\func_screen.c" />
     <ClCompile Include="screen\none_screen.c" />
@@ -202,6 +204,7 @@
     <ClInclude Include="devkit\_sms_manager.h" />
     <ClInclude Include="devkit\_snd_manager.h" />
     <ClInclude Include="engine\asm_manager.h" />
+    <ClInclude Include="engine\audio_manager.h" />
     <ClInclude Include="engine\content_manager.h" />
     <ClInclude Include="engine\delay_manager.h" />
     <ClInclude Include="engine\enum_manager.h" />
@@ -216,6 +219,7 @@
     <ClInclude Include="gfx.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="object\record_object.h" />
+    <ClInclude Include="psg.h" />
     <ClInclude Include="screen\detail_screen.h" />
     <ClInclude Include="screen\func_screen.h" />
     <ClInclude Include="screen\none_screen.h" />

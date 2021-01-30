@@ -168,6 +168,12 @@
     <ClCompile Include="engine\record_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
+    <ClCompile Include="psg.c">
+      <Filter>Source Files\content</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\audio_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -285,6 +291,12 @@
       <Filter>Header Files\object</Filter>
     </ClInclude>
     <ClInclude Include="engine\record_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="psg.h">
+      <Filter>Header Files\content</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\audio_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
   </ItemGroup>
