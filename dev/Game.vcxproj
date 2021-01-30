@@ -162,6 +162,7 @@
     <ClCompile Include="devkit\_snd_manager.c" />
     <ClCompile Include="engine\asm_manager.c" />
     <ClCompile Include="engine\content_manager.c" />
+    <ClCompile Include="engine\delay_manager.c" />
     <ClCompile Include="engine\enum_manager.c" />
     <ClCompile Include="engine\font_manager.c" />
     <ClCompile Include="engine\global_manager.c" />
@@ -199,6 +200,7 @@
     <ClInclude Include="devkit\_snd_manager.h" />
     <ClInclude Include="engine\asm_manager.h" />
     <ClInclude Include="engine\content_manager.h" />
+    <ClInclude Include="engine\delay_manager.h" />
     <ClInclude Include="engine\enum_manager.h" />
     <ClInclude Include="engine\font_manager.h" />
     <ClInclude Include="engine\global_manager.h" />
