@@ -24,6 +24,7 @@ sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 delay_man
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enum_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 font_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 global_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 locale_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 input_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 screen_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 sprite_manager.c
@@ -80,6 +81,7 @@ engine\delay_manager.rel ^
 engine\enum_manager.rel ^
 engine\font_manager.rel ^
 engine\input_manager.rel ^
+engine\locale_manager.rel ^
 engine\screen_manager.rel ^
 engine\sprite_manager.rel ^
 screen\none_screen.rel screen\splash_screen.rel screen\title_screen.rel screen\select_screen.rel screen\record_screen.rel ^
@@ -114,6 +116,6 @@ REM if exist "*.rel" del "*.rel" > nul
 if exist "*.sym" del "*.sym" > nul
 
 
-::E:\SEGA\Fusion\fusion.exe output.sms
+E:\SEGA\Fusion\fusion.exe output.sms
 :: C:\SEGA\Meka\mekaw.exe output.sms
-java -jar C:\SEGA\Emulicious\emulicious.jar output.sms
+::java -jar C:\SEGA\Emulicious\emulicious.jar output.sms

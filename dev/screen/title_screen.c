@@ -3,13 +3,14 @@
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
 #include "..\engine\input_manager.h"
+#include "..\engine\locale_manager.h"
 #include "..\devkit\_sms_manager.h"
 
 void screen_title_screen_load()
 {
-	//engine_font_manager_draw_text( "TITLE SCREEN!!", 2, 10 );
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title();
+	engine_font_manager_draw_text( LOCALE_PRESS_START, 10, 22 );
 	devkit_SMS_displayOn();
 }
 
