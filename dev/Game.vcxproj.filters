@@ -43,6 +43,12 @@
     <Filter Include="Source Files\banks">
       <UniqueIdentifier>{a2f42c21-ad1d-42ef-80c4-5d40a56e6cf8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\object">
+      <UniqueIdentifier>{bc1df177-54a5-4b92-b1be-089d216d8e17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\object">
+      <UniqueIdentifier>{a211e33e-727e-4e9b-bfee-4f587f09b61e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -156,6 +162,12 @@
     <ClCompile Include="engine\locale_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
+    <ClCompile Include="object\record_object.c">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\record_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -267,6 +279,12 @@
       <Filter>Header Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="engine\locale_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="object\record_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\record_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
   </ItemGroup>

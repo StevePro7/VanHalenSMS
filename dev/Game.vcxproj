@@ -168,11 +168,13 @@
     <ClCompile Include="engine\global_manager.c" />
     <ClCompile Include="engine\input_manager.c" />
     <ClCompile Include="engine\locale_manager.c" />
+    <ClCompile Include="engine\record_manager.c" />
     <ClCompile Include="engine\screen_manager.c" />
     <ClCompile Include="engine\sprite_manager.c" />
     <ClCompile Include="game.c" />
     <ClCompile Include="gfx.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="object\record_object.c" />
     <ClCompile Include="screen\detail_screen.c" />
     <ClCompile Include="screen\func_screen.c" />
     <ClCompile Include="screen\none_screen.c" />
@@ -207,11 +209,13 @@
     <ClInclude Include="engine\global_manager.h" />
     <ClInclude Include="engine\input_manager.h" />
     <ClInclude Include="engine\locale_manager.h" />
+    <ClInclude Include="engine\record_manager.h" />
     <ClInclude Include="engine\screen_manager.h" />
     <ClInclude Include="engine\sprite_manager.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gfx.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="object\record_object.h" />
     <ClInclude Include="screen\detail_screen.h" />
     <ClInclude Include="screen\func_screen.h" />
     <ClInclude Include="screen\none_screen.h" />

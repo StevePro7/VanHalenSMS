@@ -19,24 +19,28 @@ cd ..
 
 cd engine
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 asm_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 delay_manager.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 delay_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enum_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 font_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 global_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 locale_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 input_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 record_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 screen_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 sprite_manager.c
 cd ..
 
+cd object
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 record_object.c
+cd ..
 
 cd screen
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 none_screen.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 splash_screen.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 title_screen.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 splash_screen.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 title_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 select_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 record_screen.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 record_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 detail_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 test_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 func_screen.c
@@ -82,8 +86,10 @@ engine\enum_manager.rel ^
 engine\font_manager.rel ^
 engine\input_manager.rel ^
 engine\locale_manager.rel ^
+engine\record_manager.rel ^
 engine\screen_manager.rel ^
 engine\sprite_manager.rel ^
+object\record_object.rel ^
 screen\none_screen.rel screen\splash_screen.rel screen\title_screen.rel screen\select_screen.rel screen\record_screen.rel ^
 screen\detail_screen.rel screen\test_screen.rel screen\func_screen.rel ^
 gfx.rel
@@ -95,6 +101,12 @@ ihx2sms output.ihx output.sms
 
 REM https://www.askingbox.com/question/batch-script-delete-file-if-it-exists
 cd engine
+if exist "*.asm" del "*.asm" > nul
+if exist "*.lst" del "*.lst" > nul
+if exist "*.sym" del "*.sym" > nul
+cd ..
+
+cd object
 if exist "*.asm" del "*.asm" > nul
 if exist "*.lst" del "*.lst" > nul
 if exist "*.sym" del "*.sym" > nul
