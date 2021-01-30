@@ -144,6 +144,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="banks\bank10.c" />
+    <ClCompile Include="banks\bank11.c" />
+    <ClCompile Include="banks\bank12.c" />
+    <ClCompile Include="banks\bank13.c" />
+    <ClCompile Include="banks\bank14.c" />
+    <ClCompile Include="banks\bank15.c" />
+    <ClCompile Include="banks\bank2.c" />
+    <ClCompile Include="banks\bank3.c" />
+    <ClCompile Include="banks\bank4.c" />
+    <ClCompile Include="banks\bank5.c" />
+    <ClCompile Include="banks\bank6.c" />
+    <ClCompile Include="banks\bank7.c" />
+    <ClCompile Include="banks\bank8.c" />
+    <ClCompile Include="banks\bank9.c" />
     <ClCompile Include="devkit\_sms_manager.c" />
     <ClCompile Include="devkit\_snd_manager.c" />
     <ClCompile Include="engine\asm_manager.c" />
@@ -161,6 +175,20 @@
     <ClCompile Include="screen\splash_screen.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="banks\bank10.h" />
+    <ClInclude Include="banks\bank11.h" />
+    <ClInclude Include="banks\bank12.h" />
+    <ClInclude Include="banks\bank13.h" />
+    <ClInclude Include="banks\bank14.h" />
+    <ClInclude Include="banks\bank15.h" />
+    <ClInclude Include="banks\bank2.h" />
+    <ClInclude Include="banks\bank3.h" />
+    <ClInclude Include="banks\bank4.h" />
+    <ClInclude Include="banks\bank5.h" />
+    <ClInclude Include="banks\bank6.h" />
+    <ClInclude Include="banks\bank7.h" />
+    <ClInclude Include="banks\bank8.h" />
+    <ClInclude Include="banks\bank9.h" />
     <ClInclude Include="devkit\_sms_manager.h" />
     <ClInclude Include="devkit\_snd_manager.h" />
     <ClInclude Include="engine\asm_manager.h" />
