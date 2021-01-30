@@ -22,7 +22,7 @@ void screen_splash_screen_update( unsigned char *screen_type )
 	unsigned char delay;
 	unsigned char input;
 
-	delay = 0;
+	delay = engine_delay_manager_update();
 	input = engine_input_manager_hold( input_type_fire1 );
 
 	if( delay || input )
