@@ -10,7 +10,7 @@ void screen_title_screen_load()
 {
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title();
-	engine_font_manager_draw_text( LOCALE_PRESS_START, 10, 22 );
+	engine_font_manager_draw_text( LOCALE_PRESS_START, 10, 21 );
 	devkit_SMS_displayOn();
 }
 
