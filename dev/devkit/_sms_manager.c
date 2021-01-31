@@ -25,6 +25,15 @@ void devkit_SMS_mapROMBank( unsigned char n )
 	SMS_mapROMBank( n );
 }
 
+void devkit_SMS_setBGScrollX( unsigned char scrollX )
+{
+	SMS_setBGScrollX( scrollX );
+}
+void devkit_SMS_setBGScrollY( unsigned char scrollY )
+{
+	SMS_setBGScrollY( scrollY );
+}
+
 void devkit_SMS_enableSRAM()
 {
 	SMS_enableSRAM();

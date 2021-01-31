@@ -1,7 +1,9 @@
 #ifndef _LOCALE_MANAGER_H_
 #define _LOCALE_MANAGER_H_
 
-#define LOCALE_BLANK_START		"           "
+#define LOCALE_BLANK_CLEAR		"           "
 #define LOCALE_PRESS_START		"PRESS START"
+#define LOCALE_RECORD_TEXT		"RECORD"
+#define LOCALE_COVERS_TEXT		"COVERS"
 
 #endif//_LOCALE_MANAGER_H_

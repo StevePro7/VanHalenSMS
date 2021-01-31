@@ -6,6 +6,9 @@ void devkit_SMS_displayOn();
 void devkit_SMS_displayOff();
 void devkit_SMS_mapROMBank( unsigned char n );
 
+void devkit_SMS_setBGScrollX( unsigned char scrollX );
+void devkit_SMS_setBGScrollY( unsigned char scrollY );
+
 void devkit_SMS_enableSRAM();
 void devkit_SMS_enableSRAMBank( unsigned char n );
 void devkit_SMS_disableSRAM();

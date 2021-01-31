@@ -1,5 +1,4 @@
 #include "record_object.h"
-
 #include "..\banks\bank2.h"
 #include "..\banks\bank3.h"
 #include "..\banks\bank4.h"
@@ -12,6 +11,9 @@
 #include "..\banks\bank11.h"
 #include "..\banks\bank12.h"
 #include "..\banks\bank13.h"
+
+// Global record album index value.
+unsigned char record_album_index = 0;
 
 const unsigned char *record_tiles_data[] =
 {

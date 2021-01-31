@@ -14,18 +14,39 @@ void main(void)
 	devkit_SMS_useFirstHalfTilesforSprites_False();
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
-	engine_content_manager_load_tiles();
-	engine_content_manager_load_sprites();
+	//engine_content_manager_load_tiles();
+	//engine_content_manager_load_sprites();
 
-	//open_screen_type = screen_type_splash;
+	open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_record;
-	open_screen_type = screen_type_func;
+	//open_screen_type = screen_type_detail;
+	//open_screen_type = screen_type_func;
+	//open_screen_type = screen_type_test;
 
 	engine_screen_manager_init( open_screen_type );
 	devkit_SMS_displayOn();
 	for (;;)
 	{
+		if( devkit_SMS_queryPauseRequested() )
+		{
+			devkit_SMS_resetPauseRequest();
+			global_pause = !global_pause;
+			if( global_pause )
+			{
+				devkit_PSGSilenceChannels();
+			}
+			else
+			{
+				devkit_PSGRestoreVolumes();
+			}
+		}
+
+		if( global_pause )
+		{
+			continue;
+		}
+
 		devkit_SMS_initSprites();
 		engine_input_manager_update();
 		engine_screen_manager_update();
