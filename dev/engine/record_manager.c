@@ -5,13 +5,19 @@
 
 #define RECORD_TILES	0
 
+// Global variable.
+struct_record_object global_record_object;
+
+
 void engine_record_manager_init( unsigned char index )
 {
-	record_album_index = index;
+	struct_record_object *ro = &global_record_object;
+	ro->record_album_index = index;
 }
 void engine_record_manager_load()
 {
-	unsigned char index = record_album_index;
+	struct_record_object *ro = &global_record_object;
+	unsigned char index = ro->record_album_index;
 
 	const unsigned char *tiles = ( const unsigned char * ) record_tiles_data[ index ];
 	const unsigned char *tilemap = ( const unsigned char * ) record_tilemap_data[ index ];
@@ -27,23 +33,25 @@ void engine_record_manager_load()
 
 void engine_record_manager_decrement()
 {
-	if( 0 == record_album_index )
+	struct_record_object *ro = &global_record_object;
+	if( 0 == ro->record_album_index )
 	{
-		record_album_index = MAX_RECORDS - 1;
+		ro->record_album_index = MAX_RECORDS - 1;
 	}
 	else
 	{
-		record_album_index--;
+		ro->record_album_index --;
 	}
 }
 void engine_record_manager_increment()
 {
-	if( ( MAX_RECORDS - 1 ) == record_album_index )
+	struct_record_object *ro = &global_record_object;
+	if( ( MAX_RECORDS - 1 ) == ro->record_album_index )
 	{
-		record_album_index = 0;
+		ro->record_album_index = 0;
 	}
 	else
 	{
-		record_album_index++;
+		ro->record_album_index++;
 	}
 }

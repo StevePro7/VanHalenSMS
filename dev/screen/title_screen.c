@@ -1,4 +1,5 @@
 #include "title_screen.h"
+#include "..\engine\audio_manager.h"
 #include "..\engine\content_manager.h"
 #include "..\engine\delay_manager.h"
 #include "..\engine\enum_manager.h"
@@ -20,8 +21,6 @@ void screen_title_screen_load()
 	
 	engine_font_manager_draw_text( LOCALE_RECORD_TEXT, 6, 12 );
 	engine_font_manager_draw_text( LOCALE_COVERS_TEXT, 20, 12 );
-	//engine_font_manager_draw_text( "123456", 0, 10 );
-	//engine_font_manager_draw_text( "123456", 32-6, 10 );
 	devkit_SMS_displayOn();
 
 	engine_delay_manager_load( TITLE_FLASH_DELAY );
@@ -50,6 +49,9 @@ void screen_title_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
+		// TODO slight pause
+		//engine_audio_manager_sfx_right();
+
 		*screen_type = screen_type_record;
 		//*screen_type = screen_type_detail;
 		return;

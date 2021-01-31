@@ -13,7 +13,7 @@
 #include "..\banks\bank13.h"
 
 // Global record album index value.
-unsigned char record_album_index = 0;
+//unsigned char record_album_index = 0;
 
 const unsigned char *record_tiles_data[] =
 {

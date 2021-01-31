@@ -1,5 +1,5 @@
 #include "record_screen.h"
-//#include "..\engine\asm_manager.h"
+#include "..\engine\audio_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
 #include "..\engine\input_manager.h"
@@ -12,14 +12,11 @@ void screen_record_screen_load()
 {
 	engine_record_manager_init( 5 );
 	load_record();
-
-	//engine_font_manager_draw_text( "RECORD SCREEN!!", 2, 10 );
 }
 
 void screen_record_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
-
 	input = engine_input_manager_hold( input_type_left );
 	if( input )
 	{
