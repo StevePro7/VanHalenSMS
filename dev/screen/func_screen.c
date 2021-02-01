@@ -33,7 +33,7 @@ void screen_func_screen_load()
 
 void screen_func_screen_update( unsigned char *screen_type )
 {
-	unsigned const char sx = ( x - 1 ) * 8;
+	unsigned const char sx = ( x + 7 - 1 ) * 8;
 	unsigned const char sy = ( y - 1 ) * 8;
 	//unsigned char input;
 	//input = engine_input_manager_hold( input_type_right );
