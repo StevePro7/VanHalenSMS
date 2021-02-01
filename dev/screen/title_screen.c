@@ -18,7 +18,7 @@ void screen_title_screen_load()
 	engine_content_manager_load_sprites();
 	engine_content_manager_load_title();
 	engine_font_manager_draw_text( LOCALE_PRESS_START, 10, 21 );
-	
+
 	engine_font_manager_draw_text( LOCALE_RECORD_TEXT, 6, 12 );
 	engine_font_manager_draw_text( LOCALE_COVERS_TEXT, 20, 12 );
 	devkit_SMS_displayOn();
