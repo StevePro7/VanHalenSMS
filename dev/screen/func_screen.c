@@ -12,6 +12,7 @@ void screen_func_screen_load()
 	engine_content_manager_load_tiles();
 	engine_content_manager_load_sprites();
 	engine_font_manager_draw_text( "FUNC SCREEN...!!", 2, 10 );
+	engine_font_manager_draw_text( "1984", 4, 4 );
 }
 
 void screen_func_screen_update( unsigned char *screen_type )
@@ -34,6 +35,6 @@ void screen_func_screen_update( unsigned char *screen_type )
 	//}
 
 	//engine_sprite_manager_draw( 40, 40, SPRITE_TILES + 24 );
-	engine_cursor_manager_draw( 40, 40, CURSOR_TILES );
+	engine_cursor_manager_draw( 24, 24, CURSOR_TILES );
 	*screen_type = screen_type_func;
 }
