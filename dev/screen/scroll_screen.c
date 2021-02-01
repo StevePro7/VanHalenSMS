@@ -26,7 +26,7 @@ void screen_scroll_screen_load()
 	//engine_cursor_manager_load();
 	devkit_SMS_displayOn();
 
-	index = 8;
+	index = 32;
 	//print();
 }
 
@@ -44,6 +44,12 @@ void screen_scroll_screen_update( unsigned char *screen_type )
 	{
 		//print();
 		engine_cursor_manager_load();
+	}
+
+	input = engine_input_manager_move( input_type_left );
+	if( input )
+	{
+		engine_cursor_manager_draw();
 	}
 
 	*screen_type = screen_type_scroll;
