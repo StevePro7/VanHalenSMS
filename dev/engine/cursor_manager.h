@@ -8,5 +8,6 @@ extern struct_cursor_object global_cursor_object;
 
 void engine_cursor_manager_init( unsigned char index );
 void engine_cursor_manager_load();
+void engine_cursor_manager_draw();
 
 #endif//_CURSOR_MANAGER_H_

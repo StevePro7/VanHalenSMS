@@ -53,6 +53,6 @@ void screen_func_screen_update( unsigned char *screen_type )
 	//}
 
 	//engine_sprite_manager_draw( 40, 40, SPRITE_TILES + 24 );
-	engine_cursor_manager_draw( sx + 1, sy - 1, CURSOR_TILES );
+	//engine_cursor_manager_draw( sx + 1, sy - 1, CURSOR_TILES );
 	*screen_type = screen_type_func;
 }

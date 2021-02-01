@@ -1,4 +1,5 @@
 #include "detail_screen.h"
+#include "..\engine\cursor_manager.h"
 #include "..\engine\content_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"

@@ -2,6 +2,7 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "..\object\cursor_object.h"
+#include "..\devkit\_sms_manager.h"
 
 // Global variable.
 struct_cursor_object global_cursor_object;
@@ -40,4 +41,34 @@ void engine_cursor_manager_load()
 			engine_font_manager_draw_text( text, vx, vy );
 		}
 	}
+}
+
+void engine_cursor_manager_draw()
+{
+	struct_cursor_object *co = &global_cursor_object;
+	unsigned char x = co->cursor_value_x;
+	unsigned char y = co->cursor_value_y;
+	unsigned int tile = CURSOR_TILES;
+
+	// Corners.
+	devkit_SMS_addSprite( x + 0, y + 0, tile + 0 );
+	devkit_SMS_addSprite( x + 40, y + 0, tile + 5 );
+	devkit_SMS_addSprite( x + 0, y + 16, tile + 12 );
+	devkit_SMS_addSprite( x + 40, y + 16, tile + 17 );
+
+	// Top.
+	devkit_SMS_addSprite( x + 8, y + 0, tile + 1 );
+	devkit_SMS_addSprite( x + 16, y + 0, tile + 2 );
+	devkit_SMS_addSprite( x + 24, y + 0, tile + 3 );
+	devkit_SMS_addSprite( x + 32, y + 0, tile + 4 );
+
+	//// Sides.
+	devkit_SMS_addSprite( x + 0, y + 8, tile + 6 );
+	devkit_SMS_addSprite( x + 40, y + 8, tile + 11 );
+
+	//// Bottom.
+	devkit_SMS_addSprite( x + 8, y + 16, tile + 13 );
+	devkit_SMS_addSprite( x + 16, y + 16, tile + 14 );
+	devkit_SMS_addSprite( x + 24, y + 16, tile + 15 );
+	devkit_SMS_addSprite( x + 32, y + 16, tile + 16 );
 }
