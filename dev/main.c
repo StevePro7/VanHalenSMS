@@ -17,16 +17,15 @@ void main(void)
 	engine_content_manager_load_tiles();
 	engine_content_manager_load_sprites();
 
-	
 	engine_record_manager_init( 0 );
 	engine_cursor_manager_init( 0 );
 
 	//open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_record;
-	open_screen_type = screen_type_select;
+	//open_screen_type = screen_type_select;
 	//open_screen_type = screen_type_detail;
-	//open_screen_type = screen_type_scroll;
+	open_screen_type = screen_type_scroll;
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_test;
 
