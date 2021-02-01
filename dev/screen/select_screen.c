@@ -7,10 +7,10 @@
 
 void screen_select_screen_load()
 {
-	engine_cursor_manager_init( 11 );
+	engine_cursor_manager_init( 2 );
 	engine_cursor_manager_load();
-	//engine_record_manager_init( 0 );
-	
+	engine_record_manager_init( 0 );
+
 	engine_font_manager_draw_text( "SELECT SCREEN!!!", 2, 4 );
 }
 
@@ -26,7 +26,7 @@ void screen_select_screen_update( unsigned char *screen_type )
 		index = engine_cursor_manager_save();
 		engine_record_manager_init( index );
 
-		*screen_type = screen_type_scroll;
+		*screen_type = screen_type_record;
 		return;
 	}
 

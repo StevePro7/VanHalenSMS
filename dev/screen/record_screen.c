@@ -10,7 +10,7 @@ static void load_record();
 
 void screen_record_screen_load()
 {
-	engine_record_manager_init( 5 );
+	//engine_record_manager_init( 5 );
 	load_record();
 }
 
