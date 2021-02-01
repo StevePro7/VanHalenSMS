@@ -10,4 +10,9 @@ void engine_cursor_manager_init( unsigned char index );
 void engine_cursor_manager_load();
 void engine_cursor_manager_draw();
 
+void engine_cursor_manager_decX();
+void engine_cursor_manager_incX();
+void engine_cursor_manager_decY();
+void engine_cursor_manager_incY();
+
 #endif//_CURSOR_MANAGER_H_

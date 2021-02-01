@@ -72,7 +72,63 @@ void engine_cursor_manager_draw()
 	devkit_SMS_addSprite( x + 32, y + 16, tile + 16 );
 }
 
-// TODO delete
+void engine_cursor_manager_decX()
+{
+	struct_cursor_object *co = &global_cursor_object;
+	if( 0 == co->cursor_index_x )
+	{
+		co->cursor_index_x = MAX_GRID_X - 1;
+	}
+	else
+	{
+		co->cursor_index_x--;
+	}
+
+	update_values();
+}
+void engine_cursor_manager_incX()
+{
+	struct_cursor_object *co = &global_cursor_object;
+	if( MAX_GRID_X - 1 == co->cursor_index_x )
+	{
+		co->cursor_index_x = 0;
+	}
+	else
+	{
+		co->cursor_index_x++;
+	}
+
+	update_values();
+}
+void engine_cursor_manager_decY()
+{
+	struct_cursor_object *co = &global_cursor_object;
+	if( 0 == co->cursor_index_y )
+	{
+		co->cursor_index_y = MAX_GRID_Y - 1;
+	}
+	else
+	{
+		co->cursor_index_y--;
+	}
+
+	update_values();
+}
+void engine_cursor_manager_incY()
+{
+	struct_cursor_object *co = &global_cursor_object;
+	if( MAX_GRID_Y - 1 == co->cursor_index_y )
+	{
+		co->cursor_index_y = 0;
+	}
+	else
+	{
+		co->cursor_index_y++;
+	}
+
+	update_values();
+}
+
 static void update_values()
 {
 	struct_cursor_object *co = &global_cursor_object;
