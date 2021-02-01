@@ -1,5 +1,5 @@
 #include "detail_screen.h"
-#include "..\engine\cursor_manager.h"
+//#include "..\engine\cursor_manager.h"
 #include "..\engine\content_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
@@ -65,6 +65,6 @@ void screen_detail_screen_update( unsigned char *screen_type )
 
 	tx = ( sx - 1 ) * 8;
 	ty = ( sy + oy + oy - 1 ) * 8;
-	engine_cursor_manager_draw( tx + 1, ty - 1, CURSOR_TILES );
+	//engine_cursor_manager_draw( tx + 1, ty - 1, CURSOR_TILES );
 	*screen_type = screen_type_detail;
 }
