@@ -10,11 +10,16 @@ struct_cursor_object global_cursor_object;
 void engine_cursor_manager_init( unsigned char index )
 {
 	struct_cursor_object *co = &global_cursor_object;
+	unsigned char grid_x;
+	unsigned char grid_y;
+
 	co->cursor_index_x = index / MAX_GRID_Y;
 	co->cursor_index_y = index % MAX_GRID_Y;
 
-	co->cursor_value_x = ( co->cursor_index_x - 1 ) * TILE_PIXEL;
-	co->cursor_value_y = ( co->cursor_index_y - 1 ) * TILE_PIXEL;
+	grid_x = cursor_gridX[ co->cursor_index_x ];
+	grid_y = cursor_gridY[ co->cursor_index_y ];
+	co->cursor_value_x = ( grid_x - 1 ) * TILE_PIXEL;
+	co->cursor_value_y = ( grid_y - 1 ) * TILE_PIXEL;
 
 	// Adjust for on-screen alignment.
 	co->cursor_value_x += 1;
