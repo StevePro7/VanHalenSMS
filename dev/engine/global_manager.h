@@ -9,5 +9,6 @@
 #define MAX_ALBUMS				12
 #define MAX_GRID_X				4
 #define MAX_GRID_Y				3
+#define TILE_PIXEL				8
 
 #endif//_GLOBAL_MANAGER_H_
