@@ -6,7 +6,7 @@
 
 void screen_select_screen_load()
 {
-	engine_cursor_manager_init( 6 );
+	engine_cursor_manager_init( 0 );
 	engine_cursor_manager_load();
 	//engine_record_manager_init( 0 );
 	

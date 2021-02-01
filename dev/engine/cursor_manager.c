@@ -13,24 +13,12 @@ static void update_values();
 void engine_cursor_manager_init( unsigned char index )
 {
 	struct_cursor_object *co = &global_cursor_object;
-	//unsigned char grid_x;
-	//unsigned char grid_y;
 	co->cursor_index_x = 0;
 	co->cursor_index_y = 0;
 
 	co->cursor_index_x = index / MAX_GRID_Y;
 	co->cursor_index_y = index % MAX_GRID_Y;
 	update_values();
-
-	//grid_x = cursor_gridX[ co->cursor_index_x ];
-	//grid_y = cursor_gridY[ co->cursor_index_y ];
-
-	//co->cursor_value_x = ( grid_x - 1 ) * TILE_PIXEL;
-	//co->cursor_value_y = ( grid_y - 1 ) * TILE_PIXEL;
-
-	//// Adjust for on-screen alignment.
-	//co->cursor_value_x += 1;
-	//co->cursor_value_y -= 1;
 }
 
 void engine_cursor_manager_load()
@@ -88,11 +76,8 @@ void engine_cursor_manager_draw()
 static void update_values()
 {
 	struct_cursor_object *co = &global_cursor_object;
-	unsigned char grid_x;
-	unsigned char grid_y;
-
-	grid_x = cursor_gridX[ co->cursor_index_x ];
-	grid_y = cursor_gridY[ co->cursor_index_y ];
+	unsigned char grid_x = cursor_gridX[ co->cursor_index_x ];
+	unsigned char grid_y = cursor_gridY[ co->cursor_index_y ];
 
 	co->cursor_value_x = ( grid_x - 1 ) * TILE_PIXEL;
 	co->cursor_value_y = ( grid_y - 1 ) * TILE_PIXEL;
@@ -100,31 +85,4 @@ static void update_values()
 	// Adjust for on-screen alignment.
 	co->cursor_value_x += 1;
 	co->cursor_value_y -= 1;
-
-}
-
-static void update_valuesX()
-{
-	struct_cursor_object *co = &global_cursor_object;
-	unsigned char grid_x;
-	unsigned char grid_y;
-
-	grid_x = cursor_gridX[ co->cursor_index_x ];
-	grid_y = cursor_gridY[ co->cursor_index_y ];
-
-	
-	co->cursor_value_x = ( grid_x - 1 ) * TILE_PIXEL;
-	co->cursor_value_y = ( grid_y - 1 ) * TILE_PIXEL;
-
-
-	engine_font_manager_draw_data( co->cursor_index_x, 25, 0 );
-	engine_font_manager_draw_data( grid_x, 25, 1 );
-	engine_font_manager_draw_data( co->cursor_value_x, 25, 2 );
-
-
-	// Adjust for on-screen alignment.
-	co->cursor_value_x += 1;
-	co->cursor_value_y -= 1;
-
-	engine_font_manager_draw_data( co->cursor_value_x, 25, 3 );
 }
