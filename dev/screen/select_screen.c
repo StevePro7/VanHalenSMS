@@ -21,10 +21,7 @@ void screen_select_screen_load()
 	//engine_font_manager_draw_text( LOCALE_COVERS_TEXT, 20, 12 );
 	devkit_SMS_displayOn();
 
-	//engine_cursor_manager_init( 0 );
 	engine_cursor_manager_load();
-	//engine_record_manager_init( 0 );
-
 	engine_font_manager_draw_text( "SELECT SCREEN!!!", 2, 4 );
 }
 

@@ -17,8 +17,9 @@ void main(void)
 	engine_content_manager_load_tiles();
 	engine_content_manager_load_sprites();
 
-	engine_cursor_manager_init( 0 );
+	
 	engine_record_manager_init( 0 );
+	engine_cursor_manager_init( 0 );
 
 	//open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_title;
