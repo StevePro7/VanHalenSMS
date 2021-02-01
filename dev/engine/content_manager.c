@@ -38,6 +38,9 @@ void engine_content_manager_load_title()
 void engine_content_manager_load_sprites()
 {
 	// Sprite tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( sprite__tiles__psgcompr, SPRITE_TILES + 24 );
-	devkit_SMS_loadSpritePalette( ( void * ) sprite__palette__bin );
+	devkit_SMS_loadPSGaidencompressedTiles( cursor__tiles__psgcompr, CURSOR_TILES );
+	devkit_SMS_loadSpritePalette( ( void * ) cursor__palette__bin );
+
+	//devkit_SMS_loadPSGaidencompressedTiles( sprite__tiles__psgcompr, SPRITE_TILES + 24 );
+	//devkit_SMS_loadSpritePalette( ( void * ) sprite__palette__bin );
 }
