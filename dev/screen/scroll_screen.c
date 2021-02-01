@@ -18,8 +18,8 @@ void screen_scroll_screen_load()
 
 	engine_cursor_manager_load();
 
-	engine_font_manager_draw_text( "1234", 0, 15 );
-	engine_font_manager_draw_text( "1234", 28, 15 );
+	//engine_font_manager_draw_text( "1234", 0, 15 );
+	//engine_font_manager_draw_text( "1234", 28, 15 );
 }
 
 void screen_scroll_screen_update( unsigned char *screen_type )
