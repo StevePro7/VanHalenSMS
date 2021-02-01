@@ -7,7 +7,7 @@
 
 void screen_select_screen_load()
 {
-	engine_cursor_manager_init( 0 );
+	engine_cursor_manager_init( 11 );
 	engine_cursor_manager_load();
 	//engine_record_manager_init( 0 );
 	
@@ -17,6 +17,26 @@ void screen_select_screen_load()
 void screen_select_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
+	unsigned char index;
+	engine_cursor_manager_draw();
+
+	input = engine_input_manager_hold( input_type_fire1 );
+	if( input )
+	{
+		index = engine_cursor_manager_save();
+		engine_record_manager_init( index );
+
+		*screen_type = screen_type_scroll;
+		return;
+	}
+
+	input = engine_input_manager_hold( input_type_fire2 );
+	if( input )
+	{
+		*screen_type = screen_type_title;
+		return;
+	}
+
 	input = engine_input_manager_hold( input_type_left );
 	if( input )
 	{
@@ -38,6 +58,5 @@ void screen_select_screen_update( unsigned char *screen_type )
 		engine_cursor_manager_incY();
 	}
 
-	engine_cursor_manager_draw();
 	*screen_type = screen_type_select;
 }

@@ -42,6 +42,15 @@ void engine_cursor_manager_load()
 	}
 }
 
+unsigned char engine_cursor_manager_save()
+{
+	struct_cursor_object *co = &global_cursor_object;
+	unsigned char index;
+
+	index = co->cursor_index_x * MAX_GRID_Y + co->cursor_index_y;
+	return index;;
+}
+
 void engine_cursor_manager_draw()
 {
 	struct_cursor_object *co = &global_cursor_object;

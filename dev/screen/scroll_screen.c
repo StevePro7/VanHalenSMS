@@ -11,15 +11,19 @@
 
 void screen_scroll_screen_load()
 {
-	engine_content_manager_load_tiles();
+	unsigned char index;
+	//engine_content_manager_load_tiles();
 	//engine_content_manager_load_title();
-	engine_content_manager_load_sprites();
+	//engine_content_manager_load_sprites();
 	engine_font_manager_draw_text( "SCROLL SCREEN!!", 2, 10 );
 
-	engine_cursor_manager_load();
+	//engine_cursor_manager_load();
 
 	//engine_font_manager_draw_text( "1234", 0, 15 );
 	//engine_font_manager_draw_text( "1234", 28, 15 );
+
+	index = engine_cursor_manager_save();
+	engine_font_manager_draw_data( index, 10, 12 );
 }
 
 void screen_scroll_screen_update( unsigned char *screen_type )
