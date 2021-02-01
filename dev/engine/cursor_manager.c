@@ -7,25 +7,17 @@
 // Global variable.
 struct_cursor_object global_cursor_object;
 
+static void update_values();
+
+
 void engine_cursor_manager_init( unsigned char index )
 {
 	struct_cursor_object *co = &global_cursor_object;
-	unsigned char grid_x;
-	unsigned char grid_y;
 
 	co->cursor_index_x = index / MAX_GRID_Y;
 	co->cursor_index_y = index % MAX_GRID_Y;
-
-	grid_x = cursor_gridX[ co->cursor_index_x ];
-	grid_y = cursor_gridY[ co->cursor_index_y ];
-	co->cursor_value_x = ( grid_x - 1 ) * TILE_PIXEL;
-	co->cursor_value_y = ( grid_y - 1 ) * TILE_PIXEL;
-
-	// Adjust for on-screen alignment.
-	co->cursor_value_x += 1;
-	co->cursor_value_y -= 1;
+	update_values();
 }
-
 
 void engine_cursor_manager_load()
 {
@@ -67,13 +59,27 @@ void engine_cursor_manager_draw()
 	devkit_SMS_addSprite( x + 24, y + 0, tile + 3 );
 	devkit_SMS_addSprite( x + 32, y + 0, tile + 4 );
 
-	//// Sides.
+	// Sides.
 	devkit_SMS_addSprite( x + 0, y + 8, tile + 6 );
 	devkit_SMS_addSprite( x + 40, y + 8, tile + 11 );
 
-	//// Bottom.
+	// Bottom.
 	devkit_SMS_addSprite( x + 8, y + 16, tile + 13 );
 	devkit_SMS_addSprite( x + 16, y + 16, tile + 14 );
 	devkit_SMS_addSprite( x + 24, y + 16, tile + 15 );
 	devkit_SMS_addSprite( x + 32, y + 16, tile + 16 );
+}
+
+static void update_values()
+{
+	struct_cursor_object *co = &global_cursor_object;
+	unsigned char grid_x = cursor_gridX[ co->cursor_index_x ];
+	unsigned char grid_y = cursor_gridY[ co->cursor_index_y ];
+
+	co->cursor_value_x = ( grid_x - 1 ) * TILE_PIXEL;
+	co->cursor_value_y = ( grid_y - 1 ) * TILE_PIXEL;
+
+	// Adjust for on-screen alignment.
+	co->cursor_value_x += 1;
+	co->cursor_value_y -= 1;
 }
