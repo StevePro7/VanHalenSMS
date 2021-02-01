@@ -183,6 +183,9 @@
     <ClCompile Include="object\cursor_object.c">
       <Filter>Source Files\object</Filter>
     </ClCompile>
+    <ClCompile Include="screen\scroll_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -316,6 +319,9 @@
     </ClInclude>
     <ClInclude Include="object\cursor_object.h">
       <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\scroll_screen.h">
+      <Filter>Header Files\screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

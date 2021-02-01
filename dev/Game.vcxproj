@@ -184,6 +184,7 @@
     <ClCompile Include="screen\func_screen.c" />
     <ClCompile Include="screen\none_screen.c" />
     <ClCompile Include="screen\record_screen.c" />
+    <ClCompile Include="screen\scroll_screen.c" />
     <ClCompile Include="screen\select_screen.c" />
     <ClCompile Include="screen\splash_screen.c" />
     <ClCompile Include="screen\test_screen.c" />
@@ -230,6 +231,7 @@
     <ClInclude Include="screen\func_screen.h" />
     <ClInclude Include="screen\none_screen.h" />
     <ClInclude Include="screen\record_screen.h" />
+    <ClInclude Include="screen\scroll_screen.h" />
     <ClInclude Include="screen\select_screen.h" />
     <ClInclude Include="screen\splash_screen.h" />
     <ClInclude Include="screen\test_screen.h" />

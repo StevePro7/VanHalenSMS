@@ -28,7 +28,7 @@ sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_m
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 locale_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 input_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 record_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 screen_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 screen_manager.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 sprite_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 storage_manager.c
 cd ..
@@ -43,6 +43,7 @@ cd screen
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 none_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 splash_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 title_screen.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 scroll_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 select_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 record_screen.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 detail_screen.c
@@ -95,8 +96,8 @@ engine\record_manager.rel ^
 engine\screen_manager.rel ^
 engine\sprite_manager.rel ^
 object\record_object.rel ^
-screen\none_screen.rel screen\splash_screen.rel screen\title_screen.rel screen\select_screen.rel screen\record_screen.rel ^
-screen\detail_screen.rel screen\test_screen.rel screen\func_screen.rel ^
+screen\none_screen.rel screen\splash_screen.rel screen\title_screen.rel screen\scroll_screen.rel screen\select_screen.rel ^
+screen\record_screen.rel screen\detail_screen.rel screen\test_screen.rel screen\func_screen.rel ^
 gfx.rel ^
 psg.rel 
 
