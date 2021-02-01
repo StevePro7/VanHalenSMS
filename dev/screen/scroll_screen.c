@@ -16,7 +16,7 @@ void screen_scroll_screen_load()
 	engine_content_manager_load_sprites();
 	engine_font_manager_draw_text( "SCROLL SCREEN!!", 2, 10 );
 
-	foo();
+	engine_cursor_manager_load();
 
 	engine_font_manager_draw_text( "1234", 0, 15 );
 	engine_font_manager_draw_text( "1234", 28, 15 );
