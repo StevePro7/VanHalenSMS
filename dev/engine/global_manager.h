@@ -6,4 +6,8 @@
 #define CURSOR_TILES			256 + 32
 #define SPRITE_TILES			256 + 32 + 24
 
+#define MAX_ALBUMS				12
+#define MAX_GRID_X				4
+#define MAX_GRID_Y				3
+
 #endif//_GLOBAL_MANAGER_H_

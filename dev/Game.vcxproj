@@ -176,6 +176,7 @@
     <ClCompile Include="game.c" />
     <ClCompile Include="gfx.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="object\cursor_object.c" />
     <ClCompile Include="object\record_object.c" />
     <ClCompile Include="object\storage_object.c" />
     <ClCompile Include="psg.c" />
@@ -221,6 +222,7 @@
     <ClInclude Include="game.h" />
     <ClInclude Include="gfx.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="object\cursor_object.h" />
     <ClInclude Include="object\record_object.h" />
     <ClInclude Include="object\storage_object.h" />
     <ClInclude Include="psg.h" />
