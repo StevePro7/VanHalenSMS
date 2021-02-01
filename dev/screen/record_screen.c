@@ -33,7 +33,7 @@ void screen_record_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_fire2 );
 	if( input )
 	{
-		*screen_type = screen_type_title;
+		*screen_type = screen_type_select;
 		return;
 	}
 

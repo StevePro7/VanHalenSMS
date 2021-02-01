@@ -15,4 +15,7 @@
 #include "engine\input_manager.h"
 #include "engine\screen_manager.h"
 
+#include "engine\cursor_manager.h"
+#include "engine\record_manager.h"
+
 #endif//__MAIN__
