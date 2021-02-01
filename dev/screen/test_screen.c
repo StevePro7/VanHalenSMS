@@ -2,8 +2,10 @@
 #include "..\engine\content_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
+#include "..\engine\global_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\locale_manager.h"
+#include "..\engine\sprite_manager.h"
 #include "..\devkit\_sms_manager.h"
 
 static unsigned char index;
@@ -31,6 +33,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 		//engine_font_manager_draw_data( index, 20, 20 );
 		index++;
 	}
-	//engine_sprite_manager_draw( 0, 0, SPRITE_TILES );
+
+	engine_sprite_manager_draw( 120, 88, SPRITE_TILES );
 	*screen_type = screen_type_test;
 }

@@ -14,14 +14,14 @@ void main(void)
 	devkit_SMS_useFirstHalfTilesforSprites_False();
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
-	engine_content_manager_load_tiles();
+	//engine_content_manager_load_tiles();
 	//engine_content_manager_load_sprites();
 
-	open_screen_type = screen_type_splash;
+	//open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_record;
 	//open_screen_type = screen_type_detail;
-	//open_screen_type = screen_type_func;
+	open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_test;
 
 	engine_screen_manager_init( open_screen_type );
