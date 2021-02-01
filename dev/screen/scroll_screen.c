@@ -1,5 +1,6 @@
 #include "scroll_screen.h"
 #include "..\engine\content_manager.h"
+#include "..\engine\cursor_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
 #include "..\engine\global_manager.h"
@@ -11,9 +12,11 @@
 void screen_scroll_screen_load()
 {
 	engine_content_manager_load_tiles();
-	engine_content_manager_load_title();
+	//engine_content_manager_load_title();
 	engine_content_manager_load_sprites();
 	engine_font_manager_draw_text( "SCROLL SCREEN!!", 2, 10 );
+
+	foo();
 }
 
 void screen_scroll_screen_update( unsigned char *screen_type )

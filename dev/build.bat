@@ -20,7 +20,8 @@ cd ..
 cd engine
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 asm_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 audio_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 cursor_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 delay_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enum_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 font_manager.c
@@ -86,7 +87,7 @@ devkit\_sms_manager.rel ^
 devkit\_snd_manager.rel ^
 engine\asm_manager.rel ^
 engine\audio_manager.rel ^
-engine\content_manager.rel ^
+engine\content_manager.rel engine\cursor_manager.rel ^
 engine\delay_manager.rel ^
 engine\enum_manager.rel ^
 engine\font_manager.rel ^
@@ -95,7 +96,7 @@ engine\locale_manager.rel ^
 engine\record_manager.rel ^
 engine\screen_manager.rel ^
 engine\sprite_manager.rel ^
-object\record_object.rel ^
+object\cursor_object.rel object\record_object.rel object\storage_object.rel ^
 screen\none_screen.rel screen\splash_screen.rel screen\title_screen.rel screen\scroll_screen.rel screen\select_screen.rel ^
 screen\record_screen.rel screen\detail_screen.rel screen\test_screen.rel screen\func_screen.rel ^
 gfx.rel ^
