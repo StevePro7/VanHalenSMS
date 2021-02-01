@@ -3,7 +3,7 @@ H 9 areas 8 global symbols
 M gfx
 O -mz80
 S .__.ABS. Def0000
-A _CODE size 3ED flags 0 addr 0
+A _CODE size 3CF flags 0 addr 0
 S _cursor__tiles__psgcompr Def0010
 S _sprite__palette__bin Def039F
 S _font__tiles__psgcompr Def0108
@@ -177,13 +177,9 @@ T AD 03 3C 3F
 R 00 00 00 00
 T AF 03
 R 00 00 00 00
-T AF 03 04 00 32 03 0F 1F 3F 33 61 61 73 21 F9 6D
+T AF 03 02 00 32 03 0F 1F 3F 33 61 61 73 21 F9 6D
 R 00 00 00 00
-T BD 03 6D 32 C0 F0 F8 FC CC 86 86 CE 21 F9 B6 B6
+T BD 03 6D 33 7F 33 38 1C 8F 53 A0 50 7F 3F 3F 1F
 R 00 00 00 00
-T CB 03 33 7F 33 38 1C 8F 53 A0 50 7F 3F 3F 1F 8F
-R 00 00 00 00
-T D9 03 D3 E0 70 33 FE CC 1C 38 F1 CA 05 0A FE FC
-R 00 00 00 00
-T E7 03 FC F8 F1 CB 07 0E
+T CB 03 8F D3 E0 70
 R 00 00 00 00
