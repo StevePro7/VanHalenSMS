@@ -180,6 +180,7 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="object\cursor_object.c" />
     <ClCompile Include="object\record_object.c" />
+    <ClCompile Include="object\scroll_object.c" />
     <ClCompile Include="object\storage_object.c" />
     <ClCompile Include="object\timer_object.c" />
     <ClCompile Include="psg.c" />
@@ -230,6 +231,7 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="object\cursor_object.h" />
     <ClInclude Include="object\record_object.h" />
+    <ClInclude Include="object\scroll_object.h" />
     <ClInclude Include="object\storage_object.h" />
     <ClInclude Include="object\timer_object.h" />
     <ClInclude Include="psg.h" />
