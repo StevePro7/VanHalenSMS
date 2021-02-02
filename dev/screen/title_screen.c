@@ -27,6 +27,7 @@ void screen_title_screen_load()
 
 	engine_font_manager_draw_text( LOCALE_RECORD_TEXT, 6, 12 );
 	engine_font_manager_draw_text( LOCALE_COVERS_TEXT, 20, 12 );
+	engine_font_manager_draw_text( LOCALE_BUILD_VALUE, 28, 23 );
 	devkit_SMS_displayOn();
 
 	engine_delay_manager_load( TITLE_FLASH_DELAY );
