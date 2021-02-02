@@ -30,26 +30,21 @@ void screen_scroll_screen_load()
 void screen_scroll_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
-	if( TOP_SCROLL == offset )
-	{
-		engine_scroll_manager_load( TOP_OFFSET );
-		*screen_type = screen_type_select;
-		return;
-	}
+	unsigned char value;
 
-	input = engine_input_manager_move( input_type_down );
-	if( input )
-	{
+	value = TOP_SCROLL == offset;
+	//input = engine_input_manager_move( input_type_down );
+	//if( input )
+	//{
 		devkit_SMS_setBGScrollY( offset++ );
-	}
+//	}
 
 	input = engine_input_manager_hold( input_type_fire1 );
-	if( input )
+	if( input || value )
 	{
 		engine_scroll_manager_load( TOP_OFFSET );
 		devkit_SMS_setBGScrollY( TOP_SCROLL );
 
-		//*screen_type = screen_type_detail;
 		*screen_type = screen_type_select;
 		return;
 	}

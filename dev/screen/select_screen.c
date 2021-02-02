@@ -48,12 +48,12 @@ void screen_select_screen_update( unsigned char *screen_type )
 		return;
 	}
 
-	input = engine_input_manager_hold( input_type_fire2 );
-	if( input )
-	{
-		*screen_type = screen_type_title;
-		return;
-	}
+	//input = engine_input_manager_hold( input_type_fire2 );
+	//if( input )
+	//{
+	//	*screen_type = screen_type_title;
+	//	return;
+	//}
 
 	input = engine_input_manager_hold( input_type_left );
 	if( input )
