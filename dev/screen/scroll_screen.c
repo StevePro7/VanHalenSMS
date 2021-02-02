@@ -7,7 +7,7 @@
 #include "..\engine\global_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\locale_manager.h"
-#include "..\engine\sprite_manager.h"
+//#include "..\engine\sprite_manager.h"
 #include "..\devkit\_sms_manager.h"
 
 static unsigned char index;
