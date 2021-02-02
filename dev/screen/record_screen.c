@@ -6,12 +6,14 @@
 #include "..\engine\input_manager.h"
 #include "..\engine\record_manager.h"
 #include "..\engine\storage_manager.h"
+#include "..\engine\scroll_manager.h"
 #include "..\devkit\_sms_manager.h"
 
 static void load_record();
 
 void screen_record_screen_load()
 {
+	engine_scroll_manager_reset();
 	load_record();
 }
 

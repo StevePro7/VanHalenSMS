@@ -30,11 +30,10 @@ void screen_scroll_screen_load()
 void screen_scroll_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
-
 	if( TOP_SCROLL == offset )
 	{
 		engine_scroll_manager_load( TOP_OFFSET );
-		*screen_type = screen_type_detail;
+		*screen_type = screen_type_select;
 		return;
 	}
 
@@ -50,7 +49,8 @@ void screen_scroll_screen_update( unsigned char *screen_type )
 		engine_scroll_manager_load( TOP_OFFSET );
 		devkit_SMS_setBGScrollY( TOP_SCROLL );
 
-		*screen_type = screen_type_detail;
+		//*screen_type = screen_type_detail;
+		*screen_type = screen_type_select;
 		return;
 	}
 
