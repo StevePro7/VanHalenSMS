@@ -192,6 +192,9 @@
     <ClCompile Include="engine\timer_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
+    <ClCompile Include="engine\scroll_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -333,6 +336,9 @@
       <Filter>Header Files\object</Filter>
     </ClInclude>
     <ClInclude Include="engine\timer_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\scroll_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
   </ItemGroup>
