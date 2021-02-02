@@ -37,7 +37,7 @@ void engine_cursor_manager_load()
 			vx = cursor_gridX[ fx ];
 			vy = cursor_gridY[ fy ];
 			text = cursor_album[ idx ];
-			engine_font_manager_draw_text( text, vx, vy + 4 );
+			engine_font_manager_draw_text( text, vx, vy );
 		}
 	}
 }

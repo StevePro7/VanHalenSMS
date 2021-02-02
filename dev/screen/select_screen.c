@@ -5,6 +5,7 @@
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
 #include "..\engine\input_manager.h"
+#include "..\engine\locale_manager.h"
 #include "..\engine\record_manager.h"
 #include "..\devkit\_sms_manager.h"
 
@@ -13,11 +14,15 @@ void screen_select_screen_load()
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_tiles();
+	engine_content_manager_load_titleTop();
 	engine_content_manager_load_sprites();
+
+	engine_font_manager_draw_text( LOCALE_RECORD_TEXT, 6, 8 );
+	engine_font_manager_draw_text( LOCALE_COVERS_TEXT, 20, 8 );
 	devkit_SMS_displayOn();
 
 	engine_cursor_manager_load();
-	engine_font_manager_draw_text( "SELECT SCREEN!!!", 2, 4 );
+	//engine_font_manager_draw_text( "SELECT SCREEN!!!", 2, 4 );
 }
 
 void screen_select_screen_update( unsigned char *screen_type )
