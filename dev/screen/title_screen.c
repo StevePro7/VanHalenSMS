@@ -2,13 +2,13 @@
 #include "..\engine\audio_manager.h"
 #include "..\engine\cursor_manager.h"
 #include "..\engine\content_manager.h"
-#include "..\engine\delay_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\locale_manager.h"
 #include "..\engine\record_manager.h"
 #include "..\engine\storage_manager.h"
+#include "..\engine\timer_manager.h"
 #include "..\devkit\_sms_manager.h"
 
 #define TITLE_FLASH_DELAY	50
@@ -35,7 +35,7 @@ void screen_title_screen_load()
 	engine_record_manager_init( 0 );
 
 	//TODO delete
-	engine_font_manager_draw_data( ro->record_album_index, 15, 0 );
+	//engine_font_manager_draw_data( ro->record_album_index, 15, 0 );
 	//TODO delete
 
 	storage = engine_storage_manager_available();
@@ -44,13 +44,12 @@ void screen_title_screen_load()
 		engine_storage_manager_read();
 
 		//TODO delete
-		engine_font_manager_draw_data( ro->record_album_index, 15, 1 );
+		//engine_font_manager_draw_data( ro->record_album_index, 15, 1 );
 		//TODO delete
 	}
 
 	engine_record_manager_init( ro->record_album_index );
 	engine_cursor_manager_init( ro->record_album_index );
-
 	flash = 0;
 }
 

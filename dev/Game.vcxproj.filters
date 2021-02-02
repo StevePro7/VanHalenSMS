@@ -156,9 +156,6 @@
     <ClCompile Include="screen\title_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
-    <ClCompile Include="engine\delay_manager.c">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
     <ClCompile Include="engine\locale_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
@@ -187,6 +184,12 @@
       <Filter>Source Files\screen</Filter>
     </ClCompile>
     <ClCompile Include="engine\cursor_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="object\timer_object.c">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\timer_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -296,9 +299,6 @@
     <ClInclude Include="screen\title_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
-    <ClInclude Include="engine\delay_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
     <ClInclude Include="engine\locale_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
@@ -327,6 +327,12 @@
       <Filter>Header Files\screen</Filter>
     </ClInclude>
     <ClInclude Include="engine\cursor_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="object\timer_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\timer_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
   </ItemGroup>
