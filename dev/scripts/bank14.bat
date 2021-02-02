@@ -8,6 +8,8 @@ cd bank14
 
 :: Tiles
 bmp2tile.exe "raw\VanHalenTitle.bmp" -savetiles "VanHalenTitle (tiles).psgcompr" -removedupes -mirror -planar -tileoffset 64 -savetilemap "VanHalenTitle (tilemap).stmcompr" -savepalette "VanHalenTitle (palette).bin" -fullpalette -exit
+bmp2tile.exe "raw\VanHalenTitleGap.bmp" -savetiles "VanHalenTitleGap (tiles).psgcompr" -removedupes -mirror -planar -tileoffset 64 -savetilemap "VanHalenTitleGap (tilemap).stmcompr" -savepalette "VanHalenTitleGap (palette).bin" -fullpalette -exit
+bmp2tile.exe "raw\VanHalenTitleGap.bmp" -savetiles "VanHalenTitleTop (tiles).psgcompr" -removedupes -mirror -planar -tileoffset 64 -savetilemap "VanHalenTitleTop (tilemap).stmcompr" -savepalette "VanHalenTitleTop (palette).bin" -fullpalette -exit
 
 
 cd ..

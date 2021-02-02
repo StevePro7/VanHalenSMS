@@ -33,6 +33,26 @@ void engine_content_manager_load_title()
 	// Set the font tile text to white.
 	devkit_SMS_setBGPaletteColor( 15, 3, 3, 3 );
 }
+void engine_content_manager_load_titleGap()
+{
+	devkit_SMS_mapROMBank( VanHalenTitleGap__tiles__psgcompr_bank );
+	devkit_SMS_loadPSGaidencompressedTiles( VanHalenTitleGap__tiles__psgcompr, OPTION_TILES );
+	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) VanHalenTitleGap__tilemap__stmcompr );
+	devkit_SMS_loadBGPalette( ( void * ) VanHalenTitleGap__palette__bin );
+
+	// Set the font tile text to white.
+	devkit_SMS_setBGPaletteColor( 15, 3, 3, 3 );
+}
+void engine_content_manager_load_titleTop()
+{
+	devkit_SMS_mapROMBank( VanHalenTitleTop__tiles__psgcompr_bank );
+	devkit_SMS_loadPSGaidencompressedTiles( VanHalenTitleTop__tiles__psgcompr, OPTION_TILES );
+	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) VanHalenTitleTop__tilemap__stmcompr );
+	devkit_SMS_loadBGPalette( ( void * ) VanHalenTitleTop__palette__bin );
+
+	// Set the font tile text to white.
+	devkit_SMS_setBGPaletteColor( 15, 3, 3, 3 );
+}
 
 // Sprites.
 void engine_content_manager_load_sprites()

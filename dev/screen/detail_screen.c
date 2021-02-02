@@ -13,7 +13,9 @@ void screen_detail_screen_load()
 {
 	devkit_SMS_displayOff();
 	engine_content_manager_load_tiles();
-	engine_content_manager_load_title();
+	//engine_content_manager_load_title();
+	//engine_content_manager_load_titleGap();
+	engine_content_manager_load_titleTop();
 	engine_content_manager_load_sprites();
 	devkit_SMS_displayOn();
 }
