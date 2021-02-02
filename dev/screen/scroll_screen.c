@@ -11,7 +11,6 @@
 #include "..\devkit\_sms_manager.h"
 
 static unsigned char index;
-static void print();
 
 void screen_scroll_screen_load()
 {
@@ -23,11 +22,9 @@ void screen_scroll_screen_load()
 
 	engine_font_manager_draw_text( LOCALE_RECORD_TEXT, 6, 12 );
 	engine_font_manager_draw_text( LOCALE_COVERS_TEXT, 20, 12 );
-	//engine_cursor_manager_load();
 	devkit_SMS_displayOn();
 
 	index = 32;
-	//print();
 }
 
 void screen_scroll_screen_update( unsigned char *screen_type )
@@ -42,8 +39,17 @@ void screen_scroll_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
-		//print();
+		devkit_SMS_displayOff();
+		devkit_SMS_setBGScrollY( 0 );
+		engine_asm_manager_clear_VRAM();
+		engine_content_manager_load_tiles();
+		engine_content_manager_load_titleTop();
+		engine_content_manager_load_sprites();
+
+		engine_font_manager_draw_text( LOCALE_RECORD_TEXT, 6, 8 );
+		engine_font_manager_draw_text( LOCALE_COVERS_TEXT, 20, 8 );
 		engine_cursor_manager_load();
+		devkit_SMS_displayOn();
 	}
 
 	input = engine_input_manager_move( input_type_left );
@@ -53,13 +59,4 @@ void screen_scroll_screen_update( unsigned char *screen_type )
 	}
 
 	*screen_type = screen_type_scroll;
-}
-
-static void print()
-{
-	unsigned char idx;
-	for( idx = 0; idx < 24; idx++ )
-	{
-		engine_font_manager_draw_data( idx, 25, idx );
-	}
 }
