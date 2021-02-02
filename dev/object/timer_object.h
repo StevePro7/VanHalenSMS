@@ -2,12 +2,12 @@
 #define _TIMER_OBJECT_H_
 
 // Delay Object.
-//typedef struct tag_struct_delay_object
-//{
-//	unsigned int delay_value;
-//	unsigned int delay_timer;
-//
-//} struct_delay_object;
+typedef struct tag_struct_delay_object
+{
+	unsigned int delay_value;
+	unsigned int delay_timer;
+
+} struct_delay_object;
 
 
 // Reset Object.
