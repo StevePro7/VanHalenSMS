@@ -20,23 +20,25 @@ void screen_record_screen_load()
 void screen_record_screen_update( unsigned char *screen_type )
 {
 	struct_record_object *ro = &global_record_object;
-	unsigned char input;
+	unsigned char input1;
+	unsigned char input2;
 
-	input = engine_input_manager_hold( input_type_left );
-	if( input )
+	input1 = engine_input_manager_hold( input_type_left );
+	if( input1 )
 	{
 		engine_record_manager_decrement();
 		load_record();
 	}
-	input = engine_input_manager_hold( input_type_right );
-	if( input )
+	input1 = engine_input_manager_hold( input_type_right );
+	if( input1 )
 	{
 		engine_record_manager_increment();
 		load_record();
 	}
 
-	input = engine_input_manager_hold( input_type_fire2 );
-	if( input )
+	input1 = engine_input_manager_hold( input_type_fire1 );
+	input2 = engine_input_manager_hold( input_type_fire2 );
+	if( input1 || input2 )
 	{
 		devkit_SMS_setBGScrollY( GAP_OFFSET );
 
