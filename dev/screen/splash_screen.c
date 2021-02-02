@@ -40,7 +40,7 @@ void screen_splash_screen_update( unsigned char *screen_type )
 			engine_storage_manager_erase();
 
 			engine_reset_manager_reset();
-			engine_font_manager_draw_text( LOCALE_EDDIE_VALUE, 24, 23 );
+			engine_font_manager_draw_text( LOCALE_EDDIE_VALUE, 28, 23 );
 		}
 	}
 	else
