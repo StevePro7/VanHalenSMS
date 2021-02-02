@@ -3,7 +3,7 @@
 
 // Tiles.
 void engine_content_manager_load_tiles();
-void engine_content_manager_load_title();
+//void engine_content_manager_load_title();
 void engine_content_manager_load_splash();
 
 void engine_content_manager_load_titleGap();

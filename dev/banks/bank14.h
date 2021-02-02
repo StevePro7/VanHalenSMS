@@ -27,10 +27,10 @@ extern const unsigned char	VanHalenTitleTop__palette__bin[];
 #define				VanHalenTitleTop__palette__bin_bank 14
 
 extern const unsigned char	VanHalenTitleTop__tilemap__stmcompr[];
-#define				VanHalenTitleTop__tilemap__stmcompr_size 103
+#define				VanHalenTitleTop__tilemap__stmcompr_size 93
 #define				VanHalenTitleTop__tilemap__stmcompr_bank 14
 
 extern const unsigned char	VanHalenTitleTop__tiles__psgcompr[];
-#define				VanHalenTitleTop__tiles__psgcompr_size 4705
+#define				VanHalenTitleTop__tiles__psgcompr_size 4674
 #define				VanHalenTitleTop__tiles__psgcompr_bank 14
 

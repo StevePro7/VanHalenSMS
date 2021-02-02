@@ -16,7 +16,7 @@ void screen_func_screen_load()
 {
 	devkit_SMS_displayOff();
 	engine_content_manager_load_tiles();
-	engine_content_manager_load_title();
+	engine_content_manager_load_titleGap();
 	engine_content_manager_load_sprites();
 	engine_font_manager_draw_text( LOCALE_RECORD_TEXT, 6, 12 );
 	engine_font_manager_draw_text( LOCALE_COVERS_TEXT, 20, 12 );
