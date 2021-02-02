@@ -19,7 +19,7 @@ void main(void)
 
 	//open_screen_type = screen_type_splash;
 	open_screen_type = screen_type_title;
-	//open_screen_type = screen_type_scroll;
+	open_screen_type = screen_type_scroll;
 	//open_screen_type = screen_type_select;
 	//open_screen_type = screen_type_record;
 	//open_screen_type = screen_type_detail;

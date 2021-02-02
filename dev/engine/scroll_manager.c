@@ -7,7 +7,12 @@ struct_scroll_object global_scroll_object;
 
 void engine_scroll_manager_reset()
 {
-	struct_scroll_object *so = &global_scroll_object;
-	so->scroll_value_offset = GAP_OFFSET;
+	engine_scroll_manager_load( GAP_OFFSET );
 	devkit_SMS_setBGScrollY( GAP_OFFSET );
+}
+
+void engine_scroll_manager_load( unsigned char offset )
+{
+	struct_scroll_object *so = &global_scroll_object;
+	so->scroll_value_offset = offset;
 }

@@ -7,10 +7,10 @@
 #include "..\engine\global_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\locale_manager.h"
-//#include "..\engine\sprite_manager.h"
+#include "..\engine\scroll_manager.h"
 #include "..\devkit\_sms_manager.h"
 
-static unsigned char index;
+static unsigned char offset;
 
 void screen_scroll_screen_load()
 {
@@ -24,32 +24,41 @@ void screen_scroll_screen_load()
 	engine_font_manager_draw_text( LOCALE_COVERS_TEXT, 20, 12 );
 	devkit_SMS_displayOn();
 
-	index = 32;
+	offset = 0;
 }
 
 void screen_scroll_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
-	input = engine_input_manager_hold( input_type_down );
+
+	if( TOP_SCROLL == offset )
+	{
+		engine_scroll_manager_load( TOP_OFFSET );
+		*screen_type = screen_type_detail;
+		return;
+	}
+
+	input = engine_input_manager_move( input_type_down );
 	if( input )
 	{
-		devkit_SMS_setBGScrollY( index );
+		devkit_SMS_setBGScrollY( offset++ );
 	}
 
 	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
-		engine_cursor_manager_load( TOP_OFFSET );
+		engine_scroll_manager_load( TOP_OFFSET );
+		devkit_SMS_setBGScrollY( TOP_SCROLL );
 
 		*screen_type = screen_type_detail;
 		return;
 	}
 
-	input = engine_input_manager_move( input_type_left );
-	if( input )
-	{
-		engine_cursor_manager_draw();
-	}
+	//input = engine_input_manager_move( input_type_left );
+	//if( input )
+	//{
+	//	engine_cursor_manager_draw();
+	//}
 
 	*screen_type = screen_type_scroll;
 }
