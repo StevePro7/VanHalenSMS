@@ -35,6 +35,7 @@ void screen_record_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_fire2 );
 	if( input )
 	{
+		devkit_SMS_setBGScrollY( GAP_OFFSET );
 		engine_cursor_manager_init( ro->record_album_index );
 
 		*screen_type = screen_type_select;

@@ -21,7 +21,7 @@ void engine_cursor_manager_init( unsigned char index )
 	update_values();
 }
 
-void engine_cursor_manager_load()
+void engine_cursor_manager_load( unsigned char offset )
 {
 	unsigned char idx;
 	unsigned char fx, fy;
@@ -37,7 +37,7 @@ void engine_cursor_manager_load()
 			vx = cursor_gridX[ fx ];
 			vy = cursor_gridY[ fy ];
 			text = cursor_album[ idx ];
-			engine_font_manager_draw_text( text, vx, vy );
+			engine_font_manager_draw_text( text, vx, vy + offset );
 		}
 	}
 }

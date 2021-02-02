@@ -4,6 +4,7 @@
 #include "..\engine\cursor_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
+#include "..\engine\global_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\locale_manager.h"
 #include "..\engine\record_manager.h"
@@ -21,7 +22,8 @@ void screen_select_screen_load()
 	engine_font_manager_draw_text( LOCALE_COVERS_TEXT, 20, 8 );
 	devkit_SMS_displayOn();
 
-	engine_cursor_manager_load();
+	devkit_SMS_setBGScrollY( GAP_OFFSET );
+	engine_cursor_manager_load( GAP_OFFSET );
 	//engine_font_manager_draw_text( "SELECT SCREEN!!!", 2, 4 );
 }
 

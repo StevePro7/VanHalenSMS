@@ -39,17 +39,10 @@ void screen_scroll_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
-		devkit_SMS_displayOff();
-		devkit_SMS_setBGScrollY( 0 );
-		engine_asm_manager_clear_VRAM();
-		engine_content_manager_load_tiles();
-		engine_content_manager_load_titleTop();
-		engine_content_manager_load_sprites();
+		engine_cursor_manager_load( TOP_OFFSET );
 
-		engine_font_manager_draw_text( LOCALE_RECORD_TEXT, 6, 8 );
-		engine_font_manager_draw_text( LOCALE_COVERS_TEXT, 20, 8 );
-		engine_cursor_manager_load();
-		devkit_SMS_displayOn();
+		*screen_type = screen_type_detail;
+		return;
 	}
 
 	input = engine_input_manager_move( input_type_left );
