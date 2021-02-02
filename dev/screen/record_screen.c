@@ -5,6 +5,7 @@
 #include "..\engine\font_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\record_manager.h"
+#include "..\engine\storage_manager.h"
 #include "..\devkit\_sms_manager.h"
 
 static void load_record();
@@ -36,7 +37,10 @@ void screen_record_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		devkit_SMS_setBGScrollY( GAP_OFFSET );
+
+		engine_record_manager_init( ro->record_album_index );
 		engine_cursor_manager_init( ro->record_album_index );
+		engine_storage_manager_write();
 
 		*screen_type = screen_type_select;
 		return;
