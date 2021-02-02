@@ -14,15 +14,16 @@ static unsigned char offset;
 
 void screen_scroll_screen_load()
 {
-	devkit_SMS_displayOff();
-	engine_asm_manager_clear_VRAM();
-	engine_content_manager_load_tiles();
-	engine_content_manager_load_titleGap();
-	engine_content_manager_load_sprites();
+	engine_font_manager_draw_text( "SS", 28, 10 );
+	//devkit_SMS_displayOff();
+	//engine_asm_manager_clear_VRAM();
+	//engine_content_manager_load_tiles();
+	//engine_content_manager_load_titleGap();
+	//engine_content_manager_load_sprites();
 
-	engine_font_manager_draw_text( LOCALE_RECORD_TEXT, 6, 12 );
-	engine_font_manager_draw_text( LOCALE_COVERS_TEXT, 20, 12 );
-	devkit_SMS_displayOn();
+	//engine_font_manager_draw_text( LOCALE_RECORD_TEXT, 6, 12 );
+	//engine_font_manager_draw_text( LOCALE_COVERS_TEXT, 20, 12 );
+	//devkit_SMS_displayOn();
 	offset = 0;
 }
 

@@ -79,8 +79,8 @@ void screen_title_screen_update( unsigned char *screen_type )
 		// TODO slight pause
 		//engine_audio_manager_sfx_right();
 
-		//*screen_type = screen_type_scroll;
-		*screen_type = screen_type_select;
+		*screen_type = screen_type_scroll;
+		//*screen_type = screen_type_select;
 		//*screen_type = screen_type_record;
 		//*screen_type = screen_type_detail;
 		return;
