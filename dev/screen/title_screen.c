@@ -79,6 +79,8 @@ void screen_title_screen_update( unsigned char *screen_type )
 		// TODO slight pause
 		//engine_audio_manager_sfx_right();
 
+		engine_font_manager_draw_text( LOCALE_BLANK_CLEAR, 10, 21 );
+		engine_font_manager_draw_text( LOCALE_BLANK_CLEAR, 21, 23 );
 		*screen_type = screen_type_scroll;
 		//*screen_type = screen_type_select;
 		//*screen_type = screen_type_record;
