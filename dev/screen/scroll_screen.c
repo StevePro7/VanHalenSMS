@@ -1,7 +1,7 @@
 #include "scroll_screen.h"
 #include "..\engine\asm_manager.h"
 #include "..\engine\content_manager.h"
-#include "..\engine\cursor_manager.h"
+//#include "..\engine\cursor_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
 #include "..\engine\global_manager.h"
@@ -23,7 +23,6 @@ void screen_scroll_screen_load()
 	engine_font_manager_draw_text( LOCALE_RECORD_TEXT, 6, 12 );
 	engine_font_manager_draw_text( LOCALE_COVERS_TEXT, 20, 12 );
 	devkit_SMS_displayOn();
-
 	offset = 0;
 }
 
@@ -53,12 +52,6 @@ void screen_scroll_screen_update( unsigned char *screen_type )
 		*screen_type = screen_type_detail;
 		return;
 	}
-
-	//input = engine_input_manager_move( input_type_left );
-	//if( input )
-	//{
-	//	engine_cursor_manager_draw();
-	//}
 
 	*screen_type = screen_type_scroll;
 }
