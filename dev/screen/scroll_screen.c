@@ -14,7 +14,7 @@ static unsigned char offset;
 
 void screen_scroll_screen_load()
 {
-	engine_font_manager_draw_text( "SS", 28, 10 );
+	//engine_font_manager_draw_text( "SS", 28, 10 );
 	//devkit_SMS_displayOff();
 	//engine_asm_manager_clear_VRAM();
 	//engine_content_manager_load_tiles();

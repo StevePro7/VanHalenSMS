@@ -11,7 +11,7 @@
 
 void screen_detail_screen_load()
 {
-	engine_font_manager_draw_text( "DS", 28, 10 );
+	//engine_font_manager_draw_text( "DS", 28, 10 );
 }
 
 void screen_detail_screen_update( unsigned char *screen_type )

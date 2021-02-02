@@ -35,18 +35,10 @@ void screen_title_screen_load()
 	// Deal with storage.
 	engine_record_manager_init( 0 );
 
-	//TODO delete
-	//engine_font_manager_draw_data( ro->record_album_index, 15, 0 );
-	//TODO delete
-
 	storage = engine_storage_manager_available();
 	if( storage )
 	{
 		engine_storage_manager_read();
-
-		//TODO delete
-		//engine_font_manager_draw_data( ro->record_album_index, 15, 1 );
-		//TODO delete
 	}
 
 	engine_record_manager_init( ro->record_album_index );
@@ -81,13 +73,10 @@ void screen_title_screen_update( unsigned char *screen_type )
 
 		engine_font_manager_draw_text( LOCALE_BLANK_CLEAR, 10, 21 );
 		engine_font_manager_draw_text( LOCALE_BLANK_CLEAR, 21, 23 );
+
 		*screen_type = screen_type_scroll;
-		//*screen_type = screen_type_select;
-		//*screen_type = screen_type_record;
-		//*screen_type = screen_type_detail;
 		return;
 	}
 
-	//*screen_type = screen_type_title;
 	*screen_type = screen_type_scroll;
 }

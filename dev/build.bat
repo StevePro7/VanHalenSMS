@@ -29,7 +29,7 @@ cd engine
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 input_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 record_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 screen_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 scroll_manager.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 scroll_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 storage_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 timer_manager.c
 cd ..
@@ -37,7 +37,7 @@ cd ..
 cd object
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 cursor_object.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 record_object.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 scroll_object.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 scroll_object.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 storage_object.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 timer_object.c
 cd ..
@@ -45,11 +45,11 @@ cd ..
 cd screen
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 none_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 splash_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 title_screen.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 title_screen.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 scroll_screen.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 select_screen.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 record_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 detail_screen.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 detail_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 test_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 func_screen.c
 cd ..
@@ -87,17 +87,10 @@ banks\bank2.rel banks\bank3.rel banks\bank4.rel banks\bank5.rel banks\bank6.rel 
 banks\bank9.rel banks\bank10.rel banks\bank11.rel banks\bank12.rel banks\bank13.rel banks\bank14.rel banks\bank15.rel ^
 devkit\_sms_manager.rel ^
 devkit\_snd_manager.rel ^
-engine\asm_manager.rel ^
-engine\audio_manager.rel ^
+engine\asm_manager.rel engine\audio_manager.rel ^
 engine\content_manager.rel engine\cursor_manager.rel ^
-engine\enum_manager.rel ^
-engine\font_manager.rel ^
-engine\input_manager.rel ^
-engine\locale_manager.rel ^
-engine\record_manager.rel ^
-engine\screen_manager.rel ^
-engine\scroll_manager.rel engine\storage_manager.rel ^
-engine\timer_manager.rel ^
+engine\enum_manager.rel engine\font_manager.rel engine\input_manager.rel engine\locale_manager.rel engine\record_manager.rel ^
+engine\screen_manager.rel engine\scroll_manager.rel engine\storage_manager.rel engine\timer_manager.rel ^
 object\cursor_object.rel object\record_object.rel object\scroll_object.rel object\storage_object.rel object\timer_object.rel ^
 screen\none_screen.rel screen\splash_screen.rel screen\title_screen.rel screen\scroll_screen.rel screen\select_screen.rel ^
 screen\record_screen.rel screen\detail_screen.rel screen\test_screen.rel screen\func_screen.rel ^
