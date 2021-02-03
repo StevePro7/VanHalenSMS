@@ -7,7 +7,8 @@ cd bank10
 
 
 :: Tiles
-bmp2tile.exe "raw\VanHalen1991.bmp" -savetiles "VanHalen1991 (tiles).psgcompr" -removedupes -mirror -planar -tileoffset 0 -savetilemap "VanHalen1991 (tilemap).stmcompr" -savepalette "VanHalen1991 (palette).bin" -fullpalette -exit
+::bmp2tile.exe "raw\VanHalen1991.bmp" -savetiles "VanHalen1991 (tiles).psgcompr" -removedupes -mirror -planar -tileoffset 0 -savetilemap "VanHalen1991 (tilemap).stmcompr" -savepalette "VanHalen1991 (palette).bin" -fullpalette -exit
+bmp2tile.exe "raw\VanHalen1986.bmp" -savetiles "VanHalen1986 (tiles).psgcompr" -removedupes -mirror -planar -tileoffset 0 -savetilemap "VanHalen1986 (tilemap).stmcompr" -savepalette "VanHalen1986 (palette).bin" -fullpalette -exit
 
 
 cd ..
