@@ -1,8 +1,10 @@
 #include "content_manager.h"
 #include "global_manager.h"
 #include "..\devkit\_sms_manager.h"
-#include "..\banks\bank14.h"
-#include "..\banks\bank15.h"
+#include "..\banks\bank2.h"
+#include "..\banks\bank3.h"
+//#include "..\banks\bank14.h"
+//#include "..\banks\bank15.h"
 #include "..\gfx.h"
 
 #define FONT_TILES		0
