@@ -29,7 +29,7 @@ unsigned char engine_delay_manager_update()
 
 
 // Reset Manager.
-void engine_reset_manager_load( unsigned char delay )
+void engine_reset_manager_load( unsigned int delay )
 {
 	struct_reset_object *ro = &global_reset_object;
 	ro->reset_value = delay;

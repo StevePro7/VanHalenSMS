@@ -15,7 +15,7 @@ unsigned char engine_delay_manager_update();
 
 
 // Reset Manager.
-void engine_reset_manager_load( unsigned char frame );
+void engine_reset_manager_load( unsigned int frame );
 unsigned char engine_reset_manager_update();
 void engine_reset_manager_reset();
 
