@@ -12,6 +12,9 @@
 #include "..\devkit\_sms_manager.h"
 
 #define TITLE_FLASH_DELAY	50
+#define TITLE_VALUE_RESET	75
+
+static unsigned char event_stage;
 static unsigned char flash;
 
 void screen_title_screen_load()
@@ -31,6 +34,7 @@ void screen_title_screen_load()
 	devkit_SMS_displayOn();
 
 	engine_delay_manager_load( TITLE_FLASH_DELAY );
+	engine_reset_manager_load( TITLE_VALUE_RESET );
 
 	// Deal with storage.
 	engine_record_manager_init( 0 );
@@ -43,6 +47,8 @@ void screen_title_screen_load()
 
 	engine_record_manager_init( ro->record_album_index );
 	engine_cursor_manager_init( ro->record_album_index );
+
+	event_stage = event_stage_start;
 	flash = 0;
 }
 
@@ -50,6 +56,19 @@ void screen_title_screen_update( unsigned char *screen_type )
 {
 	unsigned char delay;
 	unsigned char input;
+
+	if( event_stage_delay == event_stage )
+	{
+		delay = engine_reset_manager_update();
+		if( delay )
+		{
+			engine_font_manager_draw_text( LOCALE_BLANK_CLEAR, 10, 21 );
+			engine_font_manager_draw_text( LOCALE_BLANK_CLEAR, 21, 23 );
+		}
+
+		*screen_type = delay ? screen_type_scroll : screen_type_title;
+		return;
+	}
 
 	delay = engine_delay_manager_update();
 	if( delay )
@@ -68,14 +87,10 @@ void screen_title_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
-		// TODO slight pause
-		//engine_audio_manager_sfx_right();
+		engine_font_manager_draw_text( LOCALE_PRESS_START, 10, 21 );
+		engine_audio_manager_sfx_right();
 
-		engine_font_manager_draw_text( LOCALE_BLANK_CLEAR, 10, 21 );
-		engine_font_manager_draw_text( LOCALE_BLANK_CLEAR, 21, 23 );
-
-		*screen_type = screen_type_scroll;
-		return;
+		event_stage = event_stage_delay;
 	}
 
 	*screen_type = screen_type_title;

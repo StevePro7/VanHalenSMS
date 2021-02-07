@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "**/*.adb": true,
+        "**/*.asm": true,
+        "**/*.lst": true,
+        "**/*.rel": true,
+        "**/*.sym": true,
+        "**/*.vs": true,
+        "**/*db": true,
+        "**/*.sln": true,
+        "**/*.vcxproj*": true
+    }
+}
