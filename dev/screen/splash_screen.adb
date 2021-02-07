@@ -8,10 +8,10 @@ S:Lsplash_screen.screen_splash_screen_update$input2$1$27({1}SC:U),R,0,0,[l]
 S:Lsplash_screen.screen_splash_screen_update$check$1$27({1}SC:U),R,0,0,[l]
 T:Fsplash_screen$tag_struct_storage_object[({0}S:S$Magic$0$0({4}SL:U),Z,0,0)({4}S:S$save_album_index$0$0({1}SC:U),Z,0,0)({5}S:S$terminal$0$0({1}SC:U),Z,0,0)]
 T:Fsplash_screen$tag_struct_delay_object[({0}S:S$delay_value$0$0({2}SI:U),Z,0,0)({2}S:S$delay_timer$0$0({2}SI:U),Z,0,0)]
-T:Fsplash_screen$tag_struct_reset_object[({0}S:S$reset_value$0$0({1}SC:U),Z,0,0)({1}S:S$reset_timer$0$0({1}SC:U),Z,0,0)]
+T:Fsplash_screen$tag_struct_reset_object[({0}S:S$reset_value$0$0({2}SI:U),Z,0,0)({2}S:S$reset_timer$0$0({2}SI:U),Z,0,0)]
 S:G$global_savegame_object$0$0({6}STtag_struct_storage_object:S),E,0,0
 S:G$global_delay_object$0$0({4}STtag_struct_delay_object:S),E,0,0
-S:G$global_reset_object$0$0({2}STtag_struct_reset_object:S),E,0,0
+S:G$global_reset_object$0$0({4}STtag_struct_reset_object:S),E,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_titleGap$0$0({2}DF,SV:S),C,0,0

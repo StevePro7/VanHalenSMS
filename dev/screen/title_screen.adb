@@ -10,7 +10,7 @@ S:Ltitle_screen.screen_title_screen_update$sloc0$1$0({2}DG,SC:U),B,1,-2
 T:Ftitle_screen$tag_struct_cursor_object[({0}S:S$cursor_index_x$0$0({1}SC:U),Z,0,0)({1}S:S$cursor_index_y$0$0({1}SC:U),Z,0,0)({2}S:S$cursor_value_x$0$0({1}SC:U),Z,0,0)({3}S:S$cursor_value_y$0$0({1}SC:U),Z,0,0)]
 T:Ftitle_screen$tag_struct_storage_object[({0}S:S$Magic$0$0({4}SL:U),Z,0,0)({4}S:S$save_album_index$0$0({1}SC:U),Z,0,0)({5}S:S$terminal$0$0({1}SC:U),Z,0,0)]
 T:Ftitle_screen$tag_struct_delay_object[({0}S:S$delay_value$0$0({2}SI:U),Z,0,0)({2}S:S$delay_timer$0$0({2}SI:U),Z,0,0)]
-T:Ftitle_screen$tag_struct_reset_object[({0}S:S$reset_value$0$0({1}SC:U),Z,0,0)({1}S:S$reset_timer$0$0({1}SC:U),Z,0,0)]
+T:Ftitle_screen$tag_struct_reset_object[({0}S:S$reset_value$0$0({2}SI:U),Z,0,0)({2}S:S$reset_timer$0$0({2}SI:U),Z,0,0)]
 T:Ftitle_screen$tag_struct_record_object[({0}S:S$record_album_index$0$0({1}SC:U),Z,0,0)]
 S:G$cursor_album$0$0({24}DA12d,DG,SC:U),E,0,0
 S:G$global_cursor_object$0$0({4}STtag_struct_cursor_object:S),E,0,0
@@ -20,7 +20,7 @@ S:G$record_palette_data$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_record_object$0$0({1}STtag_struct_record_object:S),E,0,0
 S:G$global_savegame_object$0$0({6}STtag_struct_storage_object:S),E,0,0
 S:G$global_delay_object$0$0({4}STtag_struct_delay_object:S),E,0,0
-S:G$global_reset_object$0$0({2}STtag_struct_reset_object:S),E,0,0
+S:G$global_reset_object$0$0({4}STtag_struct_reset_object:S),E,0,0
 S:Ftitle_screen$event_stage$0$0({1}SC:U),E,0,0
 S:Ftitle_screen$flash$0$0({1}SC:U),E,0,0
 S:G$engine_audio_manager_sfx_right$0$0({2}DF,SV:S),C,0,0
