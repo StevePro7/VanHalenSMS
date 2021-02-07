@@ -1,5 +1,6 @@
 #include "select_screen.h"
 #include "..\engine\asm_manager.h"
+#include "..\engine\audio_manager.h"
 #include "..\engine\content_manager.h"
 #include "..\engine\cursor_manager.h"
 #include "..\engine\enum_manager.h"
@@ -7,9 +8,16 @@
 #include "..\engine\global_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\locale_manager.h"
-#include "..\engine\scroll_manager.h"
 #include "..\engine\record_manager.h"
+#include "..\engine\scroll_manager.h"
+#include "..\engine\timer_manager.h"
 #include "..\devkit\_sms_manager.h"
+
+#define SELECT_FLASH_DELAY	150
+#define SELECT_VALUE_RESET	900
+
+static unsigned char event_stage;
+static unsigned char flash;
 
 void screen_select_screen_load()
 {
@@ -27,15 +35,40 @@ void screen_select_screen_load()
 		devkit_SMS_displayOn();
 	}
 
-	//devkit_SMS_setBGScrollY( GAP_OFFSET );
 	engine_cursor_manager_load( so->scroll_value_offset );
-	//engine_font_manager_draw_text( "SELECT SCREEN!!!", 2, 4 );
+
+	engine_delay_manager_load( SELECT_FLASH_DELAY );
+	engine_reset_manager_load( SELECT_VALUE_RESET );
+
+	event_stage = event_stage_start;
+	flash = 1;
 }
 
 void screen_select_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
 	unsigned char index;
+
+	unsigned char delay;
+	unsigned char reset;
+	if( event_stage_delay == event_stage )
+	{
+		if( flash )
+		{
+			engine_cursor_manager_draw();
+		}
+
+		delay = engine_delay_manager_update();
+		if( delay )
+		{
+			flash = 1 - flash;
+		}
+
+		reset = engine_reset_manager_update();
+		*screen_type = reset ? screen_type_record : screen_type_select;
+		return;
+	}
+
 	engine_cursor_manager_draw();
 
 	input = engine_input_manager_hold( input_type_fire1 );
@@ -44,16 +77,11 @@ void screen_select_screen_update( unsigned char *screen_type )
 		index = engine_cursor_manager_save();
 		engine_record_manager_init( index );
 
-		*screen_type = screen_type_record;
+		//*screen_type = screen_type_record;
+		engine_audio_manager_sfx_right();
+		event_stage = event_stage_delay;
 		return;
 	}
-
-	//input = engine_input_manager_hold( input_type_fire2 );
-	//if( input )
-	//{
-	//	*screen_type = screen_type_title;
-	//	return;
-	//}
 
 	input = engine_input_manager_hold( input_type_left );
 	if( input )
