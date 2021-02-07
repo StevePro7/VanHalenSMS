@@ -12,7 +12,7 @@
 #include "..\devkit\_sms_manager.h"
 
 #define TITLE_FLASH_DELAY	50
-#define TITLE_FLASH_RESET	50
+#define TITLE_VALUE_RESET	50
 
 static unsigned char event_stage;
 static unsigned char flash;
@@ -34,7 +34,7 @@ void screen_title_screen_load()
 	devkit_SMS_displayOn();
 
 	engine_delay_manager_load( TITLE_FLASH_DELAY );
-	engine_reset_manager_load( TITLE_FLASH_RESET );
+	engine_reset_manager_load( TITLE_VALUE_RESET );
 
 	// Deal with storage.
 	engine_record_manager_init( 0 );
@@ -89,8 +89,6 @@ void screen_title_screen_update( unsigned char *screen_type )
 	{
 		engine_font_manager_draw_text( LOCALE_PRESS_START, 10, 21 );
 		engine_audio_manager_sfx_right();
-
-
 
 		event_stage = event_stage_delay;
 	}
