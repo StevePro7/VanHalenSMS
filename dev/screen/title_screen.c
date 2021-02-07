@@ -12,7 +12,7 @@
 #include "..\devkit\_sms_manager.h"
 
 #define TITLE_FLASH_DELAY	50
-#define TITLE_VALUE_RESET	50
+#define TITLE_VALUE_RESET	75
 
 static unsigned char event_stage;
 static unsigned char flash;

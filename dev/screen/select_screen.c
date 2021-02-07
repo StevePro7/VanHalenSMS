@@ -13,8 +13,8 @@
 #include "..\engine\timer_manager.h"
 #include "..\devkit\_sms_manager.h"
 
-#define SELECT_FLASH_DELAY	150
-#define SELECT_VALUE_RESET	900
+#define SELECT_FLASH_DELAY	15
+#define SELECT_VALUE_RESET	75
 
 static unsigned char event_stage;
 static unsigned char flash;
