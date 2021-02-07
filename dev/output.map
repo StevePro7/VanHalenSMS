@@ -2971,16 +2971,16 @@ _CODE                               00000200    00001F7C =        8060. bytes (R
      000013E1  A$title_screen$370                 title_screen
      000013E1  C$title_screen.c$91$2$37           title_screen
      000013E4  A$title_screen$374                 title_screen
-     000013E4  C$title_screen.c$95$2$37           title_screen
+     000013E4  C$title_screen.c$93$2$37           title_screen
      000013E7  A$title_screen$375                 title_screen
      000013E9  A$title_screen$380                 title_screen
-     000013E9  C$title_screen.c$98$1$31           title_screen
+     000013E9  C$title_screen.c$96$1$31           title_screen
      000013EC  A$title_screen$381                 title_screen
      000013EF  A$title_screen$382                 title_screen
      000013F1  A$title_screen$384                 title_screen
      000013F3  A$title_screen$385                 title_screen
      000013F5  A$title_screen$390                 title_screen
-     000013F5  C$title_screen.c$99$1$31           title_screen
+     000013F5  C$title_screen.c$97$1$31           title_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 51.
 Hexadecimal  [32-Bits]
 
@@ -2994,20 +2994,20 @@ _CODE                               00000200    00001F7C =        8060. bytes (R
      000013F6  Ftitle_screen$__str_4$0$0          title_screen
      00001402  Ftitle_screen$__str_5$0$0          title_screen
      0000140E  A$scroll_screen$62                 scroll_screen
-     0000140E  C$scroll_screen.c$14$0$0           scroll_screen
-     0000140E  C$scroll_screen.c$16$1$24          scroll_screen
+     0000140E  C$scroll_screen.c$15$0$0           scroll_screen
+     0000140E  C$scroll_screen.c$27$1$24          scroll_screen
      0000140E  G$screen_scroll_screen_load$0$0    scroll_screen
      0000140E  _screen_scroll_screen_load         scroll_screen
      00001411  A$scroll_screen$63                 scroll_screen
      00001413  A$scroll_screen$68                 scroll_screen
-     00001413  C$scroll_screen.c$17$1$24          scroll_screen
+     00001413  C$scroll_screen.c$28$1$24          scroll_screen
      00001413  XG$screen_scroll_screen_load$0$0   scroll_screen
      00001414  A$scroll_screen$78                 scroll_screen
-     00001414  C$scroll_screen.c$19$1$24          scroll_screen
+     00001414  C$scroll_screen.c$30$1$24          scroll_screen
      00001414  G$screen_scroll_screen_update$0$   scroll_screen
      00001414  _screen_scroll_screen_update       scroll_screen
      00001415  A$scroll_screen$82                 scroll_screen
-     00001415  C$scroll_screen.c$24$1$26          scroll_screen
+     00001415  C$scroll_screen.c$35$1$26          scroll_screen
      00001418  A$scroll_screen$83                 scroll_screen
      0000141A  A$scroll_screen$84                 scroll_screen
      0000141C  A$scroll_screen$85                 scroll_screen
@@ -3017,7 +3017,7 @@ _CODE                               00000200    00001F7C =        8060. bytes (R
      00001422  A$scroll_screen$91                 scroll_screen
      00001423  A$scroll_screen$92                 scroll_screen
      00001424  A$scroll_screen$96                 scroll_screen
-     00001424  C$scroll_screen.c$25$1$26          scroll_screen
+     00001424  C$scroll_screen.c$39$1$26          scroll_screen
      00001428  A$scroll_screen$97                 scroll_screen
      0000142B  A$scroll_screen$98                 scroll_screen
      0000142E  A$scroll_screen$99                 scroll_screen
@@ -3025,21 +3025,21 @@ _CODE                               00000200    00001F7C =        8060. bytes (R
      00001430  A$scroll_screen$101                scroll_screen
      00001433  A$scroll_screen$102                scroll_screen
      00001434  A$scroll_screen$106                scroll_screen
-     00001434  C$scroll_screen.c$27$1$26          scroll_screen
+     00001434  C$scroll_screen.c$42$1$26          scroll_screen
      00001436  A$scroll_screen$107                scroll_screen
      00001437  A$scroll_screen$108                scroll_screen
      00001438  A$scroll_screen$109                scroll_screen
      0000143B  A$scroll_screen$110                scroll_screen
      0000143C  A$scroll_screen$111                scroll_screen
      0000143D  A$scroll_screen$115                scroll_screen
-     0000143D  C$scroll_screen.c$33$1$26          scroll_screen
+     0000143D  C$scroll_screen.c$48$1$26          scroll_screen
      00001440  A$scroll_screen$116                scroll_screen
      00001441  A$scroll_screen$117                scroll_screen
      00001442  A$scroll_screen$118                scroll_screen
      00001443  A$scroll_screen$119                scroll_screen
      00001444  A$scroll_screen$120                scroll_screen
      00001445  A$scroll_screen$124                scroll_screen
-     00001445  C$scroll_screen.c$28$1$26          scroll_screen
+     00001445  C$scroll_screen.c$43$1$26          scroll_screen
      00001446  A$scroll_screen$125                scroll_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 52.
 Hexadecimal  [32-Bits]
@@ -3057,7 +3057,7 @@ _CODE                               00000200    00001F7C =        8060. bytes (R
      00001452  A$scroll_screen$130                scroll_screen
      00001453  A$scroll_screen$131                scroll_screen
      00001455  A$scroll_screen$136                scroll_screen
-     00001455  C$scroll_screen.c$30$2$27          scroll_screen
+     00001455  C$scroll_screen.c$45$2$27          scroll_screen
      00001456  A$scroll_screen$137                scroll_screen
      00001458  A$scroll_screen$138                scroll_screen
      00001459  A$scroll_screen$139                scroll_screen
@@ -3070,14 +3070,14 @@ _CODE                               00000200    00001F7C =        8060. bytes (R
      00001465  A$scroll_screen$146                scroll_screen
      00001466  A$scroll_screen$147                scroll_screen
      00001467  A$scroll_screen$151                scroll_screen
-     00001467  C$scroll_screen.c$33$2$27          scroll_screen
+     00001467  C$scroll_screen.c$48$2$27          scroll_screen
      00001469  A$scroll_screen$155                scroll_screen
-     00001469  C$scroll_screen.c$34$2$27          scroll_screen
+     00001469  C$scroll_screen.c$49$2$27          scroll_screen
      0000146B  A$scroll_screen$160                scroll_screen
-     0000146B  C$scroll_screen.c$37$1$26          scroll_screen
+     0000146B  C$scroll_screen.c$52$1$26          scroll_screen
      0000146D  A$scroll_screen$162                scroll_screen
      0000146E  A$scroll_screen$167                scroll_screen
-     0000146E  C$scroll_screen.c$38$1$26          scroll_screen
+     0000146E  C$scroll_screen.c$53$1$26          scroll_screen
      0000146E  XG$screen_scroll_screen_update$0   scroll_screen
      0000146F  A$select_screen$75                 select_screen
      0000146F  C$select_screen.c$14$0$0           select_screen
