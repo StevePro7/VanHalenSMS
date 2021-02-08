@@ -1150,29 +1150,134 @@ _devkit_SMS_loadPSGaidencompress:
 		inc hl
 		ld b, (hl)
 		push bc
-		call _LABEL_20E7_
+		call _SMS_loadPSGaidencompressedTiles
 		pop af
 		pop af
 		ret
 	
-	; Data from 8A4 to 8C4 (33 bytes)
-	.db $3E $20 $F5 $33 $21 $05 $00 $39 $4E $23 $46 $C5 $21 $06 $00 $39
-	.db $7E $F5 $33 $21 $06 $00 $39 $7E $F5 $33 $CD $05 $1F $F1 $F1 $33
+; Data from 8A4 to 8A5 (2 bytes)	
+A$_sms_manager$432:	
+C$_sms_manager.c$76$1$95:	
+C$_sms_manager.c$78$1$97:	
+G$devkit_SMS_loadSTMcompressedTi:	
+_devkit_SMS_loadSTMcompressedTil:	
+	.db $3E $20
+	
+; Data from 8A6 to 8A6 (1 bytes)	
+A$_sms_manager$433:	
+	.db $F5
+	
+; Data from 8A7 to 8A7 (1 bytes)	
+A$_sms_manager$434:	
+	.db $33
+	
+; Data from 8A8 to 8AA (3 bytes)	
+A$_sms_manager$435:	
+	.db $21 $05 $00
+	
+; Data from 8AB to 8AB (1 bytes)	
+A$_sms_manager$436:	
+	.db $39
+	
+; Data from 8AC to 8AC (1 bytes)	
+A$_sms_manager$437:	
+	.db $4E
+	
+; Data from 8AD to 8AD (1 bytes)	
+A$_sms_manager$438:	
+	.db $23
+	
+; Data from 8AE to 8AE (1 bytes)	
+A$_sms_manager$439:	
+	.db $46
+	
+; Data from 8AF to 8AF (1 bytes)	
+A$_sms_manager$440:	
+	.db $C5
+	
+; Data from 8B0 to 8B2 (3 bytes)	
+A$_sms_manager$441:	
+	.db $21 $06 $00
+	
+; Data from 8B3 to 8B3 (1 bytes)	
+A$_sms_manager$442:	
+	.db $39
+	
+; Data from 8B4 to 8B4 (1 bytes)	
+A$_sms_manager$443:	
+	.db $7E
+	
+; Data from 8B5 to 8B5 (1 bytes)	
+A$_sms_manager$444:	
+	.db $F5
+	
+; Data from 8B6 to 8B6 (1 bytes)	
+A$_sms_manager$445:	
+	.db $33
+	
+; Data from 8B7 to 8B9 (3 bytes)	
+A$_sms_manager$446:	
+	.db $21 $06 $00
+	
+; Data from 8BA to 8BA (1 bytes)	
+A$_sms_manager$447:	
+	.db $39
+	
+; Data from 8BB to 8BB (1 bytes)	
+A$_sms_manager$448:	
+	.db $7E
+	
+; Data from 8BC to 8BC (1 bytes)	
+A$_sms_manager$449:	
+	.db $F5
+	
+; Data from 8BD to 8BD (1 bytes)	
+A$_sms_manager$450:	
+	.db $33
+	
+; Data from 8BE to 8C0 (3 bytes)	
+A$_sms_manager$451:	
+	.db $CD $05 $1F
+	
+; Data from 8C1 to 8C1 (1 bytes)	
+A$_sms_manager$452:	
+	.db $F1
+	
+; Data from 8C2 to 8C2 (1 bytes)	
+A$_sms_manager$453:	
+	.db $F1
+	
+; Data from 8C3 to 8C3 (1 bytes)	
+A$_sms_manager$454:	
+	.db $33
+	
+; Data from 8C4 to 8C4 (1 bytes)	
+A$_sms_manager$459:	
+C$_sms_manager.c$79$1$97:	
+XG$devkit_SMS_loadSTMcompressedT:	
 	.db $C9
 	
-_LABEL_8C5_:	
+A$_sms_manager$472:	
+C$_sms_manager.c$81$1$97:	
+C$_sms_manager.c$83$1$99:	
+G$devkit_SMS_loadBGPalette$0$0:	
+_devkit_SMS_loadBGPalette:	
 		pop bc
 		pop hl
 		push hl
 		push bc
-		jp _LABEL_1D4B_
+		jp _SMS_loadBGPalette
 	
-_LABEL_8CC_:	
+A$_sms_manager$493:	
+C$_sms_manager.c$85$1$99:	
+C$_sms_manager.c$87$1$101:	
+G$devkit_SMS_loadSpritePalette$0:	
+_devkit_SMS_loadSpritePalette:	
 		pop bc
 		pop hl
 		push hl
 		push bc
-		jp _LABEL_1D5F_
+		jp _SMS_loadSpritePalette
 	
 	; Data from 8D3 to 97E (172 bytes)
 	.db $21 $04 $00 $39 $7E $87 $87 $21 $03 $00 $39 $B6 $4F $21 $05 $00
@@ -1280,7 +1385,7 @@ A$content_manager$65:
 		pop af
 		ld bc, _DATA_17A8_
 		push bc
-		call _LABEL_8C5_
+		call A$_sms_manager$472
 		pop af
 		ret
 	
@@ -1306,7 +1411,7 @@ A$content_manager$263:
 		pop af
 		ld bc, _DATA_16DD_
 		push bc
-		call _LABEL_8CC_
+		call A$_sms_manager$493
 		pop af
 		ret
 	
@@ -1788,7 +1893,7 @@ _LABEL_1D37_:
 		out (Port_VDPData), a
 		ret
 	
-_LABEL_1D4B_:	
+_SMS_loadBGPalette:	
 		ld de, $C000
 		ld c, Port_VDPAddress
 		di
@@ -1802,7 +1907,7 @@ _LABEL_1D4B_:
 		jr nz, -
 		ret
 	
-_LABEL_1D5F_:	
+_SMS_loadSpritePalette:	
 		ld de, $C010
 		ld c, Port_VDPAddress
 		di
@@ -1998,7 +2103,7 @@ _SMS_nmi_isr:
 _LABEL_20E6_:	
 		jp (hl)
 	
-_LABEL_20E7_:	
+_SMS_loadPSGaidencompressedTiles:	
 		ld iy, $0004
 		add iy, sp
 		ld l, (iy+0)
