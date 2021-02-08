@@ -1,6 +1,9 @@
 	
 ; This disassembly was created using Emulicious (http://www.emulicious.net)	
-	
+
+.BANK 0 SLOT 0	
+.ORG $0000	
+
 _LABEL_0_:	
 		di
 		im 1
