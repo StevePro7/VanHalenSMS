@@ -2189,7 +2189,7 @@ _engine_content_manager_load_til:
 A$content_manager$96:	
 C$content_manager.c$20$1$17:	
 C$content_manager.c$22$1$18:	
-G$engine_content_manager_load_sp:	
+H$engine_content_manager_load_sp:	
 _engine_content_manager_load_spl:	
 	.db $3E $02
 	
@@ -2561,7 +2561,7 @@ XH$engine_content_manager_load_t:
 A$content_manager$263:	
 C$content_manager.c$60$1$20:	
 C$content_manager.c$63$1$21:	
-H$engine_content_manager_load_sp:	
+G$engine_content_manager_load_sp:	
 _engine_content_manager_load_spr:	
 		ld hl, $0120
 		push hl
