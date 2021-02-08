@@ -265,51 +265,65 @@ C$main.c$48$3$57:
 		jr nz, A$main$140
 		call A$_sms_manager$735
 		call A$input_manager$65
-		call _LABEL_1078_
-		call _LABEL_982_
-		call _LABEL_985_
-		call _LABEL_988_
-		call _LABEL_A4B_
-		call _LABEL_A4E_
+		call A$screen_manager$202
+		call A$_sms_manager$752
+		call A$_sms_manager$769
+		call A$_sms_manager$786
+		call _devkit_PSGFrame
+		call _devkit_PSGSFXFrame
 		jr A$main$140
 	
-_LABEL_281_:	
-		ld a, (PSGMusicStatus)
+_PSGStop:	
+		ld a, (PSGMusicStatus)		; PSGMusicStatus = $C001
 		or a
 		ret z
 		ld a, $9F
 		out (Port_PSG), a
 		ld a, $BF
 		out (Port_PSG), a
-		ld a, (PSGChannel2SFX)
+		ld a, (PSGChannel2SFX)		; PSGChannel2SFX = $C016
 		or a
 		jr nz, +
 		ld a, $DF
 		out (Port_PSG), a
 +:	
-		ld a, (PSGChannel3SFX)
+		ld a, (PSGChannel3SFX)		; PSGChannel3SFX = $C017
 		or a
 		jr nz, +
 		ld a, $FF
 		out (Port_PSG), a
 +:	
-		ld hl, PSGMusicStatus
+		ld hl, PSGMusicStatus		; PSGMusicStatus = $C001
 		ld (hl), $00
 		ret
 	
-	; Data from 2A8 to 33D (150 bytes)
+; Data from 2A8 to 2F3 (76 bytes)	
+_PSGResume:	
 	.db $3A $01 $C0 $B7 $C0 $3A $0F $C0 $F6 $90 $D3 $7F $3A $10 $C0 $F6
 	.db $B0 $D3 $7F $3A $16 $C0 $B7 $20 $17 $3A $13 $C0 $E6 $0F $F6 $C0
 	.db $D3 $7F $3A $14 $C0 $E6 $3F $D3 $7F $3A $11 $C0 $F6 $D0 $D3 $7F
 	.db $3A $17 $C0 $B7 $20 $10 $3A $15 $C0 $E6 $0F $F6 $E0 $D3 $7F $3A
-	.db $12 $C0 $F6 $F0 $D3 $7F $21 $01 $C0 $36 $01 $C9 $CD $81 $02 $21
-	.db $09 $C0 $36 $01 $D1 $C1 $C5 $D5 $ED $43 $02 $C0 $ED $43 $04 $C0
-	.db $ED $43 $06 $C0 $21 $08 $C0 $36 $00 $21 $0C $C0 $36 $00 $21 $0A
-	.db $C0 $36 $9F $21 $01 $C0 $36 $01 $C9 $21 $09 $C0 $36 $00 $C9 $C1
-	.db $E1 $E5 $C5 $E5 $CD $F4 $02 $F1 $21 $09 $C0 $36 $00 $C9 $FD $21
-	.db $01 $C0 $FD $6E $00 $C9
+	.db $12 $C0 $F6 $F0 $D3 $7F $21 $01 $C0 $36 $01 $C9
 	
-_LABEL_33E_:	
+; Data from 2F4 to 320 (45 bytes)	
+_PSGPlay:	
+	.db $CD $81 $02 $21 $09 $C0 $36 $01 $D1 $C1 $C5 $D5 $ED $43 $02 $C0
+	.db $ED $43 $04 $C0 $ED $43 $06 $C0 $21 $08 $C0 $36 $00 $21 $0C $C0
+	.db $36 $00 $21 $0A $C0 $36 $9F $21 $01 $C0 $36 $01 $C9
+	
+; Data from 321 to 326 (6 bytes)	
+_PSGCancelLoop:	
+	.db $21 $09 $C0 $36 $00 $C9
+	
+; Data from 327 to 335 (15 bytes)	
+_PSGPlayNoRepeat:	
+	.db $C1 $E1 $E5 $C5 $E5 $CD $F4 $02 $F1 $21 $09 $C0 $36 $00 $C9
+	
+; Data from 336 to 33D (8 bytes)	
+_PSGGetStatus:	
+	.db $FD $21 $01 $C0 $FD $6E $00 $C9
+	
+_PSGSilenceChannels:	
 		ld a, $9F
 		out (Port_PSG), a
 		ld a, $BF
@@ -320,21 +334,21 @@ _LABEL_33E_:
 		out (Port_PSG), a
 		ret
 	
-_LABEL_34F_:	
+_PSGRestoreVolumes:	
 		push ix
 		ld ix, $0000
 		add ix, sp
 		push af
-		ld iy, PSGMusicVolumeAttenuation
+		ld iy, PSGMusicVolumeAttenuation		; PSGMusicVolumeAttenuation = $C00B
 		ld a, (iy+0)
 		ld (ix-2), a
 		xor a
 		ld (ix-1), a
 		ld c, (iy+0)
-		ld a, (PSGMusicStatus)
+		ld a, (PSGMusicStatus)		; PSGMusicStatus = $C001
 		or a
 		jr z, _LABEL_3C7_
-		ld a, (PSGChan0Volume)
+		ld a, (PSGChan0Volume)		; PSGChan0Volume = $C00F
 		and $0F
 		ld e, a
 		ld d, $00
@@ -349,11 +363,11 @@ _LABEL_34F_:
 		xor $80
 +:	
 		jp p, +
-		ld de, $000F
+		ld de, _SMS_crt0_RST18 - 2	; _SMS_crt0_RST18 - 2 = $000F
 		jr ++
 	
 +:	
-		ld a, (PSGChan0Volume)
+		ld a, (PSGChan0Volume)		; PSGChan0Volume = $C00F
 		and $0F
 		add a, c
 		ld e, a
@@ -363,7 +377,7 @@ _LABEL_34F_:
 		ld a, e
 		or $90
 		out (Port_PSG), a
-		ld a, (PSGChan1Volume)
+		ld a, (PSGChan1Volume)		; PSGChan1Volume = $C010
 		and $0F
 		ld e, a
 		ld d, $00
@@ -378,11 +392,11 @@ _LABEL_34F_:
 		xor $80
 +:	
 		jp p, +
-		ld de, $000F
+		ld de, _SMS_crt0_RST18 - 2	; _SMS_crt0_RST18 - 2 = $000F
 		jr ++
 	
 +:	
-		ld a, (PSGChan1Volume)
+		ld a, (PSGChan1Volume)	; PSGChan1Volume = $C010
 		and $0F
 		add a, c
 		ld e, a
@@ -775,7 +789,7 @@ _LABEL_749_:
 +++++:	
 		ld a, (PSGLoopFlag)
 		or a
-		jp z, _LABEL_281_
+		jp z, _PSGStop
 		ld hl, (PSGMusicLoopPoint)
 		jp _LABEL_692_
 	
@@ -986,13 +1000,13 @@ _LABEL_8CC_:
 A$_sms_manager$735:	
 		jp _LABEL_1D77_
 	
-_LABEL_982_:	
+A$_sms_manager$752:	
 		jp _LABEL_1DD2_
 	
-_LABEL_985_:	
+A$_sms_manager$769:	
 		jp _LABEL_1E0D_
 	
-_LABEL_988_:	
+A$_sms_manager$786:	
 		jp _LABEL_1BA6_
 	
 	; Data from 98B to 98D (3 bytes)
@@ -1031,15 +1045,15 @@ A$_sms_manager$905:
 	.db $4E $23 $46 $C5 $CD $07 $06 $F1 $33 $C9 $C3 $3D $05 $C3 $5A $06
 	
 _devkit_PSGSilenceChannels:	
-		jp _LABEL_33E_
+		jp _PSGSilenceChannels
 	
 _devkit_PSGRestoreVolumes:	
-		jp _LABEL_34F_
+		jp _PSGRestoreVolumes
 	
-_LABEL_A4B_:	
+_devkit_PSGFrame:	
 		jp _LABEL_683_
 	
-_LABEL_A4E_:	
+_devkit_PSGSFXFrame:	
 		jp _LABEL_79C_
 	
 	; Data from A51 to A59 (9 bytes)
@@ -1235,7 +1249,7 @@ A$screen_manager$86:
 		ld (_RAM_C04F_), hl
 		ret
 	
-_LABEL_1078_:	
+A$screen_manager$202:	
 		ld a, (Fscreen_manager$curr_screen_type)
 		ld iy, Fscreen_manager$next_screen_type
 		sub (iy+0)
