@@ -1101,13 +1101,32 @@ _devkit_SMS_setSpriteMode:
 		jp _SMS_setSpriteMode
 	
 A$_sms_manager$343:	
+C$_sms_manager.c$59$1$89:	
+C$_sms_manager.c$61$1$90:	
+G$devkit_SMS_useFirstHalfTilesfo:	
+_devkit_SMS_useFirstHalfTilesfor:
 		ld l, $00
 		jp _SMS_useFirstHalfTilesforSprites
 	
-	; Data from 882 to 886 (5 bytes)
-	.db $2E $01 $C3 $CA $1C
+; Data from 882 to 883 (2 bytes)	
+A$_sms_manager$361:	
+C$_sms_manager.c$63$1$90:	
+C$_sms_manager.c$65$1$91:	
+H$devkit_SMS_useFirstHalfTilesfo:	
+_eevkit_SMS_useFirstHalfTilesfor:	
+	.db $2E $01
+	
+; Data from 884 to 886 (3 bytes)	
+A$_sms_manager$366:	
+C$_sms_manager.c$66$1$91:	
+XG$devkit_SMS_useFirstHalfTilesf:	
+	.db $C3 $CA $1C
 	
 A$_sms_manager$379:	
+C$_sms_manager.c$67$1$91:	
+C$_sms_manager.c$69$1$93:	
+G$devkit_SMS_VDPturnOnFeature$0$:	
+_devkit_SMS_VDPturnOnFeature:
 		pop bc
 		pop hl
 		push hl
