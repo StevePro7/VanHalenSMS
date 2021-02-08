@@ -1,5 +1,103 @@
 .include "bank_manager.inc"
-.include "enum_manager.inc"
+;.include "enum_manager.inc"
+
+
+
+.enum $C000 export	
+Lmain.main$global_pause$1$55 db		; Lmain.main$global_pause$1$55 = $C000
+PSGMusicStatus db		; PSGMusicStatus = $C001
+PSGMusicStart dw		; PSGMusicStart = $C002
+PSGMusicPointer dw		; PSGMusicPointer = $C004
+PSGMusicLoopPoint dw		; PSGMusicLoopPoint = $C006
+PSGMusicSkipFrames db		; PSGMusicSkipFrames = $C008
+PSGLoopFlag db		; PSGLoopFlag = $C009
+PSGMusicLastLatch db		; PSGMusicLastLatch = $C00A
+PSGMusicVolumeAttenuation db		; PSGMusicVolumeAttenuation = $C00B
+PSGMusicSubstringLen db		; PSGMusicSubstringLen = $C00C
+PSGMusicSubstringRetAddr dw		; PSGMusicSubstringRetAddr = $C00D
+PSGChan0Volume db		; PSGChan0Volume = $C00F
+PSGChan1Volume db		; PSGChan1Volume = $C010
+PSGChan2Volume db		; PSGChan2Volume = $C011
+PSGChan3Volume db		; PSGChan3Volume = $C012
+PSGChan2LowTone db		; PSGChan2LowTone = $C013
+PSGChan2HighTone db		; PSGChan2HighTone = $C014
+PSGChan3LowTone db		; PSGChan3LowTone = $C015
+PSGChannel2SFX db		; PSGChannel2SFX = $C016
+PSGChannel3SFX db		; PSGChannel3SFX = $C017
+PSGSFXChan2Volume db		; PSGSFXChan2Volume = $C018
+PSGSFXChan3Volume db		; PSGSFXChan3Volume = $C019
+PSGSFXStatus db		; PSGSFXStatus = $C01A
+PSGSFXStart dw		; PSGSFXStart = $C01B
+PSGSFXPointer dw		; PSGSFXPointer = $C01D
+PSGSFXLoopPoint dw		; PSGSFXLoopPoint = $C01F
+PSGSFXSkipFrames db		; PSGSFXSkipFrames = $C021
+PSGSFXLoopFlag db		; PSGSFXLoopFlag = $C022
+PSGSFXSubstringLen db		; PSGSFXSubstringLen = $C023
+PSGSFXSubstringRetAddr dw		; PSGSFXSubstringRetAddr = $C024
+.ende	
+	
+.enum $C02B export	
+Fscreen_manager$curr_screen_type db		; Fscreen_manager$curr_screen_type = $C02B
+Fscreen_manager$next_screen_type db		; Fscreen_manager$next_screen_type = $C02C
+Fscreen_manager$load_method$0$0 dw		; Fscreen_manager$load_method$0$0 = $C02D
+_RAM_C02F_ dw		; Fscreen_manager$load_method$0$0 + 2 = $C02F
+_RAM_C031_ dw	
+_RAM_C033_ dw	
+_RAM_C035_ dw	
+_RAM_C037_ dw	
+_RAM_C039_ dw	
+_RAM_C03B_ dw	
+_RAM_C03D_ dw	
+_RAM_C03F_ dw	
+_RAM_C041_ dw	
+_RAM_C043_ dw	
+_RAM_C045_ dw	
+_RAM_C047_ dw	
+_RAM_C049_ dw	
+_RAM_C04B_ dw	
+_RAM_C04D_ dw	
+_RAM_C04F_ dw	
+_RAM_C051_ db		; G$global_scroll_object$0$0 = $C051
+.ende	
+	
+.enum $C067 export	
+_RAM_C067_ db		; VDPBlank = $C067
+_RAM_C068_ db		; SMS_VDPFlags = $C068
+_RAM_C069_ db		; PauseRequested = $C069
+_RAM_C06A_ db		; VDPType = $C06A
+_RAM_C06B_ dw		; KeysStatus = $C06B
+_RAM_C06D_ dw		; PreviousKeysStatus = $C06D
+_RAM_C06F_ db		; SpriteTableY = $C06F
+.ende	
+	
+.enum $C0AF export	
+_RAM_C0AF_ db		; SpriteTableXN = $C0AF
+.ende	
+	
+.enum $C12F export	
+_RAM_C12F_ db		; SpriteNextFree = $C12F
+_RAM_C130_ dw		; SMS_theLineInterruptHandler = $C130
+_RAM_C132_ db		; decompBuffer = $C132
+.ende	
+	
+.enum $C152 export	
+_RAM_C152_ dw		; Finput_manager$curr_joypad1$0$0 = $C152
+_RAM_C154_ dw		; Finput_manager$prev_joypad1$0$0 = $C154
+.ende	
+	
+.enum $C1B6 export	
+_RAM_C1B6_ db		; VDPReg = $C1B6
+.ende	
+	
+.enum $C1B8 export	
+_RAM_C1B8_ db		; spritesHeight = $C1B8
+_RAM_C1B9_ db		; spritesWidth = $C1B9
+.ende	
+	
+.enum $FFFC export	
+_RAM_FFFC_ db	
+.ende	
+
 	
 
 	
@@ -279,13 +377,13 @@ _LABEL_281_:
 		out (Port_PSG), a
 		ld a, $BF
 		out (Port_PSG), a
-		ld a, (_RAM_C016_)
+		ld a, (PSGChannel2SFX)
 		or a
 		jr nz, +
 		ld a, $DF
 		out (Port_PSG), a
 +:	
-		ld a, (_RAM_C017_)
+		ld a, (PSGChannel3SFX)
 		or a
 		jr nz, +
 		ld a, $FF
@@ -323,7 +421,7 @@ _LABEL_34F_:
 		ld ix, $0000
 		add ix, sp
 		push af
-		ld iy, _RAM_C00B_
+		ld iy, PSGMusicVolumeAttenuation
 		ld a, (iy+0)
 		ld (ix-2), a
 		xor a
@@ -332,7 +430,7 @@ _LABEL_34F_:
 		ld a, (PSGMusicStatus)
 		or a
 		jr z, _LABEL_3C7_
-		ld a, (_RAM_C00F_)
+		ld a, (PSGChan0Volume)
 		and $0F
 		ld e, a
 		ld d, $00
@@ -351,7 +449,7 @@ _LABEL_34F_:
 		jr ++
 	
 +:	
-		ld a, (_RAM_C00F_)
+		ld a, (PSGChan0Volume)
 		and $0F
 		add a, c
 		ld e, a
@@ -361,7 +459,7 @@ _LABEL_34F_:
 		ld a, e
 		or $90
 		out (Port_PSG), a
-		ld a, (_RAM_C010_)
+		ld a, (PSGChan1Volume)
 		and $0F
 		ld e, a
 		ld d, $00
@@ -380,7 +478,7 @@ _LABEL_34F_:
 		jr ++
 	
 +:	
-		ld a, (_RAM_C010_)
+		ld a, (PSGChan1Volume)
 		and $0F
 		add a, c
 		ld e, a
@@ -391,10 +489,10 @@ _LABEL_34F_:
 		or $B0
 		out (Port_PSG), a
 _LABEL_3C7_:	
-		ld a, (_RAM_C016_)
+		ld a, (PSGChannel2SFX)
 		or a
 		jr z, +
-		ld a, (_RAM_C018_)
+		ld a, (PSGSFXChan2Volume)
 		or $D0
 		out (Port_PSG), a
 		jr +++
@@ -403,7 +501,7 @@ _LABEL_3C7_:
 		ld a, (PSGMusicStatus)
 		or a
 		jr z, +++
-		ld a, (_RAM_C011_)
+		ld a, (PSGChan2Volume)
 		and $0F
 		ld e, a
 		ld d, $00
@@ -422,7 +520,7 @@ _LABEL_3C7_:
 		jr ++
 	
 +:	
-		ld a, (_RAM_C011_)
+		ld a, (PSGChan2Volume)
 		and $0F
 		add a, c
 		ld e, a
@@ -433,10 +531,10 @@ _LABEL_3C7_:
 		or $D0
 		out (Port_PSG), a
 +++:	
-		ld a, (_RAM_C017_)
+		ld a, (PSGChannel3SFX)
 		or a
 		jr z, +
-		ld a, (_RAM_C019_)
+		ld a, (PSGSFXChan3Volume)
 		or $F0
 		out (Port_PSG), a
 		jr +++
@@ -445,7 +543,7 @@ _LABEL_3C7_:
 		ld a, (PSGMusicStatus)
 		or a
 		jr z, +++
-		ld a, (_RAM_C012_)
+		ld a, (PSGChan3Volume)
 		and $0F
 		ld l, a
 		ld h, $00
@@ -464,7 +562,7 @@ _LABEL_3C7_:
 		jr ++
 	
 +:	
-		ld a, (_RAM_C012_)
+		ld a, (PSGChan3Volume)
 		and $0F
 		add a, c
 		ld c, a
@@ -501,29 +599,29 @@ _LABEL_53D_:
 		ld ix, $0000
 		add ix, sp
 		push af
-		ld a, (_RAM_C01A_)
+		ld a, (PSGSFXStatus)
 		or a
 		jp z, _LABEL_602_
-		ld iy, _RAM_C00B_
+		ld iy, PSGMusicVolumeAttenuation
 		ld a, (iy+0)
 		ld (ix-2), a
 		xor a
 		ld (ix-1), a
 		ld c, (iy+0)
-		ld a, (_RAM_C016_)
+		ld a, (PSGChannel2SFX)
 		or a
 		jr z, _LABEL_5B1_
 		ld a, (PSGMusicStatus)
 		or a
 		jr z, _LABEL_5A8_
-		ld a, (_RAM_C013_)
+		ld a, (PSGChan2LowTone)
 		and $0F
 		or $C0
 		out (Port_PSG), a
-		ld a, (_RAM_C014_)
+		ld a, (PSGChan2HighTone)
 		and $3F
 		out (Port_PSG), a
-		ld a, (_RAM_C011_)
+		ld a, (PSGChan2Volume)
 		and $0F
 		ld e, a
 		ld d, $00
@@ -542,7 +640,7 @@ _LABEL_53D_:
 		jr ++
 	
 +:	
-		ld a, (_RAM_C011_)
+		ld a, (PSGChan2Volume)
 		and $0F
 		add a, c
 		ld e, a
@@ -558,20 +656,20 @@ _LABEL_5A8_:
 		ld a, $DF
 		out (Port_PSG), a
 +:	
-		ld hl, _RAM_C016_
+		ld hl, PSGChannel2SFX
 		ld (hl), $00
 _LABEL_5B1_:	
-		ld a, (_RAM_C017_)
+		ld a, (PSGChannel3SFX)
 		or a
 		jr z, _LABEL_5FD_
 		ld a, (PSGMusicStatus)
 		or a
 		jr z, +++
-		ld a, (_RAM_C015_)
+		ld a, (PSGChan3LowTone)
 		and $0F
 		or $E0
 		out (Port_PSG), a
-		ld a, (_RAM_C012_)
+		ld a, (PSGChan3Volume)
 		and $0F
 		ld l, a
 		ld h, $00
@@ -590,7 +688,7 @@ _LABEL_5B1_:
 		jr ++
 	
 +:	
-		ld a, (_RAM_C012_)
+		ld a, (PSGChan3Volume)
 		and $0F
 		add a, c
 		ld c, a
@@ -606,10 +704,10 @@ _LABEL_5B1_:
 		ld a, $FF
 		out (Port_PSG), a
 ++++:	
-		ld hl, _RAM_C017_
+		ld hl, PSGChannel3SFX
 		ld (hl), $00
 _LABEL_5FD_:	
-		ld hl, _RAM_C01A_
+		ld hl, PSGSFXStatus
 		ld (hl), $00
 _LABEL_602_:	
 		ld sp, ix
@@ -630,50 +728,50 @@ _LABEL_683_:
 		ld a, (PSGMusicStatus)
 		or a
 		ret z
-		ld a, (_RAM_C008_)
+		ld a, (PSGMusicSkipFrames)
 		or a
 		jp nz, _LABEL_717_
-		ld hl, (_RAM_C004_)
+		ld hl, (PSGMusicPointer)
 _LABEL_692_:	
 		ld b, (hl)
 		inc hl
-		ld a, (_RAM_C00C_)
+		ld a, (PSGMusicSubstringLen)
 		or a
 		jr z, +
 		dec a
-		ld (_RAM_C00C_), a
+		ld (PSGMusicSubstringLen), a
 		jr nz, +
-		ld hl, (_RAM_C00D_)
+		ld hl, (PSGMusicSubstringRetAddr)
 +:	
 		ld a, b
 		cp $80
 		jr c, _LABEL_71C_
-		ld (_RAM_C00A_), a
+		ld (PSGMusicLastLatch), a
 		bit 4, a
 		jr nz, ++
 		bit 6, a
 		jp z, _LABEL_743_
 		bit 5, a
 		jr z, +
-		ld (_RAM_C015_), a
-		ld a, (_RAM_C017_)
+		ld (PSGChan3LowTone), a
+		ld a, (PSGChannel3SFX)
 		or a
 		jp nz, _LABEL_692_
-		ld a, (_RAM_C015_)
+		ld a, (PSGChan3LowTone)
 		and $03
 		cp $03
 		jr nz, _LABEL_742_
-		ld a, (_RAM_C01A_)
+		ld a, (PSGSFXStatus)
 		or a
 		jr z, _LABEL_742_
-		ld (_RAM_C017_), a
+		ld (PSGChannel3SFX), a
 		ld a, $FF
 		out (Port_PSG), a
 		jp _LABEL_692_
 	
 +:	
-		ld (_RAM_C013_), a
-		ld a, (_RAM_C016_)
+		ld (PSGChan2LowTone), a
+		ld a, (PSGChannel2SFX)
 		or a
 		jr z, _LABEL_742_
 		jp _LABEL_692_
@@ -683,38 +781,38 @@ _LABEL_692_:
 		jr nz, ++
 		bit 5, a
 		jr z, +
-		ld (_RAM_C010_), a
+		ld (PSGChan1Volume), a
 		jp _LABEL_749_
 	
 +:	
-		ld (_RAM_C00F_), a
+		ld (PSGChan0Volume), a
 		jp _LABEL_749_
 	
 ++:	
 		bit 5, a
 		jr z, +
-		ld (_RAM_C012_), a
-		ld a, (_RAM_C017_)
+		ld (PSGChan3Volume), a
+		ld a, (PSGChannel3SFX)
 		or a
 		jr z, _LABEL_748_
 		jp _LABEL_692_
 	
 +:	
-		ld (_RAM_C011_), a
-		ld a, (_RAM_C016_)
+		ld (PSGChan2Volume), a
+		ld a, (PSGChannel2SFX)
 		or a
 		jr z, _LABEL_748_
 		jp _LABEL_692_
 	
 _LABEL_717_:	
 		dec a
-		ld (_RAM_C008_), a
+		ld (PSGMusicSkipFrames), a
 		ret
 	
 _LABEL_71C_:	
 		cp $40
 		jr c, +
-		ld a, (_RAM_C00A_)
+		ld a, (PSGMusicLastLatch)
 		jp +++
 	
 +:	
@@ -722,9 +820,9 @@ _LABEL_71C_:
 		jr z, +
 		jr c, ++
 		and $07
-		ld (_RAM_C008_), a
+		ld (PSGMusicSkipFrames), a
 +:	
-		ld (_RAM_C004_), hl
+		ld (PSGMusicPointer), hl
 		ret
 	
 ++:	
@@ -748,7 +846,7 @@ _LABEL_749_:
 		ld c, a
 		and $0F
 		ld b, a
-		ld a, (_RAM_C00B_)
+		ld a, (PSGMusicVolumeAttenuation)
 		add a, b
 		cp $0F
 		jr c, +
@@ -767,32 +865,32 @@ _LABEL_749_:
 		jp _LABEL_742_
 	
 ++++:	
-		ld (_RAM_C006_), hl
+		ld (PSGMusicLoopPoint), hl
 		jp _LABEL_692_
 	
 +++++:	
-		ld a, (_RAM_C009_)
+		ld a, (PSGLoopFlag)
 		or a
 		jp z, _LABEL_281_
-		ld hl, (_RAM_C006_)
+		ld hl, (PSGMusicLoopPoint)
 		jp _LABEL_692_
 	
 _LABEL_77B_:	
 		sub $04
-		ld (_RAM_C00C_), a
+		ld (PSGMusicSubstringLen), a
 		ld c, (hl)
 		inc hl
 		ld b, (hl)
 		inc hl
-		ld (_RAM_C00D_), hl
-		ld hl, (_RAM_C002_)
+		ld (PSGMusicSubstringRetAddr), hl
+		ld hl, (PSGMusicStart)
 		add hl, bc
 		jp _LABEL_692_
 	
 ++++++:	
 		ld a, b
-		ld (_RAM_C014_), a
-		ld a, (_RAM_C016_)
+		ld (PSGChan2HighTone), a
+		ld a, (PSGChannel2SFX)
 		or a
 		jr z, _LABEL_742_
 		jp _LABEL_692_
@@ -801,23 +899,23 @@ _LABEL_77B_:
 	.db $C9
 	
 _LABEL_79C_:	
-		ld a, (_RAM_C01A_)
+		ld a, (PSGSFXStatus)
 		or a
 		ret z
-		ld a, (_RAM_C021_)
+		ld a, (PSGSFXSkipFrames)
 		or a
 		jp nz, +++
-		ld hl, (_RAM_C01D_)
+		ld hl, (PSGSFXPointer)
 _LABEL_7AB_:	
 		ld b, (hl)
 		inc hl
-		ld a, (_RAM_C023_)
+		ld a, (PSGSFXSubstringLen)
 		or a
 		jr z, +
 		dec a
-		ld (_RAM_C023_), a
+		ld (PSGSFXSubstringLen), a
 		jr nz, +
-		ld hl, (_RAM_C024_)
+		ld hl, (PSGSFXSubstringRetAddr)
 +:	
 		ld a, b
 		cp $40
@@ -826,18 +924,18 @@ _LABEL_7AB_:
 		jr z, ++
 		bit 5, a
 		jr nz, +
-		ld (_RAM_C018_), a
+		ld (PSGSFXChan2Volume), a
 		jr ++
 	
 +:	
-		ld (_RAM_C019_), a
+		ld (PSGSFXChan3Volume), a
 ++:	
 		out (Port_PSG), a
 		jp _LABEL_7AB_
 	
 +++:	
 		dec a
-		ld (_RAM_C021_), a
+		ld (PSGSFXSkipFrames), a
 		ret
 	
 ++++:	
@@ -845,9 +943,9 @@ _LABEL_7AB_:
 		jr z, +
 		jr c, ++
 		and $07
-		ld (_RAM_C021_), a
+		ld (PSGSFXSkipFrames), a
 +:	
-		ld (_RAM_C01D_), hl
+		ld (PSGSFXPointer), hl
 		ret
 	
 ++:	
@@ -860,26 +958,26 @@ _LABEL_7AB_:
 		ret
 	
 +:	
-		ld (_RAM_C01F_), hl
+		ld (PSGSFXLoopPoint), hl
 		jp _LABEL_7AB_
 	
 ++:	
-		ld a, (_RAM_C022_)
+		ld a, (PSGSFXLoopFlag)
 		or a
 		jp z, _LABEL_53D_
-		ld hl, (_RAM_C01F_)
-		ld (_RAM_C01D_), hl
+		ld hl, (PSGSFXLoopPoint)
+		ld (PSGSFXPointer), hl
 		jp _LABEL_7AB_
 	
 +++:	
 		sub $04
-		ld (_RAM_C023_), a
+		ld (PSGSFXSubstringLen), a
 		ld c, (hl)
 		inc hl
 		ld b, (hl)
 		inc hl
-		ld (_RAM_C024_), hl
-		ld hl, (_RAM_C01B_)
+		ld (PSGSFXSubstringRetAddr), hl
+		ld hl, (PSGSFXStart)
 		add hl, bc
 		jp _LABEL_7AB_
 	
@@ -1192,11 +1290,11 @@ _LABEL_FFE_:
 		ld hl, $0002
 		add hl, sp
 		ld a, (hl)
-		ld (_RAM_C02C_), a
-		ld hl, _RAM_C02B_
+		ld (Fscreen_manager$next_screen_type), a
+		ld hl, Fscreen_manager$curr_screen_type
 		ld (hl), $00
 		ld hl, $122B
-		ld (_RAM_C02D_), hl
+		ld (Fscreen_manager$load_method$0$0), hl
 		ld hl, $1233
 		ld (_RAM_C02F_), hl
 		ld hl, $12B6
@@ -1234,14 +1332,14 @@ _LABEL_FFE_:
 		ret
 	
 _LABEL_1078_:	
-		ld a, (_RAM_C02B_)
-		ld iy, _RAM_C02C_
+		ld a, (Fscreen_manager$curr_screen_type)
+		ld iy, Fscreen_manager$next_screen_type
 		sub (iy+0)
 		jr z, +
 		ld a, (iy+0)
-		ld iy, _RAM_C02B_
+		ld iy, Fscreen_manager$curr_screen_type
 		ld (iy+0), a
-		ld bc, _RAM_C02D_
+		ld bc, Fscreen_manager$load_method$0$0
 		ld l, (iy+0)
 		ld h, $00
 		add hl, hl
@@ -1253,7 +1351,7 @@ _LABEL_1078_:
 		call _LABEL_20E6_
 +:	
 		ld bc, _RAM_C03F_
-		ld iy, _RAM_C02B_
+		ld iy, Fscreen_manager$curr_screen_type
 		ld l, (iy+0)
 		ld h, $00
 		add hl, hl
