@@ -5661,17 +5661,17 @@ A$screen_manager$86:
 C$screen_manager.c$22$0$0:	
 C$screen_manager.c$24$1$13:	
 G$engine_screen_manager_init$0$0:	
-_engine_screen_manager_init:
+_engine_screen_manager_init:	
 		ld hl, $0002
 		add hl, sp
 		ld a, (hl)
-		ld (Fscreen_manager$next_screen_type), a
-		ld hl, Fscreen_manager$curr_screen_type
+		ld (_RAM_C02C_), a
+		ld hl, _RAM_C02B_
 		ld (hl), $00
 		ld hl, $122B
-		ld (Fscreen_manager$load_method$0$0), hl
+		ld (_RAM_C02D_), hl
 		ld hl, $1233
-		ld (Fscreen_manager$load_method$0$0+2), hl
+		ld (_RAM_C02F_), hl
 		ld hl, $12B6
 		ld (_RAM_C031_), hl
 		ld hl, $141F
@@ -5707,14 +5707,18 @@ _engine_screen_manager_init:
 		ret
 	
 A$screen_manager$202:	
-		ld a, (Fscreen_manager$curr_screen_type)
-		ld iy, Fscreen_manager$next_screen_type
+C$screen_manager.c$50$1$13:	
+C$screen_manager.c$52$1$14:	
+G$engine_screen_manager_update$0:	
+_LABEL_1078_:	
+		ld a, (_RAM_C02B_)
+		ld iy, _RAM_C02C_
 		sub (iy+0)
 		jr z, +
 		ld a, (iy+0)
-		ld iy, Fscreen_manager$curr_screen_type
+		ld iy, _RAM_C02B_
 		ld (iy+0), a
-		ld bc, Fscreen_manager$load_method$0$0
+		ld bc, _RAM_C02D_
 		ld l, (iy+0)
 		ld h, $00
 		add hl, hl
@@ -5726,7 +5730,7 @@ A$screen_manager$202:
 		call _LABEL_20E6_
 +:	
 		ld bc, _RAM_C03F_
-		ld iy, Fscreen_manager$curr_screen_type
+		ld iy, _RAM_C02B_
 		ld l, (iy+0)
 		ld h, $00
 		add hl, hl
@@ -5743,10 +5747,14 @@ A$screen_manager$202:
 		ret
 	
 A$scroll_manager$61:	
+C$scroll_manager.c$10$1$18:	
+C$scroll_manager.c$8$0$0:	
+G$engine_scroll_manager_reset$0$:	
+_engine_scroll_manager_reset:		
 		xor a
 		push af
 		inc sp
-		call +
+		call A$scroll_manager$94
 		inc sp
 		xor a
 		push af
@@ -5755,7 +5763,12 @@ A$scroll_manager$61:
 		inc sp
 		ret
 	
-+:	
+A$scroll_manager$94:	
+C$scroll_manager.c$14$1$18:	
+C$scroll_manager.c$16$1$20:	
+C$scroll_manager.c$17$1$20:	
+G$engine_scroll_manager_load$0$0:	
+_engine_scroll_manager_load:	
 		ld hl, _RAM_C051_
 		ld iy, $0002
 		add iy, sp
