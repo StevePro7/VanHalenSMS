@@ -1980,22 +1980,35 @@ _devkit_PSGFrame:
 _devkit_PSGSFXFrame:	
 		jp _PSGSFXFrame
 	
-	; Data from A51 to A59 (9 bytes)
-	.db $2E $01 $C9 $2E $02 $C9 $2E $03 $C9
+; Data from A51 to A53 (3 bytes)	
+_devkit_SFX_CHANNEL2:	
+	.db $2E $01 $C9
 	
-A$asm_manager$59:	
+; Data from A54 to A56 (3 bytes)	
+_devkit_SFX_CHANNEL3:	
+	.db $2E $02 $C9
+	
+; Data from A57 to A59 (3 bytes)	
+_devkit_SFX_CHANNELS2AND3:	
+	.db $2E $03 $C9
+	
+A$asm_manager$59:
+C$asm_manager.c$11$0$0:	
+C$asm_manager.c$30$1$1:	
+G$engine_asm_manager_clear_VRAM$:	
+_engine_asm_manager_clear_VRAM:
 		ld a, $00
 		out (Port_VDPAddress), a
 		ld a, $40
 		out (Port_VDPAddress), a
 		ld bc, $4000
--:	
+A$asm_manager$65:	
 		ld a, $00
 		out (Port_VDPData), a
 		dec bc
 		ld a, b
 		or c
-		jp nz, -
+		jp nz, A$asm_manager$65
 		ret
 	
 	; Data from A70 to AA1 (50 bytes)
