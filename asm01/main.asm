@@ -2173,11 +2173,13 @@ _engine_content_manager_load_til:
 		ld hl, $0000
 		push hl
 		ld hl, _font__tiles__psgcompr	; _font__tiles__psgcompr = $1838
+		;ld hl, $1838
 		push hl
 		call A$_sms_manager$400
 		pop af
 		pop af
 		ld bc, _font__palette__bin	; _font__palette__bin = $17A8
+		;ld bc, _DATA_17A8_
 		push bc
 		call A$_sms_manager$472
 		pop af
@@ -2292,7 +2294,7 @@ XG$engine_content_manager_load_s:
 A$content_manager$145:	
 C$content_manager.c$38$1$18:	
 C$content_manager.c$40$1$19:	
-G$engine_content_manager_load_ti:	
+H$engine_content_manager_load_ti:	
 _engine_content_manager_load_tit:	
 	.db $3E $03
 	
@@ -2426,8 +2428,8 @@ XG$engine_content_manager_load_t:
 A$content_manager$204:	
 C$content_manager.c$48$1$19:	
 C$content_manager.c$50$1$20:	
-G$engine_content_manager_load_ti:	
-_engine_content_manager_load_tit:	
+I$engine_content_manager_load_ti:	
+_fngine_content_manager_load_tit:	
 	.db $3E $03
 	
 ; Data from B1C to B1C (1 bytes)	
@@ -2553,22 +2555,24 @@ A$content_manager$245:
 ; Data from B50 to B50 (1 bytes)	
 A$content_manager$250:	
 C$content_manager.c$57$1$20:	
-XG$engine_content_manager_load_t:	
+XH$engine_content_manager_load_t:	
 	.db $C9
 	
 A$content_manager$263:	
 C$content_manager.c$60$1$20:	
 C$content_manager.c$63$1$21:	
-G$engine_content_manager_load_sp:	
+H$engine_content_manager_load_sp:	
 _engine_content_manager_load_spr:	
 		ld hl, $0120
 		push hl
 		ld hl, _cursor__tiles__psgcompr	; _cursor__tiles__psgcompr = $16ED
+		;ld hl, $16ED
 		push hl
 		call A$_sms_manager$400
 		pop af
 		pop af
 		ld bc, _cursor__palette__bin	; _cursor__palette__bin = $16DD
+		;ld bc, _DATA_16DD_
 		push bc
 		call A$_sms_manager$493
 		pop af
