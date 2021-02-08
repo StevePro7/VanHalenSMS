@@ -829,24 +829,24 @@ _LABEL_77B_:
 	; Data from 79B to 79B (1 bytes)
 	.db $C9
 	
-_LABEL_79C_:	
-		ld a, (PSGSFXStatus)
+_PSGSFXFrame:	
+		ld a, (PSGSFXStatus)		; PSGSFXStatus = $C01A
 		or a
 		ret z
-		ld a, (PSGSFXSkipFrames)
+		ld a, (PSGSFXSkipFrames)		; PSGSFXSkipFrames = $C021
 		or a
 		jp nz, +++
-		ld hl, (PSGSFXPointer)
+		ld hl, (PSGSFXPointer)		; PSGSFXPointer = $C01D
 _LABEL_7AB_:	
 		ld b, (hl)
 		inc hl
-		ld a, (PSGSFXSubstringLen)
+		ld a, (PSGSFXSubstringLen)		; PSGSFXSubstringLen = $C023
 		or a
 		jr z, +
 		dec a
-		ld (PSGSFXSubstringLen), a
+		ld (PSGSFXSubstringLen), a		; PSGSFXSubstringLen = $C023
 		jr nz, +
-		ld hl, (PSGSFXSubstringRetAddr)
+		ld hl, (PSGSFXSubstringRetAddr)		; PSGSFXSubstringRetAddr = $C024
 +:	
 		ld a, b
 		cp $40
@@ -855,18 +855,18 @@ _LABEL_7AB_:
 		jr z, ++
 		bit 5, a
 		jr nz, +
-		ld (PSGSFXChan2Volume), a
+		ld (PSGSFXChan2Volume), a		; PSGSFXChan2Volume = $C018
 		jr ++
 	
 +:	
-		ld (PSGSFXChan3Volume), a
+		ld (PSGSFXChan3Volume), a		; PSGSFXChan3Volume = $C019
 ++:	
 		out (Port_PSG), a
 		jp _LABEL_7AB_
 	
 +++:	
 		dec a
-		ld (PSGSFXSkipFrames), a
+		ld (PSGSFXSkipFrames), a		; PSGSFXSkipFrames = $C021
 		ret
 	
 ++++:	
@@ -874,9 +874,9 @@ _LABEL_7AB_:
 		jr z, +
 		jr c, ++
 		and $07
-		ld (PSGSFXSkipFrames), a
+		ld (PSGSFXSkipFrames), a		; PSGSFXSkipFrames = $C021
 +:	
-		ld (PSGSFXPointer), hl
+		ld (PSGSFXPointer), hl		; PSGSFXPointer = $C01D
 		ret
 	
 ++:	
@@ -889,26 +889,26 @@ _LABEL_7AB_:
 		ret
 	
 +:	
-		ld (PSGSFXLoopPoint), hl
+		ld (PSGSFXLoopPoint), hl		; PSGSFXLoopPoint = $C01F
 		jp _LABEL_7AB_
 	
 ++:	
-		ld a, (PSGSFXLoopFlag)
+		ld a, (PSGSFXLoopFlag)		; PSGSFXLoopFlag = $C022
 		or a
 		jp z, _PSGSFXStop
-		ld hl, (PSGSFXLoopPoint)
-		ld (PSGSFXPointer), hl
+		ld hl, (PSGSFXLoopPoint)		; PSGSFXLoopPoint = $C01F
+		ld (PSGSFXPointer), hl		; PSGSFXPointer = $C01D
 		jp _LABEL_7AB_
 	
 +++:	
 		sub $04
-		ld (PSGSFXSubstringLen), a
+		ld (PSGSFXSubstringLen), a		; PSGSFXSubstringLen = $C023
 		ld c, (hl)
 		inc hl
 		ld b, (hl)
 		inc hl
-		ld (PSGSFXSubstringRetAddr), hl
-		ld hl, (PSGSFXStart)
+		ld (PSGSFXSubstringRetAddr), hl		; PSGSFXSubstringRetAddr = $C024
+		ld hl, (PSGSFXStart)		; PSGSFXStart = $C01B
 		add hl, bc
 		jp _LABEL_7AB_
 	
@@ -916,15 +916,29 @@ _LABEL_7AB_:
 	.db $C9
 	
 A$_sms_manager$132:	
+C$_sms_manager.c$11$0$0:	
+C$_sms_manager.c$13$1$74:	
+C$_sms_manager.c$14$1$74:	
+G$devkit_SMS_init$0$0:	
+XG$devkit_SMS_init$0$0:	
+_devkit_SMS_init:	
 		jp _SMS_init
 	
 A$_sms_manager$145:	
+C$_sms_manager.c$15$1$74:	
+C$_sms_manager.c$17$1$75:	
+G$devkit_SMS_displayOn$0$0:	
+_devkit_SMS_displayOn:	
 		ld hl, $0140
-		jp _LABEL_1C7C_
+		jp _SMS_VDPturnOnFeature
 	
 A$_sms_manager$163:	
+C$_sms_manager.c$19$1$75:	
+C$_sms_manager.c$21$1$76:	
+G$devkit_SMS_displayOff$0$0:	
+_devkit_SMS_displayOff:	
 		ld hl, $0140
-		jp _LABEL_1C93_
+		jp _SMS_VDPturnOffFeature
 	
 	; Data from 831 to 845 (21 bytes)
 	.db $21 $02 $00 $39 $7E $32 $FF $FF $C9 $FD $21 $02 $00 $FD $39 $FD
@@ -958,7 +972,7 @@ A$_sms_manager$379:
 		pop hl
 		push hl
 		push bc
-		jp _LABEL_1C7C_
+		jp _SMS_VDPturnOnFeature
 	
 _LABEL_88E_:	
 		ld hl, $0004
@@ -1067,7 +1081,7 @@ _devkit_PSGFrame:
 		jp _PSGFrame
 	
 _devkit_PSGSFXFrame:	
-		jp _LABEL_79C_
+		jp _PSGSFXFrame
 	
 	; Data from A51 to A59 (9 bytes)
 	.db $2E $01 $C9 $2E $02 $C9 $2E $03 $C9
@@ -1484,7 +1498,7 @@ _DATA_1C69_:
 	.db $04 $20 $FF $FF $FF $FF $FF $00 $00 $00 $FF $FD $21 $6A $C0 $FD
 	.db $6E $00 $C9
 	
-_LABEL_1C7C_:	
+_SMS_VDPturnOnFeature:	
 		ld c, l
 		ld e, h
 		ld d, $00
@@ -1503,7 +1517,7 @@ _LABEL_1C7C_:
 		ei
 		ret
 	
-_LABEL_1C93_:	
+_SMS_VDPturnOffFeature:	
 		ld a, l
 		ld e, h
 		cpl
@@ -1562,7 +1576,7 @@ _LABEL_1CDE_:
 		jr z, +
 		push bc
 		ld hl, $0102
-		call _LABEL_1C7C_
+		call _SMS_VDPturnOnFeature
 		pop bc
 		ld hl, spritesHeight
 		ld (hl), $10
@@ -1571,7 +1585,7 @@ _LABEL_1CDE_:
 +:	
 		push bc
 		ld hl, $0102
-		call _LABEL_1C93_
+		call _SMS_VDPturnOffFeature
 		pop bc
 		ld hl, spritesHeight
 		ld (hl), $08
@@ -1579,7 +1593,7 @@ _LABEL_1CDE_:
 		bit 1, c
 		jr z, +
 		ld hl, $0101
-		call _LABEL_1C7C_
+		call _SMS_VDPturnOnFeature
 		ld hl, spritesWidth
 		ld (hl), $10
 		ld iy, spritesHeight
@@ -1588,7 +1602,7 @@ _LABEL_1CDE_:
 	
 +:	
 		ld hl, $0101
-		call _LABEL_1C93_
+		call _SMS_VDPturnOffFeature
 		ld hl, spritesWidth
 		ld (hl), $08
 		ret
