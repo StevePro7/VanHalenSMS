@@ -239,36 +239,39 @@ _main:
 		call A$screen_manager$86
 		inc sp
 		call A$_sms_manager$145
-_LABEL_23C_:	
-		call _LABEL_98E_
+A$main$140:
+C$main.c$34$3$57:	
+		call A$_sms_manager$820
 		ld a, l
 		or a
-		jr z, ++
-		call _LABEL_991_
-		ld iy, Lmain.main$global_pause$1$55
+		jr z, A$main$174
+		call A$_sms_manager$837
+		ld iy, Lmain.main$global_pause$1$55	; Lmain.main$global_pause$1$55 = $C000
 		ld a, (iy+0)
 		xor $01
 		ld (iy+0), a
 		bit 0, (iy+0)
-		jr z, +
-		call _LABEL_A45_
-		jr ++
+		jr z, A$main$169
+		call _devkit_PSGSilenceChannels
+		jr A$main$174
 	
-+:	
-		call _LABEL_A48_
-++:	
-		ld hl, Lmain.main$global_pause$1$55
+A$main$169:	
+C$main.c$44$5$60:	
+		call _devkit_PSGRestoreVolumes
+A$main$174:	
+C$main.c$48$3$57:
+		ld hl, Lmain.main$global_pause$1$55	; Lmain.main$global_pause$1$55 = $C000
 		bit 0, (hl)
-		jr nz, _LABEL_23C_
-		call _LABEL_97F_
-		call _LABEL_EC6_
+		jr nz, A$main$140
+		call A$_sms_manager$735
+		call A$input_manager$65
 		call _LABEL_1078_
 		call _LABEL_982_
 		call _LABEL_985_
 		call _LABEL_988_
 		call _LABEL_A4B_
 		call _LABEL_A4E_
-		jr _LABEL_23C_
+		jr A$main$140
 	
 _LABEL_281_:	
 		ld a, (PSGMusicStatus)
@@ -980,7 +983,7 @@ _LABEL_8CC_:
 	.db $00 $21 $04 $00 $39 $46 $C5 $33 $21 $04 $00 $39 $7E $F5 $33 $21
 	.db $04 $00 $39 $7E $F5 $33 $CD $7D $1D $F1 $33 $C9
 	
-_LABEL_97F_:	
+A$_sms_manager$735:	
 		jp _LABEL_1D77_
 	
 _LABEL_982_:	
@@ -995,10 +998,10 @@ _LABEL_988_:
 	; Data from 98B to 98D (3 bytes)
 	.db $C3 $A6 $1B
 	
-_LABEL_98E_:	
+A$_sms_manager$820:	
 		jp _LABEL_1E6F_
 	
-_LABEL_991_:	
+A$_sms_manager$837:	
 		jp _LABEL_1E77_
 	
 	; Data from 994 to 99A (7 bytes)
@@ -1027,10 +1030,10 @@ A$_sms_manager$905:
 	.db $CD $4E $04 $33 $C9 $21 $04 $00 $39 $7E $F5 $33 $21 $03 $00 $39
 	.db $4E $23 $46 $C5 $CD $07 $06 $F1 $33 $C9 $C3 $3D $05 $C3 $5A $06
 	
-_LABEL_A45_:	
+_devkit_PSGSilenceChannels:	
 		jp _LABEL_33E_
 	
-_LABEL_A48_:	
+_devkit_PSGRestoreVolumes:	
 		jp _LABEL_34F_
 	
 _LABEL_A4B_:	
@@ -1159,7 +1162,7 @@ A$content_manager$263:
 	.db $21 $B8 $17 $6E $26 $00 $79 $17 $9F $47 $09 $E5 $CD $4C $09 $F1
 	.db $DD $34 $FE $DD $7E $FE $D6 $05 $38 $8D $DD $F9 $DD $E1 $C9
 	
-_LABEL_EC6_:	
+A$input_manager$65:	
 		ld hl, (Finput_manager$curr_joypad1$0$0)
 		ld (Finput_manager$prev_joypad1$0$0), hl
 		call _LABEL_99B_
