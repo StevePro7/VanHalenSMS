@@ -1133,14 +1133,18 @@ _devkit_SMS_VDPturnOnFeature:
 		push bc
 		jp _SMS_VDPturnOnFeature
 	
-_LABEL_88E_:	
-		ld hl, $0004
+A$_sms_manager$400:	
+C$_sms_manager.c$72$1$93:	
+C$_sms_manager.c$74$1$95:	
+G$devkit_SMS_loadPSGaidencompres:	
+_devkit_SMS_loadPSGaidencompress:
+		ld hl, _SMS_crt0_RST08 - 2	; _SMS_crt0_RST08 - 2 = $0004
 		add hl, sp
 		ld c, (hl)
 		inc hl
 		ld b, (hl)
 		push bc
-		ld hl, $0004
+		ld hl, _SMS_crt0_RST08 - 2	; _SMS_crt0_RST08 - 2 = $0004
 		add hl, sp
 		ld c, (hl)
 		inc hl
@@ -1271,7 +1275,7 @@ A$content_manager$65:
 		push hl
 		ld hl, $1838
 		push hl
-		call _LABEL_88E_
+		call A$_sms_manager$400
 		pop af
 		pop af
 		ld bc, _DATA_17A8_
@@ -1297,7 +1301,7 @@ A$content_manager$263:
 		push hl
 		ld hl, $16ED
 		push hl
-		call _LABEL_88E_
+		call A$_sms_manager$400
 		pop af
 		pop af
 		ld bc, _DATA_16DD_
