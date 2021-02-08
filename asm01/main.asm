@@ -1,4 +1,7 @@
-	
+;.include "bank_manager.inc"
+;.include "enum_manager.inc"
+;.include "define_manager.inc"
+
 ; This disassembly was created using Emulicious (http://www.emulicious.net)	
 
 .BANK 0 SLOT 0	
