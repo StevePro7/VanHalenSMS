@@ -1,117 +1,9 @@
 .include "bank_manager.inc"
-;.include "enum_manager.inc"
+.include "enum_manager.inc"
+.include "define_manager.inc"
 
 
 
-.enum $C000 export	
-Lmain.main$global_pause$1$55 db		; Lmain.main$global_pause$1$55 = $C000
-PSGMusicStatus db		; PSGMusicStatus = $C001
-PSGMusicStart dw		; PSGMusicStart = $C002
-PSGMusicPointer dw		; PSGMusicPointer = $C004
-PSGMusicLoopPoint dw		; PSGMusicLoopPoint = $C006
-PSGMusicSkipFrames db		; PSGMusicSkipFrames = $C008
-PSGLoopFlag db		; PSGLoopFlag = $C009
-PSGMusicLastLatch db		; PSGMusicLastLatch = $C00A
-PSGMusicVolumeAttenuation db		; PSGMusicVolumeAttenuation = $C00B
-PSGMusicSubstringLen db		; PSGMusicSubstringLen = $C00C
-PSGMusicSubstringRetAddr dw		; PSGMusicSubstringRetAddr = $C00D
-PSGChan0Volume db		; PSGChan0Volume = $C00F
-PSGChan1Volume db		; PSGChan1Volume = $C010
-PSGChan2Volume db		; PSGChan2Volume = $C011
-PSGChan3Volume db		; PSGChan3Volume = $C012
-PSGChan2LowTone db		; PSGChan2LowTone = $C013
-PSGChan2HighTone db		; PSGChan2HighTone = $C014
-PSGChan3LowTone db		; PSGChan3LowTone = $C015
-PSGChannel2SFX db		; PSGChannel2SFX = $C016
-PSGChannel3SFX db		; PSGChannel3SFX = $C017
-PSGSFXChan2Volume db		; PSGSFXChan2Volume = $C018
-PSGSFXChan3Volume db		; PSGSFXChan3Volume = $C019
-PSGSFXStatus db		; PSGSFXStatus = $C01A
-PSGSFXStart dw		; PSGSFXStart = $C01B
-PSGSFXPointer dw		; PSGSFXPointer = $C01D
-PSGSFXLoopPoint dw		; PSGSFXLoopPoint = $C01F
-PSGSFXSkipFrames db		; PSGSFXSkipFrames = $C021
-PSGSFXLoopFlag db		; PSGSFXLoopFlag = $C022
-PSGSFXSubstringLen db		; PSGSFXSubstringLen = $C023
-PSGSFXSubstringRetAddr dw		; PSGSFXSubstringRetAddr = $C024
-.ende	
-	
-.enum $C02B export	
-Fscreen_manager$curr_screen_type db		; Fscreen_manager$curr_screen_type = $C02B
-Fscreen_manager$next_screen_type db		; Fscreen_manager$next_screen_type = $C02C
-Fscreen_manager$load_method$0$0 dw		; Fscreen_manager$load_method$0$0 = $C02D
-_RAM_C02F_ dw		; Fscreen_manager$load_method$0$0 + 2 = $C02F
-_RAM_C031_ dw	
-_RAM_C033_ dw	
-_RAM_C035_ dw	
-_RAM_C037_ dw	
-_RAM_C039_ dw	
-_RAM_C03B_ dw	
-_RAM_C03D_ dw	
-_RAM_C03F_ dw	
-_RAM_C041_ dw	
-_RAM_C043_ dw	
-_RAM_C045_ dw	
-_RAM_C047_ dw	
-_RAM_C049_ dw	
-_RAM_C04B_ dw	
-_RAM_C04D_ dw	
-_RAM_C04F_ dw	
-_RAM_C051_ db		; G$global_scroll_object$0$0 = $C051
-.ende	
-	
-.enum $C067 export	
-_RAM_C067_ db		; VDPBlank = $C067
-_RAM_C068_ db		; SMS_VDPFlags = $C068
-_RAM_C069_ db		; PauseRequested = $C069
-_RAM_C06A_ db		; VDPType = $C06A
-_RAM_C06B_ dw		; KeysStatus = $C06B
-_RAM_C06D_ dw		; PreviousKeysStatus = $C06D
-_RAM_C06F_ db		; SpriteTableY = $C06F
-.ende	
-	
-.enum $C0AF export	
-_RAM_C0AF_ db		; SpriteTableXN = $C0AF
-.ende	
-	
-.enum $C12F export	
-_RAM_C12F_ db		; SpriteNextFree = $C12F
-_RAM_C130_ dw		; SMS_theLineInterruptHandler = $C130
-_RAM_C132_ db		; decompBuffer = $C132
-.ende	
-	
-.enum $C152 export	
-_RAM_C152_ dw		; Finput_manager$curr_joypad1$0$0 = $C152
-_RAM_C154_ dw		; Finput_manager$prev_joypad1$0$0 = $C154
-.ende	
-	
-.enum $C1B6 export	
-_RAM_C1B6_ db		; VDPReg = $C1B6
-.ende	
-	
-.enum $C1B8 export	
-_RAM_C1B8_ db		; spritesHeight = $C1B8
-_RAM_C1B9_ db		; spritesWidth = $C1B9
-.ende	
-	
-.enum $FFFC export	
-_RAM_FFFC_ db	
-.ende	
-
-	
-
-	
-; Ports	
-.define Port_PSG $7F	
-.define Port_VDPData $BE	
-.define Port_VDPAddress $BF	
-	
-; Input Ports	
-.define Port_VCounter $7E	
-.define Port_VDPStatus $BF	
-.define Port_IOPort1 $DC	
-.define Port_IOPort2 $DD	
-	
 .BANK 0 SLOT 0	
 .ORG $0000	
 	
@@ -1259,10 +1151,10 @@ _LABEL_B51_:
 	.db $DD $34 $FE $DD $7E $FE $D6 $05 $38 $8D $DD $F9 $DD $E1 $C9
 	
 _LABEL_EC6_:	
-		ld hl, (_RAM_C152_)
-		ld (_RAM_C154_), hl
+		ld hl, (Finput_manager$curr_joypad1$0$0)
+		ld (Finput_manager$prev_joypad1$0$0), hl
 		call _LABEL_99B_
-		ld (_RAM_C152_), hl
+		ld (Finput_manager$curr_joypad1$0$0), hl
 		ret
 	
 	; Data from ED3 to FFD (299 bytes)
@@ -1296,7 +1188,7 @@ _LABEL_FFE_:
 		ld hl, $122B
 		ld (Fscreen_manager$load_method$0$0), hl
 		ld hl, $1233
-		ld (_RAM_C02F_), hl
+		ld (Fscreen_manager$load_method$0$0+2), hl
 		ld hl, $12B6
 		ld (_RAM_C031_), hl
 		ld hl, $141F
@@ -1478,12 +1370,12 @@ _LABEL_1BA6_:
 		ld hl, $7F00
 		rst $08	; _LABEL_8_
 		ld c, Port_VDPData
-		ld hl, _RAM_C06F_
+		ld hl, SpriteTableY
 		call _LABEL_119_
 		ld hl, $7F80
 		rst $08	; _LABEL_8_
 		ld c, Port_VDPData
-		ld hl, _RAM_C0AF_
+		ld hl, SpriteTableXN
 		jp _LABEL_99_
 	
 	; Data from 1BBE to 1C14 (87 bytes)
@@ -1539,12 +1431,12 @@ _LABEL_1C15_:
 		ld a, c
 		sub $E7
 		jr c, +
-		ld hl, _RAM_C06A_
+		ld hl, VDPType
 		ld (hl), $80
 		ret
 	
 +:	
-		ld hl, _RAM_C06A_
+		ld hl, VDPType
 		ld (hl), $40
 		ret
 	
@@ -1557,7 +1449,7 @@ _LABEL_1C7C_:
 		ld c, l
 		ld e, h
 		ld d, $00
-		ld hl, _RAM_C1B6_
+		ld hl, VDPReg
 		add hl, de
 		ld a, (hl)
 		or c
@@ -1633,7 +1525,7 @@ _LABEL_1CDE_:
 		ld hl, $0102
 		call _LABEL_1C7C_
 		pop bc
-		ld hl, _RAM_C1B8_
+		ld hl, spritesHeight
 		ld (hl), $10
 		jr ++
 	
@@ -1642,23 +1534,23 @@ _LABEL_1CDE_:
 		ld hl, $0102
 		call _LABEL_1C93_
 		pop bc
-		ld hl, _RAM_C1B8_
+		ld hl, spritesHeight
 		ld (hl), $08
 ++:	
 		bit 1, c
 		jr z, +
 		ld hl, $0101
 		call _LABEL_1C7C_
-		ld hl, _RAM_C1B9_
+		ld hl, spritesWidth
 		ld (hl), $10
-		ld iy, _RAM_C1B8_
+		ld iy, spritesHeight
 		sla (iy+0)
 		ret
 	
 +:	
 		ld hl, $0101
 		call _LABEL_1C93_
-		ld hl, _RAM_C1B9_
+		ld hl, spritesWidth
 		ld (hl), $08
 		ret
 	
@@ -1712,7 +1604,7 @@ _LABEL_1D5F_:
 	.db $7D $D3 $BE $C9
 	
 _LABEL_1D77_:	
-		ld hl, _RAM_C12F_
+		ld hl, SpriteNextFree
 		ld (hl), $00
 		ret
 	
@@ -1725,11 +1617,11 @@ _LABEL_1D77_:
 	.db $69 $C9 $2E $FF $C9
 	
 _LABEL_1DD2_:	
-		ld a, (_RAM_C12F_)
+		ld a, (SpriteNextFree)
 		sub $40
 		ret nc
 		ld bc, $C06F
-		ld hl, (_RAM_C12F_)
+		ld hl, (SpriteNextFree)
 		ld h, $00
 		add hl, bc
 		ld (hl), $D0
@@ -1738,7 +1630,7 @@ _LABEL_1DD2_:
 _LABEL_1DE4_:	
 		ld hl, $7F00
 		rst $08	; _LABEL_8_
-		ld bc, _RAM_C06F_
+		ld bc, SpriteTableY
 		ld e, $40
 -:	
 		ld a, (bc)
@@ -1752,7 +1644,7 @@ _LABEL_1DE4_:
 		jr nz, -
 		ld hl, $7F80
 		rst $08	; _LABEL_8_
-		ld bc, _RAM_C0AF_
+		ld bc, SpriteTableXN
 		ld e, $80
 -:	
 		ld a, (bc)
@@ -1767,16 +1659,16 @@ _LABEL_1DE4_:
 		ret
 	
 _LABEL_1E0D_:	
-		ld hl, _RAM_C067_
+		ld hl, VDPBlank
 		ld (hl), $00
 -:	
-		ld hl, _RAM_C067_
+		ld hl, VDPBlank
 		bit 0, (hl)
 		jr z, -
 		ret
 	
 _LABEL_1E1A_:	
-		ld hl, (_RAM_C06B_)
+		ld hl, (KeysStatus)
 		ret
 	
 	; Data from 1E1E to 1E6E (81 bytes)
@@ -1788,12 +1680,12 @@ _LABEL_1E1A_:
 	.db $C9
 	
 _LABEL_1E6F_:	
-		ld iy, _RAM_C069_
+		ld iy, PauseRequested
 		ld l, (iy+0)
 		ret
 	
 _LABEL_1E77_:	
-		ld hl, _RAM_C069_
+		ld hl, PauseRequested
 		ld (hl), $00
 		ret
 	
@@ -1806,16 +1698,16 @@ _LABEL_1EA5_:
 		push af
 		push hl
 		in a, (Port_VDPStatus)
-		ld (_RAM_C068_), a
+		ld (SMS_VDPFlags), a
 		rlca
 		jr nc, +
-		ld hl, _RAM_C067_
+		ld hl, VDPBlank
 		ld (hl), $01
-		ld hl, (_RAM_C06B_)
-		ld (_RAM_C06D_), hl
+		ld hl, (KeysStatus)
+		ld (PreviousKeysStatus), hl
 		in a, (Port_IOPort1)
 		cpl
-		ld hl, _RAM_C06B_
+		ld hl, KeysStatus
 		ld (hl), a
 		in a, (Port_IOPort2)
 		cpl
@@ -1827,7 +1719,7 @@ _LABEL_1EA5_:
 		push bc
 		push de
 		push iy
-		ld hl, (_RAM_C130_)
+		ld hl, (SMS_theLineInterruptHandler)
 		call _LABEL_20E6_
 		pop iy
 		pop de
@@ -1844,7 +1736,7 @@ _LABEL_1EDB_:
 		push de
 		push hl
 		push iy
-		ld hl, _RAM_C069_
+		ld hl, PauseRequested
 		ld (hl), $01
 		pop iy
 		pop hl
@@ -1913,7 +1805,7 @@ _LABEL_20E7_:
 _LABEL_210B_:	
 		push bc
 		ld b, $04
-		ld de, _RAM_C132_
+		ld de, decompBuffer
 		ld c, (ix+0)
 		inc ix
 _LABEL_2116_:	
@@ -1932,7 +1824,7 @@ _LABEL_2116_:
 		ld e, a
 		ld a, d
 		ld d, $00
-		ld iy, _RAM_C132_
+		ld iy, decompBuffer
 		add iy, de
 		ex de, hl
 		cp $03
@@ -2019,7 +1911,7 @@ _LABEL_2177_:
 		jp nz, _LABEL_2116_
 		ld de, $0008
 		ld c, e
-		ld hl, _RAM_C132_
+		ld hl, decompBuffer
 --:	
 		ld b, $04
 		push hl
@@ -2054,7 +1946,7 @@ _LABEL_2231_:
 		ld a, b
 		or c
 		jr z, +
-		ld de, _RAM_C152_
+		ld de, Finput_manager$curr_joypad1$0$0
 		ld hl, _DATA_21C9_
 		ldir
 +:	
