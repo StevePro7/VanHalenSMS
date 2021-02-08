@@ -54,18 +54,18 @@ _LABEL_70_:
 		inc a
 		djnz -
 		xor a
-		ld hl, Lmain.main$global_pause$1$55
+		ld hl, Lmain.main$global_pause$1$55 	; Lmain.main$global_pause$1$55 = $C000
 		ld (hl), a
-		ld de, Lmain.main$global_pause$1$55 + 1
+		ld de, PSGMusicStatus	; PSGMusicStatus = $C001
 		ld bc, $1FF0
 		ldir
-		call _LABEL_2231_
-		call _LABEL_1C15_
+		call gsinit
+		call _SMS_init
 		ei
-		call _LABEL_20A_
-		jp _LABEL_204_
+		call A$main$83
+		jp _exit
 	
-_LABEL_99_:	
+_OUTI128:
 		outi
 		outi
 		outi
@@ -130,7 +130,7 @@ _LABEL_99_:
 		outi
 		outi
 		outi
-_LABEL_119_:	
+_OUTI64:	
 		outi
 		outi
 		outi
@@ -201,14 +201,14 @@ _LABEL_119_:
 	.dsb 102, $00
 	.db $3E $02 $CF $C9
 	
-_LABEL_204_:	
+_exit:	
 		ld a, $00
 		rst $08	; _LABEL_8_
 -:	
 		halt
 		jr -
 	
-_LABEL_20A_:	
+A$main$83:	
 		call _LABEL_A5A_
 		call _LABEL_822_
 		call _LABEL_82B_
@@ -879,7 +879,7 @@ _LABEL_7AB_:
 	.db $C9
 	
 _LABEL_822_:	
-		jp _LABEL_1C15_
+		jp _SMS_init
 	
 _LABEL_825_:	
 		ld hl, $0140
@@ -1373,12 +1373,12 @@ _LABEL_1BA6_:
 		rst $08	; _LABEL_8_
 		ld c, Port_VDPData
 		ld hl, SpriteTableY
-		call _LABEL_119_
+		call _OUTI64
 		ld hl, $7F80
 		rst $08	; _LABEL_8_
 		ld c, Port_VDPData
 		ld hl, SpriteTableXN
-		jp _LABEL_99_
+		jp _OUTI128
 	
 	; Data from 1BBE to 1C14 (87 bytes)
 	.db $FD $21 $02 $00 $FD $39 $FD $6E $00 $FD $7E $01 $CB $F7 $67 $CF
@@ -1388,7 +1388,7 @@ _LABEL_1BA6_:
 	.db $FD $6E $00 $FD $7E $01 $CB $F7 $67 $CF $0E $BE $21 $04 $00 $39
 	.db $7E $23 $66 $6F $C3 $99 $00
 	
-_LABEL_1C15_:	
+_SMS_init:	
 		ld hl, $0000
 		push hl
 		call _LABEL_1D37_
@@ -1943,7 +1943,7 @@ _DATA_21C9_:
 	.db $00 $80 $00 $80 $00 $80 $00 $80 $00 $80 $00 $80 $00 $80 $00 $80
 	.db $00 $80 $00 $80 $04 $20 $08 $08
 	
-_LABEL_2231_:	
+gsinit:	
 		ld bc, $0068
 		ld a, b
 		or c
