@@ -4818,34 +4818,850 @@ XG$engine_font_manager_draw_data:
 	.db $C9
 	
 A$input_manager$65:	
-		ld hl, (Finput_manager$curr_joypad1$0$0)
-		ld (Finput_manager$prev_joypad1$0$0), hl
+C$input_manager.c$10$0$0:	
+C$input_manager.c$12$1$19:	
+G$engine_input_manager_update$0$:	
+_engine_input_manager_update:	
+		ld hl, (Finput_manager$curr_joypad1$0$0)	; Finput_manager$curr_joypad1$0$0 = $C152
+		ld (Finput_manager$prev_joypad1$0$0), hl	; Finput_manager$prev_joypad1$0$0 = $C154
 		call A$_sms_manager$874
-		ld (Finput_manager$curr_joypad1$0$0), hl
+		ld (Finput_manager$curr_joypad1$0$0), hl	; Finput_manager$curr_joypad1$0$0 = $C152
 		ret
 	
-	; Data from ED3 to FFD (299 bytes)
-	.db $21 $02 $00 $39 $4E $06 $00 $FD $21 $52 $C1 $FD $7E $00 $A1 $5F
-	.db $FD $7E $01 $A0 $B3 $28 $10 $79 $FD $21 $54 $C1 $FD $A6 $00 $4F
-	.db $78 $FD $A6 $01 $B1 $28 $03 $2E $00 $C9 $2E $01 $C9 $21 $02 $00
-	.db $39 $4E $3A $52 $C1 $A1 $6F $C9 $0E $00 $C5 $3E $01 $F5 $33 $CD
-	.db $00 $0F $33 $C1 $45 $C5 $3E $02 $F5 $33 $CD $00 $0F $33 $5D $D5
-	.db $3E $04 $F5 $33 $CD $00 $0F $33 $D1 $C1 $55 $C5 $D5 $3E $08 $F5
-	.db $33 $CD $00 $0F $33 $D1 $C1 $78 $B7 $28 $04 $7A $B7 $20 $18 $7B
-	.db $B7 $28 $04 $7A $B7 $20 $10 $78 $B7 $28 $04 $7D $B7 $20 $08 $7B
-	.db $B7 $28 $07 $7D $B7 $28 $03 $2E $00 $C9 $78 $B7 $28 $04 $0E $01
-	.db $18 $16 $7B $B7 $28 $04 $0E $02 $18 $0E $7A $B7 $28 $04 $0E $04
-	.db $18 $06 $7D $B7 $28 $02 $0E $08 $69 $C9 $21 $2A $C0 $FD $21 $02
-	.db $00 $FD $39 $FD $7E $00 $77 $C9 $DD $E5 $DD $21 $00 $00 $DD $39
-	.db $3B $3A $2A $C0 $DD $77 $FF $6F $26 $00 $29 $4D $44 $21 $6E $C1
-	.db $09 $5E $23 $56 $21 $86 $C1 $09 $4E $23 $46 $DD $7E $FF $C6 $1F
-	.db $6F $3E $00 $CE $12 $67 $66 $C5 $D5 $E5 $33 $CD $31 $08 $33 $D1
-	.db $21 $00 $00 $E5 $D5 $CD $8E $08 $F1 $21 $00 $00 $E3 $CD $A4 $08
-	.db $F1 $F1 $2A $9E $C1 $E5 $CD $C5 $08 $F1 $33 $DD $E1 $C9 $01 $2A
-	.db $C0 $0A $B7 $20 $04 $3E $0B $02 $C9 $C6 $FF $02 $C9 $01 $2A $C0
-	.db $0A $FE $0B $20 $03 $AF $02 $C9 $3C $02 $C9
+; Data from ED3 to ED5 (3 bytes)	
+A$input_manager$89:	
+C$input_manager.c$17$1$19:	
+C$input_manager.c$19$1$21:	
+G$engine_input_manager_hold$0$0:	
+_engine_input_manager_hold:	
+	.db $21 $02 $00
+	
+; Data from ED6 to ED6 (1 bytes)	
+A$input_manager$90:	
+	.db $39
+	
+; Data from ED7 to ED7 (1 bytes)	
+A$input_manager$91:	
+	.db $4E
+	
+; Data from ED8 to ED9 (2 bytes)	
+A$input_manager$92:	
+	.db $06 $00
+	
+; Data from EDA to EDD (4 bytes)	
+A$input_manager$93:	
+	.db $FD $21 $52 $C1
+	
+; Data from EDE to EE0 (3 bytes)	
+A$input_manager$94:	
+	.db $FD $7E $00
+	
+; Data from EE1 to EE1 (1 bytes)	
+A$input_manager$95:	
+	.db $A1
+	
+; Data from EE2 to EE2 (1 bytes)	
+A$input_manager$96:	
+	.db $5F
+	
+; Data from EE3 to EE5 (3 bytes)	
+A$input_manager$97:	
+	.db $FD $7E $01
+	
+; Data from EE6 to EE6 (1 bytes)	
+A$input_manager$98:	
+	.db $A0
+	
+; Data from EE7 to EE7 (1 bytes)	
+A$input_manager$99:	
+	.db $B3
+	
+; Data from EE8 to EE9 (2 bytes)	
+A$input_manager$100:	
+	.db $28 $10
+	
+; Data from EEA to EEA (1 bytes)	
+A$input_manager$101:	
+	.db $79
+	
+; Data from EEB to EEE (4 bytes)	
+A$input_manager$102:	
+	.db $FD $21 $54 $C1
+	
+; Data from EEF to EF1 (3 bytes)	
+A$input_manager$103:	
+	.db $FD $A6 $00
+	
+; Data from EF2 to EF2 (1 bytes)	
+A$input_manager$104:	
+	.db $4F
+	
+; Data from EF3 to EF3 (1 bytes)	
+A$input_manager$105:	
+	.db $78
+	
+; Data from EF4 to EF6 (3 bytes)	
+A$input_manager$106:	
+	.db $FD $A6 $01
+	
+; Data from EF7 to EF7 (1 bytes)	
+A$input_manager$107:	
+	.db $B1
+	
+; Data from EF8 to EF9 (2 bytes)	
+A$input_manager$108:	
+	.db $28 $03
+	
+; Data from EFA to EFB (2 bytes)	
+A$input_manager$110:	
+	.db $2E $00
+	
+; Data from EFC to EFC (1 bytes)	
+A$input_manager$111:	
+	.db $C9
+	
+; Data from EFD to EFE (2 bytes)	
+A$input_manager$113:	
+	.db $2E $01
+	
+; Data from EFF to EFF (1 bytes)	
+A$input_manager$118:	
+C$input_manager.c$20$1$21:	
+XG$engine_input_manager_hold$0$0:	
+	.db $C9
+	
+; Data from F00 to F02 (3 bytes)	
+A$input_manager$131:	
+C$input_manager.c$22$1$21:	
+C$input_manager.c$24$1$23:	
+G$engine_input_manager_move$0$0:	
+_engine_input_manager_move:	
+	.db $21 $02 $00
+	
+; Data from F03 to F03 (1 bytes)	
+A$input_manager$132:	
+	.db $39
+	
+; Data from F04 to F04 (1 bytes)	
+A$input_manager$133:	
+	.db $4E
+	
+; Data from F05 to F07 (3 bytes)	
+A$input_manager$134:	
+	.db $3A $52 $C1
+	
+; Data from F08 to F08 (1 bytes)	
+A$input_manager$135:	
+	.db $A1
+	
+; Data from F09 to F09 (1 bytes)	
+A$input_manager$136:	
+	.db $6F
+	
+; Data from F0A to F0A (1 bytes)	
+A$input_manager$141:	
+C$input_manager.c$25$1$23:	
+XG$engine_input_manager_move$0$0:	
+	.db $C9
+	
+; Data from F0B to F0C (2 bytes)	
+A$input_manager$154:	
+C$input_manager.c$27$1$23:	
+C$input_manager.c$29$1$23:	
+G$engine_input_manager_direction:	
+_engine_input_manager_direction:	
+	.db $0E $00
+	
+; Data from F0D to F0D (1 bytes)	
+A$input_manager$158:	
+C$input_manager.c$35$1$24:	
+	.db $C5
+	
+; Data from F0E to F0F (2 bytes)	
+A$input_manager$159:	
+	.db $3E $01
+	
+; Data from F10 to F10 (1 bytes)	
+A$input_manager$160:	
+	.db $F5
+	
+; Data from F11 to F11 (1 bytes)	
+A$input_manager$161:	
+	.db $33
+	
+; Data from F12 to F14 (3 bytes)	
+A$input_manager$162:	
+	.db $CD $00 $0F
+	
+; Data from F15 to F15 (1 bytes)	
+A$input_manager$163:	
+	.db $33
+	
+; Data from F16 to F16 (1 bytes)	
+A$input_manager$164:	
+	.db $C1
+	
+; Data from F17 to F17 (1 bytes)	
+A$input_manager$165:	
+	.db $45
+	
+; Data from F18 to F18 (1 bytes)	
+A$input_manager$169:	
+C$input_manager.c$36$1$24:	
+	.db $C5
+	
+; Data from F19 to F1A (2 bytes)	
+A$input_manager$170:	
+	.db $3E $02
+	
+; Data from F1B to F1B (1 bytes)	
+A$input_manager$171:	
+	.db $F5
+	
+; Data from F1C to F1C (1 bytes)	
+A$input_manager$172:	
+	.db $33
+	
+; Data from F1D to F1F (3 bytes)	
+A$input_manager$173:	
+	.db $CD $00 $0F
+	
+; Data from F20 to F20 (1 bytes)	
+A$input_manager$174:	
+	.db $33
+	
+; Data from F21 to F21 (1 bytes)	
+A$input_manager$175:	
+	.db $5D
+	
+; Data from F22 to F22 (1 bytes)	
+A$input_manager$176:	
+	.db $D5
+	
+; Data from F23 to F24 (2 bytes)	
+A$input_manager$177:	
+	.db $3E $04
+	
+; Data from F25 to F25 (1 bytes)	
+A$input_manager$178:	
+	.db $F5
+	
+; Data from F26 to F26 (1 bytes)	
+A$input_manager$179:	
+	.db $33
+	
+; Data from F27 to F29 (3 bytes)	
+A$input_manager$180:	
+	.db $CD $00 $0F
+	
+; Data from F2A to F2A (1 bytes)	
+A$input_manager$181:	
+	.db $33
+	
+; Data from F2B to F2B (1 bytes)	
+A$input_manager$182:	
+	.db $D1
+	
+; Data from F2C to F2C (1 bytes)	
+A$input_manager$183:	
+	.db $C1
+	
+; Data from F2D to F2D (1 bytes)	
+A$input_manager$184:	
+	.db $55
+	
+; Data from F2E to F2E (1 bytes)	
+A$input_manager$188:	
+C$input_manager.c$38$1$24:	
+	.db $C5
+	
+; Data from F2F to F2F (1 bytes)	
+A$input_manager$189:	
+	.db $D5
+	
+; Data from F30 to F31 (2 bytes)	
+A$input_manager$190:	
+	.db $3E $08
+	
+; Data from F32 to F32 (1 bytes)	
+A$input_manager$191:	
+	.db $F5
+	
+; Data from F33 to F33 (1 bytes)	
+A$input_manager$192:	
+	.db $33
+	
+; Data from F34 to F36 (3 bytes)	
+A$input_manager$193:	
+	.db $CD $00 $0F
+	
+; Data from F37 to F37 (1 bytes)	
+A$input_manager$194:	
+	.db $33
+	
+; Data from F38 to F38 (1 bytes)	
+A$input_manager$195:	
+	.db $D1
+	
+; Data from F39 to F39 (1 bytes)	
+A$input_manager$196:	
+	.db $C1
+	
+; Data from F3A to F3A (1 bytes)	
+A$input_manager$200:	
+C$input_manager.c$41$1$24:	
+	.db $78
+	
+; Data from F3B to F3B (1 bytes)	
+A$input_manager$201:	
+	.db $B7
+	
+; Data from F3C to F3D (2 bytes)	
+A$input_manager$202:	
+	.db $28 $04
+	
+; Data from F3E to F3E (1 bytes)	
+A$input_manager$203:	
+	.db $7A
+	
+; Data from F3F to F3F (1 bytes)	
+A$input_manager$204:	
+	.db $B7
+	
+; Data from F40 to F41 (2 bytes)	
+A$input_manager$205:	
+	.db $20 $18
+	
+; Data from F42 to F42 (1 bytes)	
+A$input_manager$207:	
+	.db $7B
+	
+; Data from F43 to F43 (1 bytes)	
+A$input_manager$208:	
+	.db $B7
+	
+; Data from F44 to F45 (2 bytes)	
+A$input_manager$209:	
+	.db $28 $04
+	
+; Data from F46 to F46 (1 bytes)	
+A$input_manager$210:	
+	.db $7A
+	
+; Data from F47 to F47 (1 bytes)	
+A$input_manager$211:	
+	.db $B7
+	
+; Data from F48 to F49 (2 bytes)	
+A$input_manager$212:	
+	.db $20 $10
+	
+; Data from F4A to F4A (1 bytes)	
+A$input_manager$214:	
+	.db $78
+	
+; Data from F4B to F4B (1 bytes)	
+A$input_manager$215:	
+	.db $B7
+	
+; Data from F4C to F4D (2 bytes)	
+A$input_manager$216:	
+	.db $28 $04
+	
+; Data from F4E to F4E (1 bytes)	
+A$input_manager$217:	
+	.db $7D
+	
+; Data from F4F to F4F (1 bytes)	
+A$input_manager$218:	
+	.db $B7
+	
+; Data from F50 to F51 (2 bytes)	
+A$input_manager$219:	
+	.db $20 $08
+	
+; Data from F52 to F52 (1 bytes)	
+A$input_manager$221:	
+	.db $7B
+	
+; Data from F53 to F53 (1 bytes)	
+A$input_manager$222:	
+	.db $B7
+	
+; Data from F54 to F55 (2 bytes)	
+A$input_manager$223:	
+	.db $28 $07
+	
+; Data from F56 to F56 (1 bytes)	
+A$input_manager$224:	
+	.db $7D
+	
+; Data from F57 to F57 (1 bytes)	
+A$input_manager$225:	
+	.db $B7
+	
+; Data from F58 to F59 (2 bytes)	
+A$input_manager$226:	
+	.db $28 $03
+	
+; Data from F5A to F5B (2 bytes)	
+A$input_manager$231:	
+C$input_manager.c$43$2$25:	
+	.db $2E $00
+	
+; Data from F5C to F5C (1 bytes)	
+A$input_manager$232:	
+	.db $C9
+	
+; Data from F5D to F5D (1 bytes)	
+A$input_manager$237:	
+C$input_manager.c$47$2$26:	
+	.db $78
+	
+; Data from F5E to F5E (1 bytes)	
+A$input_manager$238:	
+	.db $B7
+	
+; Data from F5F to F60 (2 bytes)	
+A$input_manager$239:	
+	.db $28 $04
+	
+; Data from F61 to F62 (2 bytes)	
+A$input_manager$243:	
+C$input_manager.c$49$3$27:	
+	.db $0E $01
+	
+; Data from F63 to F64 (2 bytes)	
+A$input_manager$244:	
+	.db $18 $16
+	
+; Data from F65 to F65 (1 bytes)	
+A$input_manager$249:	
+C$input_manager.c$53$3$28:	
+	.db $7B
+	
+; Data from F66 to F66 (1 bytes)	
+A$input_manager$250:	
+	.db $B7
+	
+; Data from F67 to F68 (2 bytes)	
+A$input_manager$251:	
+	.db $28 $04
+	
+; Data from F69 to F6A (2 bytes)	
+A$input_manager$255:	
+C$input_manager.c$55$4$29:	
+	.db $0E $02
+	
+; Data from F6B to F6C (2 bytes)	
+A$input_manager$256:	
+	.db $18 $0E
+	
+; Data from F6D to F6D (1 bytes)	
+A$input_manager$261:	
+C$input_manager.c$59$4$30:	
+	.db $7A
+	
+; Data from F6E to F6E (1 bytes)	
+A$input_manager$262:	
+	.db $B7
+	
+; Data from F6F to F70 (2 bytes)	
+A$input_manager$263:	
+	.db $28 $04
+	
+; Data from F71 to F72 (2 bytes)	
+A$input_manager$267:	
+C$input_manager.c$61$5$31:	
+	.db $0E $04
+	
+; Data from F73 to F74 (2 bytes)	
+A$input_manager$268:	
+	.db $18 $06
+	
+; Data from F75 to F75 (1 bytes)	
+A$input_manager$273:	
+C$input_manager.c$65$5$32:	
+	.db $7D
+	
+; Data from F76 to F76 (1 bytes)	
+A$input_manager$274:	
+	.db $B7
+	
+; Data from F77 to F78 (2 bytes)	
+A$input_manager$275:	
+	.db $28 $02
+	
+; Data from F79 to F7A (2 bytes)	
+A$input_manager$279:	
+C$input_manager.c$67$6$33:	
+	.db $0E $08
+	
+; Data from F7B to F7B (1 bytes)	
+A$input_manager$284:	
+C$input_manager.c$74$1$24:	
+	.db $69
+	
+; Data from F7C to F7C (1 bytes)	
+A$input_manager$289:	
+C$input_manager.c$75$1$24:	
+XG$engine_input_manager_directio:	
+	.db $C9
+	
+; Data from F7D to F7F (3 bytes)	
+A$record_manager$69:	
+C$record_manager.c$12$0$0:	
+C$record_manager.c$14$1$19:	
+C$record_manager.c$15$1$19:	
+G$engine_record_manager_init$0$0:	
+_engine_record_manager_init:	
+	.db $21 $2A $C0
+	
+; Data from F80 to F83 (4 bytes)	
+A$record_manager$70:	
+	.db $FD $21 $02 $00
+	
+; Data from F84 to F85 (2 bytes)	
+A$record_manager$71:	
+	.db $FD $39
+	
+; Data from F86 to F88 (3 bytes)	
+A$record_manager$72:	
+	.db $FD $7E $00
+	
+; Data from F89 to F89 (1 bytes)	
+A$record_manager$73:	
+	.db $77
+	
+; Data from F8A to F8A (1 bytes)	
+A$record_manager$78:	
+C$record_manager.c$16$1$19:	
+XG$engine_record_manager_init$0$:	
+	.db $C9
+	
+; Data from F8B to F8C (2 bytes)	
+A$record_manager$88:	
+C$record_manager.c$17$1$19:	
+G$engine_record_manager_load$0$0:	
+_engine_record_manager_load:	
+	.db $DD $E5
+	
+; Data from F8D to F90 (4 bytes)	
+A$record_manager$89:	
+	.db $DD $21 $00 $00
+	
+; Data from F91 to F92 (2 bytes)	
+A$record_manager$90:	
+	.db $DD $39
+	
+; Data from F93 to F93 (1 bytes)	
+A$record_manager$91:	
+	.db $3B
+	
+; Data from F94 to F96 (3 bytes)	
+A$record_manager$98:	
+C$record_manager.c$19$1$20:	
+C$record_manager.c$20$1$20:	
+	.db $3A $2A $C0
+	
+; Data from F97 to F99 (3 bytes)	
+A$record_manager$102:	
+C$record_manager.c$22$1$20:	
+	.db $DD $77 $FF
+	
+; Data from F9A to F9A (1 bytes)	
+A$record_manager$103:	
+	.db $6F
+	
+; Data from F9B to F9C (2 bytes)	
+A$record_manager$104:	
+	.db $26 $00
+	
+; Data from F9D to F9D (1 bytes)	
+A$record_manager$105:	
+	.db $29
+	
+; Data from F9E to F9E (1 bytes)	
+A$record_manager$106:	
+	.db $4D
+	
+; Data from F9F to F9F (1 bytes)	
+A$record_manager$107:	
+	.db $44
+	
+; Data from FA0 to FA2 (3 bytes)	
+A$record_manager$108:	
+	.db $21 $6E $C1
+	
+; Data from FA3 to FA3 (1 bytes)	
+A$record_manager$109:	
+	.db $09
+	
+; Data from FA4 to FA4 (1 bytes)	
+A$record_manager$110:	
+	.db $5E
+	
+; Data from FA5 to FA5 (1 bytes)	
+A$record_manager$111:	
+	.db $23
+	
+; Data from FA6 to FA6 (1 bytes)	
+A$record_manager$112:	
+	.db $56
+	
+; Data from FA7 to FA9 (3 bytes)	
+A$record_manager$116:	
+C$record_manager.c$23$1$20:	
+	.db $21 $86 $C1
+	
+; Data from FAA to FAA (1 bytes)	
+A$record_manager$117:	
+	.db $09
+	
+; Data from FAB to FAB (1 bytes)	
+A$record_manager$118:	
+	.db $4E
+	
+; Data from FAC to FAC (1 bytes)	
+A$record_manager$119:	
+	.db $23
+	
+; Data from FAD to FAD (1 bytes)	
+A$record_manager$120:	
+	.db $46
+	
+; Data from FAE to FB0 (3 bytes)	
+A$record_manager$124:	
+C$record_manager.c$24$1$20:	
+	.db $DD $7E $FF
+	
+; Data from FB1 to FB2 (2 bytes)	
+A$record_manager$125:	
+	.db $C6 $1F
+	
+; Data from FB3 to FB3 (1 bytes)	
+A$record_manager$126:	
+	.db $6F
+	
+; Data from FB4 to FB5 (2 bytes)	
+A$record_manager$127:	
+	.db $3E $00
+	
+; Data from FB6 to FB7 (2 bytes)	
+A$record_manager$128:	
+	.db $CE $12
+	
+; Data from FB8 to FB8 (1 bytes)	
+A$record_manager$129:	
+	.db $67
+	
+; Data from FB9 to FB9 (1 bytes)	
+A$record_manager$130:	
+	.db $66
+	
+; Data from FBA to FBA (1 bytes)	
+A$record_manager$134:	
+C$record_manager.c$26$1$20:	
+	.db $C5
+	
+; Data from FBB to FBB (1 bytes)	
+A$record_manager$135:	
+	.db $D5
+	
+; Data from FBC to FBC (1 bytes)	
+A$record_manager$136:	
+	.db $E5
+	
+; Data from FBD to FBD (1 bytes)	
+A$record_manager$137:	
+	.db $33
+	
+; Data from FBE to FC0 (3 bytes)	
+A$record_manager$138:	
+	.db $CD $31 $08
+	
+; Data from FC1 to FC1 (1 bytes)	
+A$record_manager$139:	
+	.db $33
+	
+; Data from FC2 to FC2 (1 bytes)	
+A$record_manager$140:	
+	.db $D1
+	
+; Data from FC3 to FC5 (3 bytes)	
+A$record_manager$141:	
+	.db $21 $00 $00
+	
+; Data from FC6 to FC6 (1 bytes)	
+A$record_manager$142:	
+	.db $E5
+	
+; Data from FC7 to FC7 (1 bytes)	
+A$record_manager$143:	
+	.db $D5
+	
+; Data from FC8 to FCA (3 bytes)	
+A$record_manager$144:	
+	.db $CD $8E $08
+	
+; Data from FCB to FCB (1 bytes)	
+A$record_manager$145:	
+	.db $F1
+	
+; Data from FCC to FCE (3 bytes)	
+A$record_manager$146:	
+	.db $21 $00 $00
+	
+; Data from FCF to FCF (1 bytes)	
+A$record_manager$147:	
+	.db $E3
+	
+; Data from FD0 to FD2 (3 bytes)	
+A$record_manager$148:	
+	.db $CD $A4 $08
+	
+; Data from FD3 to FD3 (1 bytes)	
+A$record_manager$149:	
+	.db $F1
+	
+; Data from FD4 to FD4 (1 bytes)	
+A$record_manager$150:	
+	.db $F1
+	
+; Data from FD5 to FD7 (3 bytes)	
+A$record_manager$154:	
+C$record_manager.c$31$1$20:	
+	.db $2A $9E $C1
+	
+; Data from FD8 to FD8 (1 bytes)	
+A$record_manager$155:	
+	.db $E5
+	
+; Data from FD9 to FDB (3 bytes)	
+A$record_manager$156:	
+	.db $CD $C5 $08
+	
+; Data from FDC to FDC (1 bytes)	
+A$record_manager$157:	
+	.db $F1
+	
+; Data from FDD to FDD (1 bytes)	
+A$record_manager$158:	
+	.db $33
+	
+; Data from FDE to FDF (2 bytes)	
+A$record_manager$159:	
+	.db $DD $E1
+	
+; Data from FE0 to FE0 (1 bytes)	
+A$record_manager$164:	
+C$record_manager.c$32$1$20:	
+XG$engine_record_manager_load$0$:	
+	.db $C9
+	
+; Data from FE1 to FE3 (3 bytes)	
+A$record_manager$177:	
+C$record_manager.c$34$1$20:	
+C$record_manager.c$36$1$21:	
+G$engine_record_manager_decremen:	
+_engine_record_manager_decrement:	
+	.db $01 $2A $C0
+	
+; Data from FE4 to FE4 (1 bytes)	
+A$record_manager$181:	
+C$record_manager.c$37$1$21:	
+	.db $0A
+	
+; Data from FE5 to FE5 (1 bytes)	
+A$record_manager$182:	
+	.db $B7
+	
+; Data from FE6 to FE7 (2 bytes)	
+A$record_manager$183:	
+	.db $20 $04
+	
+; Data from FE8 to FE9 (2 bytes)	
+A$record_manager$187:	
+C$record_manager.c$39$2$22:	
+	.db $3E $0B
+	
+; Data from FEA to FEA (1 bytes)	
+A$record_manager$188:	
+	.db $02
+	
+; Data from FEB to FEB (1 bytes)	
+A$record_manager$189:	
+	.db $C9
+	
+; Data from FEC to FED (2 bytes)	
+A$record_manager$194:	
+C$record_manager.c$43$2$23:	
+	.db $C6 $FF
+	
+; Data from FEE to FEE (1 bytes)	
+A$record_manager$195:	
+	.db $02
+	
+; Data from FEF to FEF (1 bytes)	
+A$record_manager$200:	
+C$record_manager.c$45$1$21:	
+XG$engine_record_manager_decreme:	
+	.db $C9
+	
+; Data from FF0 to FF2 (3 bytes)	
+A$record_manager$213:	
+C$record_manager.c$46$1$21:	
+C$record_manager.c$48$1$24:	
+G$engine_record_manager_incremen:	
+_engine_record_manager_increment:	
+	.db $01 $2A $C0
+	
+; Data from FF3 to FF3 (1 bytes)	
+A$record_manager$217:	
+C$record_manager.c$49$1$24:	
+	.db $0A
+	
+; Data from FF4 to FF5 (2 bytes)	
+A$record_manager$218:	
+	.db $FE $0B
+	
+; Data from FF6 to FF7 (2 bytes)	
+A$record_manager$219:	
+	.db $20 $03
+	
+; Data from FF8 to FF8 (1 bytes)	
+A$record_manager$223:	
+C$record_manager.c$51$2$25:	
+	.db $AF
+	
+; Data from FF9 to FF9 (1 bytes)	
+A$record_manager$224:	
+	.db $02
+	
+; Data from FFA to FFA (1 bytes)	
+A$record_manager$225:	
+	.db $C9
+	
+; Data from FFB to FFB (1 bytes)	
+A$record_manager$230:	
+C$record_manager.c$55$2$26:	
+	.db $3C
+	
+; Data from FFC to FFC (1 bytes)	
+A$record_manager$231:	
+	.db $02
+	
+; Data from FFD to FFD (1 bytes)	
+A$record_manager$236:	
+C$record_manager.c$57$1$24:	
+XG$engine_record_manager_increme:	
+	.db $C9
 	
 A$screen_manager$86:	
+C$screen_manager.c$22$0$0:	
+C$screen_manager.c$24$1$13:	
+G$engine_screen_manager_init$0$0:	
+_engine_screen_manager_init:
 		ld hl, $0002
 		add hl, sp
 		ld a, (hl)
