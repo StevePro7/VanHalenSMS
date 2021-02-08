@@ -1778,51 +1778,195 @@ XG$devkit_SMS_addSprite$0$0:
 	.db $C9
 	
 A$_sms_manager$735:	
-		jp _LABEL_1D77_
+C$_sms_manager.c$117$1$113:	
+C$_sms_manager.c$119$1$114:	
+C$_sms_manager.c$120$1$114:	
+G$devkit_SMS_initSprites$0$0:	
+XG$devkit_SMS_initSprites$0$0:	
+_devkit_SMS_initSprites:	
+		jp _SMS_initSprites
 	
 A$_sms_manager$752:	
-		jp _LABEL_1DD2_
+C$_sms_manager.c$121$1$114:	
+C$_sms_manager.c$123$1$115:	
+C$_sms_manager.c$124$1$115:	
+G$devkit_SMS_finalizeSprites$0$0:	
+XG$devkit_SMS_finalizeSprites$0$:	
+_devkit_SMS_finalizeSprites:
+		jp _SMS_finalizeSprites
 	
 A$_sms_manager$769:	
-		jp _LABEL_1E0D_
+C$_sms_manager.c$125$1$115:	
+C$_sms_manager.c$127$1$116:	
+C$_sms_manager.c$128$1$116:	
+G$devkit_SMS_waitForVBlank$0$0:	
+XG$devkit_SMS_waitForVBlank$0$0:	
+_devkit_SMS_waitForVBlank:
+		jp _SMS_waitForVBlank
 	
 A$_sms_manager$786:	
-		jp _LABEL_1BA6_
+C$_sms_manager.c$129$1$116:	
+C$_sms_manager.c$131$1$117:	
+C$_sms_manager.c$132$1$117:	
+G$devkit_SMS_copySpritestoSAT$0$:	
+XG$devkit_SMS_copySpritestoSAT$0:	
+_devkit_SMS_copySpritestoSAT:
+		jp _UNSAFE_SMS_copySpritestoSAT
 	
 	; Data from 98B to 98D (3 bytes)
+A$_sms_manager$803:	
+C$_sms_manager.c$133$1$117:	
+C$_sms_manager.c$135$1$118:	
+C$_sms_manager.c$136$1$118:	
+G$devkit_UNSAFE_SMS_copySpritest:	
+XG$devkit_UNSAFE_SMS_copySprites:	
+_devkit_UNSAFE_SMS_copySpritesto:	
 	.db $C3 $A6 $1B
 	
 A$_sms_manager$820:	
-		jp _LABEL_1E6F_
+C$_sms_manager.c$138$1$118:	
+C$_sms_manager.c$140$1$119:	
+C$_sms_manager.c$141$1$119:	
+G$devkit_SMS_queryPauseRequested:	
+XG$devkit_SMS_queryPauseRequeste:	
+_devkit_SMS_queryPauseRequested:
+		jp _SMS_queryPauseRequested
 	
 A$_sms_manager$837:	
-		jp _LABEL_1E77_
+C$_sms_manager.c$142$1$119:	
+C$_sms_manager.c$144$1$120:	
+C$_sms_manager.c$145$1$120:	
+G$devkit_SMS_resetPauseRequest$0:	
+XG$devkit_SMS_resetPauseRequest$:	
+_devkit_SMS_resetPauseRequest:
+		jp _SMS_resetPauseRequest
 	
-	; Data from 994 to 99A (7 bytes)
-	.db $3A $68 $C0 $E6 $20 $6F $C9
+; Data from 994 to 996 (3 bytes)	
+A$_sms_manager$850:	
+C$_sms_manager.c$148$1$120:	
+C$_sms_manager.c$150$1$121:	
+G$devkit_isCollisionDetected$0$0:	
+_devkit_isCollisionDetected:	
+	.db $3A $68 $C0
 	
-_LABEL_99B_:	
-		jp _LABEL_1E1A_
+; Data from 997 to 998 (2 bytes)	
+A$_sms_manager$851:	
+	.db $E6 $20
+	
+; Data from 999 to 999 (1 bytes)	
+A$_sms_manager$852:	
+	.db $6F
+	
+; Data from 99A to 99A (1 bytes)	
+A$_sms_manager$857:	
+C$_sms_manager.c$151$1$121:	
+XG$devkit_isCollisionDetected$0$:	
+	.db $C9
+	
+A$_sms_manager$874:	
+C$_sms_manager.c$154$1$121:	
+C$_sms_manager.c$156$1$122:	
+C$_sms_manager.c$157$1$122:	
+G$devkit_SMS_getKeysStatus$0$0:	
+XG$devkit_SMS_getKeysStatus$0$0:	
+_devkit_SMS_getKeysStatus:	
+		jp _SMS_getKeysStatus
 	
 A$_sms_manager$887:	
+C$_sms_manager.c$160$1$122:	
+C$_sms_manager.c$162$1$123:	
+G$devkit_SPRITEMODE_NORMAL$0$0:	
+_devkit_SPRITEMODE_NORMAL:	
 		ld l, $00
 		ret
 	
 A$_sms_manager$905:	
+C$_sms_manager.c$164$1$123:	
+C$_sms_manager.c$166$1$124:	
+G$devkit_VDPFEATURE_HIDEFIRSTCOL:	
+_devkit_VDPFEATURE_HIDEFIRSTCOL:	
 		ld hl, $0020
 		ret
 	
-	; Data from 9A5 to A44 (160 bytes)
-	.db $21 $00 $10 $C9 $21 $00 $08 $C9 $53 $74 $65 $76 $65 $6E $20 $42
-	.db $6F $6C $61 $6E $64 $00 $56 $61 $6E $20 $48 $61 $6C $65 $6E $00
+; Data from 9A5 to 9A7 (3 bytes)	
+A$_sms_manager$923:	
+C$_sms_manager.c$168$1$124:	
+C$_sms_manager.c$170$1$125:	
+G$devkit_TILE_PRIORITY$0$0:	
+_devkit_TILE_PRIORITY:	
+	.db $21 $00 $10
+	
+; Data from 9A8 to 9A8 (1 bytes)	
+A$_sms_manager$928:	
+C$_sms_manager.c$171$1$125:	
+XG$devkit_TILE_PRIORITY$0$0:	
+	.db $C9
+	
+; Data from 9A9 to 9AB (3 bytes)	
+A$_sms_manager$941:	
+C$_sms_manager.c$172$1$125:	
+C$_sms_manager.c$174$1$126:	
+G$devkit_TILE_USE_SPRITE_PALETTE:	
+_devkit_TILE_USE_SPRITE_PALETTE:	
+	.db $21 $00 $08
+	
+; Data from 9AC to 9AC (1 bytes)	
+A$_sms_manager$946:	
+C$_sms_manager.c$175$1$126:	
+XG$devkit_TILE_USE_SPRITE_PALETT:	
+	.db $C9
+	
+; Data from 9AD to 9BA (14 bytes)	
+F_sms_manager$__str_0$0$0:	
+	.db $53 $74 $65 $76 $65 $6E $20 $42 $6F $6C $61 $6E $64 $00
+	
+; Data from 9BB to 9C4 (10 bytes)	
+F_sms_manager$__str_1$0$0:	
+	.db $56 $61 $6E $20 $48 $61 $6C $65 $6E $00
+	
+; Data from 9C5 to A00 (60 bytes)	
+F_sms_manager$__str_2$0$0:	
 	.db $56 $61 $6E $20 $48 $61 $6C $65 $6E $20 $52 $65 $63 $6F $72 $64
 	.db $20 $43 $6F $76 $65 $72 $73 $20 $66 $6F $72 $20 $74 $68 $65 $20
 	.db $53 $4D $53 $20 $50 $6F $77 $65 $72 $21 $20 $32 $30 $32 $31 $20
-	.db $43 $6F $6D $70 $65 $74 $69 $74 $69 $6F $6E $00 $C1 $E1 $E5 $C5
-	.db $E5 $CD $F4 $02 $F1 $C9 $C1 $E1 $E5 $C5 $E5 $CD $27 $03 $F1 $C9
-	.db $C3 $81 $02 $C3 $A8 $02 $C3 $36 $03 $21 $02 $00 $39 $7E $F5 $33
-	.db $CD $4E $04 $33 $C9 $21 $04 $00 $39 $7E $F5 $33 $21 $03 $00 $39
-	.db $4E $23 $46 $C5 $CD $07 $06 $F1 $33 $C9 $C3 $3D $05 $C3 $5A $06
+	.db $43 $6F $6D $70 $65 $74 $69 $74 $69 $6F $6E $00
+	
+; Data from A01 to A0A (10 bytes)	
+_devkit_PSGPlay:	
+	.db $C1 $E1 $E5 $C5 $E5 $CD $F4 $02 $F1 $C9
+	
+; Data from A0B to A14 (10 bytes)	
+_devkit_PSGPlayNoRepeat:	
+	.db $C1 $E1 $E5 $C5 $E5 $CD $27 $03 $F1 $C9
+	
+; Data from A15 to A17 (3 bytes)	
+_devkit_PSGStop:	
+	.db $C3 $81 $02
+	
+; Data from A18 to A1A (3 bytes)	
+_devkit_PSGResume:	
+	.db $C3 $A8 $02
+	
+; Data from A1B to A1D (3 bytes)	
+_devkit_PSGGetStatus:	
+	.db $C3 $36 $03
+	
+; Data from A1E to A29 (12 bytes)	
+_devkit_PSGSetMusicVolumeAttenua:	
+	.db $21 $02 $00 $39 $7E $F5 $33 $CD $4E $04 $33 $C9
+	
+; Data from A2A to A3E (21 bytes)	
+_devkit_PSGSFXPlay:	
+	.db $21 $04 $00 $39 $7E $F5 $33 $21 $03 $00 $39 $4E $23 $46 $C5 $CD
+	.db $07 $06 $F1 $33 $C9
+	
+; Data from A3F to A41 (3 bytes)	
+_devkit_PSGSFXStop:	
+	.db $C3 $3D $05
+	
+; Data from A42 to A44 (3 bytes)	
+_devkit_PSGSFXGetStatus:	
+	.db $C3 $5A $06
 	
 _devkit_PSGSilenceChannels:	
 		jp _PSGSilenceChannels
@@ -1959,7 +2103,7 @@ A$content_manager$263:
 A$input_manager$65:	
 		ld hl, (Finput_manager$curr_joypad1$0$0)
 		ld (Finput_manager$prev_joypad1$0$0), hl
-		call _LABEL_99B_
+		call A$_sms_manager$874
 		ld (Finput_manager$curr_joypad1$0$0), hl
 		ret
 	
@@ -2172,7 +2316,7 @@ _DATA_17A8_:
 	.db $6A $10 $F6 $5F $C9 $06 $09 $7D $6C $26 $00 $CB $1D $ED $6A $ED
 	.db $52 $30 $01 $19 $3F $17 $10 $F5 $CB $10 $50 $5F $EB $C9
 	
-_LABEL_1BA6_:	
+_UNSAFE_SMS_copySpritestoSAT:	
 		ld hl, $7F00
 		rst $08	; _LABEL_8_
 		ld c, Port_VDPData
@@ -2214,10 +2358,10 @@ _SMS_init:
 		ld a, c
 		sub $0B
 		jr c, -
-		call _LABEL_1D77_
-		call _LABEL_1DD2_
+		call _SMS_initSprites
+		call _SMS_finalizeSprites
 		call _LABEL_1DE4_
-		call _LABEL_1E77_
+		call _SMS_resetPauseRequest
 -:	
 		in a, (Port_VCounter)
 		ld b, a
@@ -2409,7 +2553,7 @@ _SMS_loadSpritePalette:
 	; Data from 1D73 to 1D76 (4 bytes)
 	.db $7D $D3 $BE $C9
 	
-_LABEL_1D77_:	
+_SMS_initSprites:	
 		ld hl, SpriteNextFree
 		ld (hl), $00
 		ret
@@ -2422,7 +2566,7 @@ _LABEL_1D77_:
 	.db $FD $39 $FD $7E $00 $77 $FD $21 $2F $C1 $FD $4E $00 $FD $34 $00
 	.db $69 $C9 $2E $FF $C9
 	
-_LABEL_1DD2_:	
+_SMS_finalizeSprites:	
 		ld a, (SpriteNextFree)
 		sub $40
 		ret nc
@@ -2464,7 +2608,7 @@ _LABEL_1DE4_:
 		jr nz, -
 		ret
 	
-_LABEL_1E0D_:	
+_SMS_waitForVBlank:	
 		ld hl, VDPBlank
 		ld (hl), $00
 -:	
@@ -2473,7 +2617,7 @@ _LABEL_1E0D_:
 		jr z, -
 		ret
 	
-_LABEL_1E1A_:	
+_SMS_getKeysStatus:	
 		ld hl, (KeysStatus)
 		ret
 	
@@ -2485,12 +2629,12 @@ _LABEL_1E1A_:
 	.db $2F $47 $79 $FD $21 $6D $C0 $FD $A6 $00 $6F $78 $FD $A6 $01 $67
 	.db $C9
 	
-_LABEL_1E6F_:	
+_SMS_queryPauseRequested:	
 		ld iy, PauseRequested
 		ld l, (iy+0)
 		ret
 	
-_LABEL_1E77_:	
+_SMS_resetPauseRequest:	
 		ld hl, PauseRequested
 		ld (hl), $00
 		ret
