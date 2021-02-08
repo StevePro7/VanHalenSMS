@@ -62,9 +62,9 @@ _LABEL_70_:
 		inc a
 		djnz -
 		xor a
-		ld hl, _RAM_C000_
+		ld hl, Lmain.main$global_pause$1$55
 		ld (hl), a
-		ld de, _RAM_C000_ + 1
+		ld de, Lmain.main$global_pause$1$55 + 1
 		ld bc, $1FF0
 		ldir
 		call _LABEL_2231_
@@ -246,7 +246,7 @@ _LABEL_23C_:
 		or a
 		jr z, ++
 		call _LABEL_991_
-		ld iy, _RAM_C000_
+		ld iy, Lmain.main$global_pause$1$55
 		ld a, (iy+0)
 		xor $01
 		ld (iy+0), a
@@ -258,7 +258,7 @@ _LABEL_23C_:
 +:	
 		call _LABEL_A48_
 ++:	
-		ld hl, _RAM_C000_
+		ld hl, Lmain.main$global_pause$1$55
 		bit 0, (hl)
 		jr nz, _LABEL_23C_
 		call _LABEL_97F_
@@ -272,7 +272,7 @@ _LABEL_23C_:
 		jr _LABEL_23C_
 	
 _LABEL_281_:	
-		ld a, (_RAM_C001_)
+		ld a, (PSGMusicStatus)
 		or a
 		ret z
 		ld a, $9F
@@ -291,7 +291,7 @@ _LABEL_281_:
 		ld a, $FF
 		out (Port_PSG), a
 +:	
-		ld hl, _RAM_C001_
+		ld hl, PSGMusicStatus
 		ld (hl), $00
 		ret
 	
@@ -329,7 +329,7 @@ _LABEL_34F_:
 		xor a
 		ld (ix-1), a
 		ld c, (iy+0)
-		ld a, (_RAM_C001_)
+		ld a, (PSGMusicStatus)
 		or a
 		jr z, _LABEL_3C7_
 		ld a, (_RAM_C00F_)
@@ -400,7 +400,7 @@ _LABEL_3C7_:
 		jr +++
 	
 +:	
-		ld a, (_RAM_C001_)
+		ld a, (PSGMusicStatus)
 		or a
 		jr z, +++
 		ld a, (_RAM_C011_)
@@ -442,7 +442,7 @@ _LABEL_3C7_:
 		jr +++
 	
 +:	
-		ld a, (_RAM_C001_)
+		ld a, (PSGMusicStatus)
 		or a
 		jr z, +++
 		ld a, (_RAM_C012_)
@@ -513,7 +513,7 @@ _LABEL_53D_:
 		ld a, (_RAM_C016_)
 		or a
 		jr z, _LABEL_5B1_
-		ld a, (_RAM_C001_)
+		ld a, (PSGMusicStatus)
 		or a
 		jr z, _LABEL_5A8_
 		ld a, (_RAM_C013_)
@@ -564,7 +564,7 @@ _LABEL_5B1_:
 		ld a, (_RAM_C017_)
 		or a
 		jr z, _LABEL_5FD_
-		ld a, (_RAM_C001_)
+		ld a, (PSGMusicStatus)
 		or a
 		jr z, +++
 		ld a, (_RAM_C015_)
@@ -627,7 +627,7 @@ _LABEL_602_:
 	.db $E5 $CD $07 $06 $F1 $33 $21 $22 $C0 $36 $01 $C9
 	
 _LABEL_683_:	
-		ld a, (_RAM_C001_)
+		ld a, (PSGMusicStatus)
 		or a
 		ret z
 		ld a, (_RAM_C008_)

@@ -1,7 +1,7 @@
 .enum $C000 export	
-_RAM_C000_ db		; Lmain.main$global_pause$1$55 = $C000
-_RAM_C001_ db		; PSGMusicStatus = $C001
-_RAM_C002_ dw		; PSGMusicStart
+Lmain.main$global_pause$1$55 db		; Lmain.main$global_pause$1$55 = $C000
+PSGMusicStatus db		; PSGMusicStatus = $C001
+_RAM_C002_ dw		; PSGMusicStart = $C002
 _RAM_C004_ dw		; PSGMusicPointer = $C004
 _RAM_C006_ dw		; PSGMusicLoopPoint = $C006
 _RAM_C008_ db		; PSGMusicSkipFrames = $C008
