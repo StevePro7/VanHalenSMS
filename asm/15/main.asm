@@ -1,6 +1,6 @@
-.include "bank_manager.inc"
-.include "enum_manager.inc"
-.include "define_manager.inc"
+.include "engine/memory_manager.inc"
+.include "engine/enum_manager.inc"
+.include "engine/define_manager.inc"
 
 
 ; This disassembly was created using Emulicious (http://www.emulicious.net)	
@@ -9990,4 +9990,4 @@ ___SMS__SEGA_signature:
 	.db $54 $4D $52 $20 $53 $45 $47 $41 $FF $FF $5C $54 $99 $99 $00 $4C
 
 
-.include "asset_manager.inc"
+.include "engine/bank_manager.inc"
