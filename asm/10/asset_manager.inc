@@ -1,8 +1,65 @@
+.BANK 10	
+.ORG $0000	
+	
+	; Data from 28000 to 2BFFF (16384 bytes)
+	;.incbin "data/File09_28000_2BFFF.dat"
+
+
+; Data from 28000 to 2800F (16 bytes)	
+_VanHalen1986__palette__bin:	
+	.incbin "banks/bank10/VanHalen1986 (palette).bin"
+	;.db $00 $00 $00 $04 $01 $05 $15 $10 $16 $1A $1A $2A $2B $3F $2F $19
+	
+; Data from 28010 to 28086 (119 bytes)	
+_VanHalen1986__tilemap__stmcompr:
+	.incbin "banks/bank10/VanHalen1986 (tilemap).stmcompr"	
+	;.db $FD $00 $85 $00 $5F $01 $15 $00 $5F $1A $15 $00 $5B $33 $04 $32
+	;.db $15 $00 $5F $4B $15 $00 $5B $64 $19 $00 $1F $7C $01 $84 $0B $85
+	;.db $04 $84 $1B $89 $19 $00 $5B $91 $19 $00 $5B $A9 $19 $00 $5B $C1
+	;.db $19 $00 $5B $D9 $19 $00 $5B $F1 $06 $19 $00 $5B $09 $06 $19 $00
+	;.db $5B $21 $06 $19 $00 $5B $39 $06 $19 $00 $5F $51 $06 $15 $00 $03
+	;.db $6A $06 $04 $00 $53 $6C $06 $19 $00 $57 $82 $06 $1D $00 $33 $99
+	;.db $06 $04 $00 $04 $84 $0B $A7 $06 $01 $00 $04 $AB $06 $25 $00 $17
+	;.db $AC $02 $FD $00 $3D $00 $00
+	
+; Data from 28087 to 2BFFF (16249 bytes)	
+_VanHalen1986__tiles__psgcompr:	
+	.incbin "banks/bank10/VanHalen1986 (tiles).psgcompr"
+	;.incbin ...
+    
+.BANK 11	
+.ORG $0000	
+	
+	; Data from 2C000 to 2FFFF (16384 bytes)
+	;.incbin "data/File10_2C000_2FFFF.dat"
+
+
+; Data from 2C000 to 2C00F (16 bytes)	
+_VanHalen1988__palette__bin:	
+	.incbin "banks/bank11/VanHalen1988 (palette).bin"
+	;.db $00 $00 $00 $00 $15 $15 $15 $15 $2A $2A $2A $3F $3F $3F $3F $2A
+	
+; Data from 2C010 to 2C066 (87 bytes)	
+_VanHalen1988__tilemap__stmcompr:
+	.incbin "banks/bank11/VanHalen1988 (tilemap).stmcompr"	
+	;.db $FD $00 $85 $00 $53 $01 $21 $00 $53 $17 $21 $00 $57 $2D $1D $00
+	;.db $5B $44 $19 $00 $5B $5C $19 $00 $5B $74 $19 $00 $5B $8C $19 $00
+	;.db $5B $A4 $19 $00 $5B $BC $19 $00 $5B $D4 $19 $00 $5B $EC $06 $19
+	;.db $00 $5B $04 $06 $19 $00 $5B $1C $06 $19 $00 $5B $34 $06 $19 $00
+	;.db $5B $4C $06 $19 $00 $5B $64 $06 $19 $00 $57 $7C $06 $1D $00 $57
+	;.db $93 $02 $FD $00 $89 $00 $00
+	
+; Data from 2C067 to 2FFFF (16281 bytes)	
+_VanHalen1988__tiles__psgcompr:	
+	.incbin "banks/bank11/VanHalen1988 (tiles).psgcompr"
+	;.incbin ...
+    
+    
 .BANK 12	
 .ORG $0000	
 	
 	; Data from 30000 to 33FFF (16384 bytes)
-	.incbin "data/File11_30000_33FFF.dat"
+	;.incbin "data/File11_30000_33FFF.dat"
 
 ; Data from 30000 to 3000F (16 bytes)	
 _VanHalen1991__palette__bin:	

@@ -10062,18 +10062,7 @@ _splash__tiles__psgcompr:
 	
 	; Data from 28000 to 2BFFF (16384 bytes)
 	.incbin "data/File09_28000_2BFFF.dat"
-	
-.BANK 11	
-.ORG $0000	
-	
-	; Data from 2C000 to 2FFFF (16384 bytes)
-	.incbin "data/File10_2C000_2FFFF.dat"
-	
-.BANK 12	
-.ORG $0000	
-	
-	; Data from 30000 to 33FFF (16384 bytes)
-	;.incbin "data/File11_30000_33FFF.dat"
+
 	
 
 .include "asset_manager.inc"
