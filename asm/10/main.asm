@@ -9988,39 +9988,6 @@ ___SMS__SDSC_signature:
 G$__SMS__SEGA_signature$0$0:	
 ___SMS__SEGA_signature:
 	.db $54 $4D $52 $20 $53 $45 $47 $41 $FF $FF $5C $54 $99 $99 $00 $4C
-	
-.BANK 2	
-.ORG $0000	
-	
-	;.incbin "data/File01_08000_0BFFF.dat"
-; Data from 8000 to 800F (16 bytes)	
-_splash__palette__bin:	
-	.incbin "banks/bank2/splash (palette).bin"
-	;.include "banks/bank2/splash (palette).inc"
-	;.db $00 $03 $01 $05 $05 $06 $06 $07 $07 $17 $1A $2A $0A $1F $0F $3F
-	
-; Data from 8010 to 8056 (71 bytes)	
-_splash__tilemap__stmcompr:	
-	.incbin "banks/bank2/splash (tilemap).stmcompr"
-	;.include "banks/bank2/splash (tilemap).inc"
-	;.db $FD $40 $FD $40 $FD $40 $0D $40 $1B $41 $01 $40 $03 $49 $49 $40
-	;.db $3F $4B $35 $40 $3F $5C $35 $40 $3F $6D $5D $40 $03 $7E $FD $40
-	;.db $65 $40 $07 $80 $55 $40 $07 $83 $04 $42 $01 $40 $07 $86 $01 $40
-	;.db $03 $49 $41 $40 $33 $89 $41 $40 $33 $97 $41 $40 $33 $A5 $FD $40
-	;.db $FD $40 $FD $40 $11 $40 $00
-	
-; Data from 8057 to BFFF (16297 bytes)	
-_splash__tiles__psgcompr:	
-	.incbin "banks/bank2/splash (tiles).psgcompr"
-	;.incbin ...
-	;.include "banks/bank2/splash (tiles).inc"
-	
-.BANK 3	
-.ORG $0000	
-	
-	; Data from C000 to FFFF (16384 bytes)
-	.incbin "data/File02_0C000_0FFFF.dat"
-	
 
 
 .include "asset_manager.inc"

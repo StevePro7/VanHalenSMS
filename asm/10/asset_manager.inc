@@ -1,3 +1,80 @@
+.BANK 2	
+.ORG $0000	
+	
+	;.incbin "data/File01_08000_0BFFF.dat"
+; Data from 8000 to 800F (16 bytes)	
+_splash__palette__bin:	
+	.incbin "banks/bank2/splash (palette).bin"
+	;.include "banks/bank2/splash (palette).inc"
+	;.db $00 $03 $01 $05 $05 $06 $06 $07 $07 $17 $1A $2A $0A $1F $0F $3F
+	
+; Data from 8010 to 8056 (71 bytes)	
+_splash__tilemap__stmcompr:	
+	.incbin "banks/bank2/splash (tilemap).stmcompr"
+	;.include "banks/bank2/splash (tilemap).inc"
+	;.db $FD $40 $FD $40 $FD $40 $0D $40 $1B $41 $01 $40 $03 $49 $49 $40
+	;.db $3F $4B $35 $40 $3F $5C $35 $40 $3F $6D $5D $40 $03 $7E $FD $40
+	;.db $65 $40 $07 $80 $55 $40 $07 $83 $04 $42 $01 $40 $07 $86 $01 $40
+	;.db $03 $49 $41 $40 $33 $89 $41 $40 $33 $97 $41 $40 $33 $A5 $FD $40
+	;.db $FD $40 $FD $40 $11 $40 $00
+	
+; Data from 8057 to BFFF (16297 bytes)	
+_splash__tiles__psgcompr:	
+	.incbin "banks/bank2/splash (tiles).psgcompr"
+	;.include "banks/bank2/splash (tiles).inc"
+	;.incbin ...
+    
+    
+.BANK 3	
+.ORG $0000	
+	
+	; Data from C000 to FFFF (16384 bytes)
+	;.incbin "data/File02_0C000_0FFFF.dat"
+
+
+; Data from C000 to C00F (16 bytes)	
+_VanHalenTitleGap__palette__bin:
+	.incbin "banks/bank3/VanHalenTitleGap (palette).bin"	
+	;.db $00 $00 $10 $14 $15 $05 $25 $38 $29 $39 $39 $2A $3A $3F $3E $2A
+	
+; Data from C010 to C076 (103 bytes)	
+_VanHalenTitleGap__tilemap__stmc:
+	.incbin "banks/bank3/VanHalenTitleGap (tilemap).stmcompr"	
+	;.db $FD $40 $FD $40 $67 $41 $11 $40 $63 $5C $11 $40 $5F $76 $19 $40
+	;.db $5B $8F $19 $40 $5B $A7 $19 $40 $57 $BF $25 $40 $0F $D6 $04 $40
+	;.db $1B $DB $04 $40 $07 $E3 $01 $40 $04 $E6 $25 $40 $04 $E7 $0D $40
+	;.db $1B $E8 $59 $40 $16 $04 $E3 $17 $F0 $5D $40 $17 $F7 $5D $40 $13
+	;.db $FE $06 $5D $40 $04 $04 $06 $04 $BF $0B $05 $06 $6D $40 $07 $09
+	;.db $06 $69 $40 $0B $0C $06 $6D $40 $07 $10 $06 $6D $40 $04 $13 $02
+	;.db $FD $40 $FD $40 $31 $40 $00
+	
+; Data from C077 to D2D7 (4705 bytes)	
+_VanHalenTitleGap__tiles__psgcom:	
+	.incbin "banks/bank3/VanHalenTitleGap (tiles).psgcompr"
+	;.incbin ...
+	
+; Data from D2D8 to D2E7 (16 bytes)	
+_VanHalenTitleTop__palette__bin:
+	.incbin "banks/bank3/VanHalenTitleTop (palette).bin"	
+	;.db $00 $00 $10 $14 $15 $01 $25 $38 $29 $39 $39 $2A $3A $3F $3E $2A
+	
+; Data from D2E8 to D344 (93 bytes)	
+_VanHalenTitleTop__tilemap__stmc:
+	.incbin "banks/bank3/VanHalenTitleTop (tilemap).stmcompr"	
+	;.db $01 $40 $67 $41 $11 $40 $63 $5C $11 $40 $63 $76 $15 $40 $5B $90
+	;.db $19 $40 $5B $A8 $19 $40 $57 $C0 $25 $40 $0B $D7 $01 $40 $1B $DB
+	;.db $04 $40 $0B $E3 $45 $40 $1B $E7 $59 $40 $1B $EF $5D $40 $13 $F7
+	;.db $61 $40 $0F $FD $22 $04 $8F $02 $61 $40 $0A $0F $02 $06 $6D $40
+	;.db $07 $07 $06 $69 $40 $0B $0A $06 $6D $40 $07 $0E $06 $6D $40 $04
+	;.db $11 $02 $FD $40 $FD $40 $FD $40 $FD $40 $29 $40 $00
+	
+; Data from D345 to FFFF (11451 bytes)	
+_VanHalenTitleTop__tiles__psgcom:
+	.incbin "banks/bank3/VanHalenTitleTop (tiles).psgcompr"	
+	;.incbin ...
+	
+
+
 .BANK 4	
 .ORG $0000	
 	
