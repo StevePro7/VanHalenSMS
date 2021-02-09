@@ -32,9 +32,9 @@ PSGSFXSubstringRetAddr dw		; PSGSFXSubstringRetAddr = $C024
 .ende	
 	
 .enum $C02B export	
-_RAM_C02B_ db	
-_RAM_C02C_ db	
-_RAM_C02D_ dw	
+Fscreen_manager$curr_screen_type db	    ; Fscreen_manager$curr_screen_type = $C02B
+Fscreen_manager$next_screen_type db	    ; Fscreen_manager$next_screen_type = $C02C
+Fscreen_manager$load_method$0$0 dw	    ; Fscreen_manager$load_method$0$0 = $C02D
 _RAM_C02F_ dw	
 _RAM_C031_ dw	
 _RAM_C033_ dw	
@@ -43,7 +43,7 @@ _RAM_C037_ dw
 _RAM_C039_ dw	
 _RAM_C03B_ dw	
 _RAM_C03D_ dw	
-_RAM_C03F_ dw	
+Fscreen_manager$update_method$0$ dw	    ; Fscreen_manager$update_method$0$ = $C03F
 _RAM_C041_ dw	
 _RAM_C043_ dw	
 _RAM_C045_ dw	
@@ -52,7 +52,7 @@ _RAM_C049_ dw
 _RAM_C04B_ dw	
 _RAM_C04D_ dw	
 _RAM_C04F_ dw	
-_RAM_C051_ db	
+G$global_scroll_object$0$0 db	    ; G$global_scroll_object$0$0 = $C051
 .ende	
 	
 .enum $C067 export	
