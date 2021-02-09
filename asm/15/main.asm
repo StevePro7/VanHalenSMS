@@ -1,8 +1,8 @@
 ;.sdsctag 1.0,"Van Halen","Van Halen Record Covers for the SMS Power! 2021 Competition","StevePro Studios"
 
-.include "engine/memory_manager.inc"
-.include "engine/enum_manager.inc"
-.include "engine/define_manager.inc"
+.include "devkit/memory_manager.inc"
+.include "devkit/enum_manager.inc"
+.include "devkit/define_manager.inc"
 
 ;.include "content/gfx.inc"
 
@@ -145,9 +145,9 @@ C$main.c$48$3$57:
 		call _devkit_PSGSFXFrame
 		jr A$main$140
 
-.include "engine/psg_manager.inc"
+.include "devkit/psg_manager.inc"
 
-.include "engine/devkit_manager.inc"
+.include "devkit/devkit_manager.inc"
 
 	
 .include "source/asm_manager.inc"
@@ -281,7 +281,7 @@ __divu16:
 	.db $ED $52 $30 $01 $19 $3F $17 $10 $F5 $CB $10 $50 $5F $EB $C9
 
 
-.include "engine/sms_manager.inc"
+.include "devkit/sms_manager.inc"
 
 	
 ; Data from 21C9 to 21CA (2 bytes)	
