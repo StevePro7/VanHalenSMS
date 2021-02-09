@@ -9967,7 +9967,9 @@ gsinit:
 .BANK 1 SLOT 1	
 .ORG $0000	
 	
-	; Data from 7FF0 to 7FFF (16 bytes)
+; Data from 7FF0 to 7FFF (16 bytes)
+G$__SMS__SEGA_signature$0$0:	
+___SMS__SEGA_signature:
 	.db $54 $4D $52 $20 $53 $45 $47 $41 $FF $FF $5C $54 $99 $99 $00 $4C
 	
 .BANK 2	
