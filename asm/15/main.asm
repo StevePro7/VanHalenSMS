@@ -1,3 +1,5 @@
+;.sdsctag 1.0,"Van Halen","Van Halen Record Covers for the SMS Power! 2021 Competition","StevePro Studios"
+
 .include "engine/memory_manager.inc"
 .include "engine/enum_manager.inc"
 .include "engine/define_manager.inc"
