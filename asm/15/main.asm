@@ -150,27 +150,27 @@ C$main.c$48$3$57:
 .include "devkit/devkit_manager.inc"
 
 	
-.include "source/asm_manager.inc"
+.include "engine/asm_manager.inc"
 
-.include "source/audio_manager.inc"
+.include "engine/audio_manager.inc"
 	
-.include "source/content_manager.inc"
+.include "engine/content_manager.inc"
 	
-.include "source/cursor_manager.inc"
+.include "engine/cursor_manager.inc"
 
-.include "source/font_manager.inc"
+.include "engine/font_manager.inc"
 	
-.include "source/input_manager.inc"
+.include "engine/input_manager.inc"
 
-.include "source/record_manager.inc"
+.include "engine/record_manager.inc"
 
-.include "source/screen_manager.inc"
+.include "engine/screen_manager.inc"
 	
-.include "source/scroll_manager.inc"
+.include "engine/scroll_manager.inc"
 
-.include "source/storage_manager.inc"
+.include "engine/storage_manager.inc"
 
-.include "source/timer_manager.inc"
+.include "engine/timer_manager.inc"
 
 	
 
