@@ -1,3 +1,74 @@
+.BANK 4	
+.ORG $0000	
+	
+	; Data from 10000 to 13FFF (16384 bytes)
+	;.incbin "data/File03_10000_13FFF.dat"
+
+
+; Data from 10000 to 1000F (16 bytes)	
+_VanHalen1978__palette__bin:	
+	.incbin "banks/bank4/VanHalen1978 (palette).bin"
+	;.db $00 $00 $00 $00 $14 $01 $05 $15 $10 $25 $39 $02 $16 $1A $3A $1A
+	
+; Data from 10010 to 10088 (121 bytes)	
+_VanHalen1978__tilemap__stmcompr:	
+	.incbin "banks/bank4/VanHalen1978 (tilemap).stmcompr"
+	;.db $FD $00 $85 $00 $03 $01 $04 $00 $0F $03 $01 $00 $33 $08 $29 $00
+	;.db $07 $16 $09 $00 $07 $19 $04 $00 $1F $1C $25 $00 $4F $25 $21 $00
+	;.db $17 $3A $04 $00 $33 $41 $1D $00 $57 $4F $25 $00 $4F $66 $1D $00
+	;.db $57 $7B $19 $00 $5B $92 $19 $00 $26 $04 $6B $57 $AA $19 $00 $5B
+	;.db $C1 $31 $00 $43 $D9 $19 $00 $03 $EB $09 $00 $03 $ED $01 $00 $33
+	;.db $EF $15 $00 $5F $FD $06 $15 $00 $5F $16 $06 $19 $00 $5B $2F $06
+	;.db $19 $00 $5B $47 $06 $19 $00 $5B $5F $06 $19 $00 $5B $77 $06 $21
+	;.db $00 $04 $8F $02 $FD $00 $59 $00 $00
+	
+; Data from 10089 to 13FFF (16247 bytes)	
+_VanHalen1978__tiles__psgcompr:	
+	.incbin "banks/bank4/VanHalen1978 (tiles).psgcompr"
+	;.incbin ...
+
+
+.BANK 5	
+.ORG $0000	
+	
+	; Data from 14000 to 17FFF (16384 bytes)
+	;.incbin "data/File04_14000_17FFF.dat"
+
+
+; Data from 14000 to 1400F (16 bytes)	
+_VanHalen1979__palette__bin:	
+	.incbin "banks/bank5/VanHalen1979 (palette).bin"
+	;.db $00 $00 $10 $10 $10 $15 $29 $07 $1B $2A $2B $2F $3F $3F $3E $25
+	
+; Data from 14010 to 14131 (290 bytes)	
+_VanHalen1979__tilemap__stmcompr:
+	.incbin "banks/bank5/VanHalen1979 (tilemap).stmcompr"	
+	;.db $FD $00 $81 $00 $33 $01 $04 $09 $03 $0F $26 $04 $0C $08 $11 $09
+	;.db $0F $12 $19 $00 $1B $17 $01 $09 $08 $1F $09 $0B $20 $03 $23 $05
+	;.db $09 $07 $25 $19 $00 $01 $09 $08 $28 $09 $26 $04 $23 $07 $29 $04
+	;.db $09 $26 $04 $08 $04 $09 $13 $2C $26 $04 $08 $05 $09 $07 $32 $15
+	;.db $00 $1B $35 $04 $20 $16 $04 $3C $04 $3D $01 $09 $07 $3E $16 $04
+	;.db $28 $03 $41 $04 $09 $0F $43 $15 $00 $5F $48 $15 $00 $04 $48 $5B
+	;.db $61 $15 $00 $5F $79 $15 $00 $04 $01 $5B $92 $15 $00 $04 $01 $16
+	;.db $04 $0C $05 $09 $33 $AA $01 $09 $0B $B8 $15 $00 $08 $01 $BC $16
+	;.db $04 $3C $08 $09 $BD $16 $04 $38 $03 $BE $04 $2B $3B $C0 $19 $00
+	;.db $04 $09 $36 $04 $1D $01 $09 $04 $D0 $16 $08 $BC $1D $23 $D1 $01
+	;.db $09 $0F $DB $15 $00 $08 $79 $3C $36 $04 $2B $03 $E0 $26 $04 $22
+	;.db $0B $E2 $04 $09 $13 $E6 $36 $04 $0C $01 $09 $0F $EC $19 $00 $01
+	;.db $09 $36 $04 $0C $05 $09 $26 $08 $28 $2B $04 $F1 $16 $04 $41 $04
+	;.db $09 $0B $F2 $04 $09 $16 $04 $23 $01 $09 $0F $F6 $19 $00 $19 $09
+	;.db $26 $04 $2B $01 $09 $07 $FB $05 $09 $17 $FE $02 $19 $00 $25 $09
+	;.db $0A $2F $05 $06 $15 $00 $04 $12 $06 $2D $09 $27 $13 $02 $19 $00
+	;.db $05 $09 $0A $03 $1E $06 $04 $09 $04 $20 $06 $0D $09 $2B $21 $02
+	;.db $19 $00 $05 $09 $0A $03 $2D $06 $11 $09 $2F $2F $02 $FD $00 $85
+	;.db $00 $00
+	
+; Data from 14132 to 17FFF (16078 bytes)	
+_VanHalen1979__tiles__psgcompr:	
+	.incbin "banks/bank5/VanHalen1979 (tiles).psgcompr"
+	;.incbin ...
+    
+
 .BANK 6	
 .ORG $0000	
 	
