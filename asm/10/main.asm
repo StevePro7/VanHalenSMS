@@ -10073,7 +10073,7 @@ _splash__tiles__psgcompr:
 .ORG $0000	
 	
 	; Data from 30000 to 33FFF (16384 bytes)
-	.incbin "data/File11_30000_33FFF.dat"
+	;.incbin "data/File11_30000_33FFF.dat"
 	
 
 .include "asset_manager.inc"
