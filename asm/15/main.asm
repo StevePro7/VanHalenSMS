@@ -2173,8 +2173,8 @@ G$engine_content_manager_load_ti:
 _engine_content_manager_load_til:
 		ld hl, $0000
 		push hl
-		;ld hl, _font__tiles__psgcompr	; _font__tiles__psgcompr = $1838
-		ld hl, $1838
+		ld hl, _font__tiles__psgcompr	; _font__tiles__psgcompr = $1838
+		;ld hl, $1838
 		push hl
 		call A$_sms_manager$400
 		pop af
