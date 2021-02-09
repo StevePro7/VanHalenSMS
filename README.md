@@ -4,10 +4,13 @@ Van Halen SMS prototyping
 08/02/2021
 VS Code
 main.asm
+E:\GitHub\StevePro7\VanHalenSMS\asm\00
 E:\GitHub\StevePro7\VanHalenSMS\asm00
+
 
 Notepad++
 main.asm
+E:\GitHub\StevePro7\VanHalenSMS\asm\50
 E:\GitHub\StevePro7\VanHalenSMS\asm01
 
 ORG art
