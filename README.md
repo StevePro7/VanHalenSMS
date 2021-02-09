@@ -13,6 +13,11 @@ main.asm
 E:\GitHub\StevePro7\VanHalenSMS\asm\50
 E:\GitHub\StevePro7\VanHalenSMS\asm01
 
+
+dz80
+E:\Steven\INSTALLATIONSEGA\Tools\VanHalenSMS
+
+
 ORG art
 192x144
 256x192
