@@ -144,7 +144,9 @@ C$main.c$48$3$57:
 		call _devkit_PSGFrame
 		call _devkit_PSGSFXFrame
 		jr A$main$140
-	
+
+;.include "engine/psg_manager.inc"
+
 _PSGStop:	
 		ld a, (PSGMusicStatus)		; PSGMusicStatus = $C001
 		or a
