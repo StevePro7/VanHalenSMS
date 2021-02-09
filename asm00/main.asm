@@ -9721,45 +9721,53 @@ _SMS_nmi_isr:
 		pop af
 		retn
 	
-	; Data from 1EEE to 20E5 (504 bytes)
-	.db $21 $03 $00 $39 $5E $2B $6E $CD $74 $1B $EB $C9 $F1 $E1 $D1 $D5
-	.db $E5 $F5 $CD $77 $1B $EB $C9 $DD $E5 $DD $21 $00 $00 $DD $39 $21
-	.db $F0 $FF $39 $F9 $DD $36 $FE $00 $DD $36 $FF $00 $DD $36 $F3 $00
-	.db $DD $36 $F4 $00 $DD $6E $05 $26 $00 $29 $29 $29 $29 $29 $29 $DD
-	.db $75 $FC $7C $F6 $78 $DD $77 $FD $DD $7E $04 $DD $77 $FA $DD $36
-	.db $FB $00 $DD $CB $FA $26 $DD $CB $FB $16 $DD $7E $FC $DD $B6 $FA
-	.db $5F $DD $7E $FD $DD $B6 $FB $57 $DD $7E $08 $DD $77 $FA $DD $77
-	.db $F1 $DD $36 $F0 $00 $6B $62 $CF $DD $6E $06 $DD $66 $07 $7E $DD
-	.db $77 $F2 $23 $DD $75 $06 $DD $74 $07 $DD $7E $06 $DD $77 $FC $DD
-	.db $7E $07 $DD $77 $FD $DD $7E $F2 $E6 $02 $DD $77 $F9 $DD $7E $F2
-	.db $0F $0F $E6 $3F $DD $77 $F8 $DD $CB $F2 $46 $CA $3E $20 $DD $36
-	.db $F6 $00 $DD $7E $FF $DD $77 $F7 $DD $4E $FC $DD $46 $FD $03 $DD
-	.db $6E $FC $DD $66 $FD $6E $DD $7E $F8 $C6 $02 $DD $77 $F5 $26 $00
-	.db $7D $DD $B6 $F6 $6F $7C $DD $B6 $F7 $67 $DD $7E $F9 $B7 $28 $3C
-	.db $DD $71 $06 $DD $70 $07 $4D $44 $DD $6E $F5 $7D $B7 $CA $B7 $20
-	.db $E5 $69 $60 $DF $E1 $DD $35 $F1 $DD $7E $F1 $B7 $20 $15 $7B $C6
-	.db $40 $5F $7A $CE $00 $57 $E5 $C5 $6B $62 $CF $C1 $E1 $DD $7E $FA
-	.db $DD $77 $F1 $3E $01 $95 $30 $01 $03 $2D $18 $CF $DD $71 $06 $DD
-	.db $70 $07 $DD $75 $FE $DD $74 $FF $DD $46 $F5 $78 $B7 $CA $C7 $20
-	.db $DD $6E $FE $DD $66 $FF $DF $DD $35 $F1 $DD $7E $F1 $B7 $20 $0D
-	.db $21 $40 $00 $19 $5D $54 $CF $DD $7E $FA $DD $77 $F1 $05 $18 $DB
-	.db $DD $7E $F9 $B7 $28 $29 $DD $CB $F2 $56 $28 $10 $DD $7E $FE $DD
-	.db $77 $F3 $DD $7E $FF $DD $77 $F4 $DD $36 $F0 $01 $DD $4E $F2 $CB
-	.db $39 $CB $39 $CB $39 $DD $71 $FF $DD $36 $FE $00 $C3 $66 $1F $DD
-	.db $6E $F8 $7D $B7 $28 $6D $DD $7E $FF $DD $77 $F6 $DD $36 $F7 $00
-	.db $DD $4E $FC $DD $46 $FD $DD $75 $F5 $DD $7E $F5 $B7 $28 $34 $0A
-	.db $D3 $BE $03 $00 $00 $00 $DD $7E $F6 $D3 $BE $DD $35 $F1 $DD $7E
-	.db $F1 $B7 $20 $10 $21 $40 $00 $19 $EB $C5 $6B $62 $CF $C1 $DD $7E
-	.db $FA $DD $77 $F1 $DD $35 $F5 $18 $D0 $DD $71 $FE $DD $70 $FF $18
-	.db $08 $18 $06 $DD $71 $06 $DD $70 $07 $DD $CB $F0 $46 $CA $66 $1F
-	.db $DD $7E $F3 $DD $77 $FE $DD $7E $F4 $DD $77 $FF $DD $36 $F0 $00
-	.db $C3 $66 $1F $DD $F9 $DD $E1 $C9
+; Data from 1EEE to 1EF9 (12 bytes)	
+__moduchar:	
+	.db $21 $03 $00 $39 $5E $2B $6E $CD $74 $1B $EB $C9
+	
+; Data from 1EFA to 1F04 (11 bytes)	
+__moduint:	
+	.db $F1 $E1 $D1 $D5 $E5 $F5 $CD $77 $1B $EB $C9
+	
+; Data from 1F05 to 20E5 (481 bytes)	
+_SMS_loadSTMcompressedTileMapAre:	
+	.db $DD $E5 $DD $21 $00 $00 $DD $39 $21 $F0 $FF $39 $F9 $DD $36 $FE
+	.db $00 $DD $36 $FF $00 $DD $36 $F3 $00 $DD $36 $F4 $00 $DD $6E $05
+	.db $26 $00 $29 $29 $29 $29 $29 $29 $DD $75 $FC $7C $F6 $78 $DD $77
+	.db $FD $DD $7E $04 $DD $77 $FA $DD $36 $FB $00 $DD $CB $FA $26 $DD
+	.db $CB $FB $16 $DD $7E $FC $DD $B6 $FA $5F $DD $7E $FD $DD $B6 $FB
+	.db $57 $DD $7E $08 $DD $77 $FA $DD $77 $F1 $DD $36 $F0 $00 $6B $62
+	.db $CF $DD $6E $06 $DD $66 $07 $7E $DD $77 $F2 $23 $DD $75 $06 $DD
+	.db $74 $07 $DD $7E $06 $DD $77 $FC $DD $7E $07 $DD $77 $FD $DD $7E
+	.db $F2 $E6 $02 $DD $77 $F9 $DD $7E $F2 $0F $0F $E6 $3F $DD $77 $F8
+	.db $DD $CB $F2 $46 $CA $3E $20 $DD $36 $F6 $00 $DD $7E $FF $DD $77
+	.db $F7 $DD $4E $FC $DD $46 $FD $03 $DD $6E $FC $DD $66 $FD $6E $DD
+	.db $7E $F8 $C6 $02 $DD $77 $F5 $26 $00 $7D $DD $B6 $F6 $6F $7C $DD
+	.db $B6 $F7 $67 $DD $7E $F9 $B7 $28 $3C $DD $71 $06 $DD $70 $07 $4D
+	.db $44 $DD $6E $F5 $7D $B7 $CA $B7 $20 $E5 $69 $60 $DF $E1 $DD $35
+	.db $F1 $DD $7E $F1 $B7 $20 $15 $7B $C6 $40 $5F $7A $CE $00 $57 $E5
+	.db $C5 $6B $62 $CF $C1 $E1 $DD $7E $FA $DD $77 $F1 $3E $01 $95 $30
+	.db $01 $03 $2D $18 $CF $DD $71 $06 $DD $70 $07 $DD $75 $FE $DD $74
+	.db $FF $DD $46 $F5 $78 $B7 $CA $C7 $20 $DD $6E $FE $DD $66 $FF $DF
+	.db $DD $35 $F1 $DD $7E $F1 $B7 $20 $0D $21 $40 $00 $19 $5D $54 $CF
+	.db $DD $7E $FA $DD $77 $F1 $05 $18 $DB $DD $7E $F9 $B7 $28 $29 $DD
+	.db $CB $F2 $56 $28 $10 $DD $7E $FE $DD $77 $F3 $DD $7E $FF $DD $77
+	.db $F4 $DD $36 $F0 $01 $DD $4E $F2 $CB $39 $CB $39 $CB $39 $DD $71
+	.db $FF $DD $36 $FE $00 $C3 $66 $1F $DD $6E $F8 $7D $B7 $28 $6D $DD
+	.db $7E $FF $DD $77 $F6 $DD $36 $F7 $00 $DD $4E $FC $DD $46 $FD $DD
+	.db $75 $F5 $DD $7E $F5 $B7 $28 $34 $0A $D3 $BE $03 $00 $00 $00 $DD
+	.db $7E $F6 $D3 $BE $DD $35 $F1 $DD $7E $F1 $B7 $20 $10 $21 $40 $00
+	.db $19 $EB $C5 $6B $62 $CF $C1 $DD $7E $FA $DD $77 $F1 $DD $35 $F5
+	.db $18 $D0 $DD $71 $FE $DD $70 $FF $18 $08 $18 $06 $DD $71 $06 $DD
+	.db $70 $07 $DD $CB $F0 $46 $CA $66 $1F $DD $7E $F3 $DD $77 $FE $DD
+	.db $7E $F4 $DD $77 $FF $DD $36 $F0 $00 $C3 $66 $1F $DD $F9 $DD $E1
+	.db $C9
 	
 ___sdcc_call_hl:	
 		jp (hl)
 	
 _SMS_loadPSGaidencompressedTiles:	
-		ld iy, $0004
+		ld iy, _SMS_crt0_RST08 - 2	; _SMS_crt0_RST08 - 2 = $0004
 		add iy, sp
 		ld l, (iy+0)
 		ld h, (iy+1)
@@ -9781,7 +9789,7 @@ _SMS_loadPSGaidencompressedTiles:
 _LABEL_210B_:	
 		push bc
 		ld b, $04
-		ld de, decompBuffer
+		ld de, decompBuffer	; decompBuffer = $C132
 		ld c, (ix+0)
 		inc ix
 _LABEL_2116_:	
@@ -9800,7 +9808,7 @@ _LABEL_2116_:
 		ld e, a
 		ld a, d
 		ld d, $00
-		ld iy, decompBuffer
+		ld iy, decompBuffer	; decompBuffer = $C132
 		add iy, de
 		ex de, hl
 		cp $03
@@ -9885,9 +9893,9 @@ _LABEL_2177_:
 ++++++++:	
 		dec b
 		jp nz, _LABEL_2116_
-		ld de, $0008
+		ld de, _SMS_crt0_RST08 + 2	; _SMS_crt0_RST08 + 2 = $0008
 		ld c, e
-		ld hl, decompBuffer
+		ld hl, decompBuffer	; decompBuffer = $C132
 --:	
 		ld b, $04
 		push hl
@@ -9907,23 +9915,41 @@ _LABEL_2177_:
 		jp nz, _LABEL_210B_
 		ret
 	
-; Data from 21C9 to 2230 (104 bytes)	
-_DATA_21C9_:	
-	.db $00 $00 $00 $00 $E3 $11 $E8 $11 $ED $11 $F2 $11 $F7 $11 $FC $11
-	.db $01 $12 $06 $12 $0B $12 $10 $12 $15 $12 $1A $12 $89 $80 $32 $81
-	.db $70 $80 $9F $80 $18 $81 $8D $80 $87 $80 $67 $80 $67 $80 $9F $80
-	.db $C7 $80 $7A $80 $10 $80 $10 $80 $10 $80 $10 $80 $10 $80 $10 $80
-	.db $10 $80 $10 $80 $10 $80 $10 $80 $10 $80 $10 $80 $00 $80 $00 $80
+; Data from 21C9 to 21CA (2 bytes)	
+Finput_manager$__xinit_curr_joyp:	
+	.db $00 $00
+	
+; Data from 21CB to 21CC (2 bytes)	
+Finput_manager$__xinit_prev_joyp:	
+	.db $00 $00
+	
+; Data from 21CD to 21E4 (24 bytes)	
+Fcursor_object$__xinit_cursor_al:	
+	.db $E3 $11 $E8 $11 $ED $11 $F2 $11 $F7 $11 $FC $11 $01 $12 $06 $12
+	.db $0B $12 $10 $12 $15 $12 $1A $12
+	
+; Data from 21E5 to 21FC (24 bytes)	
+Frecord_object$__xinit_record_ti:	
+	.db $89 $80 $32 $81 $70 $80 $9F $80 $18 $81 $8D $80 $87 $80 $67 $80
+	.db $67 $80 $9F $80 $C7 $80 $7A $80
+	
+; Data from 21FD to 2214 (24 bytes)	
+Grecord_object$__xinit_record_ti:	
+	.db $10 $80 $10 $80 $10 $80 $10 $80 $10 $80 $10 $80 $10 $80 $10 $80
+	.db $10 $80 $10 $80 $10 $80 $10 $80
+	
+; Data from 2215 to 2230 (28 bytes)	
+Frecord_object$__xinit_record_pa:	
 	.db $00 $80 $00 $80 $00 $80 $00 $80 $00 $80 $00 $80 $00 $80 $00 $80
-	.db $00 $80 $00 $80 $04 $20 $08 $08
+	.db $00 $80 $00 $80 $00 $80 $00 $80 $04 $20 $08 $08
 	
 gsinit:	
 		ld bc, $0068
 		ld a, b
 		or c
 		jr z, +
-		ld de, Finput_manager$curr_joypad1$0$0
-		ld hl, _DATA_21C9_
+		ld de, Finput_manager$curr_joypad1$0$0	; Finput_manager$curr_joypad1$0$0 = $C152
+		ld hl, Finput_manager$__xinit_curr_joyp	; Finput_manager$__xinit_curr_joyp = $21C9
 		ldir
 +:	
 		ret

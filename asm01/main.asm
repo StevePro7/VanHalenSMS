@@ -9934,7 +9934,7 @@ Frecord_object$__xinit_record_ti:
 	.db $67 $80 $9F $80 $C7 $80 $7A $80
 	
 ; Data from 21FD to 2214 (24 bytes)	
-Frecord_object$__xinit_record_ti:	
+Grecord_object$__xinit_record_ti:	
 	.db $10 $80 $10 $80 $10 $80 $10 $80 $10 $80 $10 $80 $10 $80 $10 $80
 	.db $10 $80 $10 $80 $10 $80 $10 $80
 	
