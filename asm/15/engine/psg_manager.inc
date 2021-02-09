@@ -1,4 +1,4 @@
-.section "psg_manager" free
+;.section "psg_manager" free
 _PSGStop:	
 		ld a, (PSGMusicStatus)		; PSGMusicStatus = $C001
 		or a
@@ -642,4 +642,4 @@ _LABEL_7AB_:
 	.db $C9
 	
     
-.ends
+;
