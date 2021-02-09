@@ -1,3 +1,35 @@
+.BANK 13	
+.ORG $0000	
+	
+	; Data from 34000 to 37FFF (16384 bytes)
+	;.incbin "data/File12_34000_37FFF.dat"
+
+
+; Data from 34000 to 3400F (16 bytes)	
+_VanHalen1995__palette__bin:	
+	.incbin "banks/bank13/VanHalen1995 (palette).bin"
+	;.db $00 $00 $00 $01 $01 $01 $15 $15 $06 $16 $16 $1B $1B $2F $3F $2B
+	
+; Data from 34010 to 3409E (143 bytes)	
+_VanHalen1995__tilemap__stmcompr:	
+	.incbin "banks/bank13/VanHalen1995 (tilemap).stmcompr"
+	;.db $FD $00 $29 $00 $04 $01 $05 $00 $08 $01 $00 $01 $02 $16 $04 $02
+	;.db $31 $00 $5B $03 $19 $00 $5F $1B $15 $00 $5F $34 $11 $00 $63 $4D
+	;.db $11 $00 $5F $67 $19 $00 $5B $80 $19 $00 $5B $98 $19 $00 $2F $B0
+	;.db $04 $A2 $23 $BD $19 $00 $5B $C7 $15 $00 $5F $DF $15 $00 $36 $04
+	;.db $33 $5B $F8 $02 $04 $33 $15 $00 $0A $5B $10 $02 $04 $4C $15 $00
+	;.db $0A $5B $28 $06 $19 $00 $5F $40 $02 $11 $00 $12 $04 $33 $0A $5F
+	;.db $59 $06 $11 $00 $5F $72 $02 $04 $66 $11 $00 $0A $63 $8B $06 $15
+	;.db $00 $5F $A5 $06 $1D $00 $04 $BE $06 $11 $00 $07 $BF $06 $01 $00
+	;.db $04 $C2 $06 $05 $00 $03 $C3 $0B $C4 $02 $FD $00 $05 $00 $00
+	
+; Data from 3409F to 37FFF (16225 bytes)	
+_VanHalen1995__tiles__psgcompr:	
+	.incbin "banks/bank13/VanHalen1995 (tiles).psgcompr"
+	;.incbin ...
+	
+
+
 .BANK 14	
 .ORG $0000	
 	

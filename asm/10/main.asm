@@ -10075,13 +10075,5 @@ _splash__tiles__psgcompr:
 	; Data from 30000 to 33FFF (16384 bytes)
 	.incbin "data/File11_30000_33FFF.dat"
 	
-.BANK 13	
-.ORG $0000	
-	
-	; Data from 34000 to 37FFF (16384 bytes)
-	.incbin "data/File12_34000_37FFF.dat"
-	
-
-	
 
 .include "asset_manager.inc"
