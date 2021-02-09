@@ -145,62 +145,44 @@ C$main.c$48$3$57:
 		call _devkit_PSGSFXFrame
 		jr A$main$140
 
+; devkit
 .include "devkit/psg_manager.inc"
-
 .include "devkit/devkit_manager.inc"
 
-	
+
+; engine	
 .include "engine/asm_manager.inc"
-
 .include "engine/audio_manager.inc"
-	
 .include "engine/content_manager.inc"
-	
 .include "engine/cursor_manager.inc"
-
 .include "engine/font_manager.inc"
-	
 .include "engine/input_manager.inc"
-
 .include "engine/record_manager.inc"
-
 .include "engine/screen_manager.inc"
-	
 .include "engine/scroll_manager.inc"
-
 .include "engine/storage_manager.inc"
-
 .include "engine/timer_manager.inc"
 
-	
 
-	
+; object
 .include "object/cursor_object.inc"
-	
 .include "object/record_object.inc"
 
-	
+
+; screen
 .include "screen/none_screen.inc"
-
 .include "screen/splash_screen.inc"	
-
 .include "screen/title_screen.inc"	
-
 .include "screen/scroll_screen.inc"
-	
 .include "screen/select_screen.inc"
-	
 .include "screen/record_screen.inc"
-
 .include "screen/detail_screen.inc"
-	
 .include "screen/test_screen.inc"
-	
 .include "screen/func_screen.inc"
 
 
+; content
 .include "content/gfx.inc"
-
 .include "content/psg.inc"
 
 	
