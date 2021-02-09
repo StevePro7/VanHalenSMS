@@ -1,3 +1,131 @@
+.BANK 6	
+.ORG $0000	
+	
+	; Data from 18000 to 1BFFF (16384 bytes)
+	;.incbin "data/File05_18000_1BFFF.dat"
+
+
+; Data from 18000 to 1800F (16 bytes)	
+_VanHalen1980__palette__bin:	
+	.incbin "banks/bank6/VanHalen1980 (palette).bin"
+	;.db $00 $00 $00 $14 $15 $15 $15 $15 $15 $2A $2A $2A $3F $3F $3F $29
+	
+; Data from 18010 to 1806F (96 bytes)	
+_VanHalen1980__tilemap__stmcompr:
+	.incbin "banks/bank6/VanHalen1980 (tilemap).stmcompr"	
+	;.db $FD $00 $85 $00 $5B $01 $19 $00 $5B $19 $19 $00 $5B $31 $19 $00
+	;.db $5B $49 $19 $00 $5B $61 $19 $00 $5B $79 $19 $00 $33 $91 $04 $85
+	;.db $1F $9F $19 $00 $5B $A8 $19 $00 $5B $C0 $19 $00 $5B $D8 $19 $00
+	;.db $5B $F0 $06 $19 $00 $5B $08 $06 $19 $00 $5B $20 $06 $19 $00 $5B
+	;.db $38 $06 $19 $00 $5B $50 $06 $19 $00 $5B $68 $06 $19 $00 $5B $80
+	;.db $06 $19 $00 $5B $98 $06 $49 $00 $0F $B0 $02 $FD $00 $21 $00 $00
+	
+; Data from 18070 to 1BFFF (16272 bytes)	
+_VanHalen1980__tiles__psgcompr:	
+	.incbin "banks/bank6/VanHalen1980 (tiles).psgcompr"
+	;.incbin ...
+    
+
+.BANK 7	
+.ORG $0000	
+	
+	; Data from 1C000 to 1FFFF (16384 bytes)
+	;.incbin "data/File06_1C000_1FFFF.dat"
+
+
+; Data from 1C000 to 1C00F (16 bytes)	
+_VanHalen1981__palette__bin:	
+	.incbin "banks/bank7/VanHalen1981 (palette).bin"
+	;.db $00 $00 $00 $01 $05 $15 $15 $06 $16 $07 $06 $1B $1A $2F $2F $1A
+	
+; Data from 1C010 to 1C09E (143 bytes)	
+_VanHalen1981__tilemap__stmcompr:
+	.incbin "banks/bank7/VanHalen1981 (tilemap).stmcompr"	
+	;.db $FD $00 $09 $00 $0C $01 $00 $02 $05 $00 $07 $03 $05 $00 $03 $06
+	;.db $10 $02 $08 $00 $09 $05 $00 $04 $0A $1D $00 $5B $0B $15 $00 $63
+	;.db $23 $15 $00 $5F $3D $15 $00 $5F $56 $15 $00 $5B $6F $19 $00 $5B
+	;.db $87 $19 $00 $5B $9F $19 $00 $5B $B7 $19 $00 $5B $CF $19 $00 $5F
+	;.db $E7 $15 $00 $0A $5B $00 $02 $04 $6E $15 $00 $0A $5B $18 $06 $19
+	;.db $00 $5B $30 $32 $04 $23 $02 $15 $00 $0A $5B $48 $06 $15 $00 $5F
+	;.db $60 $06 $19 $00 $5B $79 $06 $19 $00 $5B $91 $06 $19 $00 $5B $A9
+	;.db $06 $19 $00 $0F $C1 $02 $01 $00 $1A $08 $C3 $C5 $0A $04 $C6 $06
+	;.db $09 $00 $04 $C7 $26 $04 $02 $03 $C8 $02 $FD $00 $1D $00 $00
+	
+; Data from 1C09F to 1FFFF (16225 bytes)	
+_VanHalen1981__tiles__psgcompr:
+	.incbin "banks/bank7/VanHalen1981 (tiles).psgcompr"	
+	;.incbin ...
+	
+
+.BANK 8	
+.ORG $0000	
+	
+	; Data from 20000 to 23FFF (16384 bytes)
+	;.incbin "data/File07_20000_23FFF.dat"
+
+
+; Data from 20000 to 2000F (16 bytes)	
+_VanHalen1982__palette__bin:	
+	.incbin "banks/bank8/VanHalen1982 (palette).bin"
+	;.db $00 $00 $01 $01 $01 $02 $02 $03 $03 $03 $03 $17 $3F $3F $2B $1B
+	
+; Data from 20010 to 20117 (264 bytes)	
+_VanHalen1982__tilemap__stmcompr:
+	.incbin "banks/bank8/VanHalen1982 (tilemap).stmcompr"	
+	;.db $FD $00 $15 $00 $03 $01 $11 $00 $03 $03 $01 $00 $03 $05 $04 $00
+	;.db $07 $07 $16 $04 $08 $1D $00 $09 $0A $4B $0B $19 $00 $0D $0A $13
+	;.db $1F $2F $24 $19 $00 $11 $0A $0B $31 $05 $24 $08 $35 $24 $1F $36
+	;.db $19 $00 $19 $0A $07 $3F $19 $24 $0F $42 $19 $00 $04 $47 $15 $0A
+	;.db $0B $48 $11 $24 $13 $4C $19 $00 $03 $52 $1D $0A $03 $54 $0D $24
+	;.db $08 $56 $24 $0B $57 $19 $00 $0B $5B $11 $0A $08 $5F $0A $07 $60
+	;.db $09 $24 $0F $63 $19 $00 $08 $68 $24 $07 $69 $19 $0A $0B $6C $01
+	;.db $24 $0F $70 $19 $00 $13 $75 $1D $0A $03 $7B $01 $24 $0F $7D $19
+	;.db $00 $03 $82 $04 $24 $0F $84 $19 $0A $1B $89 $19 $00 $23 $91 $15
+	;.db $0A $17 $9B $19 $00 $04 $A2 $16 $04 $77 $0D $24 $0F $A3 $11 $0A
+	;.db $13 $A8 $19 $00 $04 $AE $19 $24 $07 $AF $19 $0A $0B $B2 $19 $00
+	;.db $04 $B6 $1D $24 $07 $B7 $19 $0A $04 $5F $03 $BA $19 $00 $04 $BC
+	;.db $25 $24 $03 $BD $1D $0A $04 $BF $19 $00 $04 $C0 $29 $24 $07 $C1
+	;.db $08 $0A $C4 $11 $0A $19 $00 $2F $C5 $04 $24 $36 $04 $37 $03 $D2
+	;.db $15 $0A $19 $00 $2F $D4 $26 $04 $B7 $01 $24 $03 $E1 $11 $0A $21
+	;.db $00 $08 $E3 $05 $0B $E4 $10 $00 $E8 $01 $E9 $16 $04 $07 $05 $00
+	;.db $16 $04 $E6 $FD $00 $21 $00 $00
+	
+; Data from 20118 to 23FFF (16104 bytes)	
+_VanHalen1982__tiles__psgcompr:	
+	.incbin "banks/bank8/VanHalen1982 (tiles).psgcompr"
+	;.incbin ...
+
+
+.BANK 9	
+.ORG $0000	
+	
+	; Data from 24000 to 27FFF (16384 bytes)
+	;.incbin "data/File08_24000_27FFF.dat"
+
+
+; Data from 24000 to 2400F (16 bytes)	
+_VanHalen1984__palette__bin:	
+	.incbin "banks/bank9/VanHalen1984 (palette).bin"
+	;.db $00 $15 $16 $1A $2B $2A $2B $2B $2F $2F $2F $3F $3F $3F $3E $2A
+	
+; Data from 24010 to 2408C (125 bytes)	
+_VanHalen1984__tilemap__stmcompr:
+	.incbin "banks/bank9/VanHalen1984 (tilemap).stmcompr"	
+	;.db $FD $00 $85 $00 $5B $01 $19 $00 $5B $19 $19 $00 $5B $31 $19 $00
+	;.db $5B $49 $19 $00 $5B $61 $19 $00 $5B $79 $19 $00 $5B $91 $19 $00
+	;.db $03 $A9 $16 $04 $92 $4B $AB $04 $A8 $19 $00 $08 $BF $91 $4F $C0
+	;.db $04 $A8 $19 $00 $57 $D5 $04 $A8 $19 $00 $57 $EC $02 $04 $A8 $19
+	;.db $00 $0A $57 $03 $02 $04 $A8 $19 $00 $0A $07 $1A $06 $04 $A8 $47
+	;.db $1D $02 $04 $A8 $19 $00 $0A $07 $30 $4B $32 $02 $04 $A8 $19 $00
+	;.db $05 $A8 $0A $4F $46 $02 $19 $00 $05 $A8 $0A $4F $5B $06 $19 $00
+	;.db $5B $70 $06 $19 $00 $5B $88 $02 $FD $00 $85 $00 $00
+	
+; Data from 2408D to 27FFF (16243 bytes)	
+_VanHalen1984__tiles__psgcompr:	
+	.incbin "banks/bank9/VanHalen1984 (tiles).psgcompr"
+	;.incbin ...
+    
+
 .BANK 10	
 .ORG $0000	
 	

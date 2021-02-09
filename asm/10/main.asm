@@ -10033,35 +10033,6 @@ _splash__tiles__psgcompr:
 	; Data from 14000 to 17FFF (16384 bytes)
 	.incbin "data/File04_14000_17FFF.dat"
 	
-.BANK 6	
-.ORG $0000	
-	
-	; Data from 18000 to 1BFFF (16384 bytes)
-	.incbin "data/File05_18000_1BFFF.dat"
-	
-.BANK 7	
-.ORG $0000	
-	
-	; Data from 1C000 to 1FFFF (16384 bytes)
-	.incbin "data/File06_1C000_1FFFF.dat"
-	
-.BANK 8	
-.ORG $0000	
-	
-	; Data from 20000 to 23FFF (16384 bytes)
-	.incbin "data/File07_20000_23FFF.dat"
-	
-.BANK 9	
-.ORG $0000	
-	
-	; Data from 24000 to 27FFF (16384 bytes)
-	.incbin "data/File08_24000_27FFF.dat"
-	
-.BANK 10	
-.ORG $0000	
-	
-	; Data from 28000 to 2BFFF (16384 bytes)
-	.incbin "data/File09_28000_2BFFF.dat"
 
 	
 
