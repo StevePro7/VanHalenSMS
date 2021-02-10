@@ -423,34 +423,41 @@ _screen_title_screen_update:
 	ld a, $01
 
 ; Data from 13B5 to 13B5 (1 bytes)
-	.db $96
+	sub a, (hl)
 
 ; Data from 13B6 to 13B6 (1 bytes)
-	.db $77
+	ld (hl), a
 
 ; Data from 13B7 to 13B9 (3 bytes)
-	.db $3A $61 $C0
-
+	;.db $3A $61 $C0
+	ld a,($C061)
+	
 ; Data from 13BA to 13BA (1 bytes)
 	or a
 
 ; Data from 13BB to 13BC (2 bytes)
-	.db $28 $0F
+	;.db $28 $0F
+	jr z, $0F
+	
 
 ; Data from 13BD to 13BF (3 bytes)
-	.db $21 $0A $15
+	;.db $21 $0A $15
+	ld hl, $150A
 
 ; Data from 13C0 to 13C0 (1 bytes)
 	push hl
 
 ; Data from 13C1 to 13C3 (3 bytes)
-	.db $21 $07 $14
+	;.db $21 $07 $14
+	ld hl, $1407
+	
 
 ; Data from 13C4 to 13C4 (1 bytes)
 	push hl
 
 ; Data from 13C5 to 13C7 (3 bytes)
-	.db $CD $E9 $0D
+	;.db $CD $E9 $0D
+	call $0DE9
 
 ; Data from 13C8 to 13C8 (1 bytes)
 	pop af
