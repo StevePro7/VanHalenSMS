@@ -283,16 +283,19 @@ _screen_title_screen_update:
 	ld a, ($C060)
 
 ; Data from 136D to 136D (1 bytes)
-	.db $3D
+	dec a
 
 ; Data from 136E to 136F (2 bytes)
-	.db $20 $36
+	;.db $20 $36
+	jr nz, $36
 
 ; Data from 1370 to 1372 (3 bytes)
-	.db $CD $B3 $11
+	;.db $CD $B3 $11
+	call $11B3
 
 ; Data from 1373 to 1373 (1 bytes)
-	.db $4D
+	;.db $4D
+	ld c, l
 
 ; Data from 1374 to 1374 (1 bytes)
 	ld a, c
