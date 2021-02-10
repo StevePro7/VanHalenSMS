@@ -244,31 +244,39 @@ _screen_title_screen_load:
 
 ; Data from 1354 to 1355 (2 bytes)
 _screen_title_screen_update:
-	.db $DD $E5
+	;.db $DD $E5
+	push ix
 
 ; Data from 1356 to 1359 (4 bytes)
-	.db $DD $21 $00 $00
+	;.db $DD $21 $00 $00
+	ld ix, $0000
 
 ; Data from 135A to 135B (2 bytes)
-	.db $DD $39
+	;.db $DD $39
+	add ix, sp
 
 ; Data from 135C to 135C (1 bytes)
 	push af
 
 ; Data from 135D to 135D (1 bytes)
-	.db $3B
+	;.db $3B
+	dec sp
 
 ; Data from 135E to 1360 (3 bytes)
-	.db $DD $7E $04
+	;.db $DD $7E $04
+	ld a, (ix + $04)
 
 ; Data from 1361 to 1363 (3 bytes)
-	.db $DD $77 $FE
+	;.db $DD $77 $FE
+	ld (ix - 2), a
 
 ; Data from 1364 to 1366 (3 bytes)
-	.db $DD $7E $05
+	;.db $DD $7E $05
+	ld a, (ix + $05)
 
 ; Data from 1367 to 1369 (3 bytes)
-	.db $DD $77 $FF
+	;.db $DD $77 $FF
+	ld (ix - 1), a
 
 ; Data from 136A to 136C (3 bytes)
 	.db $3A $60 $C0
