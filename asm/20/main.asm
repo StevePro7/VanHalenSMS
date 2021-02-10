@@ -88,7 +88,7 @@ C$main.c$3$0$0:
 C$main.c$9$1$55:	
 G$main$0$0:	
 _main:
-		call A$asm_manager$59
+		call _engine_asm_manager_clear_VRAM
 		call A$_sms_manager$132
 		call A$_sms_manager$163
 		call A$_sms_manager$887

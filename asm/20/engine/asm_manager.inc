@@ -1,7 +1,4 @@
-A$asm_manager$59:
-C$asm_manager.c$11$0$0:	
-C$asm_manager.c$30$1$1:	
-G$engine_asm_manager_clear_VRAM$:	
+engine_asm_manager_clear_VRAM:
 _engine_asm_manager_clear_VRAM:
 		ld a, $00
 		out (Port_VDPAddress), a
