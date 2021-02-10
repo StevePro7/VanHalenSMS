@@ -15,11 +15,11 @@ _engine_screen_manager_init:
 		ld (Fscreen_manager$load_method$0$0 + 2), hl	; Fscreen_manager$load_method$0$0 + 2 = $C02F
 		ld hl, _screen_title_screen_load	; _screen_title_screen_load = $12B6
 		ld (_RAM_C031_), hl
-		ld hl, A$scroll_screen$62	; A$scroll_screen$62 = $141F
+		ld hl, _screen_scroll_screen_load	; _screen_scroll_screen_load = $141F
 		ld (_RAM_C033_), hl
 		ld hl, _screen_select_screen_load	; _screen_select_screen_load = $1480
 		ld (_RAM_C035_), hl
-		ld hl, A$record_screen$71	; A$record_screen$71 = $1578
+		ld hl, _screen_record_screen_load	; _screen_record_screen_load = $1578
 		ld (_RAM_C037_), hl
 		ld hl, _screen_detail_screen_load	; _screen_detail_screen_load = $1605
 		ld (_RAM_C039_), hl
@@ -33,11 +33,11 @@ _engine_screen_manager_init:
 		ld (Fscreen_manager$update_method$0$ + 2), hl	; Fscreen_manager$update_method$0$ + 2 = $C041
 		ld hl, _screen_title_screen_update	; _screen_title_screen_update = $1354
 		ld (_RAM_C043_), hl
-		ld hl, A$scroll_screen$78	; A$scroll_screen$78 = $1425
+		ld hl, _screen_scroll_screen_update	; _screen_scroll_screen_update = $1425
 		ld (_RAM_C045_), hl
 		ld hl, _screen_select_screen_update	; _screen_select_screen_update = $14E3
 		ld (_RAM_C047_), hl
-		ld hl, A$record_screen$89	; A$record_screen$89 = $157E
+		ld hl, _screen_record_screen_update	; _screen_record_screen_update = $157E
 		ld (_RAM_C049_), hl
 		ld hl, _screen_detail_screen_update	; _screen_detail_screen_update = $1606
 		ld (_RAM_C04B_), hl
