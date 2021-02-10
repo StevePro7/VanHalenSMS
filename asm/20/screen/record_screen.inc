@@ -262,13 +262,17 @@ _screen_record_screen_update:
 	ret
 
 ; Data from 15F9 to 15FB (3 bytes)
-	.db $CD $2B $08
+	;.db $CD $2B $08
+	call $082B
 
 ; Data from 15FC to 15FE (3 bytes)
-	.db $CD $5A $0A
+	;.db $CD $5A $0A
+	call $0A5A
 
 ; Data from 15FF to 1601 (3 bytes)
-	.db $CD $8B $0F
+	;.db $CD $8B $0F
+	call $0F8B
 
 ; Data from 1602 to 1604 (3 bytes)
-	.db $C3 $25 $08
+	;.db $C3 $25 $08
+	jp $0825
