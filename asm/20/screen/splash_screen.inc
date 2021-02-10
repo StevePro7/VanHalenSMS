@@ -233,10 +233,12 @@ _screen_splash_screen_update:
 	ld (hl), $01
 	
 ; Data from 12AC to 12AD (2 bytes)	
-	.db $DD $F9
+	;.db $DD $F9
+	ld sp,ix
 	
 ; Data from 12AE to 12AF (2 bytes)	
-	.db $DD $E1
+	;.db $DD $E1
+	pop ix
 	
 ; Data from 12B0 to 12B0 (1 bytes)	
 	ret
