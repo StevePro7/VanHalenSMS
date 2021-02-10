@@ -9,7 +9,7 @@ _engine_screen_manager_init:
 		ld (Fscreen_manager$next_screen_type), a	; Fscreen_manager$next_screen_type = $C02C
 		ld hl, Fscreen_manager$curr_screen_type	; Fscreen_manager$curr_screen_type = $C02B
 		ld (hl), $00
-		ld hl, A$none_screen$60	; A$none_screen$60 = $122B
+		ld hl, _screen_none_screen_load	; _screen_none_screen_load = $122B
 		ld (Fscreen_manager$load_method$0$0), hl	; Fscreen_manager$load_method$0$0 = $C02D
 		ld hl, A$splash_screen$69	; A$splash_screen$69 = $1233
 		ld (Fscreen_manager$load_method$0$0 + 2), hl	; Fscreen_manager$load_method$0$0 + 2 = $C02F
@@ -27,7 +27,7 @@ _engine_screen_manager_init:
 		ld (_RAM_C03B_), hl
 		ld hl, A$func_screen$62	; A$func_screen$62 = $1655
 		ld (_RAM_C03D_), hl
-		ld hl, A$none_screen$73	; A$none_screen$73 = $122C
+		ld hl, _screen_none_screen_update	; _screen_none_screen_update = $122C
 		ld (Fscreen_manager$update_method$0$), hl	; Fscreen_manager$update_method$0$ = $C03F
 		ld hl, A$splash_screen$109	; A$splash_screen$109 = $124F
 		ld (Fscreen_manager$update_method$0$ + 2), hl	; Fscreen_manager$update_method$0$ + 2 = $C041
