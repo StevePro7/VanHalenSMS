@@ -48,7 +48,7 @@ A$timer_manager$82:
 A$timer_manager$87:	
 C$timer_manager.c$14$1$4:	
 XG$engine_delay_manager_load$0$0:	
-	.db $C9
+	ret
 	
 ; Data from 117C to 117F (4 bytes)	
 A$timer_manager$103:	
@@ -135,7 +135,7 @@ C$timer_manager.c$27$1$5:
 A$timer_manager$138:	
 C$timer_manager.c$28$1$5:	
 XG$engine_delay_manager_update$0:	
-	.db $C9
+	ret
 	
 ; Data from 119E to 11A0 (3 bytes)	
 A$timer_manager$154:	
@@ -266,7 +266,7 @@ C$timer_manager.c$50$1$9:
 A$timer_manager$220:	
 C$timer_manager.c$51$1$9:	
 XG$engine_reset_manager_update$0:	
-	.db $C9
+	ret
 	
 ; Data from 11D5 to 11D7 (3 bytes)	
 A$timer_manager$236:	
@@ -285,4 +285,4 @@ A$timer_manager$237:
 A$timer_manager$242:	
 C$timer_manager.c$56$1$11:	
 XG$engine_reset_manager_reset$0$:	
-	.db $C9
+	ret

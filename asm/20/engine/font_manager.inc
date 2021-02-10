@@ -97,7 +97,7 @@ A$font_manager$89:
 A$font_manager$94:	
 C$font_manager.c$16$1$21:	
 XG$engine_font_manager_draw_char:	
-	.db $C9
+	ret
 	
 ; Data from DE9 to DEA (2 bytes)	
 A$font_manager$104:	
@@ -300,7 +300,7 @@ A$font_manager$170:
 A$font_manager$175:	
 C$font_manager.c$30$1$23:	
 XG$engine_font_manager_draw_text:	
-	.db $C9
+	ret
 	
 ; Data from E3B to E3C (2 bytes)	
 A$font_manager$185:	
@@ -615,5 +615,5 @@ A$font_manager$293:
 A$font_manager$298:	
 C$font_manager.c$62$2$27:	
 XG$engine_font_manager_draw_data:	
-	.db $C9
+	ret
 	

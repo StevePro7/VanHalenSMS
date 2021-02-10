@@ -22,7 +22,7 @@ A$audio_manager$63:
 A$audio_manager$68:	
 C$audio_manager.c$21$1$15:	
 XG$engine_audio_manager_sfx_righ:	
-	.db $C9
+	ret
 	
 ; Data from A79 to A7B (3 bytes)	
 A$audio_manager$81:	
@@ -48,7 +48,7 @@ A$audio_manager$84:
 A$audio_manager$89:	
 C$audio_manager.c$25$1$16:	
 XG$engine_audio_manager_sfx_wron:	
-	.db $C9
+	ret
 	
 ; Data from A82 to A84 (3 bytes)	
 A$audio_manager$102:	
@@ -74,7 +74,7 @@ A$audio_manager$105:
 A$audio_manager$110:	
 C$audio_manager.c$29$1$17:	
 XG$engine_audio_manager_sfx_chea:	
-	.db $C9
+	ret
 	
 ; Data from A8B to A8D (3 bytes)	
 A$audio_manager$123:	
@@ -150,4 +150,4 @@ A$audio_manager$147:
 A$audio_manager$152:	
 C$audio_manager.c$43$1$19:	
 XFaudio_manager$play_sfx$0$0:	
-	.db $C9
+	ret

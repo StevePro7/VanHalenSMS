@@ -130,7 +130,7 @@ A$storage_manager$113:
 C$storage_manager.c$24$1$18:	
 C$storage_manager.c$25$1$18:	
 XG$engine_storage_manager_availa:	
-	.db $C9
+	ret
 	
 ; Data from 1107 to 1109 (3 bytes)	
 A$storage_manager$126:	

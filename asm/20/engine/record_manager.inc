@@ -27,7 +27,7 @@ A$record_manager$73:
 A$record_manager$78:	
 C$record_manager.c$16$1$19:	
 XG$engine_record_manager_init$0$:	
-	.db $C9
+	ret
 	
 ; Data from F8B to F8C (2 bytes)	
 A$record_manager$88:	
@@ -247,7 +247,7 @@ A$record_manager$159:
 A$record_manager$164:	
 C$record_manager.c$32$1$20:	
 XG$engine_record_manager_load$0$:	
-	.db $C9
+	ret
 	
 ; Data from FE1 to FE3 (3 bytes)	
 A$record_manager$177:	
@@ -281,7 +281,7 @@ A$record_manager$188:
 	
 ; Data from FEB to FEB (1 bytes)	
 A$record_manager$189:	
-	.db $C9
+	ret
 	
 ; Data from FEC to FED (2 bytes)	
 A$record_manager$194:	
@@ -296,7 +296,7 @@ A$record_manager$195:
 A$record_manager$200:	
 C$record_manager.c$45$1$21:	
 XG$engine_record_manager_decreme:	
-	.db $C9
+	ret
 	
 ; Data from FF0 to FF2 (3 bytes)	
 A$record_manager$213:	
@@ -330,7 +330,7 @@ A$record_manager$224:
 	
 ; Data from FFA to FFA (1 bytes)	
 A$record_manager$225:	
-	.db $C9
+	ret
 	
 ; Data from FFB to FFB (1 bytes)	
 A$record_manager$230:	
@@ -345,4 +345,4 @@ A$record_manager$231:
 A$record_manager$236:	
 C$record_manager.c$57$1$24:	
 XG$engine_record_manager_increme:	
-	.db $C9
+	ret

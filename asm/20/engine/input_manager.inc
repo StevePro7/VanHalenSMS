@@ -99,7 +99,7 @@ A$input_manager$110:
 	
 ; Data from EFC to EFC (1 bytes)	
 A$input_manager$111:	
-	.db $C9
+	ret
 	
 ; Data from EFD to EFE (2 bytes)	
 A$input_manager$113:	
@@ -109,7 +109,7 @@ A$input_manager$113:
 A$input_manager$118:	
 C$input_manager.c$20$1$21:	
 XG$engine_input_manager_hold$0$0:	
-	.db $C9
+	ret
 	
 ; Data from F00 to F02 (3 bytes)	
 A$input_manager$131:	
@@ -143,7 +143,7 @@ A$input_manager$136:
 A$input_manager$141:	
 C$input_manager.c$25$1$23:	
 XG$engine_input_manager_move$0$0:	
-	.db $C9
+	ret
 	
 ; Data from F0B to F0C (2 bytes)	
 A$input_manager$154:	
@@ -392,7 +392,7 @@ C$input_manager.c$43$2$25:
 	
 ; Data from F5C to F5C (1 bytes)	
 A$input_manager$232:	
-	.db $C9
+	ret
 	
 ; Data from F5D to F5D (1 bytes)	
 A$input_manager$237:	
@@ -487,5 +487,5 @@ C$input_manager.c$74$1$24:
 A$input_manager$289:	
 C$input_manager.c$75$1$24:	
 XG$engine_input_manager_directio:	
-	.db $C9
+	ret
 	

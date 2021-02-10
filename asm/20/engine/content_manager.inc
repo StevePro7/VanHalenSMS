@@ -121,7 +121,7 @@ A$content_manager$127:
 A$content_manager$132:	
 C$content_manager.c$26$1$18:	
 XG$engine_content_manager_load_s:	
-	.db $C9
+	ret
 	
 ; Data from AE3 to AE4 (2 bytes)	
 A$content_manager$145:	
@@ -255,7 +255,7 @@ A$content_manager$186:
 A$content_manager$191:	
 C$content_manager.c$47$1$19:	
 XG$engine_content_manager_load_t:	
-	.db $C9
+	ret
 	
 ; Data from B1A to B1B (2 bytes)	
 A$content_manager$204:	
@@ -389,7 +389,7 @@ A$content_manager$245:
 A$content_manager$250:	
 C$content_manager.c$57$1$20:	
 XH$engine_content_manager_load_t:	
-	.db $C9
+	ret
 	
 A$content_manager$263:	
 C$content_manager.c$60$1$20:	

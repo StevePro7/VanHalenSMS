@@ -385,7 +385,7 @@ A$cursor_manager$214:
 A$cursor_manager$219:	
 C$cursor_manager.c$43$2$26:	
 XG$engine_cursor_manager_load$0$:	
-	.db $C9
+	ret
 	
 ; Data from C05 to C07 (3 bytes)	
 A$cursor_manager$235:	
@@ -432,7 +432,7 @@ A$cursor_manager$243:
 A$cursor_manager$248:	
 C$cursor_manager.c$55$1$30:	
 XG$engine_cursor_manager_save$0$:	
-	.db $C9
+	ret
 	
 ; Data from C13 to C14 (2 bytes)	
 A$cursor_manager$258:	
@@ -1257,7 +1257,7 @@ A$cursor_manager$505:
 A$cursor_manager$510:	
 C$cursor_manager.c$85$1$31:	
 XG$engine_cursor_manager_draw$0$:	
-	.db $C9
+	ret
 	
 ; Data from D3E to D40 (3 bytes)	
 A$cursor_manager$523:	
@@ -1616,5 +1616,5 @@ A$cursor_manager$732:
 A$cursor_manager$737:	
 C$cursor_manager.c$156$1$44:	
 XFcursor_manager$update_values$0:	
-	.db $C9
+	ret
 	
