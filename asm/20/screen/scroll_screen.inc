@@ -89,31 +89,39 @@ _screen_scroll_screen_update:
 	inc sp
 
 ; Data from 144D to 144D (1 bytes)
-	.db $4D
+	;.db $4D
+	ld c, l
 
 ; Data from 144E to 1450 (3 bytes)
-	.db $21 $03 $00
+	;.db $21 $03 $00
+	ld hl, $0003
 
 ; Data from 1451 to 1451 (1 bytes)
-	.db $39
+	;.db $39
+	add hl, sp
 
 ; Data from 1452 to 1452 (1 bytes)
-	.db $7E
+	;.db $7E
+	ld a, (hl)
 
 ; Data from 1453 to 1453 (1 bytes)
-	.db $23
+	;.db $23
+	inc hl
 
 ; Data from 1454 to 1454 (1 bytes)
-	.db $66
+	;.db $66
+	ld h, (hl)
 
 ; Data from 1455 to 1455 (1 bytes)
-	.db $6F
+	;.db $6F
+	ld l, a
 
 ; Data from 1456 to 1456 (1 bytes)
-	.db $79
+	;.db $79
+	ld a, c
 
 ; Data from 1457 to 1457 (1 bytes)
-	.db $B7
+	or a
 
 ; Data from 1458 to 1459 (2 bytes)
 	.db $20 $0C
@@ -128,13 +136,13 @@ _screen_scroll_screen_update:
 	.db $FD $7E $00
 
 ; Data from 1463 to 1463 (1 bytes)
-	.db $B7
+	or a
 
 ; Data from 1464 to 1465 (2 bytes)
 	.db $28 $16
 
 ; Data from 1466 to 1466 (1 bytes)
-	.db $E5
+	push hl
 
 ; Data from 1467 to 1468 (2 bytes)
 	.db $3E $04
@@ -162,7 +170,8 @@ _screen_scroll_screen_update:
 	inc sp
 
 ; Data from 1473 to 1475 (3 bytes)
-	.db $CD $46 $08
+	;.db $CD $46 $08
+	call $0846
 
 ; Data from 1476 to 1476 (1 bytes)
 	inc sp
@@ -171,13 +180,16 @@ _screen_scroll_screen_update:
 	pop hl
 
 ; Data from 1478 to 1479 (2 bytes)
-	.db $36 $04
+	;.db $36 $04
+	ld (hl), $04
 
 ; Data from 147A to 147B (2 bytes)
-	.db $18 $02
+	;.db $18 $02
+	jr $02
 
 ; Data from 147C to 147D (2 bytes)
-	.db $36 $03
+	;.db $36 $03
+	ld (hl), $03
 
 ; Data from 147E to 147E (1 bytes)
 	inc sp
