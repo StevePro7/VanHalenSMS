@@ -136,20 +136,22 @@ _screen_scroll_screen_update:
 	add iy, sp
 
 ; Data from 1460 to 1462 (3 bytes)
-	.db $FD $7E $00
+	;.db $FD $7E $00
 	ld a, (iy + $00)
 
 ; Data from 1463 to 1463 (1 bytes)
 	or a
 
 ; Data from 1464 to 1465 (2 bytes)
-	.db $28 $16
-
+	;.db $28 $16
+	jr z, $16
+	
 ; Data from 1466 to 1466 (1 bytes)
 	push hl
 
 ; Data from 1467 to 1468 (2 bytes)
-	.db $3E $04
+	;.db $3E $04
+	ld a, $04
 
 ; Data from 1469 to 1469 (1 bytes)
 	push af
@@ -158,7 +160,8 @@ _screen_scroll_screen_update:
 	inc sp
 
 ; Data from 146B to 146D (3 bytes)
-	.db $CD $CA $10
+	;.db $CD $CA $10
+	call $10CA
 
 ; Data from 146E to 146E (1 bytes)
 	inc sp
