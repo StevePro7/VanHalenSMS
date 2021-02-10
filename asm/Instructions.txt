@@ -1,6 +1,9 @@
 Single byte instructions
 10/02/2021
 
+http://www.z80.info/z80oplist.txt
+http://jgmalcolm.com/z80/opcodes/opcodesB
+https://www.rapidtables.com/convert/number/hex-to-ascii.html
 
 $C9	ret
 

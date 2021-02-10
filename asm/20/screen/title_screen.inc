@@ -216,25 +216,31 @@ _screen_title_screen_load:
 	ld (hl), $00
 
 ; Data from 132F to 1331 (3 bytes)
-	.db $21 $61 $C0
+	;.db $21 $61 $C0
+	ld hl, $C061
 
 ; Data from 1332 to 1333 (2 bytes)
-	.db $36 $00
+	;.db $36 $00
+	ld (hl), $00
 
 ; Data from 1334 to 1334 (1 bytes)
 	ret
 
 ; Data from 1335 to 1340 (12 bytes)
 	.db $50 $52 $45 $53 $53 $20 $53 $54 $41 $52 $54 $00
+	; PRESS START
 
 ; Data from 1341 to 1347 (7 bytes)
 	.db $52 $45 $43 $4F $52 $44 $00
+	; RECORD
 
 ; Data from 1348 to 134E (7 bytes)
 	.db $43 $4F $56 $45 $52 $53 $00
+	; COVERS
 
 ; Data from 134F to 1353 (5 bytes)
 	.db $56 $31 $2E $30 $00
+	; V1.0
 
 ; Data from 1354 to 1355 (2 bytes)
 _screen_title_screen_update:
