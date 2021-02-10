@@ -575,6 +575,8 @@ _screen_title_screen_update:
 ; Data from 1407 to 1412 (12 bytes)
 	.dsb 11, $20
 	.db $00
+	; LOCALE_BLANK_CLEAR
 
 ; Data from 1413 to 141E (12 bytes)
 	.db $50 $52 $45 $53 $53 $20 $53 $54 $41 $52 $54 $00
+	; PRESS START
