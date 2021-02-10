@@ -24,7 +24,7 @@ $E5	push hl
 $F5	push af
 
 
-79 	ld a, c
+
 
 E3 	ex (sp), hl
 
@@ -37,6 +37,7 @@ AF	xor a
 46	ld b, (hl)
 71	ld (hl), c
 77	ld (hl), a
+79 	ld a, c
 7D	ld a, l
 
 B7	or a

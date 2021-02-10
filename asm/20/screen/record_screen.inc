@@ -19,22 +19,22 @@ _screen_record_screen_update:
 	.db $3E $04
 
 ; Data from 1588 to 1588 (1 bytes)
-	.db $F5
+	push af
 
 ; Data from 1589 to 1589 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 158A to 158C (3 bytes)
 	.db $CD $D3 $0E
 
 ; Data from 158D to 158D (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 158E to 158E (1 bytes)
-	.db $7D
+	ld a, l
 
 ; Data from 158F to 158F (1 bytes)
-	.db $B7
+	or a
 
 ; Data from 1590 to 1591 (2 bytes)
 	.db $28 $06
@@ -49,22 +49,22 @@ _screen_record_screen_update:
 	.db $3E $08
 
 ; Data from 159A to 159A (1 bytes)
-	.db $F5
+	push af
 
 ; Data from 159B to 159B (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 159C to 159E (3 bytes)
 	.db $CD $D3 $0E
 
 ; Data from 159F to 159F (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 15A0 to 15A0 (1 bytes)
-	.db $7D
+	ld a, l
 
 ; Data from 15A1 to 15A1 (1 bytes)
-	.db $B7
+	or a
 
 ; Data from 15A2 to 15A3 (2 bytes)
 	.db $28 $06
@@ -79,40 +79,40 @@ _screen_record_screen_update:
 	.db $3E $10
 
 ; Data from 15AC to 15AC (1 bytes)
-	.db $F5
+	push af
 
 ; Data from 15AD to 15AD (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 15AE to 15B0 (3 bytes)
 	.db $CD $D3 $0E
 
 ; Data from 15B1 to 15B1 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 15B2 to 15B2 (1 bytes)
 	.db $4D
 
 ; Data from 15B3 to 15B3 (1 bytes)
-	.db $C5
+	push bc
 
 ; Data from 15B4 to 15B5 (2 bytes)
 	.db $3E $20
 
 ; Data from 15B6 to 15B6 (1 bytes)
-	.db $F5
+	push af
 
 ; Data from 15B7 to 15B7 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 15B8 to 15BA (3 bytes)
 	.db $CD $D3 $0E
 
 ; Data from 15BB to 15BB (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 15BC to 15BC (1 bytes)
-	.db $C1
+	pop bc
 
 ; Data from 15BD to 15BF (3 bytes)
 	.db $DD $5E $04
@@ -124,7 +124,7 @@ _screen_record_screen_update:
 	.db $79
 
 ; Data from 15C4 to 15C4 (1 bytes)
-	.db $B7
+	or a
 
 ; Data from 15C5 to 15C6 (2 bytes)
 	.db $20 $03
@@ -136,76 +136,76 @@ _screen_record_screen_update:
 	.db $28 $29
 
 ; Data from 15CA to 15CA (1 bytes)
-	.db $D5
+	push de
 
 ; Data from 15CB to 15CB (1 bytes)
-	.db $AF
+	xor a
 
 ; Data from 15CC to 15CC (1 bytes)
-	.db $F5
+	push af
 
 ; Data from 15CD to 15CD (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 15CE to 15D0 (3 bytes)
 	.db $CD $46 $08
 
 ; Data from 15D1 to 15D1 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 15D2 to 15D2 (1 bytes)
-	.db $D1
+	pop de
 
 ; Data from 15D3 to 15D5 (3 bytes)
 	.db $21 $2A $C0
 
 ; Data from 15D6 to 15D6 (1 bytes)
-	.db $46
+	ld b, (hl)
 
 ; Data from 15D7 to 15D7 (1 bytes)
-	.db $D5
+	push de
 
 ; Data from 15D8 to 15D8 (1 bytes)
-	.db $C5
+	push bc
 
 ; Data from 15D9 to 15D9 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 15DA to 15DC (3 bytes)
 	.db $CD $7D $0F
 
 ; Data from 15DD to 15DD (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 15DE to 15DE (1 bytes)
-	.db $D1
+	pop de
 
 ; Data from 15DF to 15E1 (3 bytes)
 	.db $21 $2A $C0
 
 ; Data from 15E2 to 15E2 (1 bytes)
-	.db $46
+	ld b, (hl)
 
 ; Data from 15E3 to 15E3 (1 bytes)
-	.db $D5
+	push de
 
 ; Data from 15E4 to 15E4 (1 bytes)
-	.db $C5
+	push bc
 
 ; Data from 15E5 to 15E5 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 15E6 to 15E8 (3 bytes)
 	.db $CD $67 $0B
 
 ; Data from 15E9 to 15E9 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 15EA to 15EC (3 bytes)
 	.db $CD $1A $11
 
 ; Data from 15ED to 15ED (1 bytes)
-	.db $D1
+	pop de
 
 ; Data from 15EE to 15EF (2 bytes)
 	.db $3E $04
