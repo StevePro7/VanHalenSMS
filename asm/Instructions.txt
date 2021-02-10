@@ -3,7 +3,11 @@ Single byte instructions
 
 http://www.z80.info/z80oplist.txt
 http://jgmalcolm.com/z80/opcodes/opcodesB
+
+ASCII
 https://www.rapidtables.com/convert/number/hex-to-ascii.html
+https://www.smspower.org/maxim/HowToProgram/Lesson1AllOnOnePage
+
 
 $C9	ret
 
@@ -28,7 +32,7 @@ E3 	ex (sp), hl
 AF	xor a
 
 33	inc sp
-3D	dec sp
+3D	dec a
 
 46	ld b, (hl)
 71	ld (hl), c

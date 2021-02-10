@@ -304,7 +304,8 @@ _screen_title_screen_update:
 	or a
 
 ; Data from 1376 to 1377 (2 bytes)
-	.db $28 $1B
+	;.db $28 $1B
+	jr z, $1B
 
 ; Data from 1378 to 1378 (1 bytes)
 	push bc
