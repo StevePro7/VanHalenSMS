@@ -213,19 +213,24 @@ _screen_splash_screen_update:
 	ld a, (ix - 1)
 	
 ; Data from 12A3 to 12A3 (1 bytes)	
-	.db $B7
+	;.db $B7
+	or a
 	
 ; Data from 12A4 to 12A5 (2 bytes)	
-	.db $28 $04
+	;.db $28 $04
+	jr z, $04
 	
 ; Data from 12A6 to 12A7 (2 bytes)	
-	.db $36 $02
+	;.db $36 $02
+	ld (hl), $02
 	
 ; Data from 12A8 to 12A9 (2 bytes)	
-	.db $18 $02
+	;.db $18 $02
+	jr $02
 	
 ; Data from 12AA to 12AB (2 bytes)	
-	.db $36 $01
+	;.db $36 $01
+	ld (hl), $01
 	
 ; Data from 12AC to 12AD (2 bytes)	
 	.db $DD $F9
