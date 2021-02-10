@@ -1,0 +1,17 @@
+Single byte instructions
+10/02/2021
+
+
+$C9	ret
+
+
+$C1	pop bc
+$D1	pop de
+$E1	pop hl
+$F1	pop af
+
+
+$C5	push bc
+$D5	push de
+$E5	push hl
+$F5	push af
