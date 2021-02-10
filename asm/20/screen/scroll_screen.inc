@@ -124,16 +124,20 @@ _screen_scroll_screen_update:
 	or a
 
 ; Data from 1458 to 1459 (2 bytes)
-	.db $20 $0C
+	;.db $20 $0C
+	jr nz, $0C
 
 ; Data from 145A to 145D (4 bytes)
-	.db $FD $21 $00 $00
+	;.db $FD $21 $00 $00
+	ld iy, $0000
 
 ; Data from 145E to 145F (2 bytes)
-	.db $FD $39
+	;.db $FD $39
+	add iy, sp
 
 ; Data from 1460 to 1462 (3 bytes)
 	.db $FD $7E $00
+	ld a, (iy + $00)
 
 ; Data from 1463 to 1463 (1 bytes)
 	or a
