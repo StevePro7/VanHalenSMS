@@ -95,43 +95,52 @@ _screen_select_screen_load:
 	inc sp
 
 ; Data from 14B7 to 14B9 (3 bytes)
-	.db $CD $9B $0B
+	;.db $CD $9B $0B
+	call $0B9B
 
 ; Data from 14BA to 14BA (1 bytes)
 	inc sp
 
 ; Data from 14BB to 14BD (3 bytes)
-	.db $21 $0F $00
+	;.db $21 $0F $00
+	ld hl, $000F
 
 ; Data from 14BE to 14BE (1 bytes)
 	push hl
 
 ; Data from 14BF to 14C1 (3 bytes)
-	.db $CD $63 $11
+	;.db $CD $63 $11
+	call $1163
 
 ; Data from 14C2 to 14C4 (3 bytes)
-	.db $21 $4B $00
+	;.db $21 $4B $00
+	ld hl, $004B
 
 ; Data from 14C5 to 14C5 (1 bytes)
 	ex (sp), hl
 
 ; Data from 14C6 to 14C8 (3 bytes)
-	.db $CD $9E $11
+	;.db $CD $9E $11
+	call $119E
 
 ; Data from 14C9 to 14C9 (1 bytes)
 	pop af
 
 ; Data from 14CA to 14CC (3 bytes)
-	.db $21 $63 $C0
+	;.db $21 $63 $C0
+	ld hl, $C063
 
 ; Data from 14CD to 14CE (2 bytes)
-	.db $36 $00
+	;.db $36 $00
+	ld (hl), $00
 
 ; Data from 14CF to 14D1 (3 bytes)
-	.db $21 $64 $C0
+	;.db $21 $64 $C0
+	ld hl, $C064
 
 ; Data from 14D2 to 14D3 (2 bytes)
-	.db $36 $01
+	;.db $36 $01
+	ld (hl), $01
 
 ; Data from 14D4 to 14D4 (1 bytes)
 	ret
