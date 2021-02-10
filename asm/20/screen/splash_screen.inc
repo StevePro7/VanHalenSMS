@@ -190,22 +190,27 @@ _screen_splash_screen_update:
 	
 ; Data from 1294 to 1296 (3 bytes)	
 	;.db $DD $6E $04
-	ld l, (ix + 04)
+	ld l, (ix + $04)
 	
 ; Data from 1297 to 1299 (3 bytes)	
-	.db $DD $66 $05
+	;.db $DD $66 $05
+	ld h, (ix + $05)
 	
 ; Data from 129A to 129C (3 bytes)	
-	.db $DD $7E $FE
+	;.db $DD $7E $FE
+	ld a, (ix - 2)
 	
 ; Data from 129D to 129D (1 bytes)	
-	.db $B7
+	;.db $B7
+	or a
 	
 ; Data from 129E to 129F (2 bytes)	
-	.db $20 $06
+	;.db $20 $06
+	jr nz, $06
 	
 ; Data from 12A0 to 12A2 (3 bytes)	
-	.db $DD $7E $FF
+	;.db $DD $7E $FF
+	ld a, (ix - 1)
 	
 ; Data from 12A3 to 12A3 (1 bytes)	
 	.db $B7
