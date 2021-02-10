@@ -1,272 +1,190 @@
-; Data from 1655 to 1657 (3 bytes)	
-A$func_screen$62:	
-C$func_screen.c$15$0$0:	
-C$func_screen.c$17$1$23:	
-G$screen_func_screen_load$0$0:	
-_screen_func_screen_load:	
+; Data from 1655 to 1657 (3 bytes)
+_screen_func_screen_load:
 	.db $CD $2B $08
-	
-; Data from 1658 to 165A (3 bytes)	
-A$func_screen$66:	
-C$func_screen.c$18$1$23:	
+
+; Data from 1658 to 165A (3 bytes)
 	.db $CD $A2 $0A
-	
-; Data from 165B to 165D (3 bytes)	
-A$func_screen$70:	
-C$func_screen.c$19$1$23:	
+
+; Data from 165B to 165D (3 bytes)
 	.db $CD $E3 $0A
-	
-; Data from 165E to 1660 (3 bytes)	
-A$func_screen$74:	
-C$func_screen.c$20$1$23:	
+
+; Data from 165E to 1660 (3 bytes)
 	.db $CD $51 $0B
-	
-; Data from 1661 to 1663 (3 bytes)	
-A$func_screen$78:	
-C$func_screen.c$21$1$23:	
+
+; Data from 1661 to 1663 (3 bytes)
 	.db $21 $06 $0C
-	
-; Data from 1664 to 1664 (1 bytes)	
-A$func_screen$79:	
+
+; Data from 1664 to 1664 (1 bytes)
 	.db $E5
-	
-; Data from 1665 to 1667 (3 bytes)	
-A$func_screen$80:	
+
+; Data from 1665 to 1667 (3 bytes)
 	.db $21 $B9 $16
-	
-; Data from 1668 to 1668 (1 bytes)	
-A$func_screen$81:	
+
+; Data from 1668 to 1668 (1 bytes)
 	.db $E5
-	
-; Data from 1669 to 166B (3 bytes)	
-A$func_screen$82:	
+
+; Data from 1669 to 166B (3 bytes)
 	.db $CD $E9 $0D
-	
-; Data from 166C to 166C (1 bytes)	
-A$func_screen$83:	
+
+; Data from 166C to 166C (1 bytes)
 	.db $F1
-	
-; Data from 166D to 166F (3 bytes)	
-A$func_screen$87:	
-C$func_screen.c$22$1$23:	
+
+; Data from 166D to 166F (3 bytes)
 	.db $21 $14 $0C
-	
-; Data from 1670 to 1670 (1 bytes)	
-A$func_screen$88:	
+
+; Data from 1670 to 1670 (1 bytes)
 	.db $E3
-	
-; Data from 1671 to 1673 (3 bytes)	
-A$func_screen$89:	
+
+; Data from 1671 to 1673 (3 bytes)
 	.db $21 $C0 $16
-	
-; Data from 1674 to 1674 (1 bytes)	
-A$func_screen$90:	
+
+; Data from 1674 to 1674 (1 bytes)
 	.db $E5
-	
-; Data from 1675 to 1677 (3 bytes)	
-A$func_screen$91:	
+
+; Data from 1675 to 1677 (3 bytes)
 	.db $CD $E9 $0D
-	
-; Data from 1678 to 1678 (1 bytes)	
-A$func_screen$92:	
+
+; Data from 1678 to 1678 (1 bytes)
 	.db $F1
-	
-; Data from 1679 to 1679 (1 bytes)	
-A$func_screen$93:	
+
+; Data from 1679 to 1679 (1 bytes)
 	.db $F1
-	
-; Data from 167A to 167C (3 bytes)	
-A$func_screen$97:	
-C$func_screen.c$24$1$23:	
+
+; Data from 167A to 167C (3 bytes)
 	.db $21 $B8 $16
-	
-; Data from 167D to 167D (1 bytes)	
-A$func_screen$98:	
+
+; Data from 167D to 167D (1 bytes)
 	.db $56
-	
-; Data from 167E to 1680 (3 bytes)	
-A$func_screen$99:	
+
+; Data from 167E to 1680 (3 bytes)
 	.db $21 $B7 $16
-	
-; Data from 1681 to 1681 (1 bytes)	
-A$func_screen$100:	
+
+; Data from 1681 to 1681 (1 bytes)
 	.db $5E
-	
-; Data from 1682 to 1682 (1 bytes)	
-A$func_screen$101:	
+
+; Data from 1682 to 1682 (1 bytes)
 	.db $D5
-	
-; Data from 1683 to 1685 (3 bytes)	
-A$func_screen$102:	
+
+; Data from 1683 to 1685 (3 bytes)
 	.db $21 $C7 $16
-	
-; Data from 1686 to 1686 (1 bytes)	
-A$func_screen$103:	
+
+; Data from 1686 to 1686 (1 bytes)
 	.db $E5
-	
-; Data from 1687 to 1689 (3 bytes)	
-A$func_screen$104:	
+
+; Data from 1687 to 1689 (3 bytes)
 	.db $CD $E9 $0D
-	
-; Data from 168A to 168A (1 bytes)	
-A$func_screen$105:	
+
+; Data from 168A to 168A (1 bytes)
 	.db $F1
-	
-; Data from 168B to 168B (1 bytes)	
-A$func_screen$106:	
+
+; Data from 168B to 168B (1 bytes)
 	.db $F1
-	
-; Data from 168C to 168E (3 bytes)	
-A$func_screen$110:	
-C$func_screen.c$25$1$23:	
+
+; Data from 168C to 168E (3 bytes)
 	.db $21 $B8 $16
-	
-; Data from 168F to 168F (1 bytes)	
-A$func_screen$111:	
+
+; Data from 168F to 168F (1 bytes)
 	.db $46
-	
-; Data from 1690 to 1692 (3 bytes)	
-A$func_screen$112:	
+
+; Data from 1690 to 1692 (3 bytes)
 	.db $3A $B7 $16
-	
-; Data from 1693 to 1694 (2 bytes)	
-A$func_screen$113:	
+
+; Data from 1693 to 1694 (2 bytes)
 	.db $C6 $07
-	
-; Data from 1695 to 1695 (1 bytes)	
-A$func_screen$114:	
+
+; Data from 1695 to 1695 (1 bytes)
 	.db $4F
-	
-; Data from 1696 to 1696 (1 bytes)	
-A$func_screen$115:	
+
+; Data from 1696 to 1696 (1 bytes)
 	.db $C5
-	
-; Data from 1697 to 1699 (3 bytes)	
-A$func_screen$116:	
+
+; Data from 1697 to 1699 (3 bytes)
 	.db $21 $CC $16
-	
-; Data from 169A to 169A (1 bytes)	
-A$func_screen$117:	
+
+; Data from 169A to 169A (1 bytes)
 	.db $E5
-	
-; Data from 169B to 169D (3 bytes)	
-A$func_screen$118:	
+
+; Data from 169B to 169D (3 bytes)
 	.db $CD $E9 $0D
-	
-; Data from 169E to 169E (1 bytes)	
-A$func_screen$119:	
+
+; Data from 169E to 169E (1 bytes)
 	.db $F1
-	
-; Data from 169F to 169F (1 bytes)	
-A$func_screen$120:	
+
+; Data from 169F to 169F (1 bytes)
 	.db $F1
-	
-; Data from 16A0 to 16A2 (3 bytes)	
-A$func_screen$124:	
-C$func_screen.c$26$1$23:	
+
+; Data from 16A0 to 16A2 (3 bytes)
 	.db $21 $B8 $16
-	
-; Data from 16A3 to 16A3 (1 bytes)	
-A$func_screen$125:	
+
+; Data from 16A3 to 16A3 (1 bytes)
 	.db $46
-	
-; Data from 16A4 to 16A6 (3 bytes)	
-A$func_screen$126:	
+
+; Data from 16A4 to 16A6 (3 bytes)
 	.db $3A $B7 $16
-	
-; Data from 16A7 to 16A8 (2 bytes)	
-A$func_screen$127:	
+
+; Data from 16A7 to 16A8 (2 bytes)
 	.db $C6 $0E
-	
-; Data from 16A9 to 16A9 (1 bytes)	
-A$func_screen$128:	
+
+; Data from 16A9 to 16A9 (1 bytes)
 	.db $4F
-	
-; Data from 16AA to 16AA (1 bytes)	
-A$func_screen$129:	
+
+; Data from 16AA to 16AA (1 bytes)
 	.db $C5
-	
-; Data from 16AB to 16AD (3 bytes)	
-A$func_screen$130:	
+
+; Data from 16AB to 16AD (3 bytes)
 	.db $21 $D1 $16
-	
-; Data from 16AE to 16AE (1 bytes)	
-A$func_screen$131:	
+
+; Data from 16AE to 16AE (1 bytes)
 	.db $E5
-	
-; Data from 16AF to 16B1 (3 bytes)	
-A$func_screen$132:	
+
+; Data from 16AF to 16B1 (3 bytes)
 	.db $CD $E9 $0D
-	
-; Data from 16B2 to 16B2 (1 bytes)	
-A$func_screen$133:	
+
+; Data from 16B2 to 16B2 (1 bytes)
 	.db $F1
-	
-; Data from 16B3 to 16B3 (1 bytes)	
-A$func_screen$134:	
+
+; Data from 16B3 to 16B3 (1 bytes)
 	.db $F1
-	
-; Data from 16B4 to 16B6 (3 bytes)	
-A$func_screen$142:	
-C$func_screen.c$27$1$23:	
-C$func_screen.c$32$1$23:	
-XG$screen_func_screen_load$0$0:	
+
+; Data from 16B4 to 16B6 (3 bytes)
 	.db $C3 $25 $08
-	
-; Data from 16B7 to 16B7 (1 bytes)	
-Ffunc_screen$x$0$0:	
+
+; Data from 16B7 to 16B7 (1 bytes)
 	.db $04
-	
-; Data from 16B8 to 16B8 (1 bytes)	
-Ffunc_screen$y$0$0:	
+
+; Data from 16B8 to 16B8 (1 bytes)
 	.db $14
-	
-; Data from 16B9 to 16BF (7 bytes)	
-Ffunc_screen$__str_0$0$0:	
+
+; Data from 16B9 to 16BF (7 bytes)
 	.db $52 $45 $43 $4F $52 $44 $00
-	
-; Data from 16C0 to 16C6 (7 bytes)	
-Ffunc_screen$__str_1$0$0:	
+
+; Data from 16C0 to 16C6 (7 bytes)
 	.db $43 $4F $56 $45 $52 $53 $00
-	
-; Data from 16C7 to 16CB (5 bytes)	
-Ffunc_screen$__str_2$0$0:	
+
+; Data from 16C7 to 16CB (5 bytes)
 	.db $31 $39 $38 $34 $00
-	
-; Data from 16CC to 16D0 (5 bytes)	
-Ffunc_screen$__str_3$0$0:	
+
+; Data from 16CC to 16D0 (5 bytes)
 	.db $31 $39 $38 $36 $00
-	
-; Data from 16D1 to 16D5 (5 bytes)	
-Ffunc_screen$__str_4$0$0:	
+
+; Data from 16D1 to 16D5 (5 bytes)
 	.db $31 $39 $38 $38 $00
-	
-; Data from 16D6 to 16D6 (1 bytes)	
-A$func_screen$181:	
-C$func_screen.c$34$1$23:	
-C$func_screen.c$57$1$25:	
-G$screen_func_screen_update$0$0:	
-_screen_func_screen_update:	
+
+; Data from 16D6 to 16D6 (1 bytes)
+_screen_func_screen_update:
 	.db $C1
-	
-; Data from 16D7 to 16D7 (1 bytes)	
-A$func_screen$182:	
+
+; Data from 16D7 to 16D7 (1 bytes)
 	.db $E1
-	
-; Data from 16D8 to 16D8 (1 bytes)	
-A$func_screen$183:	
+
+; Data from 16D8 to 16D8 (1 bytes)
 	.db $E5
-	
-; Data from 16D9 to 16D9 (1 bytes)	
-A$func_screen$184:	
+
+; Data from 16D9 to 16D9 (1 bytes)
 	.db $C5
-	
-; Data from 16DA to 16DB (2 bytes)	
-A$func_screen$185:	
+
+; Data from 16DA to 16DB (2 bytes)
 	.db $36 $08
-	
-; Data from 16DC to 16DC (1 bytes)	
-A$func_screen$190:	
-C$func_screen.c$58$1$25:	
-XG$screen_func_screen_update$0$0:	
+
+; Data from 16DC to 16DC (1 bytes)
 	ret
