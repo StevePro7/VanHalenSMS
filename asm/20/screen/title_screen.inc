@@ -546,28 +546,36 @@ _screen_title_screen_update:
 	pop af
 
 ; Data from 13F2 to 13F4 (3 bytes)
-	.db $CD $70 $0A
+	;.db $CD $70 $0A
+	call $0A70
 
 ; Data from 13F5 to 13F7 (3 bytes)
-	.db $21 $60 $C0
+	;.db $21 $60 $C0
+	ld hl, $C060
 
 ; Data from 13F8 to 13F9 (2 bytes)
-	.db $36 $01
+	;.db $36 $01
+	ld (hl), $01
 
 ; Data from 13FA to 13FC (3 bytes)
-	.db $DD $6E $FE
-
+	;.db $DD $6E $FE
+	ld l, (ix - 2)
+	
 ; Data from 13FD to 13FF (3 bytes)
-	.db $DD $66 $FF
+	;.db $DD $66 $FF
+	ld h, (ix - 1)
 
 ; Data from 1400 to 1401 (2 bytes)
-	.db $36 $02
+	;.db $36 $02
+	ld (hl), $02
 
 ; Data from 1402 to 1403 (2 bytes)
-	.db $DD $F9
+	;.db $DD $F9
+	ld sp, ix
 
 ; Data from 1404 to 1405 (2 bytes)
-	.db $DD $E1
+	;.db $DD $E1
+	pop ix
 
 ; Data from 1406 to 1406 (1 bytes)
 	ret
