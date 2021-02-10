@@ -2,7 +2,7 @@
 _screen_none_screen_load:	
 	ret
 	
-; Data from 122C to 122C (1 bytes)	
+; Data from 122C to 1232 (7 bytes)
 _screen_none_screen_update:	
 	;.db $D1
 	pop de

@@ -4,7 +4,6 @@ _cursor_gridX:
 	.db $04 $0B $12 $19
 	
 ; Data from 11E0 to 11E2 (3 bytes)	
-G$cursor_gridY$0$0:	
 _cursor_gridY:	
 	.db $10 $13 $16
 	
