@@ -1,31 +1,38 @@
 ; Data from 141F to 1421 (3 bytes)
 _screen_scroll_screen_load:
-	.db $21 $62 $C0
+	;.db $21 $62 $C0
+	ld hl, $C062
 
 ; Data from 1422 to 1423 (2 bytes)
-	.db $36 $00
+	;.db $36 $00
+	ld (hl), $00
 
 ; Data from 1424 to 1424 (1 bytes)
 	ret
 
 ; Data from 1425 to 1425 (1 bytes)
 _screen_scroll_screen_update:
-	.db $3B
+	dec sp
 
 ; Data from 1426 to 1428 (3 bytes)
-	.db $3A $62 $C0
+	;.db $3A $62 $C0
+	ld a, ($C062)
 
 ; Data from 1429 to 142A (2 bytes)
-	.db $D6 $20
+	;.db $D6 $20
+	sub a, $20
 
 ; Data from 142B to 142C (2 bytes)
-	.db $20 $04
+	;.db $20 $04
+	jr nz, $04
 
 ; Data from 142D to 142E (2 bytes)
-	.db $3E $01
+	;.db $3E $01
+	ld a, $01
 
 ; Data from 142F to 1430 (2 bytes)
-	.db $18 $01
+	;.db $18 $01
+	jr $01
 
 ; Data from 1431 to 1431 (1 bytes)
 	xor a
