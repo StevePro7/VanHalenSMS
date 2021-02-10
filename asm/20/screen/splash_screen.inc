@@ -73,31 +73,40 @@ _screen_splash_screen_update:
 	ld (ix - 2), l
 	
 ; Data from 125E to 125F (2 bytes)	
-	.db $3E $10
+	;.db $3E $10
+	ld a, $10
 	
 ; Data from 1260 to 1260 (1 bytes)	
-	.db $F5
+	;.db $F5
+	push af
 	
 ; Data from 1261 to 1261 (1 bytes)	
-	.db $33
+	;.db $33
+	inc sp
 	
 ; Data from 1262 to 1264 (3 bytes)	
-	.db $CD $D3 $0E
+	;.db $CD $D3 $0E
+	call $0ED3
 	
 ; Data from 1265 to 1265 (1 bytes)	
-	.db $33
+	;.db $33
+	inc sp
 	
 ; Data from 1266 to 1268 (3 bytes)	
-	.db $DD $75 $FF
+	;.db $DD $75 $FF
+	ld (ix - 1), l
 	
 ; Data from 1269 to 126A (2 bytes)	
-	.db $3E $20
+	;.db $3E $20
+	ld a, $20
 	
 ; Data from 126B to 126B (1 bytes)	
-	.db $F5
+	;.db $F5
+	push af
 	
 ; Data from 126C to 126C (1 bytes)	
-	.db $33
+	;.db $33
+	inc sp
 	
 ; Data from 126D to 126F (3 bytes)	
 	.db $CD $00 $0F
