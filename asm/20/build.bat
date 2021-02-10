@@ -18,3 +18,6 @@ if exist main.o del main.o
 echo Run
 ::java -jar C:\SEGA\Emulicious\Emulicious.jar output.sms
 ::output.sms
+
+:: TODO delete
+cp output.sms E:\GitHub\StevePro7\Z80test\05-Utils\BinaryFileXcomp\bin\Debug\input\
