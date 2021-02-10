@@ -124,28 +124,28 @@ _screen_title_screen_load:
 	pop af
 
 ; Data from 1305 to 1305 (1 bytes)
-	.db $AF
+	xor a
 
 ; Data from 1306 to 1306 (1 bytes)
 	.db $F5
 
 ; Data from 1307 to 1307 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 1308 to 130A (3 bytes)
 	.db $CD $7D $0F
 
 ; Data from 130B to 130B (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 130C to 130E (3 bytes)
 	.db $CD $D8 $10
 
 ; Data from 130F to 130F (1 bytes)
-	.db $7D
+	ld a, l
 
 ; Data from 1310 to 1310 (1 bytes)
-	.db $B7
+	add a, a
 
 ; Data from 1311 to 1312 (2 bytes)
 	.db $28 $03
@@ -163,13 +163,13 @@ _screen_title_screen_load:
 	.db $C5
 
 ; Data from 131B to 131B (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 131C to 131E (3 bytes)
 	.db $CD $7D $0F
 
 ; Data from 131F to 131F (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 1320 to 1322 (3 bytes)
 	.db $21 $2A $C0
@@ -181,13 +181,13 @@ _screen_title_screen_load:
 	.db $C5
 
 ; Data from 1325 to 1325 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 1326 to 1328 (3 bytes)
 	.db $CD $67 $0B
 
 ; Data from 1329 to 1329 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 132A to 132C (3 bytes)
 	.db $21 $60 $C0
@@ -263,7 +263,7 @@ _screen_title_screen_update:
 	ld a, c
 
 ; Data from 1375 to 1375 (1 bytes)
-	.db $B7
+	add a, a
 
 ; Data from 1376 to 1377 (2 bytes)
 	.db $28 $1B
@@ -317,7 +317,7 @@ _screen_title_screen_update:
 	ld a, c
 
 ; Data from 1394 to 1394 (1 bytes)
-	.db $B7
+	add a, a
 
 ; Data from 1395 to 1396 (2 bytes)
 	.db $28 $04
@@ -350,10 +350,10 @@ _screen_title_screen_update:
 	.db $DD $75 $FD
 
 ; Data from 13AC to 13AC (1 bytes)
-	.db $7D
+	ld a, l
 
 ; Data from 13AD to 13AD (1 bytes)
-	.db $B7
+	add a, a
 
 ; Data from 13AE to 13AF (2 bytes)
 	.db $28 $29
@@ -374,7 +374,7 @@ _screen_title_screen_update:
 	.db $3A $61 $C0
 
 ; Data from 13BA to 13BA (1 bytes)
-	.db $B7
+	add a, a
 
 ; Data from 13BB to 13BC (2 bytes)
 	.db $28 $0F
@@ -431,19 +431,19 @@ _screen_title_screen_update:
 	.db $F5
 
 ; Data from 13DC to 13DC (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 13DD to 13DF (3 bytes)
 	.db $CD $D3 $0E
 
 ; Data from 13E0 to 13E0 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 13E1 to 13E1 (1 bytes)
-	.db $7D
+	ld a, l
 
 ; Data from 13E2 to 13E2 (1 bytes)
-	.db $B7
+	add a, a
 
 ; Data from 13E3 to 13E4 (2 bytes)
 	.db $28 $15
