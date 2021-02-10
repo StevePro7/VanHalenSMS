@@ -109,14 +109,16 @@ _screen_splash_screen_update:
 	inc sp
 	
 ; Data from 126D to 126F (3 bytes)	
-	.db $CD $00 $0F
+	;.db $CD $00 $0F
+	call $0F00
 	
 ; Data from 1270 to 1270 (1 bytes)	
-	.db $33
+	;.db $33
+	inc sp
 	
 ; Data from 1271 to 1271 (1 bytes)	
 	.db $7D
-	
+
 ; Data from 1272 to 1272 (1 bytes)	
 	.db $B7
 	
