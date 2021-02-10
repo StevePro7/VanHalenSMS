@@ -69,7 +69,8 @@ _screen_splash_screen_update:
 	call $117C
 	
 ; Data from 125B to 125D (3 bytes)	
-	.db $DD $75 $FE
+	;.db $DD $75 $FE
+	ld (ix - 2), l
 	
 ; Data from 125E to 125F (2 bytes)	
 	.db $3E $10
