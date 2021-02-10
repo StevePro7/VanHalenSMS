@@ -1,9 +1,4 @@
 ; Data from 12B6 to 12B8 (3 bytes)	
-A$title_screen$81:	
-C$title_screen.c$20$0$0:	
-C$title_screen.c$22$1$28:	
-C$title_screen.c$25$1$28:	
-G$screen_title_screen_load$0$0:	
 _screen_title_screen_load:	
 	.db $CD $2B $08
 	
