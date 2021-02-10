@@ -466,22 +466,26 @@ _screen_title_screen_update:
 	pop af
 
 ; Data from 13CA to 13CB (2 bytes)
-	.db $18 $0D
+	;.db $18 $0D
+	jr $0D
 
 ; Data from 13CC to 13CE (3 bytes)
-	.db $21 $0A $15
+	;.db $21 $0A $15
+	ld hl, $150A
 
 ; Data from 13CF to 13CF (1 bytes)
 	push hl
 
 ; Data from 13D0 to 13D2 (3 bytes)
-	.db $21 $13 $14
+	;.db $21 $13 $14
+	ld hl, $1413
 
 ; Data from 13D3 to 13D3 (1 bytes)
 	push hl
 
 ; Data from 13D4 to 13D6 (3 bytes)
-	.db $CD $E9 $0D
+	;.db $CD $E9 $0D
+	call $0DE9
 
 ; Data from 13D7 to 13D7 (1 bytes)
 	pop af
@@ -490,7 +494,8 @@ _screen_title_screen_update:
 	pop af
 
 ; Data from 13D9 to 13DA (2 bytes)
-	.db $3E $10
+	;.db $3E $10
+	ld a, $10
 
 ; Data from 13DB to 13DB (1 bytes)
 	push af
@@ -499,7 +504,8 @@ _screen_title_screen_update:
 	inc sp
 
 ; Data from 13DD to 13DF (3 bytes)
-	.db $CD $D3 $0E
+	;.db $CD $D3 $0E
+	call $0ED3
 
 ; Data from 13E0 to 13E0 (1 bytes)
 	inc sp
@@ -511,22 +517,27 @@ _screen_title_screen_update:
 	or a
 
 ; Data from 13E3 to 13E4 (2 bytes)
-	.db $28 $15
+	;.db $28 $15
+	jr z, $15
 
 ; Data from 13E5 to 13E7 (3 bytes)
-	.db $21 $0A $15
+	;.db $21 $0A $15
+	ld hl, $150A
 
 ; Data from 13E8 to 13E8 (1 bytes)
 	push hl
 
 ; Data from 13E9 to 13EB (3 bytes)
-	.db $21 $13 $14
+	;.db $21 $13 $14
+	ld hl, $1413
 
 ; Data from 13EC to 13EC (1 bytes)
 	push hl
 
 ; Data from 13ED to 13EF (3 bytes)
-	.db $CD $E9 $0D
+	;.db $CD $E9 $0D
+	call $0DE9
+	
 
 ; Data from 13F0 to 13F0 (1 bytes)
 	pop af
