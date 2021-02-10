@@ -17,7 +17,7 @@ _engine_screen_manager_init:
 		ld (_RAM_C031_), hl
 		ld hl, A$scroll_screen$62	; A$scroll_screen$62 = $141F
 		ld (_RAM_C033_), hl
-		ld hl, A$select_screen$86	; A$select_screen$86 = $1480
+		ld hl, _screen_select_screen_load	; _screen_select_screen_load = $1480
 		ld (_RAM_C035_), hl
 		ld hl, A$record_screen$71	; A$record_screen$71 = $1578
 		ld (_RAM_C037_), hl
@@ -35,7 +35,7 @@ _engine_screen_manager_init:
 		ld (_RAM_C043_), hl
 		ld hl, A$scroll_screen$78	; A$scroll_screen$78 = $1425
 		ld (_RAM_C045_), hl
-		ld hl, A$select_screen$190	; A$select_screen$190 = $14E3
+		ld hl, _screen_select_screen_update	; _screen_select_screen_update = $14E3
 		ld (_RAM_C047_), hl
 		ld hl, A$record_screen$89	; A$record_screen$89 = $157E
 		ld (_RAM_C049_), hl
