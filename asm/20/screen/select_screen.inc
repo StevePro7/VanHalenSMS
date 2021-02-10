@@ -199,16 +199,20 @@ _screen_select_screen_update:
 	ld hl, $C064
 
 ; Data from 14FC to 14FD (2 bytes)
-	.db $3E $01
+	;.db $3E $01
+	ld a, $01
 
 ; Data from 14FE to 14FE (1 bytes)
-	.db $96
+	;.db $96
+	sub a, (hl)
 
 ; Data from 14FF to 14FF (1 bytes)
-	.db $77
+	;.db $77
+	ld (hl), a
 
 ; Data from 1500 to 1502 (3 bytes)
-	.db $CD $B3 $11
+	;.db $CD $B3 $11
+	call $11B3
 
 ; Data from 1503 to 1503 (1 bytes)
 	pop de
@@ -229,10 +233,12 @@ _screen_select_screen_update:
 	or a
 
 ; Data from 1509 to 150A (2 bytes)
-	.db $28 $04
+	;.db $28 $04
+	jr z, $04
 
 ; Data from 150B to 150C (2 bytes)
-	.db $3E $05
+	;.db $3E $05
+	ld a, $05
 
 ; Data from 150D to 150E (2 bytes)
 	.db $18 $02
