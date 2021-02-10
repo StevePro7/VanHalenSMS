@@ -28,16 +28,16 @@ _screen_scroll_screen_update:
 	.db $18 $01
 
 ; Data from 1431 to 1431 (1 bytes)
-	.db $AF
+	xor a
 
 ; Data from 1432 to 1432 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 1433 to 1433 (1 bytes)
-	.db $F5
+	push af
 
 ; Data from 1434 to 1434 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 1435 to 1438 (4 bytes)
 	.db $FD $21 $62 $C0
@@ -49,31 +49,31 @@ _screen_scroll_screen_update:
 	.db $FD $34 $00
 
 ; Data from 143F to 143F (1 bytes)
-	.db $C5
+	push bc
 
 ; Data from 1440 to 1440 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 1441 to 1443 (3 bytes)
 	.db $CD $46 $08
 
 ; Data from 1444 to 1444 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 1445 to 1446 (2 bytes)
 	.db $3E $10
 
 ; Data from 1447 to 1447 (1 bytes)
-	.db $F5
+	push af
 
 ; Data from 1448 to 1448 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 1449 to 144B (3 bytes)
 	.db $CD $D3 $0E
 
 ; Data from 144C to 144C (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 144D to 144D (1 bytes)
 	.db $4D
@@ -127,34 +127,35 @@ _screen_scroll_screen_update:
 	.db $3E $04
 
 ; Data from 1469 to 1469 (1 bytes)
-	.db $F5
+	push af
 
 ; Data from 146A to 146A (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 146B to 146D (3 bytes)
 	.db $CD $CA $10
 
 ; Data from 146E to 146E (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 146F to 1470 (2 bytes)
-	.db $3E $20
+	;.db $3E $20
+	ld a, $20
 
 ; Data from 1471 to 1471 (1 bytes)
-	.db $F5
+	push af
 
 ; Data from 1472 to 1472 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 1473 to 1475 (3 bytes)
 	.db $CD $46 $08
 
 ; Data from 1476 to 1476 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 1477 to 1477 (1 bytes)
-	.db $E1
+	pop hl
 
 ; Data from 1478 to 1479 (2 bytes)
 	.db $36 $04
@@ -166,7 +167,7 @@ _screen_scroll_screen_update:
 	.db $36 $03
 
 ; Data from 147E to 147E (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from 147F to 147F (1 bytes)
 	ret
