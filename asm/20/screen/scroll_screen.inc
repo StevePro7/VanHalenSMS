@@ -47,7 +47,8 @@ _screen_scroll_screen_update:
 	inc sp
 
 ; Data from 1435 to 1438 (4 bytes)
-	.db $FD $21 $62 $C0
+	;.db $FD $21 $62 $C0
+	ld iy, $C062
 
 ; Data from 1439 to 143B (3 bytes)
 	.db $FD $46 $00
