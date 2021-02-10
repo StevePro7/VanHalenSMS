@@ -117,61 +117,80 @@ _screen_splash_screen_update:
 	inc sp
 	
 ; Data from 1271 to 1271 (1 bytes)	
-	.db $7D
+	;.db $7D
+	ld a, l
 
 ; Data from 1272 to 1272 (1 bytes)	
-	.db $B7
+	;.db $B7
+	or a
 	
 ; Data from 1273 to 1274 (2 bytes)	
-	.db $28 $1C
+	;.db $28 $1C
+	jr z, $1C
 	
 ; Data from 1275 to 1277 (3 bytes)	
-	.db $CD $B3 $11
+	;.db $CD $B3 $11
+	call $11B3
 	
 ; Data from 1278 to 1278 (1 bytes)	
-	.db $7D
+	;.db $7D
+	ld a, l
 	
 ; Data from 1279 to 1279 (1 bytes)	
-	.db $B7
+	;.db $B7
+	or a
 	
 ; Data from 127A to 127B (2 bytes)	
-	.db $28 $18
+	;.db $28 $18
+	jr z, $18
 	
 ; Data from 127C to 127E (3 bytes)	
-	.db $CD $41 $11
+	;;.db $CD $41 $11
+	call $1141
 	
 ; Data from 127F to 1281 (3 bytes)	
-	.db $CD $D5 $11
+	;.db $CD $D5 $11
+	call $11D5
 	
 ; Data from 1282 to 1284 (3 bytes)	
-	.db $21 $1C $17
+	;.db $21 $1C $17
+	ld hl, $171C
 	
 ; Data from 1285 to 1285 (1 bytes)	
-	.db $E5
+	;.db $E5
+	push hl
 	
 ; Data from 1286 to 1288 (3 bytes)	
-	.db $21 $B1 $12
+	;.db $21 $B1 $12
+	ld hl, $12B1
 	
 ; Data from 1289 to 1289 (1 bytes)	
-	.db $E5
+	;.db $E5
+	push hl
 	
 ; Data from 128A to 128C (3 bytes)	
-	.db $CD $E9 $0D
+	;.db $CD $E9 $0D
+	call $0DE9
 	
 ; Data from 128D to 128D (1 bytes)	
-	.db $F1
+	;.db $F1
+	pop af
 	
 ; Data from 128E to 128E (1 bytes)	
-	.db $F1
+	;.db $F1
+	pop af
 	
 ; Data from 128F to 1290 (2 bytes)	
-	.db $18 $03
+	;.db $18 $03
+	jr $03
 	
 ; Data from 1291 to 1293 (3 bytes)	
-	.db $CD $D5 $11
+	;.db $CD $D5 $11
+	call $11D5
 	
 ; Data from 1294 to 1296 (3 bytes)	
-	.db $DD $6E $04
+	;.db $DD $6E $04
+	ld l, (ix + 04)
 	
 ; Data from 1297 to 1299 (3 bytes)	
 	.db $DD $66 $05
