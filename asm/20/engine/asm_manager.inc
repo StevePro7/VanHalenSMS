@@ -1,4 +1,3 @@
-engine_asm_manager_clear_VRAM:
 _engine_asm_manager_clear_VRAM:
 		ld a, $00
 		out (Port_VDPAddress), a
