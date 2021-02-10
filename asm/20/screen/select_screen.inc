@@ -155,28 +155,34 @@ _screen_select_screen_load:
 
 ; Data from 14E3 to 14E5 (3 bytes)
 _screen_select_screen_update:
-	.db $3A $63 $C0
-
+	;.db $3A $63 $C0
+	ld a, ($C063)
+	
 ; Data from 14E6 to 14E6 (1 bytes)
-	.db $3D
+	dec a
 
 ; Data from 14E7 to 14E8 (2 bytes)
-	.db $20 $2A
+	;.db $20 $2A
+	jr nz, $2A
 
 ; Data from 14E9 to 14EB (3 bytes)
-	.db $3A $64 $C0
+	;.db $3A $64 $C0
+	ld a, ($C064)
 
 ; Data from 14EC to 14EC (1 bytes)
 	or a
 
 ; Data from 14ED to 14EE (2 bytes)
-	.db $28 $03
+	;.db $28 $03
+	jr z, $03
 
 ; Data from 14EF to 14F1 (3 bytes)
-	.db $CD $13 $0C
+	;.db $CD $13 $0C
+	call $0C13
 
 ; Data from 14F2 to 14F4 (3 bytes)
-	.db $CD $7C $11
+	;.db $CD $7C $11
+	call $117C
 
 ; Data from 14F5 to 14F5 (1 bytes)
 	ld a, l
@@ -185,10 +191,12 @@ _screen_select_screen_update:
 	or a
 
 ; Data from 14F7 to 14F8 (2 bytes)
-	.db $28 $07
+	;.db $28 $07
+	jr z, $07
 
 ; Data from 14F9 to 14FB (3 bytes)
-	.db $21 $64 $C0
+	;.db $21 $64 $C0
+	ld hl, $C064
 
 ; Data from 14FC to 14FD (2 bytes)
 	.db $3E $01
