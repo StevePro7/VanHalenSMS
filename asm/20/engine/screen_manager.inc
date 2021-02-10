@@ -21,7 +21,7 @@ _engine_screen_manager_init:
 		ld (_RAM_C035_), hl
 		ld hl, A$record_screen$71	; A$record_screen$71 = $1578
 		ld (_RAM_C037_), hl
-		ld hl, A$detail_screen$60	; A$detail_screen$60 = $1605
+		ld hl, _screen_detail_screen_load	; _screen_detail_screen_load = $1605
 		ld (_RAM_C039_), hl
 		ld hl, A$test_screen$65	; A$test_screen$65 = $160D
 		ld (_RAM_C03B_), hl
@@ -39,7 +39,7 @@ _engine_screen_manager_init:
 		ld (_RAM_C047_), hl
 		ld hl, A$record_screen$89	; A$record_screen$89 = $157E
 		ld (_RAM_C049_), hl
-		ld hl, A$detail_screen$73	; A$detail_screen$73 = $1606
+		ld hl, _screen_detail_screen_update	; _screen_detail_screen_update = $1606
 		ld (_RAM_C04B_), hl
 		ld hl, A$test_screen$110	; A$test_screen$110 = $1635
 		ld (_RAM_C04D_), hl
