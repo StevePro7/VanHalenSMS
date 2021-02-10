@@ -316,13 +316,15 @@ _screen_select_screen_update:
 	ld hl, $C063
 
 ; Data from 1532 to 1533 (2 bytes)
-	.db $36 $01
+	;.db $36 $01
+	ld (hl), $01
 
 ; Data from 1534 to 1534 (1 bytes)
 	ret
 
 ; Data from 1535 to 1536 (2 bytes)
-	.db $3E $04
+	;.db $3E $04
+	ld a, $04
 
 ; Data from 1537 to 1537 (1 bytes)
 	push af
@@ -331,7 +333,8 @@ _screen_select_screen_update:
 	inc sp
 
 ; Data from 1539 to 153B (3 bytes)
-	.db $CD $D3 $0E
+	;.db $CD $D3 $0E
+	call $0ED3
 
 ; Data from 153C to 153C (1 bytes)
 	inc sp
@@ -343,13 +346,16 @@ _screen_select_screen_update:
 	or a
 
 ; Data from 153F to 1540 (2 bytes)
-	.db $28 $03
+	;.db $28 $03
+	jr z, $03
 
 ; Data from 1541 to 1543 (3 bytes)
-	.db $CD $3E $0D
+	;.db $CD $3E $0D
+	call $0D3E
 
 ; Data from 1544 to 1545 (2 bytes)
-	.db $3E $08
+	;.db $3E $08
+	ld a, $08
 
 ; Data from 1546 to 1546 (1 bytes)
 	push af
@@ -358,7 +364,8 @@ _screen_select_screen_update:
 	inc sp
 
 ; Data from 1548 to 154A (3 bytes)
-	.db $CD $D3 $0E
+	;.db $CD $D3 $0E
+	call $0ED3
 
 ; Data from 154B to 154B (1 bytes)
 	inc sp
@@ -370,13 +377,16 @@ _screen_select_screen_update:
 	or a
 
 ; Data from 154E to 154F (2 bytes)
-	.db $28 $03
+	;.db $28 $03
+	jr z, $03
 
 ; Data from 1550 to 1552 (3 bytes)
-	.db $CD $51 $0D
+	;.db $CD $51 $0D
+	call $0D51
 
 ; Data from 1553 to 1554 (2 bytes)
-	.db $3E $01
+	;.db $3E $01
+	ld a, $01
 
 ; Data from 1555 to 1555 (1 bytes)
 	push af
@@ -385,7 +395,8 @@ _screen_select_screen_update:
 	inc sp
 
 ; Data from 1557 to 1559 (3 bytes)
-	.db $CD $D3 $0E
+	;.db $CD $D3 $0E
+	call $0ED3
 
 ; Data from 155A to 155A (1 bytes)
 	inc sp
@@ -397,13 +408,16 @@ _screen_select_screen_update:
 	or a
 
 ; Data from 155D to 155E (2 bytes)
-	.db $28 $03
+	;.db $28 $03
+	jr z, $03
 
 ; Data from 155F to 1561 (3 bytes)
-	.db $CD $63 $0D
+	;.db $CD $63 $0D
+	call $0D63
 
 ; Data from 1562 to 1563 (2 bytes)
-	.db $3E $02
+	;.db $3E $02
+	ld a, $02
 
 ; Data from 1564 to 1564 (1 bytes)
 	push af
@@ -412,7 +426,8 @@ _screen_select_screen_update:
 	inc sp
 
 ; Data from 1566 to 1568 (3 bytes)
-	.db $CD $D3 $0E
+	;.db $CD $D3 $0E
+	call $0ED3
 
 ; Data from 1569 to 1569 (1 bytes)
 	inc sp
@@ -424,10 +439,12 @@ _screen_select_screen_update:
 	or a
 
 ; Data from 156C to 156D (2 bytes)
-	.db $28 $03
+	;.db $28 $03
+	jr z, $03
 
 ; Data from 156E to 1570 (3 bytes)
-	.db $CD $76 $0D
+	;.db $CD $76 $0D
+	call $0D76
 
 ; Data from 1571 to 1571 (1 bytes)
 	pop bc
@@ -442,7 +459,8 @@ _screen_select_screen_update:
 	push bc
 
 ; Data from 1575 to 1576 (2 bytes)
-	.db $36 $04
+	;.db $36 $04
+	ld (hl), $04
 
 ; Data from 1577 to 1577 (1 bytes)
 	ret
