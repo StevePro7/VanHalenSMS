@@ -1,36 +1,47 @@
 ; Data from 1233 to 1235 (3 bytes)	
 _screen_splash_screen_load:	
-	.db $CD $2B $08
+	;.db $CD $2B $08
+	call $082B
 	
 ; Data from 1236 to 1238 (3 bytes)	
-	.db $CD $A2 $0A
+	;.db $CD $A2 $0A
+	call $0AA2
 	
 ; Data from 1239 to 123B (3 bytes)	
-	.db $CD $B8 $0A
+	;.db $CD $B8 $0A
+	call $0AB8
 	
 ; Data from 123C to 123E (3 bytes)	
-	.db $CD $25 $08
+	;.db $CD $25 $08
+	call $0825
 	
 ; Data from 123F to 1241 (3 bytes)	
-	.db $21 $96 $00
+	;.db $21 $96 $00
+	ld hl, $0096
 	
 ; Data from 1242 to 1242 (1 bytes)	
-	.db $E5
+	;.db $E5
+	push hl
 	
 ; Data from 1243 to 1245 (3 bytes)	
-	.db $CD $63 $11
+	;.db $CD $63 $11
+	call $1163
 	
 ; Data from 1246 to 1248 (3 bytes)	
-	.db $21 $4B $00
+	;.db $21 $4B $00
+	ld hl, $004B
 	
 ; Data from 1249 to 1249 (1 bytes)	
-	.db $E3
+	;.db $E3
+	ex (sp), hl
 	
 ; Data from 124A to 124C (3 bytes)	
-	.db $CD $9E $11
+	;.db $CD $9E $11
+	call $119E
 	
 ; Data from 124D to 124D (1 bytes)	
-	.db $F1
+	;.db $F1
+	pop af
 	
 ; Data from 124E to 124E (1 bytes)	
 	ret
