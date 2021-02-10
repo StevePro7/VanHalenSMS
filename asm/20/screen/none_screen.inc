@@ -1,9 +1,5 @@
 ; Data from 122B to 122B (1 bytes)	
-A$none_screen$60:	
-C$none_screen.c$4$0$0:	
-C$none_screen.c$6$0$0:	
-G$screen_none_screen_load$0$0:	
-XG$screen_none_screen_load$0$0:	
+A$none_screen$60:
 _screen_none_screen_load:	
 	.db $C9
 	
