@@ -12,10 +12,12 @@ _screen_title_screen_load:
 	call $0B51
 
 ; Data from 12BF to 12C1 (3 bytes)
-	.db $CD $E3 $0A
+	;.db $CD $E3 $0A
+	call $0AE3
 
 ; Data from 12C2 to 12C4 (3 bytes)
-	.db $21 $0A $15
+	;.db $21 $0A $15
+	ld hl, $150A
 
 ; Data from 12C5 to 12C5 (1 bytes)
 	push hl
