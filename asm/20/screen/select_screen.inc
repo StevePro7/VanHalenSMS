@@ -147,9 +147,11 @@ _screen_select_screen_load:
 
 ; Data from 14D5 to 14DB (7 bytes)
 	.db $52 $45 $43 $4F $52 $44 $00
+	; RECORD
 
 ; Data from 14DC to 14E2 (7 bytes)
 	.db $43 $4F $56 $45 $52 $53 $00
+	; COVERS
 
 ; Data from 14E3 to 14E5 (3 bytes)
 _screen_select_screen_update:
