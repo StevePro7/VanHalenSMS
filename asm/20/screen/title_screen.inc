@@ -3,188 +3,132 @@ _screen_title_screen_load:
 	.db $CD $2B $08
 	
 ; Data from 12B9 to 12BB (3 bytes)	
-A$title_screen$85:	
-C$title_screen.c$26$1$28:	
 	.db $CD $A2 $0A
 	
 ; Data from 12BC to 12BE (3 bytes)	
-A$title_screen$89:	
-C$title_screen.c$27$1$28:	
 	.db $CD $51 $0B
 	
 ; Data from 12BF to 12C1 (3 bytes)	
-A$title_screen$93:	
-C$title_screen.c$28$1$28:	
 	.db $CD $E3 $0A
 	
 ; Data from 12C2 to 12C4 (3 bytes)	
-A$title_screen$97:	
-C$title_screen.c$29$1$28:	
 	.db $21 $0A $15
 	
 ; Data from 12C5 to 12C5 (1 bytes)	
-A$title_screen$98:	
 	.db $E5
 	
 ; Data from 12C6 to 12C8 (3 bytes)	
-A$title_screen$99:	
 	.db $21 $35 $13
 	
 ; Data from 12C9 to 12C9 (1 bytes)	
-A$title_screen$100:	
 	.db $E5
 	
 ; Data from 12CA to 12CC (3 bytes)	
-A$title_screen$101:	
 	.db $CD $E9 $0D
 	
 ; Data from 12CD to 12CD (1 bytes)	
-A$title_screen$102:	
 	.db $F1
 	
 ; Data from 12CE to 12D0 (3 bytes)	
-A$title_screen$106:	
-C$title_screen.c$31$1$28:	
 	.db $21 $06 $0C
 	
 ; Data from 12D1 to 12D1 (1 bytes)	
-A$title_screen$107:	
 	.db $E3
 	
 ; Data from 12D2 to 12D4 (3 bytes)	
-A$title_screen$108:	
 	.db $21 $41 $13
 	
 ; Data from 12D5 to 12D5 (1 bytes)	
-A$title_screen$109:	
 	.db $E5
 	
 ; Data from 12D6 to 12D8 (3 bytes)	
-A$title_screen$110:	
 	.db $CD $E9 $0D
 	
 ; Data from 12D9 to 12D9 (1 bytes)	
-A$title_screen$111:	
 	.db $F1
 	
 ; Data from 12DA to 12DC (3 bytes)	
-A$title_screen$115:	
-C$title_screen.c$32$1$28:	
 	.db $21 $14 $0C
 	
 ; Data from 12DD to 12DD (1 bytes)	
-A$title_screen$116:	
 	.db $E3
 	
 ; Data from 12DE to 12E0 (3 bytes)	
-A$title_screen$117:	
 	.db $21 $48 $13
 	
 ; Data from 12E1 to 12E1 (1 bytes)	
-A$title_screen$118:	
 	.db $E5
 	
 ; Data from 12E2 to 12E4 (3 bytes)	
-A$title_screen$119:	
 	.db $CD $E9 $0D
 	
 ; Data from 12E5 to 12E5 (1 bytes)	
-A$title_screen$120:	
 	.db $F1
 	
 ; Data from 12E6 to 12E8 (3 bytes)	
-A$title_screen$124:	
-C$title_screen.c$33$1$28:	
 	.db $21 $1C $17
 	
 ; Data from 12E9 to 12E9 (1 bytes)	
-A$title_screen$125:	
 	.db $E3
 	
 ; Data from 12EA to 12EC (3 bytes)	
-A$title_screen$126:	
 	.db $21 $4F $13
 	
 ; Data from 12ED to 12ED (1 bytes)	
-A$title_screen$127:	
 	.db $E5
 	
 ; Data from 12EE to 12F0 (3 bytes)	
-A$title_screen$128:	
 	.db $CD $E9 $0D
 	
 ; Data from 12F1 to 12F1 (1 bytes)	
-A$title_screen$129:	
 	.db $F1
 	
 ; Data from 12F2 to 12F2 (1 bytes)	
-A$title_screen$130:	
 	.db $F1
 	
 ; Data from 12F3 to 12F5 (3 bytes)	
-A$title_screen$134:	
-C$title_screen.c$34$1$28:	
 	.db $CD $25 $08
 	
 ; Data from 12F6 to 12F8 (3 bytes)	
-A$title_screen$138:	
-C$title_screen.c$36$1$28:	
 	.db $21 $32 $00
 	
 ; Data from 12F9 to 12F9 (1 bytes)	
-A$title_screen$139:	
 	.db $E5
 	
 ; Data from 12FA to 12FC (3 bytes)	
-A$title_screen$140:	
 	.db $CD $63 $11
 	
 ; Data from 12FD to 12FF (3 bytes)	
-A$title_screen$144:	
-C$title_screen.c$37$1$28:	
 	.db $21 $4B $00
 	
 ; Data from 1300 to 1300 (1 bytes)	
-A$title_screen$145:	
 	.db $E3
 	
 ; Data from 1301 to 1303 (3 bytes)	
-A$title_screen$146:	
 	.db $CD $9E $11
 	
 ; Data from 1304 to 1304 (1 bytes)	
-A$title_screen$147:	
 	.db $F1
 	
 ; Data from 1305 to 1305 (1 bytes)	
-A$title_screen$151:	
-C$title_screen.c$40$1$28:	
 	.db $AF
 	
 ; Data from 1306 to 1306 (1 bytes)	
-A$title_screen$152:	
 	.db $F5
 	
 ; Data from 1307 to 1307 (1 bytes)	
-A$title_screen$153:	
 	.db $33
 	
 ; Data from 1308 to 130A (3 bytes)	
-A$title_screen$154:	
 	.db $CD $7D $0F
 	
 ; Data from 130B to 130B (1 bytes)	
-A$title_screen$155:	
 	.db $33
 	
 ; Data from 130C to 130E (3 bytes)	
-A$title_screen$159:	
-C$title_screen.c$42$1$28:	
 	.db $CD $D8 $10
 	
 ; Data from 130F to 130F (1 bytes)	
-A$title_screen$163:	
-C$title_screen.c$43$1$28:	
 	.db $7D
 	
 ; Data from 1310 to 1310 (1 bytes)	

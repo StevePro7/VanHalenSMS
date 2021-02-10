@@ -31,7 +31,7 @@ _engine_screen_manager_init:
 		ld (Fscreen_manager$update_method$0$), hl	; Fscreen_manager$update_method$0$ = $C03F
 		ld hl, _screen_splash_screen_update	; _screen_splash_screen_update = $124F
 		ld (Fscreen_manager$update_method$0$ + 2), hl	; Fscreen_manager$update_method$0$ + 2 = $C041
-		ld hl, A$title_screen$229	; A$title_screen$229 = $1354
+		ld hl, _screen_title_screen_update	; _screen_title_screen_update = $1354
 		ld (_RAM_C043_), hl
 		ld hl, A$scroll_screen$78	; A$scroll_screen$78 = $1425
 		ld (_RAM_C045_), hl
