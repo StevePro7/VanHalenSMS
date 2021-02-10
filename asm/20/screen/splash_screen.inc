@@ -46,21 +46,27 @@ _screen_splash_screen_load:
 ; Data from 124E to 124E (1 bytes)	
 	ret
 	
+	
 ; Data from 124F to 1250 (2 bytes)	
 _screen_splash_screen_update:	
-	.db $DD $E5
+	;.db $DD $E5
+	push ix
 	
 ; Data from 1251 to 1254 (4 bytes)	
-	.db $DD $21 $00 $00
+	;.db $DD $21 $00 $00
+	ld ix, $0000
 	
 ; Data from 1255 to 1256 (2 bytes)	
-	.db $DD $39
+	;.db $DD $39
+	add ix, sp
 	
 ; Data from 1257 to 1257 (1 bytes)	
-	.db $F5
+	;.db $F5
+	push af
 	
 ; Data from 1258 to 125A (3 bytes)	
-	.db $CD $7C $11
+	;.db $CD $7C $11
+	call $117C
 	
 ; Data from 125B to 125D (3 bytes)	
 	.db $DD $75 $FE
