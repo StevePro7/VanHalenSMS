@@ -1,7 +1,8 @@
 ; Data from 122B to 122B (1 bytes)	
 A$none_screen$60:
 _screen_none_screen_load:	
-	.db $C9
+	ret
+	;.db $C9
 	
 ; Data from 122C to 122C (1 bytes)	
 A$none_screen$73:	
