@@ -156,7 +156,7 @@ _screen_title_screen_load:
 	ld a, l
 
 ; Data from 1310 to 1310 (1 bytes)
-	;.db $B7
+	;or a
 	or a
 
 ; Data from 1311 to 1312 (2 bytes)
@@ -301,7 +301,7 @@ _screen_title_screen_update:
 	ld a, c
 
 ; Data from 1375 to 1375 (1 bytes)
-	.db $B7
+	or a
 
 ; Data from 1376 to 1377 (2 bytes)
 	.db $28 $1B
@@ -355,7 +355,7 @@ _screen_title_screen_update:
 	ld a, c
 
 ; Data from 1394 to 1394 (1 bytes)
-	.db $B7
+	or a
 
 ; Data from 1395 to 1396 (2 bytes)
 	.db $28 $04
@@ -391,7 +391,7 @@ _screen_title_screen_update:
 	.db $7D
 
 ; Data from 13AD to 13AD (1 bytes)
-	.db $B7
+	or a
 
 ; Data from 13AE to 13AF (2 bytes)
 	.db $28 $29
@@ -412,7 +412,7 @@ _screen_title_screen_update:
 	.db $3A $61 $C0
 
 ; Data from 13BA to 13BA (1 bytes)
-	.db $B7
+	or a
 
 ; Data from 13BB to 13BC (2 bytes)
 	.db $28 $0F
@@ -481,7 +481,7 @@ _screen_title_screen_update:
 	.db $7D
 
 ; Data from 13E2 to 13E2 (1 bytes)
-	.db $B7
+	or a
 
 ; Data from 13E3 to 13E4 (2 bytes)
 	.db $28 $15
