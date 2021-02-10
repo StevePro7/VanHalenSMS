@@ -15,3 +15,6 @@ $C5	push bc
 $D5	push de
 $E5	push hl
 $F5	push af
+
+
+79 	ld a, c
