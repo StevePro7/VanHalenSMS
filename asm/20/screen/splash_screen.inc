@@ -244,5 +244,11 @@ _screen_splash_screen_update:
 	ret
 	
 ; Data from 12B1 to 12B5 (5 bytes)	
-	.db $35 $31 $35 $30 $00
+	;.db $35
+	dec (hl)
 	
+	;.db $31 $35 $30
+	ld sp, $3035
+	
+	;.db $00
+	nop
