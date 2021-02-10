@@ -1,45 +1,56 @@
 ; Data from 1480 to 1482 (3 bytes)
 _screen_select_screen_load:
-	.db $3A $51 $C0
+	;.db $3A $51 $C0
+	ld a, ($C051)
 
 ; Data from 1483 to 1483 (1 bytes)
 	or a
 
 ; Data from 1484 to 1485 (2 bytes)
-	.db $20 $2B
+	;.db $20 $2B
+	jr nz, $2B
+	
 
 ; Data from 1486 to 1488 (3 bytes)
-	.db $CD $2B $08
+	;.db $CD $2B $08
+	call $082B
 
 ; Data from 1489 to 148B (3 bytes)
-	.db $CD $5A $0A
+	;.db $CD $5A $0A
+	call $0A5A
 
 ; Data from 148C to 148E (3 bytes)
-	.db $CD $A2 $0A
+	;.db $CD $A2 $0A
+	call $0AA2
 
 ; Data from 148F to 1491 (3 bytes)
-	.db $CD $1A $0B
+	;.db $CD $1A $0B
+	call $0B1A
 
 ; Data from 1492 to 1494 (3 bytes)
-	.db $CD $51 $0B
+	;.db $CD $51 $0B
+	call $0B51
 
 ; Data from 1495 to 1497 (3 bytes)
-	.db $21 $06 $08
+	;.db $21 $06 $08
+	ld hl, $0806
 
 ; Data from 1498 to 1498 (1 bytes)
 	push hl
 
 ; Data from 1499 to 149B (3 bytes)
-	.db $21 $D5 $14
+	;.db $21 $D5 $14
+	ld hl $14,D5
 
 ; Data from 149C to 149C (1 bytes)
 	push hl
 
 ; Data from 149D to 149F (3 bytes)
-	.db $CD $E9 $0D
+	;.db $CD $E9 $0D
+	call $0DE9
 
 ; Data from 14A0 to 14A0 (1 bytes)
-	.db $F1
+	pop af
 
 ; Data from 14A1 to 14A3 (3 bytes)
 	.db $21 $14 $08
@@ -57,10 +68,10 @@ _screen_select_screen_load:
 	.db $CD $E9 $0D
 
 ; Data from 14AC to 14AC (1 bytes)
-	.db $F1
+	pop af
 
 ; Data from 14AD to 14AD (1 bytes)
-	.db $F1
+	pop af
 
 ; Data from 14AE to 14B0 (3 bytes)
 	.db $CD $25 $08
@@ -102,7 +113,7 @@ _screen_select_screen_load:
 	.db $CD $9E $11
 
 ; Data from 14C9 to 14C9 (1 bytes)
-	.db $F1
+	pop af
 
 ; Data from 14CA to 14CC (3 bytes)
 	.db $21 $63 $C0
