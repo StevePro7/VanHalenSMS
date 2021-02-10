@@ -279,7 +279,8 @@ _screen_title_screen_update:
 	ld (ix - 1), a
 
 ; Data from 136A to 136C (3 bytes)
-	.db $3A $60 $C0
+	;.db $3A $60 $C0
+	ld a, ($C060)
 
 ; Data from 136D to 136D (1 bytes)
 	.db $3D
