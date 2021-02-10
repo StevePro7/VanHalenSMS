@@ -156,55 +156,64 @@ _screen_title_screen_load:
 	ld a, l
 
 ; Data from 1310 to 1310 (1 bytes)
-	.db $B7
+	;.db $B7
+	or a
 
 ; Data from 1311 to 1312 (2 bytes)
-	.db $28 $03
+	;.db $28 $03
+	jr z, $03
 
 ; Data from 1313 to 1315 (3 bytes)
-	.db $CD $07 $11
+	;.db $CD $07 $11
+	call $1107
 
 ; Data from 1316 to 1318 (3 bytes)
-	.db $21 $2A $C0
+	;.db $21 $2A $C0
+	ld hl, $C02A
 
 ; Data from 1319 to 1319 (1 bytes)
-	.db $46
+	ld b, (hl)
 
 ; Data from 131A to 131A (1 bytes)
-	.db $C5
+	push bc
 
 ; Data from 131B to 131B (1 bytes)
 	inc sp
 
 ; Data from 131C to 131E (3 bytes)
-	.db $CD $7D $0F
+	;.db $CD $7D $0F
+	call $0F7D
 
 ; Data from 131F to 131F (1 bytes)
 	inc sp
 
 ; Data from 1320 to 1322 (3 bytes)
-	.db $21 $2A $C0
+	;.db $21 $2A $C0
+	ld hl, $C02A
 
 ; Data from 1323 to 1323 (1 bytes)
-	.db $46
+	ld b, (hl)
 
 ; Data from 1324 to 1324 (1 bytes)
-	.db $C5
+	push bc
 
 ; Data from 1325 to 1325 (1 bytes)
 	inc sp
 
 ; Data from 1326 to 1328 (3 bytes)
-	.db $CD $67 $0B
+	;.db $CD $67 $0B
+	call $0B67
 
 ; Data from 1329 to 1329 (1 bytes)
 	inc sp
 
 ; Data from 132A to 132C (3 bytes)
-	.db $21 $60 $C0
+	;.db $21 $60 $C0
+	ld hl, $C060
 
 ; Data from 132D to 132E (2 bytes)
-	.db $36 $00
+	;.db $36 $00
+	ld (hl), $00
 
 ; Data from 132F to 1331 (3 bytes)
 	.db $21 $61 $C0
@@ -280,7 +289,7 @@ _screen_title_screen_update:
 	.db $28 $1B
 
 ; Data from 1378 to 1378 (1 bytes)
-	.db $C5
+	push bc
 
 ; Data from 1379 to 137B (3 bytes)
 	.db $21 $0A $15
