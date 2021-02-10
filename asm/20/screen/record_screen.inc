@@ -331,7 +331,7 @@ A$record_screen$223:
 A$record_screen$228:	
 C$record_screen.c$56$1$31:	
 XG$screen_record_screen_update$0:	
-	.db $C9
+	ret
 	
 ; Data from 15F9 to 15FB (3 bytes)	
 A$record_screen$241:	

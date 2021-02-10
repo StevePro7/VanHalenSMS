@@ -346,7 +346,7 @@ _SMS_resetPauseRequest:
 ; Data from 1E7D to 1E8D (17 bytes)	
 _SMS_setLineInterruptHandler:	
 	.db $21 $02 $00 $39 $7E $32 $30 $C1 $21 $03 $00 $39 $7E $32 $31 $C1
-	.db $C9
+	ret
 	
 ; Data from 1E8E to 1E9C (15 bytes)	
 _SMS_setLineCounter:	
@@ -451,7 +451,7 @@ _SMS_loadSTMcompressedTileMapAre:
 	.db $18 $D0 $DD $71 $FE $DD $70 $FF $18 $08 $18 $06 $DD $71 $06 $DD
 	.db $70 $07 $DD $CB $F0 $46 $CA $66 $1F $DD $7E $F3 $DD $77 $FE $DD
 	.db $7E $F4 $DD $77 $FF $DD $36 $F0 $00 $C3 $66 $1F $DD $F9 $DD $E1
-	.db $C9
+	ret
 	
 ___sdcc_call_hl:	
 		jp (hl)

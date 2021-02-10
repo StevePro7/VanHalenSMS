@@ -58,7 +58,7 @@ A$test_screen$88:
 A$test_screen$93:	
 C$test_screen.c$21$1$23:	
 XG$screen_test_screen_load$0$0:	
-	.db $C9
+	ret
 	
 ; Data from 1629 to 1634 (12 bytes)	
 Ftest_screen$__str_0$0$0:	
@@ -156,4 +156,4 @@ A$test_screen$142:
 A$test_screen$147:	
 C$test_screen.c$39$1$25:	
 XG$screen_test_screen_update$0$0:	
-	.db $C9
+	ret

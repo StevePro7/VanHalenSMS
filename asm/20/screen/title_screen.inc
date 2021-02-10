@@ -277,7 +277,7 @@ A$title_screen$198:
 A$title_screen$203:	
 C$title_screen.c$53$1$28:	
 XG$screen_title_screen_load$0$0:	
-	.db $C9
+	ret
 	
 ; Data from 1335 to 1340 (12 bytes)	
 Ftitle_screen$__str_0$0$0:	
@@ -689,7 +689,7 @@ A$title_screen$385:
 A$title_screen$390:	
 C$title_screen.c$97$1$31:	
 XG$screen_title_screen_update$0$:	
-	.db $C9
+	ret
 	
 ; Data from 1407 to 1412 (12 bytes)	
 Ftitle_screen$__str_4$0$0:	

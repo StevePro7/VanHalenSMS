@@ -55,7 +55,7 @@ A$splash_screen$94:
 A$splash_screen$99:	
 C$splash_screen.c$23$1$25:	
 XG$screen_splash_screen_load$0$0:	
-	.db $C9
+	ret
 	
 ; Data from 124F to 1250 (2 bytes)	
 A$splash_screen$109:	
@@ -271,7 +271,7 @@ A$splash_screen$206:
 A$splash_screen$211:	
 C$splash_screen.c$58$1$27:	
 XG$screen_splash_screen_update$0:	
-	.db $C9
+	ret
 	
 ; Data from 12B1 to 12B5 (5 bytes)	
 Fsplash_screen$__str_0$0$0:	

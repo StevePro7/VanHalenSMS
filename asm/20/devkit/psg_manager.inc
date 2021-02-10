@@ -379,7 +379,7 @@ _PSGSFXGetStatus:
 _PSGSFXPlayLoop:	
 	.db $FD $21 $04 $00 $FD $39 $FD $7E $00 $F5 $33 $FD $2B $FD $2B $FD
 	.db $6E $00 $FD $66 $01 $E5 $CD $07 $06 $F1 $33 $21 $22 $C0 $36 $01
-	.db $C9
+	ret
 	
 _PSGFrame:	
 		ld a, (PSGMusicStatus)		; PSGMusicStatus = $C001
@@ -553,7 +553,7 @@ _LABEL_77B_:
 		jp _LABEL_692_
 	
 	; Data from 79B to 79B (1 bytes)
-	.db $C9
+	ret
 	
 _PSGSFXFrame:	
 		ld a, (PSGSFXStatus)		; PSGSFXStatus = $C01A
@@ -639,7 +639,7 @@ _LABEL_7AB_:
 		jp _LABEL_7AB_
 	
 	; Data from 821 to 821 (1 bytes)
-	.db $C9
+	ret
 	
     
 ;

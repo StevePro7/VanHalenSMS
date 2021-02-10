@@ -47,7 +47,7 @@ A$_sms_manager$184:
 A$_sms_manager$189:	
 C$_sms_manager.c$26$1$78:	
 XG$devkit_SMS_mapROMBank$0$0:	
-	.db $C9
+	ret
 	
 ; Data from 83A to 83D (4 bytes)	
 A$_sms_manager$202:	
@@ -97,7 +97,7 @@ A$_sms_manager$243:
 A$_sms_manager$248:	
 C$_sms_manager.c$40$1$83:	
 XG$devkit_SMS_enableSRAM$0$0:	
-	.db $C9
+	ret
 	
 ; Data from 858 to 85A (3 bytes)	
 A$_sms_manager$261:	
@@ -139,7 +139,7 @@ A$_sms_manager$268:
 A$_sms_manager$273:	
 C$_sms_manager.c$44$1$85:	
 XG$devkit_SMS_enableSRAMBank$0$0:	
-	.db $C9
+	ret
 	
 ; Data from 867 to 869 (3 bytes)	
 A$_sms_manager$286:	
@@ -157,7 +157,7 @@ A$_sms_manager$287:
 A$_sms_manager$292:	
 C$_sms_manager.c$48$1$86:	
 XG$devkit_SMS_disableSRAM$0$0:	
-	.db $C9
+	ret
 	
 ; Data from 86D to 86F (3 bytes)	
 A$_sms_manager$305:	
@@ -171,7 +171,7 @@ _devkit_SMS_SRAM:
 A$_sms_manager$310:	
 C$_sms_manager.c$52$1$87:	
 XG$devkit_SMS_SRAM$0$0:	
-	.db $C9
+	ret
 	
 A$_sms_manager$323:	
 C$_sms_manager.c$55$1$87:	
@@ -338,7 +338,7 @@ A$_sms_manager$454:
 A$_sms_manager$459:	
 C$_sms_manager.c$79$1$97:	
 XG$devkit_SMS_loadSTMcompressedT:	
-	.db $C9
+	ret
 	
 A$_sms_manager$472:	
 C$_sms_manager.c$81$1$97:	
@@ -483,7 +483,7 @@ A$_sms_manager$544:
 A$_sms_manager$549:	
 C$_sms_manager.c$93$1$103:	
 XG$devkit_SMS_setBGPaletteColor$:	
-	.db $C9
+	ret
 	
 ; Data from 8FB to 8FD (3 bytes)	
 A$_sms_manager$562:	
@@ -606,7 +606,7 @@ A$_sms_manager$592:
 A$_sms_manager$597:	
 C$_sms_manager.c$98$1$105:	
 XG$devkit_SMS_setSpritePaletteCo:	
-	.db $C9
+	ret
 	
 ; Data from 923 to 924 (2 bytes)	
 A$_sms_manager$607:	
@@ -858,7 +858,7 @@ A$_sms_manager$713:
 A$_sms_manager$718:	
 C$_sms_manager.c$116$1$113:	
 XG$devkit_SMS_addSprite$0$0:	
-	.db $C9
+	ret
 	
 A$_sms_manager$735:	
 C$_sms_manager.c$117$1$113:	
@@ -944,7 +944,7 @@ A$_sms_manager$852:
 A$_sms_manager$857:	
 C$_sms_manager.c$151$1$121:	
 XG$devkit_isCollisionDetected$0$:	
-	.db $C9
+	ret
 	
 A$_sms_manager$874:	
 C$_sms_manager.c$154$1$121:	
@@ -983,7 +983,7 @@ _devkit_TILE_PRIORITY:
 A$_sms_manager$928:	
 C$_sms_manager.c$171$1$125:	
 XG$devkit_TILE_PRIORITY$0$0:	
-	.db $C9
+	ret
 	
 ; Data from 9A9 to 9AB (3 bytes)	
 A$_sms_manager$941:	
@@ -997,7 +997,7 @@ _devkit_TILE_USE_SPRITE_PALETTE:
 A$_sms_manager$946:	
 C$_sms_manager.c$175$1$126:	
 XG$devkit_TILE_USE_SPRITE_PALETT:	
-	.db $C9
+	ret
 	
 ; Data from 9AD to 9BA (14 bytes)	
 F_sms_manager$__str_0$0$0:	

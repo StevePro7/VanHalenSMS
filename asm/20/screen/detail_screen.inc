@@ -5,7 +5,7 @@ C$detail_screen.c$15$0$0:
 G$screen_detail_screen_load$0$0:	
 XG$screen_detail_screen_load$0$0:	
 _screen_detail_screen_load:	
-	.db $C9
+	ret
 	
 ; Data from 1606 to 1606 (1 bytes)	
 A$detail_screen$73:	
@@ -35,4 +35,4 @@ A$detail_screen$77:
 A$detail_screen$82:	
 C$detail_screen.c$20$1$25:	
 XG$screen_detail_screen_update$0:	
-	.db $C9
+	ret

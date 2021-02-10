@@ -14,7 +14,7 @@ A$scroll_screen$63:
 A$scroll_screen$68:	
 C$scroll_screen.c$17$1$24:	
 XG$screen_scroll_screen_load$0$0:	
-	.db $C9
+	ret
 	
 ; Data from 1425 to 1425 (1 bytes)	
 A$scroll_screen$78:	
@@ -244,5 +244,5 @@ A$scroll_screen$162:
 A$scroll_screen$167:	
 C$scroll_screen.c$38$1$26:	
 XG$screen_scroll_screen_update$0:	
-	.db $C9
+	ret
 	

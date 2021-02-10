@@ -2,7 +2,6 @@
 A$none_screen$60:
 _screen_none_screen_load:	
 	ret
-	;.db $C9
 	
 ; Data from 122C to 122C (1 bytes)	
 A$none_screen$73:	
@@ -36,4 +35,4 @@ A$none_screen$78:
 A$none_screen$83:	
 C$none_screen.c$11$1$4:	
 XG$screen_none_screen_update$0$0:	
-	.db $C9
+	ret

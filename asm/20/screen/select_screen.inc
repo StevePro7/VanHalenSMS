@@ -176,7 +176,7 @@ A$select_screen$164:
 A$select_screen$169:	
 C$select_screen.c$45$1$29:	
 XG$screen_select_screen_load$0$0:	
-	.db $C9
+	ret
 	
 ; Data from 14D5 to 14DB (7 bytes)	
 Fselect_screen$__str_0$0$0:	
@@ -308,7 +308,7 @@ A$select_screen$241:
 ; Data from 1512 to 1512 (1 bytes)	
 A$select_screen$245:	
 C$select_screen.c$69$2$33:	
-	.db $C9
+	ret
 	
 ; Data from 1513 to 1515 (3 bytes)	
 A$select_screen$250:	
@@ -392,7 +392,7 @@ A$select_screen$285:
 ; Data from 1534 to 1534 (1 bytes)	
 A$select_screen$289:	
 C$select_screen.c$83$2$36:	
-	.db $C9
+	ret
 	
 ; Data from 1535 to 1536 (2 bytes)	
 A$select_screen$294:	
@@ -575,4 +575,4 @@ A$select_screen$374:
 A$select_screen$379:	
 C$select_screen.c$108$1$32:	
 XG$screen_select_screen_update$0:	
-	.db $C9
+	ret

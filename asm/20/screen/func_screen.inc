@@ -269,4 +269,4 @@ A$func_screen$185:
 A$func_screen$190:	
 C$func_screen.c$58$1$25:	
 XG$screen_func_screen_update$0$0:	
-	.db $C9
+	ret
