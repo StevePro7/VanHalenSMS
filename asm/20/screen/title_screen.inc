@@ -23,49 +23,57 @@ _screen_title_screen_load:
 	push hl
 
 ; Data from 12C6 to 12C8 (3 bytes)
-	.db $21 $35 $13
+	;.db $21 $35 $13
+	ld hl, $1335
 
 ; Data from 12C9 to 12C9 (1 bytes)
 	push hl
 
 ; Data from 12CA to 12CC (3 bytes)
-	.db $CD $E9 $0D
+	;.db $CD $E9 $0D
+	call $0DE9
 
 ; Data from 12CD to 12CD (1 bytes)
 	pop af
 
 ; Data from 12CE to 12D0 (3 bytes)
-	.db $21 $06 $0C
+	;.db $21 $06 $0C
+	ld hl, $0C06
 
 ; Data from 12D1 to 12D1 (1 bytes)
 	ex (sp), hl
 
 ; Data from 12D2 to 12D4 (3 bytes)
-	.db $21 $41 $13
+	;.db $21 $41 $13
+	ld hl, $1341
 
 ; Data from 12D5 to 12D5 (1 bytes)
 	push hl
 
 ; Data from 12D6 to 12D8 (3 bytes)
-	.db $CD $E9 $0D
+	;.db $CD $E9 $0D
+	call $0DE9
 
 ; Data from 12D9 to 12D9 (1 bytes)
 	pop af
 
 ; Data from 12DA to 12DC (3 bytes)
-	.db $21 $14 $0C
+	;.db $21 $14 $0C
+	ld hl, $0C14
 
 ; Data from 12DD to 12DD (1 bytes)
 	ex (sp), hl
 
 ; Data from 12DE to 12E0 (3 bytes)
-	.db $21 $48 $13
+	;.db $21 $48 $13
+	ld hl, $1348
 
 ; Data from 12E1 to 12E1 (1 bytes)
 	push hl
 
 ; Data from 12E2 to 12E4 (3 bytes)
-	.db $CD $E9 $0D
+	;.db $CD $E9 $0D
+	call $0DE9
 
 ; Data from 12E5 to 12E5 (1 bytes)
 	pop af
