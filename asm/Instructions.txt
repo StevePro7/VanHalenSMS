@@ -31,7 +31,11 @@ E3 	ex (sp), hl
 
 AF	xor a
 
+09	add hl, bc
+29	add hl, hl
+
 33	inc sp
+39	add hl, sp
 3D	dec a
 
 46	ld b, (hl)
@@ -51,3 +55,8 @@ SUB  A,(HL)
 
 
 $DD $E5		push ix
+
+
+
+LD  (IX+0),&00
+ld (ix - 3), $00
