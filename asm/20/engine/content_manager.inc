@@ -46,7 +46,8 @@ _engine_content_manager_load_spl:
 	push hl
 	
 ; Data from AC8 to ACA (3 bytes)	
-	.db $CD $8E $08
+	;.db $CD $8E $08
+	call $088E
 	
 ; Data from ACB to ACB (1 bytes)	
 	pop af
@@ -55,19 +56,23 @@ _engine_content_manager_load_spl:
 	pop af
 	
 ; Data from ACD to ACF (3 bytes)	
-	.db $01 $10 $80
+	;.db $01 $10 $80
+	;ld bc, $8010
+	ld bc, _splash__tilemap__stmcompr
 	
 ; Data from AD0 to AD0 (1 bytes)	
 	push bc
 	
 ; Data from AD1 to AD3 (3 bytes)	
-	.db $21 $00 $00
+	;.db $21 $00 $00
+	ld hl, $0000
 	
 ; Data from AD4 to AD4 (1 bytes)	
 	push hl
 	
 ; Data from AD5 to AD7 (3 bytes)	
-	.db $CD $A4 $08
+	;.db $CD $A4 $08
+	call $08A4
 	
 ; Data from AD8 to AD8 (1 bytes)	
 	pop af
@@ -76,13 +81,16 @@ _engine_content_manager_load_spl:
 	pop af
 	
 ; Data from ADA to ADC (3 bytes)	
-	.db $01 $00 $80
+	;.db $01 $00 $80
+	;ld bc, $8000
+	ld bc, _splash__palette__bin
 	
 ; Data from ADD to ADD (1 bytes)	
 	push bc
 	
 ; Data from ADE to AE0 (3 bytes)	
-	.db $CD $C5 $08
+	;.db $CD $C5 $08
+	call $08C5
 	
 ; Data from AE1 to AE1 (1 bytes)	
 	pop af
@@ -92,7 +100,8 @@ _engine_content_manager_load_spl:
 	
 ; Data from AE3 to AE4 (2 bytes)	
 _engine_content_manager_load_tit:	
-	.db $3E $03
+	;.db $3E $03
+	ld a, $03
 	
 ; Data from AE5 to AE5 (1 bytes)	
 	push af
