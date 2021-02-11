@@ -25,9 +25,9 @@ $F5	push af
 
 
 
-
 E3 	ex (sp), hl
 
+02	ld (bc), a
 
 AF	xor a
 
