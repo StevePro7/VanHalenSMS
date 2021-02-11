@@ -15,19 +15,19 @@ void engine_asm_manager_clear_VRAM()
 #else
 
 	__asm
-	ld a, #0x00
+		ld a, #0x00
 		out( _VDPControlPort ), a
 		ld a, #0x40
 		out( _VDPControlPort ), a
 		ld bc, #0x4000
-		ClearVRAMLoop:
-	ld a, #0x00
+	ClearVRAMLoop:
+		ld a, #0x00
 		out( _VDPDataPort ), a
 		dec bc
 		ld a, b
 		or c
 		jp nz, ClearVRAMLoop
-		__endasm;
+	__endasm;
 
 #endif
 }
