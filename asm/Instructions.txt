@@ -69,8 +69,8 @@ LD  (IX+0),&00
 ld (ix - 3), $00
 
 .db $06		ld b,
-.db $16		ld d,
-
+.db $18		jr
+.db $18		ld h,
 .db $28		jr z,
 
 .db $CE		adc a,
