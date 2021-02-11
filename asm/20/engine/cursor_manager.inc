@@ -430,7 +430,7 @@ _engine_cursor_manager_draw:
 	ld a, c
 
 ; Data from C37 to C38 (2 bytes)
-	;.db $C6 $28
+	;add a, $28
 	add a, $28
 
 ; Data from C39 to C39 (1 bytes)
@@ -484,7 +484,7 @@ _engine_cursor_manager_draw:
 	ld a, b
 
 ; Data from C4D to C4E (2 bytes)
-	;.db $C6 $10
+	;add a, $10
 	add a, $10
 
 ; Data from C4F to C4F (1 bytes)
@@ -555,10 +555,11 @@ _engine_cursor_manager_draw:
 	ld a, c
 
 ; Data from C6C to C6D (2 bytes)
-	.db $C6 $08
+	add a, $08
 
 ; Data from C6E to C70 (3 bytes)
-	.db $DD $77 $FD
+	;.db $DD $77 $FD
+	ld (ix - 3), a
 
 ; Data from C71 to C71 (1 bytes)
 	push bc
@@ -567,7 +568,8 @@ _engine_cursor_manager_draw:
 	push de
 
 ; Data from C73 to C75 (3 bytes)
-	.db $21 $21 $01
+	;.db $21 $21 $01
+	ld hl, $0121
 
 ; Data from C76 to C76 (1 bytes)
 	push hl
@@ -579,7 +581,8 @@ _engine_cursor_manager_draw:
 	inc sp
 
 ; Data from C79 to C7B (3 bytes)
-	.db $DD $7E $FD
+	;.db $DD $7E $FD
+	ld a, (ix - 3)
 
 ; Data from C7C to C7C (1 bytes)
 	push af
@@ -588,7 +591,8 @@ _engine_cursor_manager_draw:
 	inc sp
 
 ; Data from C7E to C80 (3 bytes)
-	.db $CD $64 $09
+	;.db $CD $64 $09
+	call $0964
 
 ; Data from C81 to C81 (1 bytes)
 	pop af
@@ -606,10 +610,11 @@ _engine_cursor_manager_draw:
 	ld a, c
 
 ; Data from C86 to C87 (2 bytes)
-	.db $C6 $10
+	add a, $10
 
 ; Data from C88 to C8A (3 bytes)
-	.db $DD $77 $FF
+	;.db $DD $77 $FF
+	ld (ix - 1), a
 
 ; Data from C8B to C8B (1 bytes)
 	push bc
@@ -657,7 +662,7 @@ _engine_cursor_manager_draw:
 	ld a, c
 
 ; Data from CA0 to CA1 (2 bytes)
-	.db $C6 $18
+	add a, $18
 
 ; Data from CA2 to CA4 (3 bytes)
 	.db $DD $77 $FC
@@ -708,7 +713,7 @@ _engine_cursor_manager_draw:
 	ld a, c
 
 ; Data from CBA to CBB (2 bytes)
-	.db $C6 $20
+	add a, $20
 
 ; Data from CBC to CBE (3 bytes)
 	.db $DD $77 $FE
@@ -759,7 +764,7 @@ _engine_cursor_manager_draw:
 	ld a, b
 
 ; Data from CD4 to CD5 (2 bytes)
-	.db $C6 $08
+	add a, $08
 
 ; Data from CD6 to CD6 (1 bytes)
 	.db $47
@@ -994,7 +999,7 @@ _engine_cursor_manager_decX:
 	.db $C3 $88 $0D
 
 ; Data from D4B to D4C (2 bytes)
-	.db $C6 $FF
+	add a, $FF
 
 ; Data from D4D to D4D (1 bytes)
 	ld (bc), a
@@ -1056,7 +1061,7 @@ _engine_cursor_manager_decY:
 	.db $C3 $88 $0D
 
 ; Data from D70 to D71 (2 bytes)
-	.db $C6 $FF
+	add a, $FF
 
 ; Data from D72 to D72 (1 bytes)
 	ld (bc), a
