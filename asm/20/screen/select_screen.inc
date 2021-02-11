@@ -25,7 +25,8 @@ _screen_select_screen_load:
 
 ; Data from 148F to 1491 (3 bytes)
 	;.db $CD $1A $0B
-	call $0B1A
+	;call $0B1A
+	call _fngine_content_manager_load_tit
 
 ; Data from 1492 to 1494 (3 bytes)
 	;.db $CD $51 $0B
