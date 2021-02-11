@@ -38,10 +38,16 @@ AF	xor a
 71	ld (hl), c
 77	ld (hl), a
 79 	ld a, c
+7B	ld a, e
 7D	ld a, l
+7E	ld a, (hl)
+LD   A,(HL) 
 
 B7	or a
 
 96	sub a, (hl)
 
 SUB  A,(HL)
+
+
+$DD $E5		push ix

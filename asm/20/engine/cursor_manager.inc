@@ -80,7 +80,8 @@ _engine_cursor_manager_init:
 	call $0003
 
 ; Data from B8B to B8B (1 bytes)
-	.db $39
+	;.db $39
+	add hl, sp
 
 ; Data from B8C to B8C (1 bytes)
 	ld a, (hl)
@@ -92,32 +93,40 @@ _engine_cursor_manager_init:
 	inc sp
 
 ; Data from B8F to B91 (3 bytes)
-	.db $CD $EE $1E
+	;.db $CD $EE $1E
+	call $1EEE
 
 ; Data from B92 to B92 (1 bytes)
 	pop af
 
 ; Data from B93 to B93 (1 bytes)
-	.db $4D
+	;.db $4D
+	ld c, l
 
 ; Data from B94 to B96 (3 bytes)
-	.db $21 $27 $C0
+	;.db $21 $27 $C0
+	ld hl, $C027
 
 ; Data from B97 to B97 (1 bytes)
-	.db $71
+	;.db $71
+	ld (hl), c
 
 ; Data from B98 to B9A (3 bytes)
-	.db $C3 $88 $0D
+	;.db $C3 $88 $0D
+	jp $0D88
 
 ; Data from B9B to B9C (2 bytes)
 _engine_cursor_manager_load:
-	.db $DD $E5
+	;.db $DD $E5
+	push ix
 
 ; Data from B9D to BA0 (4 bytes)
-	.db $DD $21 $00 $00
+	;.db $DD $21 $00 $00
+	ld ix, $0000
 
 ; Data from BA1 to BA2 (2 bytes)
-	.db $DD $39
+	;.db $DD $39
+	add ix, sp
 
 ; Data from BA3 to BA3 (1 bytes)
 	push af
@@ -126,25 +135,32 @@ _engine_cursor_manager_load:
 	push af
 
 ; Data from BA5 to BA8 (4 bytes)
-	.db $DD $36 $FD $00
-
+	;.db $DD $36 $FD $00
+	ld (ix - 3), $00
+		
 ; Data from BA9 to BAA (2 bytes)
-	.db $3E $E0
+	;.db $3E $E0
+	ld a, $E0
 
 ; Data from BAB to BAD (3 bytes)
-	.db $DD $86 $FD
+	;.db $DD $86 $FD
+	add a, (ix - 3)
 
 ; Data from BAE to BB0 (3 bytes)
-	.db $DD $77 $FE
+	;.db $DD $77 $FE
+	ld (ix - 2), a
 
 ; Data from BB1 to BB2 (2 bytes)
-	.db $3E $11
+	;.db $3E $11
+	ld a, $11
 
 ; Data from BB3 to BB4 (2 bytes)
-	.db $CE $00
+	;.db $CE $00
+	adc a, $00
 
 ; Data from BB5 to BB7 (3 bytes)
-	.db $DD $77 $FF
+	;.db $DD $77 $FF
+	ld (ix - 1), a
 
 ; Data from BB8 to BB9 (2 bytes)
 	.db $0E $00
