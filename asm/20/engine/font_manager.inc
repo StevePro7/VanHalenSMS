@@ -81,7 +81,8 @@ _engine_font_manager_draw_text:
 	push ix
 
 ; Data from DEB to DEE (4 bytes)
-	.db $DD $21 $00 $00
+	;.db $DD $21 $00 $00
+	ld ix, $0000
 
 ; Data from DEF to DF0 (2 bytes)
 	add ix, sp
@@ -90,25 +91,30 @@ _engine_font_manager_draw_text:
 	dec sp
 
 ; Data from DF2 to DF4 (3 bytes)
-	.db $DD $4E $06
+	;.db $DD $4E $06
+	ld c, (ix + $06)
 
 ; Data from DF5 to DF8 (4 bytes)
-	.db $DD $36 $FF $00
+	;.db $DD $36 $FF $00
+	ld (ix -1), $00
 
 ; Data from DF9 to DFB (3 bytes)
-	.db $DD $7E $04
+	;.db $DD $7E $04
+	ld a, (ix + $04)
 
 ; Data from DFC to DFE (3 bytes)
-	.db $DD $86 $FF
+	;.db $DD $86 $FF
+	add a, (ix - 1)
 
 ; Data from DFF to DFF (1 bytes)
 	ld e, a
 
 ; Data from E00 to E02 (3 bytes)
-	.db $DD $7E $05
+	;.db $DD $7E $05
+	ld a, (ix + $05)
 
 ; Data from E03 to E04 (2 bytes)
-	.db $CE $00
+	adc a, $00
 
 ; Data from E05 to E05 (1 bytes)
 	ld d, a
@@ -120,7 +126,7 @@ _engine_font_manager_draw_text:
 	or a
 
 ; Data from E08 to E09 (2 bytes)
-	.db $28 $2D
+	jr z, $2D
 
 ; Data from E0A to E0B (2 bytes)
 	add a, $E0
@@ -135,7 +141,8 @@ _engine_font_manager_draw_text:
 	inc c
 
 ; Data from E0F to E11 (3 bytes)
-	.db $DD $71 $06
+	;.db $DD $71 $06
+	ld (ix + $06), c
 
 ; Data from E12 to E12 (1 bytes)
 	push bc
@@ -349,7 +356,7 @@ _engine_font_manager_draw_data:
 	or a
 
 ; Data from E8A to E8B (2 bytes)
-	.db $28 $02
+	jr z, $02
 
 ; Data from E8C to E8D (2 bytes)
 	.db $0E $00
