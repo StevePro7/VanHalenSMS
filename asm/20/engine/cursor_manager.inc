@@ -216,7 +216,7 @@ _engine_cursor_manager_load:
 	ld (ix - 4), a
 
 ; Data from BD3 to BD4 (2 bytes)
-	;.db $26 $00
+	;ld h, $00
 	ld h, $00
 
 ; Data from BD5 to BD5 (1 bytes)
@@ -1147,13 +1147,14 @@ _engine_cursor_manager_incY:
 	ld bc, $11DC
 
 ; Data from D8B to D8D (3 bytes)
-	.db $21 $26 $C0
+	;.db $21 $26 $C0
+	ld hl, $C026
 
 ; Data from D8E to D8E (1 bytes)
 	ld l, (hl)
 
 ; Data from D8F to D90 (2 bytes)
-	;.db $26 $00
+	;ld h, $00
 	ld h, $00
 
 ; Data from D91 to D91 (1 bytes)
@@ -1163,10 +1164,12 @@ _engine_cursor_manager_incY:
 	ld c, (hl)
 
 ; Data from D93 to D95 (3 bytes)
-	.db $11 $E0 $11
+	;.db $11 $E0 $11
+	ld de, $11E0
 
 ; Data from D96 to D98 (3 bytes)
-	.db $21 $26 $C0
+	;.db $21 $26 $C0
+	ld hl, $C026
 
 ; Data from D99 to D99 (1 bytes)
 	inc hl
@@ -1175,7 +1178,7 @@ _engine_cursor_manager_incY:
 	ld l, (hl)
 
 ; Data from D9B to D9C (2 bytes)
-	.db $26 $00
+	ld h, $00
 
 ; Data from D9D to D9D (1 bytes)
 	add hl, de
@@ -1184,52 +1187,54 @@ _engine_cursor_manager_incY:
 	ld e, (hl)
 
 ; Data from D9F to D9F (1 bytes)
-	.db $0D
+	dec c
 
 ; Data from DA0 to DA0 (1 bytes)
 	ld a, c
 
 ; Data from DA1 to DA1 (1 bytes)
-	.db $07
+	rlca
 
 ; Data from DA2 to DA2 (1 bytes)
-	.db $07
+	rlca
 
 ; Data from DA3 to DA3 (1 bytes)
-	.db $07
+	rlca
 
 ; Data from DA4 to DA5 (2 bytes)
-	.db $E6 $F8
+	and $F8
 
 ; Data from DA6 to DA6 (1 bytes)
 	ld d, a
 
 ; Data from DA7 to DA9 (3 bytes)
-	.db $21 $28 $C0
+	;.db $21 $28 $C0
+	ld hl, $C028
 
 ; Data from DAA to DAA (1 bytes)
-	.db $72
+	ld (hl), d
 
 ; Data from DAB to DAD (3 bytes)
-	.db $01 $29 $C0
+	;.db $01 $29 $C0
+	ld bc, $C029
 
 ; Data from DAE to DAE (1 bytes)
-	.db $1D
+	dec e
 
 ; Data from DAF to DAF (1 bytes)
 	ld a, e
 
 ; Data from DB0 to DB0 (1 bytes)
-	.db $07
+	rlca
 
 ; Data from DB1 to DB1 (1 bytes)
-	.db $07
+	rlca
 
 ; Data from DB2 to DB2 (1 bytes)
-	.db $07
+	rlca
 
 ; Data from DB3 to DB4 (2 bytes)
-	.db $E6 $F8
+	and $F8
 
 ; Data from DB5 to DB5 (1 bytes)
 	ld e, a
@@ -1241,10 +1246,10 @@ _engine_cursor_manager_incY:
 	.db $14
 
 ; Data from DB8 to DB8 (1 bytes)
-	.db $72
+	ld (hl), d
 
 ; Data from DB9 to DB9 (1 bytes)
-	.db $1D
+	dec e
 
 ; Data from DBA to DBA (1 bytes)
 	ld a, e
