@@ -18,11 +18,7 @@ _engine_content_manager_load_til:
 		pop af
 		ret
 	
-; Data from AB8 to AB9 (2 bytes)	
-A$content_manager$96:	
-C$content_manager.c$20$1$17:	
-C$content_manager.c$22$1$18:	
-H$engine_content_manager_load_sp:	
+; Data from AB8 to AB9 (2 bytes)
 _engine_content_manager_load_spl:	
 	.db $3E $02
 	

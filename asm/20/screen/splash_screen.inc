@@ -9,7 +9,8 @@ _screen_splash_screen_load:
 	
 ; Data from 1239 to 123B (3 bytes)	
 	;.db $CD $B8 $0A
-	call $0AB8
+	;call $0AB8
+	call _engine_content_manager_load_spl
 	
 ; Data from 123C to 123E (3 bytes)	
 	;.db $CD $25 $08
