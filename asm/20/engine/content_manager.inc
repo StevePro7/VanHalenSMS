@@ -1,7 +1,3 @@
-A$content_manager$65:	
-C$content_manager.c$14$0$0:	
-C$content_manager.c$16$1$17:	
-G$engine_content_manager_load_ti:	
 _engine_content_manager_load_til:
 		ld hl, $0000
 		push hl

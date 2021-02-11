@@ -102,7 +102,7 @@ _main:
 		push hl
 		call A$_sms_manager$379
 		pop af
-		call A$content_manager$65
+		call _engine_content_manager_load_til
 		call A$content_manager$263
 		call A$scroll_manager$61
 		ld a, $01
