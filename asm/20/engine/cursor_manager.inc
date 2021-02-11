@@ -1243,7 +1243,7 @@ _engine_cursor_manager_incY:
 	ld (bc), a
 
 ; Data from DB7 to DB7 (1 bytes)
-	.db $14
+	inc d
 
 ; Data from DB8 to DB8 (1 bytes)
 	ld (hl), d
