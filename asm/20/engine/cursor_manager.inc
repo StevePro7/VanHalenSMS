@@ -77,7 +77,7 @@ _engine_cursor_manager_init:
 
 ; Data from B88 to B8A (3 bytes)
 	;.db $21 $03 $00
-	call $0003
+	ld hl, $0003
 
 ; Data from B8B to B8B (1 bytes)
 	;.db $39
@@ -227,7 +227,7 @@ _engine_cursor_manager_load:
 
 ; Data from BD7 to BD9 (3 bytes)
 	;.db $11 $56 $C1
-	ld bc, $C156
+	ld de, $C156
 
 ; Data from BDA to BDA (1 bytes)
 	add hl, de

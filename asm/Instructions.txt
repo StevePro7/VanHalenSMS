@@ -36,9 +36,13 @@ AF	xor a
 
 33	inc sp
 39	add hl, sp
+3C	inc a
 3D	dec a
 
 46	ld b, (hl)
+
+6B	ld l, e
+
 71	ld (hl), c
 77	ld (hl), a
 79 	ld a, c
@@ -54,9 +58,24 @@ B7	or a
 SUB  A,(HL)
 
 
+$DD $39		add ix, sp
+
+$DD $E1		pop ix
 $DD $E5		push ix
 
-
+$DD $F9		ld sp, ix
 
 LD  (IX+0),&00
 ld (ix - 3), $00
+
+.db $06		ld b,
+.db $16		ld d,
+
+.db $28		jr z,
+
+.db $CE		adc a,
+.db $C6		add a,
+.db $20		jr nz,
+.db $26 	ld h,
+
+.db $E6		and
