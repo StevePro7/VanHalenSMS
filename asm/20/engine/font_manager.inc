@@ -109,7 +109,7 @@ _engine_font_manager_draw_text:
 	ld a, (de)
 
 ; Data from E07 to E07 (1 bytes)
-	.db $B7
+	or a
 
 ; Data from E08 to E09 (2 bytes)
 	.db $28 $2D
@@ -118,13 +118,13 @@ _engine_font_manager_draw_text:
 	.db $C6 $E0
 
 ; Data from E0C to E0C (1 bytes)
-	.db $47
+	ld b, a
 
 ; Data from E0D to E0D (1 bytes)
-	.db $51
+	ld d, c
 
 ; Data from E0E to E0E (1 bytes)
-	.db $0C
+	inc c
 
 ; Data from E0F to E11 (3 bytes)
 	.db $DD $71 $06
@@ -136,16 +136,16 @@ _engine_font_manager_draw_text:
 	.db $DD $7E $07
 
 ; Data from E16 to E16 (1 bytes)
-	.db $F5
+	push af
 
 ; Data from E17 to E17 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from E18 to E18 (1 bytes)
-	.db $D5
+	push de
 
 ; Data from E19 to E19 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from E1A to E1C (3 bytes)
 	.db $CD $23 $09
@@ -166,7 +166,7 @@ _engine_font_manager_draw_text:
 	.db $16 $00
 
 ; Data from E25 to E25 (1 bytes)
-	.db $78
+	ld a, b
 
 ; Data from E26 to E26 (1 bytes)
 	.db $6F
@@ -205,7 +205,7 @@ _engine_font_manager_draw_text:
 	.db $18 $C2
 
 ; Data from E37 to E37 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from E38 to E39 (2 bytes)
 	.db $DD $E1
@@ -224,7 +224,7 @@ _engine_font_manager_draw_data:
 	.db $DD $39
 
 ; Data from E43 to E43 (1 bytes)
-	.db $F5
+	push af
 
 ; Data from E44 to E46 (3 bytes)
 	.db $DD $7E $06
@@ -269,7 +269,7 @@ _engine_font_manager_draw_data:
 	push hl
 
 ; Data from E61 to E61 (1 bytes)
-	.db $D5
+	push de
 
 ; Data from E62 to E64 (3 bytes)
 	.db $01 $0A $00
@@ -311,7 +311,7 @@ _engine_font_manager_draw_data:
 	.db $DD $74 $05
 
 ; Data from E7B to E7B (1 bytes)
-	.db $78
+	ld a, b
 
 ; Data from E7C to E7D (2 bytes)
 	.db $C6 $10
@@ -338,7 +338,7 @@ _engine_font_manager_draw_data:
 	.db $DD $7E $FE
 
 ; Data from E89 to E89 (1 bytes)
-	.db $B7
+	or a
 
 ; Data from E8A to E8B (2 bytes)
 	.db $28 $02
@@ -365,16 +365,16 @@ _engine_font_manager_draw_data:
 	.db $DD $7E $07
 
 ; Data from E9E to E9E (1 bytes)
-	.db $F5
+	push af
 
 ; Data from E9F to E9F (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from EA0 to EA0 (1 bytes)
 	push bc
 
 ; Data from EA1 to EA1 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from EA2 to EA4 (3 bytes)
 	.db $CD $23 $09
@@ -404,7 +404,7 @@ _engine_font_manager_draw_data:
 	.db $9F
 
 ; Data from EB0 to EB0 (1 bytes)
-	.db $47
+	ld b, a
 
 ; Data from EB1 to EB1 (1 bytes)
 	add hl, bc
