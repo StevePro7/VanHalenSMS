@@ -1088,13 +1088,15 @@ _engine_cursor_manager_decY:
 	jr nz, $06
 
 ; Data from D6A to D6B (2 bytes)
-	.db $3E $02
+	;.db $3E $02
+	ld a, $02
 
 ; Data from D6C to D6C (1 bytes)
 	ld (bc), a
 
 ; Data from D6D to D6F (3 bytes)
-	.db $C3 $88 $0D
+	;.db $C3 $88 $0D
+	jp $0D88
 
 ; Data from D70 to D71 (2 bytes)
 	add a, $FF
@@ -1103,11 +1105,13 @@ _engine_cursor_manager_decY:
 	ld (bc), a
 
 ; Data from D73 to D75 (3 bytes)
-	.db $C3 $88 $0D
+	;.db $C3 $88 $0D
+	jp $0D88
 
 ; Data from D76 to D78 (3 bytes)
 _engine_cursor_manager_incY:
-	.db $01 $27 $C0
+	;.db $01 $27 $C0
+	ld bc, $C027
 
 ; Data from D79 to D79 (1 bytes)
 	ld a, (bc)
@@ -1125,7 +1129,8 @@ _engine_cursor_manager_incY:
 	ld (bc), a
 
 ; Data from D80 to D82 (3 bytes)
-	.db $C3 $88 $0D
+	;.db $C3 $88 $0D
+	jp $0D88
 
 ; Data from D83 to D83 (1 bytes)
 	inc a
@@ -1134,10 +1139,12 @@ _engine_cursor_manager_incY:
 	ld (bc), a
 
 ; Data from D85 to D87 (3 bytes)
-	.db $C3 $88 $0D
+	;.db $C3 $88 $0D
+	jp $0D88
 
 ; Data from D88 to D8A (3 bytes)
-	.db $01 $DC $11
+	;.db $01 $DC $11
+	ld bc, $11DC
 
 ; Data from D8B to D8D (3 bytes)
 	.db $21 $26 $C0
@@ -1146,7 +1153,8 @@ _engine_cursor_manager_incY:
 	ld l, (hl)
 
 ; Data from D8F to D90 (2 bytes)
-	.db $26 $00
+	;.db $26 $00
+	ld h, $00
 
 ; Data from D91 to D91 (1 bytes)
 	add hl, bc
