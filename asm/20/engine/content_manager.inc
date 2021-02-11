@@ -210,7 +210,8 @@ _engine_content_manager_load_tit:
 	
 ; Data from B1A to B1B (2 bytes)	
 _fngine_content_manager_load_tit:	
-	.db $3E $03
+	;.db $3E $03
+	ld a, $03
 	
 ; Data from B1C to B1C (1 bytes)	
 	push af
@@ -219,25 +220,29 @@ _fngine_content_manager_load_tit:
 	inc sp
 	
 ; Data from B1E to B20 (3 bytes)	
-	.db $CD $31 $08
+	;.db $CD $31 $08
+	call $0831
 	
 ; Data from B21 to B21 (1 bytes)	
 	inc sp
 	
 ; Data from B22 to B24 (3 bytes)	
-	.db $21 $40 $00
+	;.db $21 $40 $00
+	ld hl, $0040
 	
 ; Data from B25 to B25 (1 bytes)	
 	push hl
 	
 ; Data from B26 to B28 (3 bytes)	
-	.db $21 $45 $93
+	;.db $21 $45 $93
+	ld hl, $9345
 	
 ; Data from B29 to B29 (1 bytes)	
 	push hl
 	
 ; Data from B2A to B2C (3 bytes)	
-	.db $CD $8E $08
+	;.db $CD $8E $08
+	call $088E
 	
 ; Data from B2D to B2D (1 bytes)	
 	pop af
@@ -246,19 +251,22 @@ _fngine_content_manager_load_tit:
 	pop af
 	
 ; Data from B2F to B31 (3 bytes)	
-	.db $01 $E8 $92
+	;.db $01 $E8 $92
+	ld bc, $92E8
 	
 ; Data from B32 to B32 (1 bytes)	
 	push bc
 	
 ; Data from B33 to B35 (3 bytes)	
-	.db $21 $00 $00
+	;.db $21 $00 $00
+	ld hl, $0000
 	
 ; Data from B36 to B36 (1 bytes)	
 	push hl
 	
 ; Data from B37 to B39 (3 bytes)	
-	.db $CD $A4 $08
+	;.db $CD $A4 $08
+	ld $08A4
 	
 ; Data from B3A to B3A (1 bytes)	
 	pop af
@@ -267,31 +275,36 @@ _fngine_content_manager_load_tit:
 	pop af
 	
 ; Data from B3C to B3E (3 bytes)	
-	.db $01 $D8 $92
+	;.db $01 $D8 $92
+	ld bc, $92D8
 	
 ; Data from B3F to B3F (1 bytes)	
 	push bc
 	
 ; Data from B40 to B42 (3 bytes)	
-	.db $CD $C5 $08
+	;.db $CD $C5 $08
+	cal $08C5
 	
 ; Data from B43 to B43 (1 bytes)	
 	pop af
 	
 ; Data from B44 to B46 (3 bytes)	
-	.db $21 $03 $03
+	;.db $21 $03 $03
+	ld hl, $0303
 	
 ; Data from B47 to B47 (1 bytes)	
 	push hl
 	
 ; Data from B48 to B49 (2 bytes)	
-	.db $2E $0F
+	;.db $2E $0F
+	ld l, $0F
 	
 ; Data from B4A to B4A (1 bytes)	
 	push hl
 	
 ; Data from B4B to B4D (3 bytes)	
-	.db $CD $D3 $08
+	;.db $CD $D3 $08
+	call $08D3
 	
 ; Data from B4E to B4E (1 bytes)	
 	pop af
