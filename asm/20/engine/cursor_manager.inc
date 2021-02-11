@@ -1060,20 +1060,23 @@ _engine_cursor_manager_incX:
 	ld (bc), a
 
 ; Data from D5B to D5D (3 bytes)
-	.db $C3 $88 $0D
+	;.db $C3 $88 $0D
+	jp $0D88
 
 ; Data from D5E to D5E (1 bytes)
-	.db $3C
+	inc a
 
 ; Data from D5F to D5F (1 bytes)
 	ld (bc), a
 
 ; Data from D60 to D62 (3 bytes)
-	.db $C3 $88 $0D
+	;.db $C3 $88 $0D
+	jp $0D88
 
 ; Data from D63 to D65 (3 bytes)
 _engine_cursor_manager_decY:
-	.db $01 $27 $C0
+	;.db $01 $27 $C0
+	ld bc, $C027
 
 ; Data from D66 to D66 (1 bytes)
 	ld a, (bc)
@@ -1125,7 +1128,7 @@ _engine_cursor_manager_incY:
 	.db $C3 $88 $0D
 
 ; Data from D83 to D83 (1 bytes)
-	.db $3C
+	inc a
 
 ; Data from D84 to D84 (1 bytes)
 	ld (bc), a
