@@ -235,7 +235,8 @@ _fngine_content_manager_load_tit:
 	
 ; Data from B26 to B28 (3 bytes)	
 	;.db $21 $45 $93
-	ld hl, $9345
+	;ld hl, $9345
+	ld hl, _VanHalenTitleTop__tiles__psgcom
 	
 ; Data from B29 to B29 (1 bytes)	
 	push hl
@@ -252,7 +253,8 @@ _fngine_content_manager_load_tit:
 	
 ; Data from B2F to B31 (3 bytes)	
 	;.db $01 $E8 $92
-	ld bc, $92E8
+	;ld bc, $92E8
+	ld bc, _VanHalenTitleTop__tilemap__stmc
 	
 ; Data from B32 to B32 (1 bytes)	
 	push bc
@@ -266,7 +268,7 @@ _fngine_content_manager_load_tit:
 	
 ; Data from B37 to B39 (3 bytes)	
 	;.db $CD $A4 $08
-	ld $08A4
+	call $08A4
 	
 ; Data from B3A to B3A (1 bytes)	
 	pop af
@@ -276,14 +278,15 @@ _fngine_content_manager_load_tit:
 	
 ; Data from B3C to B3E (3 bytes)	
 	;.db $01 $D8 $92
-	ld bc, $92D8
+	;ld bc, $92D8
+	ld bc, _VanHalenTitleTop__palette__bin
 	
 ; Data from B3F to B3F (1 bytes)	
 	push bc
 	
 ; Data from B40 to B42 (3 bytes)	
 	;.db $CD $C5 $08
-	cal $08C5
+	call $08C5
 	
 ; Data from B43 to B43 (1 bytes)	
 	pop af
