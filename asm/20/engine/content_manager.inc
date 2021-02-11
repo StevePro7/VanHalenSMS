@@ -110,25 +110,29 @@ _engine_content_manager_load_tit:
 	inc sp
 	
 ; Data from AE7 to AE9 (3 bytes)	
-	.db $CD $31 $08
+	;.db $CD $31 $08
+	call $0831
 	
 ; Data from AEA to AEA (1 bytes)	
 	inc sp
 	
 ; Data from AEB to AED (3 bytes)	
-	.db $21 $40 $00
+	;.db $21 $40 $00
+	ld hl, $0040
 	
 ; Data from AEE to AEE (1 bytes)	
 	push hl
 	
 ; Data from AEF to AF1 (3 bytes)	
-	.db $21 $77 $80
+	;.db $21 $77 $80
+	ld hl, $8077
 	
 ; Data from AF2 to AF2 (1 bytes)	
 	push hl
 	
 ; Data from AF3 to AF5 (3 bytes)	
-	.db $CD $8E $08
+	;.db $CD $8E $08
+	call $088E
 	
 ; Data from AF6 to AF6 (1 bytes)	
 	pop af
@@ -137,19 +141,22 @@ _engine_content_manager_load_tit:
 	pop af
 	
 ; Data from AF8 to AFA (3 bytes)	
-	.db $01 $10 $80
+	;.db $01 $10 $80
+	ld bc, $8010
 	
 ; Data from AFB to AFB (1 bytes)	
 	push bc
 	
 ; Data from AFC to AFE (3 bytes)	
-	.db $21 $00 $00
+	;.db $21 $00 $00
+	ld hl, $0000
 	
 ; Data from AFF to AFF (1 bytes)	
 	push hl
 	
 ; Data from B00 to B02 (3 bytes)	
-	.db $CD $A4 $08
+	;.db $CD $A4 $08
+	call $08A4
 	
 ; Data from B03 to B03 (1 bytes)	
 	pop af
@@ -158,31 +165,36 @@ _engine_content_manager_load_tit:
 	pop af
 	
 ; Data from B05 to B07 (3 bytes)	
-	.db $01 $00 $80
+	;.db $01 $00 $80
+	ld bc, $8000
 	
 ; Data from B08 to B08 (1 bytes)	
 	push bc
 	
 ; Data from B09 to B0B (3 bytes)	
-	.db $CD $C5 $08
+	;.db $CD $C5 $08
+	call $08C5
 	
 ; Data from B0C to B0C (1 bytes)	
 	pop af
 	
 ; Data from B0D to B0F (3 bytes)	
-	.db $21 $03 $03
+	;.db $21 $03 $03
+	ld hl, $0303
 	
 ; Data from B10 to B10 (1 bytes)	
 	push hl
 	
 ; Data from B11 to B12 (2 bytes)	
 	.db $2E $0F
+	ld l, $0F
 	
 ; Data from B13 to B13 (1 bytes)	
 	push hl
 	
 ; Data from B14 to B16 (3 bytes)	
-	.db $CD $D3 $08
+	;.db $CD $D3 $08
+	call $08D3
 	
 ; Data from B17 to B17 (1 bytes)	
 	pop af
