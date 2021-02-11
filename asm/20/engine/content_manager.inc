@@ -125,7 +125,8 @@ _engine_content_manager_load_tit:
 	
 ; Data from AEF to AF1 (3 bytes)	
 	;.db $21 $77 $80
-	ld hl, $8077
+	;ld hl, $8077
+	ld hl, _VanHalenTitleGap__tiles__psgcom
 	
 ; Data from AF2 to AF2 (1 bytes)	
 	push hl
@@ -142,7 +143,8 @@ _engine_content_manager_load_tit:
 	
 ; Data from AF8 to AFA (3 bytes)	
 	;.db $01 $10 $80
-	ld bc, $8010
+	;ld bc, $8010
+	ld bc, _VanHalenTitleGap__tilemap__stmc
 	
 ; Data from AFB to AFB (1 bytes)	
 	push bc
@@ -166,7 +168,8 @@ _engine_content_manager_load_tit:
 	
 ; Data from B05 to B07 (3 bytes)	
 	;.db $01 $00 $80
-	ld bc, $8000
+	;ld bc, $8000
+	ld bc, _VanHalenTitleGap__palette__bin
 	
 ; Data from B08 to B08 (1 bytes)	
 	push bc
@@ -186,7 +189,7 @@ _engine_content_manager_load_tit:
 	push hl
 	
 ; Data from B11 to B12 (2 bytes)	
-	.db $2E $0F
+	;.db $2E $0F
 	ld l, $0F
 	
 ; Data from B13 to B13 (1 bytes)	
