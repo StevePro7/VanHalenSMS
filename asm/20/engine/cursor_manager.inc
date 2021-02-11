@@ -311,7 +311,7 @@ _engine_cursor_manager_load:
 	jr c, $A9
 
 ; Data from C00 to C01 (2 bytes)
-	;.db $DD $F9
+	;ld sp, ix
 	ld sp, ix
 
 ; Data from C02 to C03 (2 bytes)
@@ -691,7 +691,8 @@ _engine_cursor_manager_draw:
 	inc sp
 
 ; Data from CAD to CAF (3 bytes)
-	.db $DD $7E $FC
+	;.db $DD $7E $FC
+	ld a, (ix - 4)
 
 ; Data from CB0 to CB0 (1 bytes)
 	push af
@@ -700,7 +701,8 @@ _engine_cursor_manager_draw:
 	inc sp
 
 ; Data from CB2 to CB4 (3 bytes)
-	.db $CD $64 $09
+	;.db $CD $64 $09
+	call $0964
 
 ; Data from CB5 to CB5 (1 bytes)
 	pop af
@@ -721,7 +723,8 @@ _engine_cursor_manager_draw:
 	add a, $20
 
 ; Data from CBC to CBE (3 bytes)
-	.db $DD $77 $FE
+	;.db $DD $77 $FE
+	ld (ix - 2), a
 
 ; Data from CBF to CBF (1 bytes)
 	push bc
@@ -730,7 +733,8 @@ _engine_cursor_manager_draw:
 	push de
 
 ; Data from CC1 to CC3 (3 bytes)
-	.db $21 $24 $01
+	;.db $21 $24 $01
+	ld hl, $0124
 
 ; Data from CC4 to CC4 (1 bytes)
 	push hl
@@ -751,7 +755,8 @@ _engine_cursor_manager_draw:
 	inc sp
 
 ; Data from CCC to CCE (3 bytes)
-	.db $CD $64 $09
+	;.db $CD $64 $09
+	call $0964
 
 ; Data from CCF to CCF (1 bytes)
 	pop af
@@ -781,7 +786,8 @@ _engine_cursor_manager_draw:
 	push de
 
 ; Data from CD9 to CDB (3 bytes)
-	.db $21 $26 $01
+	;.db $21 $26 $01
+	ld hl, $0126
 
 ; Data from CDC to CDC (1 bytes)
 	push hl
@@ -790,7 +796,8 @@ _engine_cursor_manager_draw:
 	push bc
 
 ; Data from CDE to CE0 (3 bytes)
-	.db $CD $64 $09
+	;.db $CD $64 $09
+	call $0964
 
 ; Data from CE1 to CE1 (1 bytes)
 	pop af
@@ -808,7 +815,8 @@ _engine_cursor_manager_draw:
 	push de
 
 ; Data from CE6 to CE8 (3 bytes)
-	.db $21 $2B $01
+	;.db $21 $2B $01
+	ld hl, $012B
 
 ; Data from CE9 to CE9 (1 bytes)
 	push hl
@@ -829,7 +837,8 @@ _engine_cursor_manager_draw:
 	inc sp
 
 ; Data from CEF to CF1 (3 bytes)
-	.db $CD $64 $09
+	;.db $CD $64 $09
+	call $0964
 
 ; Data from CF2 to CF2 (1 bytes)
 	pop af
@@ -844,7 +853,8 @@ _engine_cursor_manager_draw:
 	push de
 
 ; Data from CF6 to CF8 (3 bytes)
-	.db $21 $2D $01
+	;.db $21 $2D $01
+	ld hl, $012D
 
 ; Data from CF9 to CF9 (1 bytes)
 	push hl
@@ -856,7 +866,8 @@ _engine_cursor_manager_draw:
 	inc sp
 
 ; Data from CFC to CFE (3 bytes)
-	.db $DD $7E $FD
+	;.db $DD $7E $FD
+	ld a, (ix - 3)
 
 ; Data from CFF to CFF (1 bytes)
 	push af
@@ -865,7 +876,8 @@ _engine_cursor_manager_draw:
 	inc sp
 
 ; Data from D01 to D03 (3 bytes)
-	.db $CD $64 $09
+	;.db $CD $64 $09
+	call $0964
 
 ; Data from D04 to D04 (1 bytes)
 	pop af
@@ -880,7 +892,8 @@ _engine_cursor_manager_draw:
 	push de
 
 ; Data from D08 to D0A (3 bytes)
-	.db $21 $2E $01
+	;.db $21 $2E $01
+	ld hl, $012E
 
 ; Data from D0B to D0B (1 bytes)
 	push hl
@@ -892,7 +905,8 @@ _engine_cursor_manager_draw:
 	inc sp
 
 ; Data from D0E to D10 (3 bytes)
-	.db $DD $7E $FF
+	;.db $DD $7E $FF
+	ld a, (ix - 1)
 
 ; Data from D11 to D11 (1 bytes)
 	push af
@@ -901,7 +915,8 @@ _engine_cursor_manager_draw:
 	inc sp
 
 ; Data from D13 to D15 (3 bytes)
-	.db $CD $64 $09
+	;.db $CD $64 $09
+	call $0964
 
 ; Data from D16 to D16 (1 bytes)
 	pop af
@@ -916,7 +931,8 @@ _engine_cursor_manager_draw:
 	push de
 
 ; Data from D1A to D1C (3 bytes)
-	.db $21 $2F $01
+	;.db $21 $2F $01
+	ld hl, $012F
 
 ; Data from D1D to D1D (1 bytes)
 	push hl
@@ -928,8 +944,9 @@ _engine_cursor_manager_draw:
 	inc sp
 
 ; Data from D20 to D22 (3 bytes)
-	.db $DD $7E $FC
-
+	;.db $DD $7E $FC
+	ld a, (ix - 4)
+	
 ; Data from D23 to D23 (1 bytes)
 	push af
 
@@ -937,7 +954,8 @@ _engine_cursor_manager_draw:
 	inc sp
 
 ; Data from D25 to D27 (3 bytes)
-	.db $CD $64 $09
+	;.db $CD $64 $09
+	call $0964
 
 ; Data from D28 to D28 (1 bytes)
 	pop af
@@ -949,7 +967,8 @@ _engine_cursor_manager_draw:
 	pop de
 
 ; Data from D2B to D2D (3 bytes)
-	.db $21 $30 $01
+	;.db $21 $30 $01
+	ld hl, $0130
 
 ; Data from D2E to D2E (1 bytes)
 	push hl
@@ -961,7 +980,8 @@ _engine_cursor_manager_draw:
 	inc sp
 
 ; Data from D31 to D33 (3 bytes)
-	.db $DD $7E $FE
+	;.db $DD $7E $FE
+	ld a, (ix - 2)
 
 ; Data from D34 to D34 (1 bytes)
 	push af
@@ -970,10 +990,11 @@ _engine_cursor_manager_draw:
 	inc sp
 
 ; Data from D36 to D38 (3 bytes)
-	.db $CD $64 $09
+	;.db $CD $64 $09
+	call $0964
 
 ; Data from D39 to D3A (2 bytes)
-	.db $DD $F9
+	ld sp, ix
 
 ; Data from D3B to D3C (2 bytes)
 	.db $DD $E1
