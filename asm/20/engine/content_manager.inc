@@ -179,14 +179,9 @@ _engine_content_manager_load_tit:
 	.db $F1
 	
 ; Data from B19 to B19 (1 bytes)	
-XG$engine_content_manager_load_t:	
 	ret
 	
 ; Data from B1A to B1B (2 bytes)	
-A$content_manager$204:	
-C$content_manager.c$48$1$19:	
-C$content_manager.c$50$1$20:	
-I$engine_content_manager_load_ti:	
 _fngine_content_manager_load_tit:	
 	.db $3E $03
 	

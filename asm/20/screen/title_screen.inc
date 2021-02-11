@@ -13,7 +13,8 @@ _screen_title_screen_load:
 
 ; Data from 12BF to 12C1 (3 bytes)
 	;.db $CD $E3 $0A
-	call $0AE3
+	;call $0AE3
+	call _engine_content_manager_load_tit
 
 ; Data from 12C2 to 12C4 (3 bytes)
 	;.db $21 $0A $15
