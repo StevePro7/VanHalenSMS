@@ -273,13 +273,8 @@ _fngine_content_manager_load_tit:
 	.db $F1
 	
 ; Data from B50 to B50 (1 bytes)	
-XH$engine_content_manager_load_t:	
 	ret
 	
-A$content_manager$263:	
-C$content_manager.c$60$1$20:	
-C$content_manager.c$63$1$21:	
-G$engine_content_manager_load_sp:	
 _engine_content_manager_load_spr:	
 		ld hl, $0120
 		push hl
