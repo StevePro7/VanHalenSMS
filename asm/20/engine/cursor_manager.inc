@@ -623,7 +623,8 @@ _engine_cursor_manager_draw:
 	push de
 
 ; Data from C8D to C8F (3 bytes)
-	.db $21 $22 $01
+	;.db $21 $22 $01
+	ld hl, $0122
 
 ; Data from C90 to C90 (1 bytes)
 	push hl
@@ -635,7 +636,8 @@ _engine_cursor_manager_draw:
 	inc sp
 
 ; Data from C93 to C95 (3 bytes)
-	.db $DD $7E $FF
+	;.db $DD $7E $FF
+	ld a, (ix - 1)
 
 ; Data from C96 to C96 (1 bytes)
 	push af
@@ -644,7 +646,8 @@ _engine_cursor_manager_draw:
 	inc sp
 
 ; Data from C98 to C9A (3 bytes)
-	.db $CD $64 $09
+	;.db $CD $64 $09
+	call $0964
 
 ; Data from C9B to C9B (1 bytes)
 	pop af
@@ -665,7 +668,8 @@ _engine_cursor_manager_draw:
 	add a, $18
 
 ; Data from CA2 to CA4 (3 bytes)
-	.db $DD $77 $FC
+	;.db $DD $77 $FC
+	ld (ix - 4), a
 
 ; Data from CA5 to CA5 (1 bytes)
 	push bc
@@ -674,7 +678,8 @@ _engine_cursor_manager_draw:
 	push de
 
 ; Data from CA7 to CA9 (3 bytes)
-	.db $21 $23 $01
+	;.db $21 $23 $01
+	ld hl, $0123
 
 ; Data from CAA to CAA (1 bytes)
 	push hl
