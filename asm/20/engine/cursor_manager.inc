@@ -746,7 +746,8 @@ _engine_cursor_manager_draw:
 	inc sp
 
 ; Data from CC7 to CC9 (3 bytes)
-	.db $DD $7E $FE
+	;.db $DD $7E $FE
+	ld a, (ix - 2)
 
 ; Data from CCA to CCA (1 bytes)
 	push af
@@ -777,7 +778,7 @@ _engine_cursor_manager_draw:
 	add a, $08
 
 ; Data from CD6 to CD6 (1 bytes)
-	.db $47
+	ld b, a
 
 ; Data from CD7 to CD7 (1 bytes)
 	push bc
@@ -997,32 +998,36 @@ _engine_cursor_manager_draw:
 	ld sp, ix
 
 ; Data from D3B to D3C (2 bytes)
-	.db $DD $E1
+	pop ix
 
 ; Data from D3D to D3D (1 bytes)
 	ret
 
 ; Data from D3E to D40 (3 bytes)
 _engine_cursor_manager_decX:
-	.db $01 $26 $C0
+	;.db $01 $26 $C0
+	ld bc, $C026
 
 ; Data from D41 to D41 (1 bytes)
-	.db $0A
+	ld a, (bc)
 
 ; Data from D42 to D42 (1 bytes)
-	.db $B7
+	or a
 
 ; Data from D43 to D44 (2 bytes)
-	.db $20 $06
+	;jr nz, $06
+	 jr nz, $06
 
 ; Data from D45 to D46 (2 bytes)
-	.db $3E $03
+	;.db $3E $03
+	ld a, $03
 
 ; Data from D47 to D47 (1 bytes)
 	ld (bc), a
 
 ; Data from D48 to D4A (3 bytes)
-	.db $C3 $88 $0D
+	;.db $C3 $88 $0D
+	jp $0D88
 
 ; Data from D4B to D4C (2 bytes)
 	add a, $FF
@@ -1031,20 +1036,22 @@ _engine_cursor_manager_decX:
 	ld (bc), a
 
 ; Data from D4E to D50 (3 bytes)
-	.db $C3 $88 $0D
+	;.db $C3 $88 $0D
+	jp $0D88
 
 ; Data from D51 to D53 (3 bytes)
 _engine_cursor_manager_incX:
-	.db $01 $26 $C0
+	;.db $01 $26 $C0
+	ld bc, $C026
 
 ; Data from D54 to D54 (1 bytes)
-	.db $0A
+	ld a, (bc)
 
 ; Data from D55 to D56 (2 bytes)
-	.db $FE $03
+	cp $03
 
 ; Data from D57 to D58 (2 bytes)
-	.db $20 $05
+	jr nz, $05
 
 ; Data from D59 to D59 (1 bytes)
 	xor a
@@ -1069,13 +1076,13 @@ _engine_cursor_manager_decY:
 	.db $01 $27 $C0
 
 ; Data from D66 to D66 (1 bytes)
-	.db $0A
+	ld a, (bc)
 
 ; Data from D67 to D67 (1 bytes)
-	.db $B7
+	or a
 
 ; Data from D68 to D69 (2 bytes)
-	.db $20 $06
+	jr nz, $06
 
 ; Data from D6A to D6B (2 bytes)
 	.db $3E $02
@@ -1100,13 +1107,13 @@ _engine_cursor_manager_incY:
 	.db $01 $27 $C0
 
 ; Data from D79 to D79 (1 bytes)
-	.db $0A
+	ld a, (bc)
 
 ; Data from D7A to D7B (2 bytes)
-	.db $FE $02
+	cp $02
 
 ; Data from D7C to D7D (2 bytes)
-	.db $20 $05
+	jr nz, $05
 
 ; Data from D7E to D7E (1 bytes)
 	xor a
