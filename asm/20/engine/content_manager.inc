@@ -186,128 +186,93 @@ _fngine_content_manager_load_tit:
 	.db $3E $03
 	
 ; Data from B1C to B1C (1 bytes)	
-A$content_manager$205:	
 	.db $F5
 	
 ; Data from B1D to B1D (1 bytes)	
-A$content_manager$206:	
 	.db $33
 	
 ; Data from B1E to B20 (3 bytes)	
-A$content_manager$207:	
 	.db $CD $31 $08
 	
 ; Data from B21 to B21 (1 bytes)	
-A$content_manager$208:	
 	.db $33
 	
 ; Data from B22 to B24 (3 bytes)	
-A$content_manager$212:	
-C$content_manager.c$51$1$20:	
 	.db $21 $40 $00
 	
 ; Data from B25 to B25 (1 bytes)	
-A$content_manager$213:	
 	.db $E5
 	
 ; Data from B26 to B28 (3 bytes)	
-A$content_manager$214:	
 	.db $21 $45 $93
 	
 ; Data from B29 to B29 (1 bytes)	
-A$content_manager$215:	
 	.db $E5
 	
 ; Data from B2A to B2C (3 bytes)	
-A$content_manager$216:	
 	.db $CD $8E $08
 	
 ; Data from B2D to B2D (1 bytes)	
-A$content_manager$217:	
 	.db $F1
 	
 ; Data from B2E to B2E (1 bytes)	
-A$content_manager$218:	
 	.db $F1
 	
 ; Data from B2F to B31 (3 bytes)	
-A$content_manager$222:	
-C$content_manager.c$52$1$20:	
 	.db $01 $E8 $92
 	
 ; Data from B32 to B32 (1 bytes)	
-A$content_manager$223:	
 	.db $C5
 	
 ; Data from B33 to B35 (3 bytes)	
-A$content_manager$224:	
 	.db $21 $00 $00
 	
 ; Data from B36 to B36 (1 bytes)	
-A$content_manager$225:	
 	.db $E5
 	
 ; Data from B37 to B39 (3 bytes)	
-A$content_manager$226:	
 	.db $CD $A4 $08
 	
 ; Data from B3A to B3A (1 bytes)	
-A$content_manager$227:	
 	.db $F1
 	
 ; Data from B3B to B3B (1 bytes)	
-A$content_manager$228:	
 	.db $F1
 	
 ; Data from B3C to B3E (3 bytes)	
-A$content_manager$232:	
-C$content_manager.c$53$1$20:	
 	.db $01 $D8 $92
 	
 ; Data from B3F to B3F (1 bytes)	
-A$content_manager$233:	
 	.db $C5
 	
 ; Data from B40 to B42 (3 bytes)	
-A$content_manager$234:	
 	.db $CD $C5 $08
 	
 ; Data from B43 to B43 (1 bytes)	
-A$content_manager$235:	
 	.db $F1
 	
 ; Data from B44 to B46 (3 bytes)	
-A$content_manager$239:	
-C$content_manager.c$56$1$20:	
 	.db $21 $03 $03
 	
 ; Data from B47 to B47 (1 bytes)	
-A$content_manager$240:	
 	.db $E5
 	
 ; Data from B48 to B49 (2 bytes)	
-A$content_manager$241:	
 	.db $2E $0F
 	
 ; Data from B4A to B4A (1 bytes)	
-A$content_manager$242:	
 	.db $E5
 	
 ; Data from B4B to B4D (3 bytes)	
-A$content_manager$243:	
 	.db $CD $D3 $08
 	
 ; Data from B4E to B4E (1 bytes)	
-A$content_manager$244:	
 	.db $F1
 	
 ; Data from B4F to B4F (1 bytes)	
-A$content_manager$245:	
 	.db $F1
 	
 ; Data from B50 to B50 (1 bytes)	
-A$content_manager$250:	
-C$content_manager.c$57$1$20:	
 XH$engine_content_manager_load_t:	
 	ret
 	
