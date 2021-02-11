@@ -281,34 +281,41 @@ _engine_cursor_manager_load:
 
 ; Data from BF0 to BF0 (1 bytes)
 	inc c
-	
 
 ; Data from BF1 to BF1 (1 bytes)
-	.db $79
+	ld a, c
 
 ; Data from BF2 to BF3 (2 bytes)
-	.db $D6 $04
-
+	;.db $D6 $04
+	sub a, $04
+	
 ; Data from BF4 to BF5 (2 bytes)
-	.db $38 $C4
+	;.db $38 $C4
+	jr c, $C4
 
 ; Data from BF6 to BF8 (3 bytes)
-	.db $DD $34 $FD
+	;.db $DD $34 $FD
+	inc (ix - 3)
 
 ; Data from BF9 to BFB (3 bytes)
-	.db $DD $7E $FD
+	;.db $DD $7E $FD
+	ld a, (ix - 3)
 
 ; Data from BFC to BFD (2 bytes)
-	.db $D6 $03
+	;.db $D6 $03
+	sub a, $03
 
 ; Data from BFE to BFF (2 bytes)
-	.db $38 $A9
+	;.db $38 $A9
+	jr c, $A9
 
 ; Data from C00 to C01 (2 bytes)
-	.db $DD $F9
+	;.db $DD $F9
+	ld sp, ix
 
 ; Data from C02 to C03 (2 bytes)
-	.db $DD $E1
+	;.db $DD $E1
+	pop ix
 
 ; Data from C04 to C04 (1 bytes)
 	ret
@@ -412,7 +419,7 @@ _engine_cursor_manager_draw:
 	pop bc
 
 ; Data from C36 to C36 (1 bytes)
-	.db $79
+	ld a, c
 
 ; Data from C37 to C38 (2 bytes)
 	.db $C6 $28
@@ -529,7 +536,7 @@ _engine_cursor_manager_draw:
 	pop bc
 
 ; Data from C6B to C6B (1 bytes)
-	.db $79
+	ld a, c
 
 ; Data from C6C to C6D (2 bytes)
 	.db $C6 $08
@@ -580,7 +587,7 @@ _engine_cursor_manager_draw:
 	pop bc
 
 ; Data from C85 to C85 (1 bytes)
-	.db $79
+	ld a, c
 
 ; Data from C86 to C87 (2 bytes)
 	.db $C6 $10
@@ -631,7 +638,7 @@ _engine_cursor_manager_draw:
 	pop bc
 
 ; Data from C9F to C9F (1 bytes)
-	.db $79
+	ld a, c
 
 ; Data from CA0 to CA1 (2 bytes)
 	.db $C6 $18
@@ -682,7 +689,7 @@ _engine_cursor_manager_draw:
 	pop bc
 
 ; Data from CB9 to CB9 (1 bytes)
-	.db $79
+	ld a, c
 
 ; Data from CBA to CBB (2 bytes)
 	.db $C6 $20
@@ -1115,7 +1122,7 @@ _engine_cursor_manager_incY:
 	.db $0D
 
 ; Data from DA0 to DA0 (1 bytes)
-	.db $79
+	ld a, c
 
 ; Data from DA1 to DA1 (1 bytes)
 	.db $07
