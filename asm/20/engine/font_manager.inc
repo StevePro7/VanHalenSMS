@@ -369,7 +369,8 @@ _engine_font_manager_draw_data:
 	jr nz, $08
 
 ; Data from E86 to E88 (3 bytes)
-	.db $DD $7E $FE
+	;.db $DD $7E $FE
+	ld a, (ix - 2)
 
 ; Data from E89 to E89 (1 bytes)
 	or a
@@ -378,19 +379,24 @@ _engine_font_manager_draw_data:
 	jr z, $02
 
 ; Data from E8C to E8D (2 bytes)
-	.db $0E $00
+	;.db $0E $00
+	ld c, $00
 
 ; Data from E8E to E90 (3 bytes)
-	.db $DD $46 $FF
+	;.db $DD $46 $FF
+	ld b, (ix - 1)
 
 ; Data from E91 to E93 (3 bytes)
-	.db $DD $35 $FF
+	;.db $DD $35 $FF
+	dec (ix - 1)
 
 ; Data from E94 to E96 (3 bytes)
-	.db $DD $7E $FF
+	;.db $DD $7E $FF
+	ld a, (ix - 1)
 
 ; Data from E97 to E99 (3 bytes)
-	.db $DD $77 $06
+	;.db $DD $77 $06
+	ld (ix + $06), a
 
 ; Data from E9A to E9A (1 bytes)
 	push bc
@@ -411,7 +417,8 @@ _engine_font_manager_draw_data:
 	inc sp
 
 ; Data from EA2 to EA4 (3 bytes)
-	.db $CD $23 $09
+	;.db $CD $23 $09
+	call $0923
 
 ; Data from EA5 to EA5 (1 bytes)
 	pop af
