@@ -3,7 +3,9 @@ _engine_font_manager_draw_char:
 	push ix
 
 ; Data from DBF to DC2 (4 bytes)
-	.db $DD $21 $00 $00
+	;.db $DD $21 $00 $00
+	ld ix, $0000
+	
 
 ; Data from DC3 to DC4 (2 bytes)
 	.db $DD $39
@@ -39,7 +41,8 @@ _engine_font_manager_draw_char:
 	pop bc
 
 ; Data from DD8 to DDA (3 bytes)
-	.db $21 $B8 $17
+	;.db $21 $B8 $17
+	ld hl, $17B8
 
 ; Data from DDB to DDB (1 bytes)
 	ld l, (hl)
