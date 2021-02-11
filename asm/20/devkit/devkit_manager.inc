@@ -340,10 +340,6 @@ C$_sms_manager.c$79$1$97:
 XG$devkit_SMS_loadSTMcompressedT:	
 	ret
 	
-A$_sms_manager$472:	
-C$_sms_manager.c$81$1$97:	
-C$_sms_manager.c$83$1$99:	
-G$devkit_SMS_loadBGPalette$0$0:	
 _devkit_SMS_loadBGPalette:	
 		pop bc
 		pop hl
@@ -351,10 +347,6 @@ _devkit_SMS_loadBGPalette:
 		push bc
 		jp _SMS_loadBGPalette
 	
-A$_sms_manager$493:	
-C$_sms_manager.c$85$1$99:	
-C$_sms_manager.c$87$1$101:	
-G$devkit_SMS_loadSpritePalette$0:	
 _devkit_SMS_loadSpritePalette:	
 		pop bc
 		pop hl

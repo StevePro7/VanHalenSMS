@@ -2,21 +2,20 @@ _engine_content_manager_load_til:
 		ld hl, $0000
 		push hl
 		ld hl, _font__tiles__psgcompr	; _font__tiles__psgcompr = $1838
-		;ld hl, $1838
 		push hl
-		call A$_sms_manager$400
+		call _devkit_SMS_loadPSGaidencompress
 		pop af
 		pop af
 		ld bc, _font__palette__bin	; _font__palette__bin = $17A8
-		;ld bc, _DATA_17A8_
 		push bc
-		call A$_sms_manager$472
+		call _devkit_SMS_loadBGPalette
 		pop af
 		ret
 	
 ; Data from AB8 to AB9 (2 bytes)
 _engine_content_manager_load_spl:	
-	.db $3E $02
+	;.db $3E $02
+	ld a, $02
 	
 ; Data from ABA to ABA (1 bytes)	
 	push af
@@ -25,19 +24,23 @@ _engine_content_manager_load_spl:
 	inc sp
 	
 ; Data from ABC to ABE (3 bytes)	
-	.db $CD $31 $08
+	;.db $CD $31 $08
+	call $0831
 	
 ; Data from ABF to ABF (1 bytes)	
 	inc sp
 	
 ; Data from AC0 to AC2 (3 bytes)	
-	.db $21 $40 $00
+	;.db $21 $40 $00
+	ld hl, $0040
 	
 ; Data from AC3 to AC3 (1 bytes)	
 	push hl
 	
 ; Data from AC4 to AC6 (3 bytes)	
-	.db $21 $57 $80
+	;.db $21 $57 $80
+	;ld hl, $8057
+	ld hl, _splash__tiles__psgcompr
 	
 ; Data from AC7 to AC7 (1 bytes)	
 	push hl
@@ -279,14 +282,12 @@ _engine_content_manager_load_spr:
 		ld hl, $0120
 		push hl
 		ld hl, _cursor__tiles__psgcompr	; _cursor__tiles__psgcompr = $16ED
-		;ld hl, $16ED
 		push hl
-		call A$_sms_manager$400
+		call _devkit_SMS_loadPSGaidencompress
 		pop af
 		pop af
 		ld bc, _cursor__palette__bin	; _cursor__palette__bin = $16DD
-		;ld bc, _DATA_16DD_
 		push bc
-		call A$_sms_manager$493
+		call _devkit_SMS_loadSpritePalette
 		pop af
 		ret
