@@ -25,40 +25,44 @@ _engine_input_manager_hold:
 	ld iy, $C152
 
 ; Data from EDE to EE0 (3 bytes)
-	.db $FD $7E $00
+	;.db $FD $7E $00
+	ld a, (iy + $00)
 
 ; Data from EE1 to EE1 (1 bytes)
-	.db $A1
+	and c
 
 ; Data from EE2 to EE2 (1 bytes)
-	.db $5F
+	ld e, a
 
 ; Data from EE3 to EE5 (3 bytes)
-	.db $FD $7E $01
+	;.db $FD $7E $01
+	ld a, (iy + $01)
 
 ; Data from EE6 to EE6 (1 bytes)
-	.db $A0
+	and b
 
 ; Data from EE7 to EE7 (1 bytes)
 	.db $B3
 
 ; Data from EE8 to EE9 (2 bytes)
-	.db $28 $10
+	jr z, $10
 
 ; Data from EEA to EEA (1 bytes)
-	.db $79
+	ld a, c
 
 ; Data from EEB to EEE (4 bytes)
-	.db $FD $21 $54 $C1
+	;.db $FD $21 $54 $C1
+	ld iy, $C154
 
 ; Data from EEF to EF1 (3 bytes)
-	.db $FD $A6 $00
+	;.db $FD $A6 $00
+	and (iy + $00)
 
 ; Data from EF2 to EF2 (1 bytes)
-	.db $4F
+	ld c, a
 
 ; Data from EF3 to EF3 (1 bytes)
-	.db $78
+	ld a, b
 
 ; Data from EF4 to EF6 (3 bytes)
 	.db $FD $A6 $01
@@ -67,7 +71,7 @@ _engine_input_manager_hold:
 	.db $B1
 
 ; Data from EF8 to EF9 (2 bytes)
-	.db $28 $03
+	jr z, $03
 
 ; Data from EFA to EFB (2 bytes)
 	.db $2E $00
@@ -95,7 +99,7 @@ _engine_input_manager_move:
 	.db $3A $52 $C1
 
 ; Data from F08 to F08 (1 bytes)
-	.db $A1
+	and c
 
 ; Data from F09 to F09 (1 bytes)
 	.db $6F
@@ -207,13 +211,13 @@ _engine_input_manager_direction:
 	.db $C1
 
 ; Data from F3A to F3A (1 bytes)
-	.db $78
+	ld a, b
 
 ; Data from F3B to F3B (1 bytes)
 	.db $B7
 
 ; Data from F3C to F3D (2 bytes)
-	.db $28 $04
+	jr z, $04
 
 ; Data from F3E to F3E (1 bytes)
 	.db $7A
@@ -231,7 +235,7 @@ _engine_input_manager_direction:
 	.db $B7
 
 ; Data from F44 to F45 (2 bytes)
-	.db $28 $04
+	jr z, $04
 
 ; Data from F46 to F46 (1 bytes)
 	.db $7A
@@ -243,13 +247,13 @@ _engine_input_manager_direction:
 	.db $20 $10
 
 ; Data from F4A to F4A (1 bytes)
-	.db $78
+	ld a, b
 
 ; Data from F4B to F4B (1 bytes)
 	.db $B7
 
 ; Data from F4C to F4D (2 bytes)
-	.db $28 $04
+	jr z, $04
 
 ; Data from F4E to F4E (1 bytes)
 	.db $7D
@@ -267,7 +271,7 @@ _engine_input_manager_direction:
 	.db $B7
 
 ; Data from F54 to F55 (2 bytes)
-	.db $28 $07
+	jr z, $07
 
 ; Data from F56 to F56 (1 bytes)
 	.db $7D
@@ -276,7 +280,7 @@ _engine_input_manager_direction:
 	.db $B7
 
 ; Data from F58 to F59 (2 bytes)
-	.db $28 $03
+	jr z, $03
 
 ; Data from F5A to F5B (2 bytes)
 	.db $2E $00
@@ -285,13 +289,13 @@ _engine_input_manager_direction:
 	ret
 
 ; Data from F5D to F5D (1 bytes)
-	.db $78
+	ld a, b
 
 ; Data from F5E to F5E (1 bytes)
 	.db $B7
 
 ; Data from F5F to F60 (2 bytes)
-	.db $28 $04
+	jr z, $04
 
 ; Data from F61 to F62 (2 bytes)
 	.db $0E $01
@@ -306,7 +310,7 @@ _engine_input_manager_direction:
 	.db $B7
 
 ; Data from F67 to F68 (2 bytes)
-	.db $28 $04
+	jr z, $04
 
 ; Data from F69 to F6A (2 bytes)
 	.db $0E $02
@@ -321,7 +325,7 @@ _engine_input_manager_direction:
 	.db $B7
 
 ; Data from F6F to F70 (2 bytes)
-	.db $28 $04
+	jr z, $04
 
 ; Data from F71 to F72 (2 bytes)
 	.db $0E $04
@@ -336,7 +340,7 @@ _engine_input_manager_direction:
 	.db $B7
 
 ; Data from F77 to F78 (2 bytes)
-	.db $28 $02
+	jr z, $02
 
 ; Data from F79 to F7A (2 bytes)
 	.db $0E $08
