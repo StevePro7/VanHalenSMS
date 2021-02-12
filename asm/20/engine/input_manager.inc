@@ -1,8 +1,4 @@
-A$input_manager$65:	
-C$input_manager.c$10$0$0:	
-C$input_manager.c$12$1$19:	
-G$engine_input_manager_update$0$:	
-_engine_input_manager_update:	
+_engine_input_manager_update:
 		ld hl, (Finput_manager$curr_joypad1$0$0)	; Finput_manager$curr_joypad1$0$0 = $C152
 		ld (Finput_manager$prev_joypad1$0$0), hl	; Finput_manager$prev_joypad1$0$0 = $C154
 		call A$_sms_manager$874

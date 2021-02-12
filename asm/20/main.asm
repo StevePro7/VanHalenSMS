@@ -136,7 +136,7 @@ C$main.c$48$3$57:
 		bit 0, (hl)
 		jr nz, A$main$140
 		call A$_sms_manager$735
-		call A$input_manager$65
+		call _engine_input_manager_update
 		call A$screen_manager$202
 		call A$_sms_manager$752
 		call A$_sms_manager$769
