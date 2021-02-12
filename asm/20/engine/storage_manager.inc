@@ -258,7 +258,8 @@ _engine_storage_manager_erase:
 	ld (hl), $00
 
 ; Data from 115A to 115C (3 bytes)
-	.db $21 $05 $00
+	;.db $21 $05 $00
+	ld hl, $0005
 
 ; Data from 115D to 115D (1 bytes)
 	add hl, bc
@@ -267,4 +268,5 @@ _engine_storage_manager_erase:
 	ld (hl), $FE
 
 ; Data from 1160 to 1162 (3 bytes)
-	.db $C3 $67 $08
+	;.db $C3 $67 $08
+	jp $0867
