@@ -1,9 +1,3 @@
-A$_sms_manager$132:	
-C$_sms_manager.c$11$0$0:	
-C$_sms_manager.c$13$1$74:	
-C$_sms_manager.c$14$1$74:	
-G$devkit_SMS_init$0$0:	
-XG$devkit_SMS_init$0$0:	
 _devkit_SMS_init:	
 		jp _SMS_init
 	
