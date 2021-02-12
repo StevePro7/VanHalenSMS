@@ -62,28 +62,29 @@ _engine_record_manager_load:
 	ld hl, $C16E
 
 ; Data from FA3 to FA3 (1 bytes)
-	.db $09
+	add hl, bc
 
 ; Data from FA4 to FA4 (1 bytes)
-	.db $5E
+	ld e, (hl)
 
 ; Data from FA5 to FA5 (1 bytes)
-	.db $23
+	inc hl
 
 ; Data from FA6 to FA6 (1 bytes)
-	.db $56
+	ld d, (hl)
 
 ; Data from FA7 to FA9 (3 bytes)
-	.db $21 $86 $C1
+	;.db $21 $86 $C1
+	ld hl, $C186
 
 ; Data from FAA to FAA (1 bytes)
-	.db $09
+	add hl, bc
 
 ; Data from FAB to FAB (1 bytes)
 	.db $4E
 
 ; Data from FAC to FAC (1 bytes)
-	.db $23
+	inc hl
 
 ; Data from FAD to FAD (1 bytes)
 	.db $46
