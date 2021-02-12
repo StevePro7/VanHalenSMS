@@ -151,13 +151,15 @@ _engine_record_manager_load:
 	pop af
 
 ; Data from FCC to FCE (3 bytes)
-	.db $21 $00 $00
+	;.db $21 $00 $00
+	ld hl, $0000
 
 ; Data from FCF to FCF (1 bytes)
-	.db $E3
+	ex (sp), hl
 
 ; Data from FD0 to FD2 (3 bytes)
-	.db $CD $A4 $08
+	;.db $CD $A4 $08
+	call $08A4
 
 ; Data from FD3 to FD3 (1 bytes)
 	pop af
@@ -195,7 +197,7 @@ _engine_record_manager_decrement:
 	ld bc, $C02A
 
 ; Data from FE4 to FE4 (1 bytes)
-	;.db $0A
+	;ld a, (bc)
 	ld a, (bc)
 
 ; Data from FE5 to FE5 (1 bytes)
@@ -208,7 +210,7 @@ _engine_record_manager_decrement:
 	ld a, $0B
 
 ; Data from FEA to FEA (1 bytes)
-	.db $02
+	ld (bc), a
 
 ; Data from FEB to FEB (1 bytes)
 	ret
@@ -217,38 +219,39 @@ _engine_record_manager_decrement:
 	add a, $FF
 
 ; Data from FEE to FEE (1 bytes)
-	.db $02
+	ld (bc), a
 
 ; Data from FEF to FEF (1 bytes)
 	ret
 
 ; Data from FF0 to FF2 (3 bytes)
 _engine_record_manager_increment:
-	.db $01 $2A $C0
+	;.db $01 $2A $C0
+	ld bc, $C02A
 
 ; Data from FF3 to FF3 (1 bytes)
-	.db $0A
+	ld a, (bc)
 
 ; Data from FF4 to FF5 (2 bytes)
-	.db $FE $0B
+	cp $0B
 
 ; Data from FF6 to FF7 (2 bytes)
 	jr nz, $03
 
 ; Data from FF8 to FF8 (1 bytes)
-	.db $AF
+	xor a
 
 ; Data from FF9 to FF9 (1 bytes)
-	.db $02
+	ld (bc), a
 
 ; Data from FFA to FFA (1 bytes)
 	ret
 
 ; Data from FFB to FFB (1 bytes)
-	.db $3C
+	inc a
 
 ; Data from FFC to FFC (1 bytes)
-	.db $02
+	ld (bc), a
 
 ; Data from FFD to FFD (1 bytes)
 	ret
