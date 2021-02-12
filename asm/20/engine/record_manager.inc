@@ -81,25 +81,26 @@ _engine_record_manager_load:
 	add hl, bc
 
 ; Data from FAB to FAB (1 bytes)
-	.db $4E
+	ld c, (hl)
 
 ; Data from FAC to FAC (1 bytes)
 	inc hl
 
 ; Data from FAD to FAD (1 bytes)
-	.db $46
+	ld b, (hl)
 
 ; Data from FAE to FB0 (3 bytes)
-	.db $DD $7E $FF
+	;.db $DD $7E $FF
+	ld a, (ix - 1)
 
 ; Data from FB1 to FB2 (2 bytes)
-	.db $C6 $1F
+	add a, $1F
 
 ; Data from FB3 to FB3 (1 bytes)
 	ld l, a
 
 ; Data from FB4 to FB5 (2 bytes)
-	.db $3E $00
+	ld a, $00
 
 ; Data from FB6 to FB7 (2 bytes)
 	.db $CE $12
@@ -196,7 +197,7 @@ _engine_record_manager_decrement:
 	.db $20 $04
 
 ; Data from FE8 to FE9 (2 bytes)
-	.db $3E $0B
+	ld a, $0B
 
 ; Data from FEA to FEA (1 bytes)
 	.db $02
@@ -205,7 +206,7 @@ _engine_record_manager_decrement:
 	ret
 
 ; Data from FEC to FED (2 bytes)
-	.db $C6 $FF
+	add a, $FF
 
 ; Data from FEE to FEE (1 bytes)
 	.db $02
