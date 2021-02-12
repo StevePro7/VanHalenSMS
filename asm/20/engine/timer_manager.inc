@@ -1,33 +1,40 @@
 ; Data from 1163 to 1165 (3 bytes)
 _engine_delay_manager_load:
-	.db $21 $58 $C0
+	;.db $21 $58 $C0
+	ld hl, $C058
 
 ; Data from 1166 to 1169 (4 bytes)
-	.db $FD $21 $02 $00
+	;.db $FD $21 $02 $00
+	ld iy, $0002
 
 ; Data from 116A to 116B (2 bytes)
-	.db $FD $39
+	;.db $FD $39
+	add iy, sp
 
 ; Data from 116C to 116E (3 bytes)
-	.db $FD $7E $00
+	;.db $FD $7E $00
+	ld a, (iy + $00)
 
 ; Data from 116F to 116F (1 bytes)
-	.db $77
+	ld (hl), a
 
 ; Data from 1170 to 1170 (1 bytes)
-	.db $23
+	inc hl
 
 ; Data from 1171 to 1173 (3 bytes)
-	.db $FD $7E $01
+	;.db $FD $7E $01
+	ld a, (iy + $01)
 
 ; Data from 1174 to 1174 (1 bytes)
-	.db $77
+	ld (hl), a
 
 ; Data from 1175 to 1177 (3 bytes)
-	.db $21 $00 $00
+	;.db $21 $00 $00
+	ld hl, $0000
 
 ; Data from 1178 to 117A (3 bytes)
-	.db $22 $5A $C0
+	;.db $22 $5A $C0
+	ld ($C05A), hl
 
 ; Data from 117B to 117B (1 bytes)
 	ret
@@ -104,16 +111,16 @@ _engine_reset_manager_load:
 	.db $FD $7E $00
 
 ; Data from 11AA to 11AA (1 bytes)
-	.db $77
+	ld (hl), a
 
 ; Data from 11AB to 11AB (1 bytes)
-	.db $23
+	inc hl
 
 ; Data from 11AC to 11AE (3 bytes)
 	.db $FD $7E $01
 
 ; Data from 11AF to 11AF (1 bytes)
-	.db $77
+	ld (hl), a
 
 ; Data from 11B0 to 11B2 (3 bytes)
 	.db $C3 $D5 $11
