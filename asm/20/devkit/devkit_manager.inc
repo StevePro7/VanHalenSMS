@@ -205,7 +205,8 @@ _eevkit_SMS_useFirstHalfTilesfor:
 A$_sms_manager$366:	
 C$_sms_manager.c$66$1$91:	
 XG$devkit_SMS_useFirstHalfTilesf:	
-	.db $C3 $CA $1C
+	;.db $C3 $CA $1C
+	jp $1CCA
 	
 A$_sms_manager$379:	
 C$_sms_manager.c$67$1$91:	
@@ -246,19 +247,20 @@ C$_sms_manager.c$76$1$95:
 C$_sms_manager.c$78$1$97:	
 G$devkit_SMS_loadSTMcompressedTi:	
 _devkit_SMS_loadSTMcompressedTil:	
-	.db $3E $20
+	ld a, $20
 	
 ; Data from 8A6 to 8A6 (1 bytes)	
 A$_sms_manager$433:	
-	.db $F5
+	push af
 	
 ; Data from 8A7 to 8A7 (1 bytes)	
 A$_sms_manager$434:	
-	.db $33
+	inc sp
 	
 ; Data from 8A8 to 8AA (3 bytes)	
 A$_sms_manager$435:	
-	.db $21 $05 $00
+	;.db $21 $05 $00
+	ld hl, $0005
 	
 ; Data from 8AB to 8AB (1 bytes)	
 A$_sms_manager$436:	
@@ -266,11 +268,11 @@ A$_sms_manager$436:
 	
 ; Data from 8AC to 8AC (1 bytes)	
 A$_sms_manager$437:	
-	.db $4E
+	ld c, (hl)
 	
 ; Data from 8AD to 8AD (1 bytes)	
 A$_sms_manager$438:	
-	.db $23
+	inc hl
 	
 ; Data from 8AE to 8AE (1 bytes)	
 A$_sms_manager$439:	
@@ -278,11 +280,12 @@ A$_sms_manager$439:
 	
 ; Data from 8AF to 8AF (1 bytes)	
 A$_sms_manager$440:	
-	.db $C5
+	push bc
 	
 ; Data from 8B0 to 8B2 (3 bytes)	
 A$_sms_manager$441:	
-	.db $21 $06 $00
+	;.db $21 $06 $00
+	ld hl, $0006
 	
 ; Data from 8B3 to 8B3 (1 bytes)	
 A$_sms_manager$442:	
@@ -294,15 +297,16 @@ A$_sms_manager$443:
 	
 ; Data from 8B5 to 8B5 (1 bytes)	
 A$_sms_manager$444:	
-	.db $F5
+	push af
 	
 ; Data from 8B6 to 8B6 (1 bytes)	
 A$_sms_manager$445:	
-	.db $33
+	inc sp
 	
 ; Data from 8B7 to 8B9 (3 bytes)	
 A$_sms_manager$446:	
-	.db $21 $06 $00
+	;.db $21 $06 $00
+	ld hl, $0006
 	
 ; Data from 8BA to 8BA (1 bytes)	
 A$_sms_manager$447:	
@@ -314,27 +318,28 @@ A$_sms_manager$448:
 	
 ; Data from 8BC to 8BC (1 bytes)	
 A$_sms_manager$449:	
-	.db $F5
+	push af
 	
 ; Data from 8BD to 8BD (1 bytes)	
 A$_sms_manager$450:	
-	.db $33
+	inc sp
 	
 ; Data from 8BE to 8C0 (3 bytes)	
 A$_sms_manager$451:	
-	.db $CD $05 $1F
+	;.db $CD $05 $1F
+	call $1F05
 	
 ; Data from 8C1 to 8C1 (1 bytes)	
 A$_sms_manager$452:	
-	.db $F1
+	pop af
 	
 ; Data from 8C2 to 8C2 (1 bytes)	
 A$_sms_manager$453:	
-	.db $F1
+	pop af
 	
 ; Data from 8C3 to 8C3 (1 bytes)	
 A$_sms_manager$454:	
-	.db $33
+	inc sp
 	
 ; Data from 8C4 to 8C4 (1 bytes)	
 A$_sms_manager$459:	
@@ -362,7 +367,8 @@ C$_sms_manager.c$89$1$101:
 C$_sms_manager.c$91$1$103:	
 G$devkit_SMS_setBGPaletteColor$0:	
 _devkit_SMS_setBGPaletteColor:	
-	.db $21 $04 $00
+	;.db $21 $04 $00
+	ld hl, $0004
 	
 ; Data from 8D6 to 8D6 (1 bytes)	
 A$_sms_manager$515:	
@@ -382,7 +388,8 @@ A$_sms_manager$518:
 	
 ; Data from 8DA to 8DC (3 bytes)	
 A$_sms_manager$519:	
-	.db $21 $03 $00
+	;.db $21 $03 $00
+	ld hl, $0003
 	
 ; Data from 8DD to 8DD (1 bytes)	
 A$_sms_manager$520:	
@@ -390,15 +397,16 @@ A$_sms_manager$520:
 	
 ; Data from 8DE to 8DE (1 bytes)	
 A$_sms_manager$521:	
-	.db $B6
+	or (hl)
 	
 ; Data from 8DF to 8DF (1 bytes)	
 A$_sms_manager$522:	
-	.db $4F
+	ld c, a
 	
 ; Data from 8E0 to 8E2 (3 bytes)	
 A$_sms_manager$523:	
-	.db $21 $05 $00
+	;.db $21 $05 $00
+	ld hl, $0005
 	
 ; Data from 8E3 to 8E3 (1 bytes)	
 A$_sms_manager$524:	
@@ -439,11 +447,11 @@ A$_sms_manager$532:
 ; Data from 8ED to 8ED (1 bytes)	
 A$_sms_manager$536:	
 C$_sms_manager.c$92$1$103:	
-	.db $C5
+	push bc
 	
 ; Data from 8EE to 8EE (1 bytes)	
 A$_sms_manager$537:	
-	.db $33
+	inc sp
 	
 ; Data from 8EF to 8F1 (3 bytes)	
 A$_sms_manager$538:	
@@ -459,11 +467,11 @@ A$_sms_manager$540:
 	
 ; Data from 8F4 to 8F4 (1 bytes)	
 A$_sms_manager$541:	
-	.db $F5
+	push af
 	
 ; Data from 8F5 to 8F5 (1 bytes)	
 A$_sms_manager$542:	
-	.db $33
+	inc sp
 	
 ; Data from 8F6 to 8F8 (3 bytes)	
 A$_sms_manager$543:	
@@ -471,7 +479,7 @@ A$_sms_manager$543:
 	
 ; Data from 8F9 to 8F9 (1 bytes)	
 A$_sms_manager$544:	
-	.db $F1
+	pop af
 	
 ; Data from 8FA to 8FA (1 bytes)	
 A$_sms_manager$549:	
@@ -513,11 +521,11 @@ A$_sms_manager$568:
 	
 ; Data from 906 to 906 (1 bytes)	
 A$_sms_manager$569:	
-	.db $B6
+	or (hl)
 	
 ; Data from 907 to 907 (1 bytes)	
 A$_sms_manager$570:	
-	.db $4F
+	ld c, a
 	
 ; Data from 908 to 90A (3 bytes)	
 A$_sms_manager$571:	
@@ -562,11 +570,11 @@ A$_sms_manager$580:
 ; Data from 915 to 915 (1 bytes)	
 A$_sms_manager$584:	
 C$_sms_manager.c$97$1$105:	
-	.db $C5
+	push bc
 	
 ; Data from 916 to 916 (1 bytes)	
 A$_sms_manager$585:	
-	.db $33
+	inc sp
 	
 ; Data from 917 to 919 (3 bytes)	
 A$_sms_manager$586:	
@@ -582,11 +590,11 @@ A$_sms_manager$588:
 	
 ; Data from 91C to 91C (1 bytes)	
 A$_sms_manager$589:	
-	.db $F5
+	push af
 	
 ; Data from 91D to 91D (1 bytes)	
 A$_sms_manager$590:	
-	.db $33
+	inc sp
 	
 ; Data from 91E to 920 (3 bytes)	
 A$_sms_manager$591:	
@@ -594,7 +602,7 @@ A$_sms_manager$591:
 	
 ; Data from 921 to 921 (1 bytes)	
 A$_sms_manager$592:	
-	.db $F1
+	pop af
 	
 ; Data from 922 to 922 (1 bytes)	
 A$_sms_manager$597:	
@@ -730,7 +738,7 @@ A$_sms_manager$654:
 	
 ; Data from 94F to 94F (1 bytes)	
 A$_sms_manager$655:	
-	.db $C5
+	push bc
 	
 ; Data from 950 to 952 (3 bytes)	
 A$_sms_manager$660:	
@@ -756,7 +764,7 @@ A$_sms_manager$675:
 	
 ; Data from 95C to 95D (2 bytes)	
 A$_sms_manager$676:	
-	.db $3E $00
+	ld a, $00
 	
 ; Data from 95E to 95F (2 bytes)	
 A$_sms_manager$677:	
@@ -790,11 +798,11 @@ A$_sms_manager$698:
 	
 ; Data from 969 to 969 (1 bytes)	
 A$_sms_manager$699:	
-	.db $C5
+	push bc
 	
 ; Data from 96A to 96A (1 bytes)	
 A$_sms_manager$700:	
-	.db $33
+	inc sp
 	
 ; Data from 96B to 96D (3 bytes)	
 A$_sms_manager$701:	
@@ -810,11 +818,11 @@ A$_sms_manager$703:
 	
 ; Data from 970 to 970 (1 bytes)	
 A$_sms_manager$704:	
-	.db $F5
+	push af
 	
 ; Data from 971 to 971 (1 bytes)	
 A$_sms_manager$705:	
-	.db $33
+	inc sp
 	
 ; Data from 972 to 974 (3 bytes)	
 A$_sms_manager$706:	
@@ -830,11 +838,11 @@ A$_sms_manager$708:
 	
 ; Data from 977 to 977 (1 bytes)	
 A$_sms_manager$709:	
-	.db $F5
+	push af
 	
 ; Data from 978 to 978 (1 bytes)	
 A$_sms_manager$710:	
-	.db $33
+	inc sp
 	
 ; Data from 979 to 97B (3 bytes)	
 A$_sms_manager$711:	
@@ -842,11 +850,11 @@ A$_sms_manager$711:
 	
 ; Data from 97C to 97C (1 bytes)	
 A$_sms_manager$712:	
-	.db $F1
+	pop af
 	
 ; Data from 97D to 97D (1 bytes)	
 A$_sms_manager$713:	
-	.db $33
+	inc sp
 	
 ; Data from 97E to 97E (1 bytes)	
 A$_sms_manager$718:	
