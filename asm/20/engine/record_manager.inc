@@ -103,49 +103,52 @@ _engine_record_manager_load:
 	ld a, $00
 
 ; Data from FB6 to FB7 (2 bytes)
-	.db $CE $12
+	adc a, $12
 
 ; Data from FB8 to FB8 (1 bytes)
-	.db $67
+	ld h, a
 
 ; Data from FB9 to FB9 (1 bytes)
-	.db $66
+	ld h, (hl)
 
 ; Data from FBA to FBA (1 bytes)
-	.db $C5
+	push bc
 
 ; Data from FBB to FBB (1 bytes)
-	.db $D5
+	push de
 
 ; Data from FBC to FBC (1 bytes)
-	.db $E5
+	push hl
 
 ; Data from FBD to FBD (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from FBE to FC0 (3 bytes)
-	.db $CD $31 $08
+	;.db $CD $31 $08
+	call $0831
 
 ; Data from FC1 to FC1 (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from FC2 to FC2 (1 bytes)
-	.db $D1
+	pop de
 
 ; Data from FC3 to FC5 (3 bytes)
-	.db $21 $00 $00
+	;.db $21 $00 $00
+	ld hl, $0000
 
 ; Data from FC6 to FC6 (1 bytes)
-	.db $E5
+	push hl
 
 ; Data from FC7 to FC7 (1 bytes)
-	.db $D5
+	push de
 
 ; Data from FC8 to FCA (3 bytes)
-	.db $CD $8E $08
+	;.db $CD $8E $08
+	call $088E
 
 ; Data from FCB to FCB (1 bytes)
-	.db $F1
+	pop af
 
 ; Data from FCC to FCE (3 bytes)
 	.db $21 $00 $00
@@ -157,44 +160,49 @@ _engine_record_manager_load:
 	.db $CD $A4 $08
 
 ; Data from FD3 to FD3 (1 bytes)
-	.db $F1
+	pop af
 
 ; Data from FD4 to FD4 (1 bytes)
-	.db $F1
+	pop af
 
 ; Data from FD5 to FD7 (3 bytes)
-	.db $2A $9E $C1
+	;.db $2A $9E $C1
+	ld hl, ($C19E)
 
 ; Data from FD8 to FD8 (1 bytes)
-	.db $E5
+	push hl
 
 ; Data from FD9 to FDB (3 bytes)
-	.db $CD $C5 $08
+	;.db $CD $C5 $08
+	call $08C5
 
 ; Data from FDC to FDC (1 bytes)
-	.db $F1
+	pop af
 
 ; Data from FDD to FDD (1 bytes)
-	.db $33
+	inc sp
 
 ; Data from FDE to FDF (2 bytes)
-	.db $DD $E1
+	;.db $DD $E1
+	pop ix
 
 ; Data from FE0 to FE0 (1 bytes)
 	ret
 
 ; Data from FE1 to FE3 (3 bytes)
 _engine_record_manager_decrement:
-	.db $01 $2A $C0
+	;.db $01 $2A $C0
+	ld bc, $C02A
 
 ; Data from FE4 to FE4 (1 bytes)
-	.db $0A
+	;.db $0A
+	ld a, (bc)
 
 ; Data from FE5 to FE5 (1 bytes)
-	.db $B7
+	or a
 
 ; Data from FE6 to FE7 (2 bytes)
-	.db $20 $04
+	jr nz, $04
 
 ; Data from FE8 to FE9 (2 bytes)
 	ld a, $0B
@@ -225,7 +233,7 @@ _engine_record_manager_increment:
 	.db $FE $0B
 
 ; Data from FF6 to FF7 (2 bytes)
-	.db $20 $03
+	jr nz, $03
 
 ; Data from FF8 to FF8 (1 bytes)
 	.db $AF
