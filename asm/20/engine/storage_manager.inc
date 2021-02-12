@@ -77,10 +77,10 @@ _engine_storage_manager_availabl:
 	jr $01
 
 ; Data from 10FF to 10FF (1 bytes)
-	.db $AF
+	xor a
 
 ; Data from 1100 to 1100 (1 bytes)
-	.db $6F
+	ld l, a
 
 ; Data from 1101 to 1101 (1 bytes)
 	push hl
@@ -145,65 +145,71 @@ _engine_storage_manager_write:
 	ld l, c
 
 ; Data from 1123 to 1123 (1 bytes)
-	.db $60
+	ld h, b
 
 ; Data from 1124 to 1125 (2 bytes)
-	.db $36 $04
+	ld (hl), $04
 
 ; Data from 1126 to 1126 (1 bytes)
 	inc hl
 
 ; Data from 1127 to 1128 (2 bytes)
-	.db $36 $B0
+	ld (hl), $B0
 
 ; Data from 1129 to 1129 (1 bytes)
 	inc hl
 
 ; Data from 112A to 112B (2 bytes)
-	.db $36 $E0
+	ld (hl), $E0
 
 ; Data from 112C to 112C (1 bytes)
 	inc hl
 
 ; Data from 112D to 112E (2 bytes)
-	.db $36 $AC
+	ld (hl), $AC
 
 ; Data from 112F to 1131 (3 bytes)
-	.db $21 $04 $00
+	;.db $21 $04 $00
+	ld hl, $0004
 
 ; Data from 1132 to 1132 (1 bytes)
-	.db $09
+	add hl, bc
 
 ; Data from 1133 to 1133 (1 bytes)
-	.db $EB
+	ex de, hl
 
 ; Data from 1134 to 1136 (3 bytes)
-	.db $3A $2A $C0
+	;.db $3A $2A $C0
+	ld a, ($C02A)
 
 ; Data from 1137 to 1137 (1 bytes)
-	.db $12
+	ld (de), a
 
 ; Data from 1138 to 113A (3 bytes)
-	.db $21 $05 $00
+	;.db $21 $05 $00
+	ld hl, $0005
 
 ; Data from 113B to 113B (1 bytes)
-	.db $09
+	add hl, bc
 
 ; Data from 113C to 113D (2 bytes)
-	.db $36 $FE
+	ld (hl), $FE
 
 ; Data from 113E to 1140 (3 bytes)
-	.db $C3 $67 $08
+	;.db $C3 $67 $08
+	jp $0867
 
 ; Data from 1141 to 1143 (3 bytes)
 _engine_storage_manager_erase:
-	.db $CD $6D $08
+	;.db $CD $6D $08
+	call $086D
 
 ; Data from 1144 to 1144 (1 bytes)
 	push hl
 
 ; Data from 1145 to 1147 (3 bytes)
-	.db $CD $52 $08
+	;.db $CD $52 $08
+	call $0852
 
 ; Data from 1148 to 1148 (1 bytes)
 	pop bc
@@ -212,53 +218,53 @@ _engine_storage_manager_erase:
 	ld l, c
 
 ; Data from 114A to 114A (1 bytes)
-	.db $60
+	ld h, b
 
 ; Data from 114B to 114B (1 bytes)
-	.db $AF
+	xor a
 
 ; Data from 114C to 114C (1 bytes)
-	.db $77
+	ld (hl), a
 
 ; Data from 114D to 114D (1 bytes)
 	inc hl
 
 ; Data from 114E to 114E (1 bytes)
-	.db $77
+	ld (hl), a
 
 ; Data from 114F to 114F (1 bytes)
 	inc hl
 
 ; Data from 1150 to 1150 (1 bytes)
-	.db $AF
+	xor a
 
 ; Data from 1151 to 1151 (1 bytes)
-	.db $77
+	ld (hl), a
 
 ; Data from 1152 to 1152 (1 bytes)
 	inc hl
 
 ; Data from 1153 to 1153 (1 bytes)
-	.db $77
+	ld (hl), a
 
 ; Data from 1154 to 1156 (3 bytes)
 	;.db $21 $04 $00
 	ld hl, $0004
 
 ; Data from 1157 to 1157 (1 bytes)
-	.db $09
+	add hl, bc
 
 ; Data from 1158 to 1159 (2 bytes)
-	.db $36 $00
+	ld (hl), $00
 
 ; Data from 115A to 115C (3 bytes)
 	.db $21 $05 $00
 
 ; Data from 115D to 115D (1 bytes)
-	.db $09
+	add hl, bc
 
 ; Data from 115E to 115F (2 bytes)
-	.db $36 $FE
+	ld (hl), $FE
 
 ; Data from 1160 to 1162 (3 bytes)
 	.db $C3 $67 $08
