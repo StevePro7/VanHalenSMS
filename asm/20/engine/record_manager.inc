@@ -1,58 +1,65 @@
 ; Data from F7D to F7F (3 bytes)
 _engine_record_manager_init:
-	.db $21 $2A $C0
+	;.db $21 $2A $C0
+	ld hl, $C02A
 
 ; Data from F80 to F83 (4 bytes)
-	.db $FD $21 $02 $00
+	;.db $FD $21 $02 $00
+	ld iy, $0002
 
 ; Data from F84 to F85 (2 bytes)
-	.db $FD $39
+	add iy, sp
 
 ; Data from F86 to F88 (3 bytes)
-	.db $FD $7E $00
+	;.db $FD $7E $00
+	ld a, (iy + $00)
 
 ; Data from F89 to F89 (1 bytes)
-	.db $77
+	ld (hl), a
 
 ; Data from F8A to F8A (1 bytes)
 	ret
 
 ; Data from F8B to F8C (2 bytes)
 _engine_record_manager_load:
-	.db $DD $E5
+	push ix
 
 ; Data from F8D to F90 (4 bytes)
-	.db $DD $21 $00 $00
+	;.db $DD $21 $00 $00
+	ld ix, $0000
 
 ; Data from F91 to F92 (2 bytes)
-	.db $DD $39
+	add ix, sp
 
 ; Data from F93 to F93 (1 bytes)
-	.db $3B
+	dec sp
 
 ; Data from F94 to F96 (3 bytes)
-	.db $3A $2A $C0
+	;.db $3A $2A $C0
+	ld a, ($C02A)
 
 ; Data from F97 to F99 (3 bytes)
-	.db $DD $77 $FF
+	;.db $DD $77 $FF
+	ld (ix - 1), a
 
 ; Data from F9A to F9A (1 bytes)
-	.db $6F
+	ld l, a
 
 ; Data from F9B to F9C (2 bytes)
-	.db $26 $00
+	ld h, $00
 
 ; Data from F9D to F9D (1 bytes)
-	.db $29
+	add hl, hl
 
 ; Data from F9E to F9E (1 bytes)
-	.db $4D
+	ld c, l
 
 ; Data from F9F to F9F (1 bytes)
-	.db $44
+	ld b, h
 
 ; Data from FA0 to FA2 (3 bytes)
-	.db $21 $6E $C1
+	;.db $21 $6E $C1
+	ld hl, $C16E
 
 ; Data from FA3 to FA3 (1 bytes)
 	.db $09
@@ -88,7 +95,7 @@ _engine_record_manager_load:
 	.db $C6 $1F
 
 ; Data from FB3 to FB3 (1 bytes)
-	.db $6F
+	ld l, a
 
 ; Data from FB4 to FB5 (2 bytes)
 	.db $3E $00
