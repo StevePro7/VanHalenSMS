@@ -13,7 +13,7 @@ _screen_splash_screen_load:
 	
 ; Data from 123C to 123E (3 bytes)	
 	;.db $CD $25 $08
-	call $0825
+	call _devkit_SMS_displayOn
 	
 ; Data from 123F to 1241 (3 bytes)	
 	;.db $21 $96 $00

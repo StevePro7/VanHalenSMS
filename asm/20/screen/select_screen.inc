@@ -79,7 +79,7 @@ _screen_select_screen_load:
 
 ; Data from 14AE to 14B0 (3 bytes)
 	;.db $CD $25 $08
-	call $0825
+	call _devkit_SMS_displayOn
 
 ; Data from 14B1 to 14B3 (3 bytes)
 	;.db $21 $51 $C0

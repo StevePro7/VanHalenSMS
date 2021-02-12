@@ -275,4 +275,4 @@ _screen_record_screen_update:
 
 ; Data from 1602 to 1604 (3 bytes)
 	;.db $C3 $25 $08
-	jp $0825
+	jp _devkit_SMS_displayOn

@@ -104,7 +104,7 @@ _screen_title_screen_load:
 
 ; Data from 12F3 to 12F5 (3 bytes)
 	;.db $CD $25 $08
-	call $0825
+	call _devkit_SMS_displayOn
 
 ; Data from 12F6 to 12F8 (3 bytes)
 	;.db $21 $32 $00
