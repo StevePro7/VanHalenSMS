@@ -7,19 +7,22 @@ _engine_input_manager_update:
 
 ; Data from ED3 to ED5 (3 bytes)
 _engine_input_manager_hold:
-	.db $21 $02 $00
+	;.db $21 $02 $00
+	ld hl, $0002
 
 ; Data from ED6 to ED6 (1 bytes)
-	.db $39
+	add hl, sp
 
 ; Data from ED7 to ED7 (1 bytes)
-	.db $4E
+	ld c, (hl)
 
 ; Data from ED8 to ED9 (2 bytes)
-	.db $06 $00
+	;.db $06 $00
+	ld b, $00
 
 ; Data from EDA to EDD (4 bytes)
-	.db $FD $21 $52 $C1
+	;.db $FD $21 $52 $C1
+	ld iy, $C152
 
 ; Data from EDE to EE0 (3 bytes)
 	.db $FD $7E $00
@@ -83,10 +86,10 @@ _engine_input_manager_move:
 	.db $21 $02 $00
 
 ; Data from F03 to F03 (1 bytes)
-	.db $39
+	add hl, sp
 
 ; Data from F04 to F04 (1 bytes)
-	.db $4E
+	ld c, (hl)
 
 ; Data from F05 to F07 (3 bytes)
 	.db $3A $52 $C1
