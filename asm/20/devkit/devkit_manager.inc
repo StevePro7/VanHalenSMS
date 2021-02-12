@@ -1,18 +1,10 @@
 _devkit_SMS_init:	
 		jp _SMS_init
-	
-A$_sms_manager$145:	
-C$_sms_manager.c$15$1$74:	
-C$_sms_manager.c$17$1$75:	
-G$devkit_SMS_displayOn$0$0:	
+
 _devkit_SMS_displayOn:	
 		ld hl, $0140
 		jp _SMS_VDPturnOnFeature
-	
-A$_sms_manager$163:	
-C$_sms_manager.c$19$1$75:	
-C$_sms_manager.c$21$1$76:	
-G$devkit_SMS_displayOff$0$0:	
+
 _devkit_SMS_displayOff:	
 		ld hl, $0140
 		jp _SMS_VDPturnOffFeature

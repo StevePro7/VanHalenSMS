@@ -261,17 +261,18 @@ _screen_record_screen_update:
 ; Data from 15F8 to 15F8 (1 bytes)
 	ret
 
+; static void load_record()
 ; Data from 15F9 to 15FB (3 bytes)
 	;.db $CD $2B $08
 	call _devkit_SMS_displayOff
 
 ; Data from 15FC to 15FE (3 bytes)
 	;.db $CD $5A $0A
-	call $0A5A
+	call _engine_asm_manager_clear_VRAM
 
 ; Data from 15FF to 1601 (3 bytes)
 	;.db $CD $8B $0F
-	call $0F8B
+	call _engine_record_manager_load
 
 ; Data from 1602 to 1604 (3 bytes)
 	;.db $C3 $25 $08

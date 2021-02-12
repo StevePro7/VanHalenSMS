@@ -90,7 +90,7 @@ G$main$0$0:
 _main:
 		call _engine_asm_manager_clear_VRAM
 		call _devkit_SMS_init
-		call A$_sms_manager$163
+		call _devkit_SMS_displayOff
 		call A$_sms_manager$887
 		ld b, l
 		push bc
