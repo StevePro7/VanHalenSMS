@@ -1,7 +1,7 @@
 ; Data from 12B6 to 12B8 (3 bytes)
 _screen_title_screen_load:
 	;.db $CD $2B $08
-	call $082B
+	call _devkit_SMS_displayOff
 
 ; Data from 12B9 to 12BB (3 bytes)
 	;.db $CD $A2 $0A

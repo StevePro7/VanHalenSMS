@@ -1,7 +1,7 @@
 ; Data from 1233 to 1235 (3 bytes)	
 _screen_splash_screen_load:	
 	;.db $CD $2B $08
-	call $082B
+	call _devkit_SMS_displayOff
 	
 ; Data from 1236 to 1238 (3 bytes)	
 	;.db $CD $A2 $0A

@@ -110,7 +110,7 @@ _main:
 		inc sp
 		call _engine_screen_manager_init
 		inc sp
-		call A$_sms_manager$145
+		call _devkit_SMS_displayOn
 A$main$140:
 C$main.c$34$3$57:	
 		call A$_sms_manager$820

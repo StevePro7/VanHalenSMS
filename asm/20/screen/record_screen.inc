@@ -263,7 +263,7 @@ _screen_record_screen_update:
 
 ; Data from 15F9 to 15FB (3 bytes)
 	;.db $CD $2B $08
-	call $082B
+	call _devkit_SMS_displayOff
 
 ; Data from 15FC to 15FE (3 bytes)
 	;.db $CD $5A $0A

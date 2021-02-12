@@ -13,7 +13,7 @@ _screen_select_screen_load:
 
 ; Data from 1486 to 1488 (3 bytes)
 	;.db $CD $2B $08
-	call $082B
+	call _devkit_SMS_displayOff
 
 ; Data from 1489 to 148B (3 bytes)
 	;.db $CD $5A $0A
