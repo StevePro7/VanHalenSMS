@@ -1,39 +1,41 @@
 ; Data from 10D8 to 10DA (3 bytes)
 _engine_storage_manager_availabl:
-	.db $CD $6D $08
+	;.db $CD $6D $08
+	call $086D
 
 ; Data from 10DB to 10DB (1 bytes)
-	.db $E5
+	push hl
 
 ; Data from 10DC to 10DE (3 bytes)
-	.db $CD $52 $08
+	;.db $CD $52 $08
+	call $0852
 
 ; Data from 10DF to 10DF (1 bytes)
-	.db $E1
+	pop hl
 
 ; Data from 10E0 to 10E0 (1 bytes)
-	.db $4E
+	ld c, (hl)
 
 ; Data from 10E1 to 10E1 (1 bytes)
-	.db $23
+	inc hl
 
 ; Data from 10E2 to 10E2 (1 bytes)
-	.db $46
+	ld b, (hl)
 
 ; Data from 10E3 to 10E3 (1 bytes)
-	.db $23
+	inc hl
 
 ; Data from 10E4 to 10E4 (1 bytes)
-	.db $5E
+	ld e, (hl)
 
 ; Data from 10E5 to 10E5 (1 bytes)
-	.db $23
+	inc hl
 
 ; Data from 10E6 to 10E6 (1 bytes)
-	.db $56
+	ld d, (hl)
 
 ; Data from 10E7 to 10E7 (1 bytes)
-	.db $79
+	ld a, c
 
 ; Data from 10E8 to 10E9 (2 bytes)
 	.db $D6 $04
@@ -81,13 +83,13 @@ _engine_storage_manager_availabl:
 	.db $6F
 
 ; Data from 1101 to 1101 (1 bytes)
-	.db $E5
+	push hl
 
 ; Data from 1102 to 1104 (3 bytes)
 	.db $CD $67 $08
 
 ; Data from 1105 to 1105 (1 bytes)
-	.db $E1
+	pop hl
 
 ; Data from 1106 to 1106 (1 bytes)
 	ret
@@ -97,7 +99,7 @@ _engine_storage_manager_read:
 	.db $CD $6D $08
 
 ; Data from 110A to 110A (1 bytes)
-	.db $E5
+	push hl
 
 ; Data from 110B to 110D (3 bytes)
 	.db $CD $52 $08
@@ -122,7 +124,7 @@ _engine_storage_manager_write:
 	.db $CD $6D $08
 
 ; Data from 111D to 111D (1 bytes)
-	.db $E5
+	push hl
 
 ; Data from 111E to 1120 (3 bytes)
 	.db $CD $52 $08
@@ -140,19 +142,19 @@ _engine_storage_manager_write:
 	.db $36 $04
 
 ; Data from 1126 to 1126 (1 bytes)
-	.db $23
+	inc hl
 
 ; Data from 1127 to 1128 (2 bytes)
 	.db $36 $B0
 
 ; Data from 1129 to 1129 (1 bytes)
-	.db $23
+	inc hl
 
 ; Data from 112A to 112B (2 bytes)
 	.db $36 $E0
 
 ; Data from 112C to 112C (1 bytes)
-	.db $23
+	inc hl
 
 ; Data from 112D to 112E (2 bytes)
 	.db $36 $AC
@@ -189,7 +191,7 @@ _engine_storage_manager_erase:
 	.db $CD $6D $08
 
 ; Data from 1144 to 1144 (1 bytes)
-	.db $E5
+	push hl
 
 ; Data from 1145 to 1147 (3 bytes)
 	.db $CD $52 $08
@@ -210,13 +212,13 @@ _engine_storage_manager_erase:
 	.db $77
 
 ; Data from 114D to 114D (1 bytes)
-	.db $23
+	inc hl
 
 ; Data from 114E to 114E (1 bytes)
 	.db $77
 
 ; Data from 114F to 114F (1 bytes)
-	.db $23
+	inc hl
 
 ; Data from 1150 to 1150 (1 bytes)
 	.db $AF
@@ -225,7 +227,7 @@ _engine_storage_manager_erase:
 	.db $77
 
 ; Data from 1152 to 1152 (1 bytes)
-	.db $23
+	inc hl
 
 ; Data from 1153 to 1153 (1 bytes)
 	.db $77
