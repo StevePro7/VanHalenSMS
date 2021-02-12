@@ -104,7 +104,7 @@ _main:
 		pop af
 		call _engine_content_manager_load_til
 		call _engine_content_manager_load_spr
-		call A$scroll_manager$61
+		call _engine_scroll_manager_reset
 		ld a, $01
 		push af
 		inc sp

@@ -4,7 +4,7 @@ readme
 
 01.
 here is the screen type
-call A$scroll_manager$61
+call _engine_scroll_manager_reset
 ld a, $02		; enum_title_screen
 push af
 
