@@ -108,7 +108,7 @@ _main:
 		ld a, $01
 		push af
 		inc sp
-		call A$screen_manager$86
+		call _engine_screen_manager_init
 		inc sp
 		call A$_sms_manager$145
 A$main$140:
@@ -137,7 +137,7 @@ C$main.c$48$3$57:
 		jr nz, A$main$140
 		call A$_sms_manager$735
 		call _engine_input_manager_update
-		call A$screen_manager$202
+		call _engine_screen_manager_update
 		call A$_sms_manager$752
 		call A$_sms_manager$769
 		call A$_sms_manager$786

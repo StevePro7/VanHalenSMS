@@ -1,7 +1,3 @@
-A$screen_manager$86:	
-C$screen_manager.c$22$0$0:	
-C$screen_manager.c$24$1$13:	
-G$engine_screen_manager_init$0$0:	
 _engine_screen_manager_init:	
 		ld hl, $0002
 		add hl, sp
@@ -47,15 +43,11 @@ _engine_screen_manager_init:
 		ld (_RAM_C04F_), hl
 		ret
 	
-A$screen_manager$202:	
-C$screen_manager.c$50$1$13:	
-C$screen_manager.c$52$1$14:	
-G$engine_screen_manager_update$0:	
 _engine_screen_manager_update:	
 		ld a, (Fscreen_manager$curr_screen_type)	; Fscreen_manager$curr_screen_type = $C02B
 		ld iy, Fscreen_manager$next_screen_type	; Fscreen_manager$next_screen_type = $C02C
 		sub (iy+0)
-		jr z, A$screen_manager$229
+		jr z, screen_skip_load
 		ld a, (iy+0)
 		ld iy, Fscreen_manager$curr_screen_type	; Fscreen_manager$curr_screen_type = $C02B
 		ld (iy+0), a
@@ -69,8 +61,7 @@ _engine_screen_manager_update:
 		ld h, (hl)
 		ld l, c
 		call ___sdcc_call_hl
-A$screen_manager$229:	
-C$screen_manager.c$58$1$14:	
+screen_skip_load:
 		ld bc, Fscreen_manager$update_method$0$	; Fscreen_manager$update_method$0$ = $C03F
 		ld iy, Fscreen_manager$curr_screen_type	; Fscreen_manager$curr_screen_type = $C02B
 		ld l, (iy+0)
