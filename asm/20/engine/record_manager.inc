@@ -176,7 +176,6 @@ _engine_record_manager_load:
 
 ; Data from FD9 to FDB (3 bytes)
 	;.db $CD $C5 $08
-	;call $08C5
 	call _devkit_SMS_loadBGPalette
 
 ; Data from FDC to FDC (1 bytes)

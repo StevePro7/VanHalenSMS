@@ -79,3 +79,16 @@ ld (ix - 3), $00
 .db $26 	ld h,
 
 .db $E6		and
+
+
+
+
+call $088E
+call _devkit_SMS_loadPSGaidencompress
+
+call $08A4
+call _devkit_SMS_loadSTMcompressedTil
+
+
+call $08C5
+call _devkit_SMS_loadBGPalette
