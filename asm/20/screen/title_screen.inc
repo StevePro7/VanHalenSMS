@@ -115,7 +115,7 @@ _screen_title_screen_load:
 
 ; Data from 12FA to 12FC (3 bytes)
 	;.db $CD $63 $11
-	call $1163
+	call _engine_delay_manager_load
 
 ; Data from 12FD to 12FF (3 bytes)
 	;.db $21 $4B $00
@@ -126,7 +126,7 @@ _screen_title_screen_load:
 
 ; Data from 1301 to 1303 (3 bytes)
 	;.db $CD $9E $11
-	call $119E
+	call _engine_reset_manager_load
 
 ; Data from 1304 to 1304 (1 bytes)
 	pop af

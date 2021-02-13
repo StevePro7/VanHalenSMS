@@ -111,7 +111,7 @@ _screen_select_screen_load:
 
 ; Data from 14BF to 14C1 (3 bytes)
 	;.db $CD $63 $11
-	call $1163
+	call _engine_delay_manager_load
 
 ; Data from 14C2 to 14C4 (3 bytes)
 	;.db $21 $4B $00
@@ -122,7 +122,7 @@ _screen_select_screen_load:
 
 ; Data from 14C6 to 14C8 (3 bytes)
 	;.db $CD $9E $11
-	call $119E
+	call _engine_reset_manager_load
 
 ; Data from 14C9 to 14C9 (1 bytes)
 	pop af

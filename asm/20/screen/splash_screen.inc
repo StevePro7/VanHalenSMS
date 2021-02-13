@@ -25,7 +25,7 @@ _screen_splash_screen_load:
 	
 ; Data from 1243 to 1245 (3 bytes)	
 	;.db $CD $63 $11
-	call $1163
+	call _engine_delay_manager_load
 	
 ; Data from 1246 to 1248 (3 bytes)	
 	;.db $21 $4B $00
@@ -37,7 +37,7 @@ _screen_splash_screen_load:
 	
 ; Data from 124A to 124C (3 bytes)	
 	;.db $CD $9E $11
-	call $119E
+	call _engine_reset_manager_load
 	
 ; Data from 124D to 124D (1 bytes)	
 	;.db $F1
