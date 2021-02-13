@@ -83,7 +83,6 @@ _exit:
 		halt
 		jr -
 
-
 _main:
 		call _engine_asm_manager_clear_VRAM
 		call _devkit_SMS_init

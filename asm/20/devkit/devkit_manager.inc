@@ -302,7 +302,6 @@ _devkit_SMS_setBGPaletteColor:
 	rlca
 
 ; Data from 8E9 to 8EA (2 bytes)
-A$_sms_manager$530:
 	and $F0
 
 ; Data from 8EB to 8EB (1 bytes)
@@ -679,36 +678,29 @@ _devkit_TILE_PRIORITY:
 	ld hl, $1000
 	
 ; Data from 9A8 to 9A8 (1 bytes)
-A$_sms_manager$928:
-C$_sms_manager.c$171$1$125:
-XG$devkit_TILE_PRIORITY$0$0:
 	ret
 	
 ; Data from 9A9 to 9AB (3 bytes)
-A$_sms_manager$941:
-C$_sms_manager.c$172$1$125:
-C$_sms_manager.c$174$1$126:
-G$devkit_TILE_USE_SPRITE_PALETTE:
 _devkit_TILE_USE_SPRITE_PALETTE:
 	;.db $21 $00 $08
 	ld hl, $0800
 	
 ; Data from 9AC to 9AC (1 bytes)
-A$_sms_manager$946:
-C$_sms_manager.c$175$1$126:
-XG$devkit_TILE_USE_SPRITE_PALETT:
 	ret
 	
 ; Data from 9AD to 9BA (14 bytes)
 F_sms_manager$__str_0$0$0:
+; todo disassemble
 	.db $53 $74 $65 $76 $65 $6E $20 $42 $6F $6C $61 $6E $64 $00
 	
 ; Data from 9BB to 9C4 (10 bytes)
 F_sms_manager$__str_1$0$0:
+; todo disassemble
 	.db $56 $61 $6E $20 $48 $61 $6C $65 $6E $00
 	
 ; Data from 9C5 to A00 (60 bytes)
 F_sms_manager$__str_2$0$0:
+; todo disassemble
 	.db $56 $61 $6E $20 $48 $61 $6C $65 $6E $20 $52 $65 $63 $6F $72 $64
 	.db $20 $43 $6F $76 $65 $72 $73 $20 $66 $6F $72 $20 $74 $68 $65 $20
 	.db $53 $4D $53 $20 $50 $6F $77 $65 $72 $21 $20 $32 $30 $32 $31 $20
