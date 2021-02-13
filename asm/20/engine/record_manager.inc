@@ -125,7 +125,7 @@ _engine_record_manager_load:
 
 ; Data from FBE to FC0 (3 bytes)
 	;.db $CD $31 $08
-	call $0831
+	call _devkit_SMS_mapROMBank
 
 ; Data from FC1 to FC1 (1 bytes)
 	inc sp

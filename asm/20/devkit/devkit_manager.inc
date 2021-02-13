@@ -4,21 +4,13 @@ _devkit_SMS_init:
 _devkit_SMS_displayOn:	
 		ld hl, $0140
 		jp _SMS_VDPturnOnFeature
-	
-A$_sms_manager$163:
-C$_sms_manager.c$19$1$75:	
-C$_sms_manager.c$21$1$76:	
-G$devkit_SMS_displayOff$0$0:	
+
 _devkit_SMS_displayOff:	
 		ld hl, $0140
 		jp _SMS_VDPturnOffFeature
 	
-; Data from 831 to 833 (3 bytes)	
-A$_sms_manager$181:
-C$_sms_manager.c$23$1$76:	
-C$_sms_manager.c$25$1$78:	
-G$devkit_SMS_mapROMBank$0$0:	
-_devkit_SMS_mapROMBank:	
+; Data from 831 to 833 (3 bytes)
+_devkit_SMS_mapROMBank:
 	;.db $21 $02 $00
 	ld hl, $0002
 	

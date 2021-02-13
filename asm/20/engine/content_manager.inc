@@ -25,7 +25,7 @@ _engine_content_manager_load_spl:
 	
 ; Data from ABC to ABE (3 bytes)	
 	;.db $CD $31 $08
-	call $0831
+	call _devkit_SMS_mapROMBank
 	
 ; Data from ABF to ABF (1 bytes)	
 	inc sp
@@ -111,7 +111,7 @@ _engine_content_manager_load_tit:
 	
 ; Data from AE7 to AE9 (3 bytes)	
 	;.db $CD $31 $08
-	call $0831
+	call _devkit_SMS_mapROMBank
 	
 ; Data from AEA to AEA (1 bytes)	
 	inc sp
@@ -221,7 +221,7 @@ _fngine_content_manager_load_tit:
 	
 ; Data from B1E to B20 (3 bytes)	
 	;.db $CD $31 $08
-	call $0831
+	call _devkit_SMS_mapROMBank
 	
 ; Data from B21 to B21 (1 bytes)	
 	inc sp
