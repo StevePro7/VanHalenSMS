@@ -230,7 +230,6 @@ _screen_record_screen_update:
 
 ; Data from 15EA to 15EC (3 bytes)
 	;.db $CD $1A $11
-	;call $111A		; todo
 	call _engine_storage_manager_write
 
 ; Data from 15ED to 15ED (1 bytes)

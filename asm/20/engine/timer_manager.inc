@@ -133,7 +133,7 @@ _engine_reset_manager_load:
 
 ; Data from 11B0 to 11B2 (3 bytes)
 	;.db $C3 $D5 $11
-	jp $11D5
+	jp _engine_reset_manager_reset
 
 ; Data from 11B3 to 11B6 (4 bytes)
 _engine_reset_manager_update:

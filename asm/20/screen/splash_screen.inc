@@ -146,11 +146,12 @@ _screen_splash_screen_update:
 	
 ; Data from 127C to 127E (3 bytes)	
 	;;.db $CD $41 $11
-	call $1141
+	;call $1141
+	call _engine_storage_manager_erase
 	
 ; Data from 127F to 1281 (3 bytes)	
 	;.db $CD $D5 $11
-	call $11D5
+	call _engine_reset_manager_reset
 	
 ; Data from 1282 to 1284 (3 bytes)	
 	;.db $21 $1C $17
@@ -186,7 +187,7 @@ _screen_splash_screen_update:
 	
 ; Data from 1291 to 1293 (3 bytes)	
 	;.db $CD $D5 $11
-	call $11D5
+	call _engine_reset_manager_reset
 	
 ; Data from 1294 to 1296 (3 bytes)	
 	;.db $DD $6E $04
