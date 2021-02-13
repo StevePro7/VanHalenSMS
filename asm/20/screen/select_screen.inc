@@ -82,7 +82,7 @@ _screen_select_screen_load:
 
 ; Data from 14B1 to 14B3 (3 bytes)
 	;.db $21 $51 $C0
-	ld hl, $C051
+	ld hl, $C051		; so->scroll_value_offset
 
 ; Data from 14B4 to 14B4 (1 bytes)
 	ld b, (hl)
@@ -126,7 +126,7 @@ _screen_select_screen_load:
 
 ; Data from 14CA to 14CC (3 bytes)
 	;.db $21 $63 $C0
-	ld hl, $C063
+	ld hl, $C063		; static unsigned char event_stage
 
 ; Data from 14CD to 14CE (2 bytes)
 	;.db $36 $00
@@ -134,7 +134,7 @@ _screen_select_screen_load:
 
 ; Data from 14CF to 14D1 (3 bytes)
 	;.db $21 $64 $C0
-	ld hl, $C064
+	ld hl, $C064		; static unsigned char flash
 
 ; Data from 14D2 to 14D3 (2 bytes)
 	;.db $36 $01
@@ -157,7 +157,7 @@ select_covers_label:
 ; Data from 14E3 to 14E5 (3 bytes)
 _screen_select_screen_update:
 	;.db $3A $63 $C0
-	ld a, ($C063)
+	ld a, ($C063)		; static unsigned char event_stage
 	
 ; Data from 14E6 to 14E6 (1 bytes)
 	dec a
@@ -168,7 +168,7 @@ _screen_select_screen_update:
 
 ; Data from 14E9 to 14EB (3 bytes)
 	;.db $3A $64 $C0
-	ld a, ($C064)
+	ld a, ($C064)		; static unsigned char flash
 
 ; Data from 14EC to 14EC (1 bytes)
 	or a
@@ -197,7 +197,7 @@ _screen_select_screen_update:
 
 ; Data from 14F9 to 14FB (3 bytes)
 	;.db $21 $64 $C0
-	ld hl, $C064
+	ld hl, $C064		; static unsigned char flash
 
 ; Data from 14FC to 14FD (2 bytes)
 	;.db $3E $01
@@ -315,7 +315,7 @@ _screen_select_screen_update:
 
 ; Data from 152F to 1531 (3 bytes)
 	;.db $21 $63 $C0
-	ld hl, $C063
+	ld hl, $C063		; static unsigned char event_stage
 
 ; Data from 1532 to 1533 (2 bytes)
 	;.db $36 $01
@@ -353,7 +353,6 @@ _screen_select_screen_update:
 
 ; Data from 1541 to 1543 (3 bytes)
 	;.db $CD $3E $0D
-	;call $0D3E
 	call _engine_cursor_manager_decX
 
 ; Data from 1544 to 1545 (2 bytes)
@@ -417,7 +416,6 @@ _screen_select_screen_update:
 
 ; Data from 155F to 1561 (3 bytes)
 	;.db $CD $63 $0D
-	;call $0D63
 	call _engine_cursor_manager_decY
 
 ; Data from 1562 to 1563 (2 bytes)
@@ -449,7 +447,6 @@ _screen_select_screen_update:
 
 ; Data from 156E to 1570 (3 bytes)
 	;.db $CD $76 $0D
-	;call $0D76
 	call _engine_cursor_manager_incY
 
 ; Data from 1571 to 1571 (1 bytes)
