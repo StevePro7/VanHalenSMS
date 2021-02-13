@@ -1,7 +1,7 @@
 ; Data from 10D8 to 10DA (3 bytes)
 _engine_storage_manager_availabl:
 	;.db $CD $6D $08
-	call $086D
+	call _devkit_SMS_SRAM
 
 ; Data from 10DB to 10DB (1 bytes)
 	push hl
@@ -98,7 +98,7 @@ _engine_storage_manager_availabl:
 ; Data from 1107 to 1109 (3 bytes)
 _engine_storage_manager_read:
 	;.db $CD $6D $08
-	call $086D
+	call _devkit_SMS_SRAM
 
 ; Data from 110A to 110A (1 bytes)
 	push hl
@@ -129,7 +129,7 @@ _engine_storage_manager_read:
 ; Data from 111A to 111C (3 bytes)
 _engine_storage_manager_write:
 	;.db $CD $6D $08
-	call $086D
+	call _devkit_SMS_SRAM
 
 ; Data from 111D to 111D (1 bytes)
 	push hl
@@ -202,7 +202,7 @@ _engine_storage_manager_write:
 ; Data from 1141 to 1143 (3 bytes)
 _engine_storage_manager_erase:
 	;.db $CD $6D $08
-	call $086D
+	call _devkit_SMS_SRAM
 
 ; Data from 1144 to 1144 (1 bytes)
 	push hl

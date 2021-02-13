@@ -5,7 +5,7 @@ _devkit_SMS_displayOn:
 		ld hl, $0140
 		jp _SMS_VDPturnOnFeature
 	
-A$_sms_manager$163:	
+A$_sms_manager$163:
 C$_sms_manager.c$19$1$75:	
 C$_sms_manager.c$21$1$76:	
 G$devkit_SMS_displayOff$0$0:	
@@ -160,10 +160,6 @@ XG$devkit_SMS_disableSRAM$0$0:
 	ret
 	
 ; Data from 86D to 86F (3 bytes)	
-A$_sms_manager$305:	
-C$_sms_manager.c$49$1$86:	
-C$_sms_manager.c$51$1$87:	
-G$devkit_SMS_SRAM$0$0:	
 _devkit_SMS_SRAM:	
 	;.db $21 $00 $80
 	ld hl, $8000
@@ -173,11 +169,7 @@ A$_sms_manager$310:
 C$_sms_manager.c$52$1$87:	
 XG$devkit_SMS_SRAM$0$0:	
 	ret
-	
-A$_sms_manager$323:	
-C$_sms_manager.c$55$1$87:	
-C$_sms_manager.c$57$1$89:	
-G$devkit_SMS_setSpriteMode$0$0:	
+
 _devkit_SMS_setSpriteMode:
 		ld iy, $0002
 		add iy, sp
@@ -981,11 +973,7 @@ G$devkit_SMS_getKeysStatus$0$0:
 XG$devkit_SMS_getKeysStatus$0$0:	
 _devkit_SMS_getKeysStatus:	
 		jp _SMS_getKeysStatus
-	
-A$_sms_manager$887:	
-C$_sms_manager.c$160$1$122:	
-C$_sms_manager.c$162$1$123:	
-G$devkit_SPRITEMODE_NORMAL$0$0:	
+
 _devkit_SPRITEMODE_NORMAL:	
 		ld l, $00
 		ret

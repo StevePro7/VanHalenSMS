@@ -91,11 +91,11 @@ _main:
 		call _engine_asm_manager_clear_VRAM
 		call _devkit_SMS_init
 		call _devkit_SMS_displayOff
-		call A$_sms_manager$887
+		call _devkit_SPRITEMODE_NORMAL
 		ld b, l
 		push bc
 		inc sp
-		call A$_sms_manager$323
+		call _devkit_SMS_setSpriteMode
 		inc sp
 		call A$_sms_manager$343
 		call A$_sms_manager$905
