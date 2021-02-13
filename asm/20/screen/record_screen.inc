@@ -223,7 +223,7 @@ _screen_record_screen_update:
 
 ; Data from 15E6 to 15E8 (3 bytes)
 	;.db $CD $67 $0B
-	call $0B67		; todo
+	call _engine_cursor_manager_init
 
 ; Data from 15E9 to 15E9 (1 bytes)
 	inc sp
