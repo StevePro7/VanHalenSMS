@@ -632,26 +632,15 @@ _devkit_SMS_finalizeSprites:
 _devkit_SMS_waitForVBlank:
 		jp _SMS_waitForVBlank
 
-A$_sms_manager$786:
-C$_sms_manager.c$129$1$116:
-C$_sms_manager.c$131$1$117:
-C$_sms_manager.c$132$1$117:
-G$devkit_SMS_copySpritestoSAT$0$:
-XG$devkit_SMS_copySpritestoSAT$0:
 _devkit_SMS_copySpritestoSAT:
 		jp _UNSAFE_SMS_copySpritestoSAT
 	
-	; Data from 98B to 98D (3 bytes)
-A$_sms_manager$803:
-C$_sms_manager.c$133$1$117:
-C$_sms_manager.c$135$1$118:
-C$_sms_manager.c$136$1$118:
-G$devkit_UNSAFE_SMS_copySpritest:
-XG$devkit_UNSAFE_SMS_copySprites:
+; Data from 98B to 98D (3 bytes)
+
 _devkit_UNSAFE_SMS_copySpritesto:
 	;.db $C3 $A6 $1B
 	jp $1BA6
-	
+
 A$_sms_manager$820:
 C$_sms_manager.c$138$1$118:
 C$_sms_manager.c$140$1$119:

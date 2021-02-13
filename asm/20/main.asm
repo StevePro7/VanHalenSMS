@@ -105,15 +105,14 @@ _main:
 		call _engine_content_manager_load_til
 		call _engine_content_manager_load_spr
 		call _engine_scroll_manager_reset
-		ld a, $01
+		ld a, $01			; screen_type_splash
 		push af
 		inc sp
 		call _engine_screen_manager_init
 		inc sp
 		call _devkit_SMS_displayOn
 A$main$140:
-C$main.c$34$3$57:	
-		call A$_sms_manager$820
+		call _devkit_SMS_queryPauseRequested
 		ld a, l
 		or a
 		jr z, A$main$174
@@ -140,7 +139,7 @@ C$main.c$48$3$57:
 		call _engine_screen_manager_update
 		call _devkit_SMS_finalizeSprites
 		call _devkit_SMS_waitForVBlank
-		call A$_sms_manager$786
+		call _devkit_SMS_copySpritestoSAT
 		call _devkit_PSGFrame
 		call _devkit_PSGSFXFrame
 		jr A$main$140
