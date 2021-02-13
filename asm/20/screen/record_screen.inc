@@ -1,7 +1,8 @@
 ; Data from 1578 to 157A (3 bytes)
 _screen_record_screen_load:
 	;.db $CD $BB $10
-	call $10BB
+	;call $10BB
+	call _engine_scroll_manager_reset
 
 ; Data from 157B to 157D (3 bytes)
 	;.db $C3 $F9 $15
@@ -20,7 +21,7 @@ _screen_record_screen_update:
 
 ; Data from 1586 to 1587 (2 bytes)
 	;.db $3E $04
-	ld a, $04
+	ld a, $04			; input_type_left
 
 ; Data from 1588 to 1588 (1 bytes)
 	push af
@@ -30,7 +31,7 @@ _screen_record_screen_update:
 
 ; Data from 158A to 158C (3 bytes)
 	;.db $CD $D3 $0E
-	call $0ED3
+	call _engine_input_manager_hold
 
 ; Data from 158D to 158D (1 bytes)
 	inc sp
@@ -55,7 +56,7 @@ _screen_record_screen_update:
 
 ; Data from 1598 to 1599 (2 bytes)
 	;.db $3E $08
-	ld a, $08
+	ld a, $08			; input_type_right
 
 ; Data from 159A to 159A (1 bytes)
 	push af
@@ -65,7 +66,7 @@ _screen_record_screen_update:
 
 ; Data from 159C to 159E (3 bytes)
 	;.db $CD $D3 $0E
-	call $0ED3
+	call _engine_input_manager_hold
 
 ; Data from 159F to 159F (1 bytes)
 	inc sp
@@ -90,7 +91,7 @@ _screen_record_screen_update:
 
 ; Data from 15AA to 15AB (2 bytes)
 	;.db $3E $10
-	ld a, $10
+	ld a, $10		; input_type_fire2
 
 ; Data from 15AC to 15AC (1 bytes)
 	push af
@@ -100,7 +101,7 @@ _screen_record_screen_update:
 
 ; Data from 15AE to 15B0 (3 bytes)
 	;.db $CD $D3 $0E
-	call $0ED3
+	call _engine_input_manager_hold
 
 ; Data from 15B1 to 15B1 (1 bytes)
 	inc sp
@@ -114,7 +115,7 @@ _screen_record_screen_update:
 
 ; Data from 15B4 to 15B5 (2 bytes)
 	;.db $3E $20
-	ld a, $20
+	ld a, $20		; input_type_fire2
 
 ; Data from 15B6 to 15B6 (1 bytes)
 	push af
@@ -124,7 +125,7 @@ _screen_record_screen_update:
 
 ; Data from 15B8 to 15BA (3 bytes)
 	;.db $CD $D3 $0E
-	call $0ED3
+	call _engine_input_manager_hold
 
 ; Data from 15BB to 15BB (1 bytes)
 	inc sp
