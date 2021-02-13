@@ -171,7 +171,7 @@ _screen_title_screen_load:
 
 ; Data from 1316 to 1318 (3 bytes)
 	;.db $21 $2A $C0
-	ld hl, $C02A
+	ld hl, $C02A		; ro->record_album_index
 
 ; Data from 1319 to 1319 (1 bytes)
 	ld b, (hl)
@@ -191,7 +191,7 @@ _screen_title_screen_load:
 
 ; Data from 1320 to 1322 (3 bytes)
 	;.db $21 $2A $C0
-	ld hl, $C02A
+	ld hl, $C02A		; ro->record_album_index
 
 ; Data from 1323 to 1323 (1 bytes)
 	ld b, (hl)

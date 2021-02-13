@@ -38,7 +38,7 @@ _engine_storage_manager_availabl:
 	ld a, c
 
 ; Data from 10E8 to 10E9 (2 bytes)
-	sub a, $04
+	sub a, $04		; MAGIC			0xACE0B004
 
 ; Data from 10EA to 10EB (2 bytes)
 	jr nz, $13
@@ -47,7 +47,7 @@ _engine_storage_manager_availabl:
 	ld a, b
 
 ; Data from 10ED to 10EE (2 bytes)
-	sub a, $B0
+	sub a, $B0		; MAGIC			0xACE0B004
 
 ; Data from 10EF to 10F0 (2 bytes)
 	jr nz, $0E
@@ -56,7 +56,7 @@ _engine_storage_manager_availabl:
 	ld a, e
 
 ; Data from 10F2 to 10F3 (2 bytes)
-	sub a, $E0
+	sub a, $E0		; MAGIC			0xACE0B004
 
 ; Data from 10F4 to 10F5 (2 bytes)
 	jr nz, $09
@@ -65,7 +65,7 @@ _engine_storage_manager_availabl:
 	ld a, d
 
 ; Data from 10F7 to 10F8 (2 bytes)
-	sub a, $AC
+	sub a, $AC		; MAGIC			0xACE0B004
 
 ; Data from 10F9 to 10FA (2 bytes)
 	jr nz, $04
@@ -117,7 +117,7 @@ _engine_storage_manager_read:
 
 ; Data from 1113 to 1115 (3 bytes)
 	;.db $21 $2A $C0
-	ld hl, $C02A
+	ld hl, $C02A		; ro->record_album_index
 
 ; Data from 1116 to 1116 (1 bytes)
 	ld (hl), c
@@ -148,25 +148,25 @@ _engine_storage_manager_write:
 	ld h, b
 
 ; Data from 1124 to 1125 (2 bytes)
-	ld (hl), $04
+	ld (hl), $04		; MAGIC			0xACE0B004
 
 ; Data from 1126 to 1126 (1 bytes)
 	inc hl
 
 ; Data from 1127 to 1128 (2 bytes)
-	ld (hl), $B0
+	ld (hl), $B0		; MAGIC			0xACE0B004
 
 ; Data from 1129 to 1129 (1 bytes)
 	inc hl
 
 ; Data from 112A to 112B (2 bytes)
-	ld (hl), $E0
+	ld (hl), $E0		; MAGIC			0xACE0B004
 
 ; Data from 112C to 112C (1 bytes)
 	inc hl
 
 ; Data from 112D to 112E (2 bytes)
-	ld (hl), $AC
+	ld (hl), $AC		; MAGIC			0xACE0B004
 
 ; Data from 112F to 1131 (3 bytes)
 	;.db $21 $04 $00
@@ -180,7 +180,7 @@ _engine_storage_manager_write:
 
 ; Data from 1134 to 1136 (3 bytes)
 	;.db $3A $2A $C0
-	ld a, ($C02A)
+	ld a, ($C02A)		; ro->record_album_index
 
 ; Data from 1137 to 1137 (1 bytes)
 	ld (de), a
@@ -193,7 +193,7 @@ _engine_storage_manager_write:
 	add hl, bc
 
 ; Data from 113C to 113D (2 bytes)
-	ld (hl), $FE
+	ld (hl), $FE		; savegame->terminal = FINAL;
 
 ; Data from 113E to 1140 (3 bytes)
 	;.db $C3 $67 $08

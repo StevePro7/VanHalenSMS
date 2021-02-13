@@ -181,7 +181,7 @@ _screen_record_screen_update:
 
 ; Data from 15D3 to 15D5 (3 bytes)
 	;.db $21 $2A $C0
-	ld hl, $C02A
+	ld hl, $C02A		; ro->record_album_index
 
 ; Data from 15D6 to 15D6 (1 bytes)
 	ld b, (hl)
@@ -207,7 +207,7 @@ _screen_record_screen_update:
 
 ; Data from 15DF to 15E1 (3 bytes)
 	;.db $21 $2A $C0
-	ld hl, $C02A
+	ld hl, $C02A		; ro->record_album_index
 
 ; Data from 15E2 to 15E2 (1 bytes)
 	ld b, (hl)
