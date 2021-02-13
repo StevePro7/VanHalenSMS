@@ -318,7 +318,7 @@ _engine_font_manager_draw_data:
 
 ; Data from E6D to E6F (3 bytes)
 	;.db $CD $FA $1E
-	call $1EFA
+	call __moduint
 
 ; Data from E70 to E70 (1 bytes)
 	pop af

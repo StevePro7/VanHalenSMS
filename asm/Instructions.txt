@@ -95,3 +95,6 @@ call _devkit_SMS_loadBGPalette
 
 call $1B65
 call __divuint
+
+call $1EFA
+call __moduint

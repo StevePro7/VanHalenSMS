@@ -1,7 +1,6 @@
 ; Data from 1578 to 157A (3 bytes)
 _screen_record_screen_load:
 	;.db $CD $BB $10
-	;call $10BB
 	call _engine_scroll_manager_reset
 
 ; Data from 157B to 157D (3 bytes)
@@ -172,7 +171,6 @@ _screen_record_screen_update:
 
 ; Data from 15CE to 15D0 (3 bytes)
 	;.db $CD $46 $08
-	;call $0846
 	call _devkit_SMS_setBGScrollY
 
 ; Data from 15D1 to 15D1 (1 bytes)
@@ -225,14 +223,15 @@ _screen_record_screen_update:
 
 ; Data from 15E6 to 15E8 (3 bytes)
 	;.db $CD $67 $0B
-	call $0B67
+	call $0B67		; todo
 
 ; Data from 15E9 to 15E9 (1 bytes)
 	inc sp
 
 ; Data from 15EA to 15EC (3 bytes)
 	;.db $CD $1A $11
-	call $111A
+	;call $111A		; todo
+	call _engine_storage_manager_write
 
 ; Data from 15ED to 15ED (1 bytes)
 	pop de

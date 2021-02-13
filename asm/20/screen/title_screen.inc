@@ -202,7 +202,7 @@ _screen_title_screen_load:
 
 ; Data from 1326 to 1328 (3 bytes)
 	;.db $CD $67 $0B
-	call $0B67
+	call $0B67		; todo
 
 ; Data from 1329 to 1329 (1 bytes)
 	inc sp
