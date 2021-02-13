@@ -90,7 +90,8 @@ _screen_title_screen_load:
 
 ; Data from 12EA to 12EC (3 bytes)
 	;.db $21 $4F $13
-	ld hl, $134F
+	;ld hl, $134F
+	ld hl, title_build_label
 
 ; Data from 12ED to 12ED (1 bytes)
 	push hl
@@ -111,7 +112,7 @@ _screen_title_screen_load:
 
 ; Data from 12F6 to 12F8 (3 bytes)
 	;.db $21 $32 $00
-	ld hl, $0032
+	ld hl, $0032		; TITLE_FLASH_DELAY	50
 
 ; Data from 12F9 to 12F9 (1 bytes)
 	push hl
@@ -122,7 +123,7 @@ _screen_title_screen_load:
 
 ; Data from 12FD to 12FF (3 bytes)
 	;.db $21 $4B $00
-	ld hl, $004B
+	ld hl, $004B		; TITLE_VALUE_RESET	75
 
 ; Data from 1300 to 1300 (1 bytes)
 	ex (sp), hl
@@ -243,8 +244,9 @@ title_covers_label:
 	.db $43 $4F $56 $45 $52 $53 $00
 
 ; Data from 134F to 1353 (5 bytes)
-	.db $56 $31 $2E $30 $00
+title_build_label:
 	; V1.0
+	.db $56 $31 $2E $30 $00
 
 ; Data from 1354 to 1355 (2 bytes)
 _screen_title_screen_update:
