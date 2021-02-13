@@ -1,7 +1,7 @@
 _engine_input_manager_update:
 		ld hl, (Finput_manager$curr_joypad1$0$0)	; Finput_manager$curr_joypad1$0$0 = $C152
 		ld (Finput_manager$prev_joypad1$0$0), hl	; Finput_manager$prev_joypad1$0$0 = $C154
-		call A$_sms_manager$874
+		call _devkit_SMS_getKeysStatus
 		ld (Finput_manager$curr_joypad1$0$0), hl	; Finput_manager$curr_joypad1$0$0 = $C152
 		ret
 

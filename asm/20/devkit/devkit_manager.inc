@@ -135,11 +135,7 @@ _devkit_SMS_VDPturnOnFeature:
 		push hl
 		push bc
 		jp _SMS_VDPturnOnFeature
-	
-A$_sms_manager$400:
-C$_sms_manager.c$72$1$93:
-C$_sms_manager.c$74$1$95:
-G$devkit_SMS_loadPSGaidencompres:
+
 _devkit_SMS_loadPSGaidencompress:
 		ld hl, _SMS_crt0_RST08 - 2	; _SMS_crt0_RST08 - 2 = $0004
 		add hl, sp
@@ -159,111 +155,82 @@ _devkit_SMS_loadPSGaidencompress:
 		ret
 	
 ; Data from 8A4 to 8A5 (2 bytes)
-A$_sms_manager$432:
-C$_sms_manager.c$76$1$95:
-C$_sms_manager.c$78$1$97:
-G$devkit_SMS_loadSTMcompressedTi:
 _devkit_SMS_loadSTMcompressedTil:
 	ld a, $20
-	
+
 ; Data from 8A6 to 8A6 (1 bytes)
-A$_sms_manager$433:
 	push af
-	
+
 ; Data from 8A7 to 8A7 (1 bytes)
-A$_sms_manager$434:
 	inc sp
-	
+
 ; Data from 8A8 to 8AA (3 bytes)
-A$_sms_manager$435:
 	;.db $21 $05 $00
 	ld hl, $0005
-	
+
 ; Data from 8AB to 8AB (1 bytes)
-A$_sms_manager$436:
 	add hl, sp
-	
+
 ; Data from 8AC to 8AC (1 bytes)
-A$_sms_manager$437:
 	ld c, (hl)
-	
+
 ; Data from 8AD to 8AD (1 bytes)
-A$_sms_manager$438:
 	inc hl
-	
+
 ; Data from 8AE to 8AE (1 bytes)
-A$_sms_manager$439:
 	ld b, (hl)
-	
+
 ; Data from 8AF to 8AF (1 bytes)
-A$_sms_manager$440:
 	push bc
-	
+
 ; Data from 8B0 to 8B2 (3 bytes)
-A$_sms_manager$441:
 	;.db $21 $06 $00
 	ld hl, $0006
-	
+
 ; Data from 8B3 to 8B3 (1 bytes)
-A$_sms_manager$442:
 	add hl, sp
-	
+
 ; Data from 8B4 to 8B4 (1 bytes)
-A$_sms_manager$443:
 	ld a, (hl)
-	
+
 ; Data from 8B5 to 8B5 (1 bytes)
-A$_sms_manager$444:
 	push af
-	
+
 ; Data from 8B6 to 8B6 (1 bytes)
-A$_sms_manager$445:
 	inc sp
-	
+
 ; Data from 8B7 to 8B9 (3 bytes)
-A$_sms_manager$446:
 	;.db $21 $06 $00
 	ld hl, $0006
-	
+
 ; Data from 8BA to 8BA (1 bytes)
-A$_sms_manager$447:
 	add hl, sp
-	
+
 ; Data from 8BB to 8BB (1 bytes)
-A$_sms_manager$448:
 	ld a, (hl)
-	
+
 ; Data from 8BC to 8BC (1 bytes)
-A$_sms_manager$449:
 	push af
-	
+
 ; Data from 8BD to 8BD (1 bytes)
-A$_sms_manager$450:
 	inc sp
-	
+
 ; Data from 8BE to 8C0 (3 bytes)
-A$_sms_manager$451:
 	;.db $CD $05 $1F
 	call $1F05
-	
+
 ; Data from 8C1 to 8C1 (1 bytes)
-A$_sms_manager$452:
 	pop af
-	
+
 ; Data from 8C2 to 8C2 (1 bytes)
-A$_sms_manager$453:
 	pop af
-	
+
 ; Data from 8C3 to 8C3 (1 bytes)
-A$_sms_manager$454:
 	inc sp
-	
+
 ; Data from 8C4 to 8C4 (1 bytes)
-A$_sms_manager$459:
-C$_sms_manager.c$79$1$97:
-XG$devkit_SMS_loadSTMcompressedT:
 	ret
-	
+
 _devkit_SMS_loadBGPalette:
 		pop bc
 		pop hl
@@ -889,13 +856,7 @@ A$_sms_manager$857:
 C$_sms_manager.c$151$1$121:
 XG$devkit_isCollisionDetected$0$:
 	ret
-	
-A$_sms_manager$874:
-C$_sms_manager.c$154$1$121:
-C$_sms_manager.c$156$1$122:
-C$_sms_manager.c$157$1$122:
-G$devkit_SMS_getKeysStatus$0$0:
-XG$devkit_SMS_getKeysStatus$0$0:
+
 _devkit_SMS_getKeysStatus:
 		jp _SMS_getKeysStatus
 
@@ -906,12 +867,8 @@ _devkit_SPRITEMODE_NORMAL:
 _devkit_VDPFEATURE_HIDEFIRSTCOL:
 		ld hl, $0020
 		ret
-	
+
 ; Data from 9A5 to 9A7 (3 bytes)
-A$_sms_manager$923:
-C$_sms_manager.c$168$1$124:
-C$_sms_manager.c$170$1$125:
-G$devkit_TILE_PRIORITY$0$0:
 _devkit_TILE_PRIORITY:
 	;.db $21 $00 $10
 	ld hl, $1000
