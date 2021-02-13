@@ -145,7 +145,8 @@ _engine_record_manager_load:
 
 ; Data from FC8 to FCA (3 bytes)
 	;.db $CD $8E $08
-	call $088E
+	;call $088E
+	call _devkit_SMS_loadPSGaidencompress
 
 ; Data from FCB to FCB (1 bytes)
 	pop af
@@ -159,7 +160,8 @@ _engine_record_manager_load:
 
 ; Data from FD0 to FD2 (3 bytes)
 	;.db $CD $A4 $08
-	call $08A4
+	;call $08A4
+	call _devkit_SMS_loadSTMcompressedTil
 
 ; Data from FD3 to FD3 (1 bytes)
 	pop af
@@ -176,7 +178,8 @@ _engine_record_manager_load:
 
 ; Data from FD9 to FDB (3 bytes)
 	;.db $CD $C5 $08
-	call $08C5
+	;call $08C5
+	call _devkit_SMS_loadBGPalette
 
 ; Data from FDC to FDC (1 bytes)
 	pop af
