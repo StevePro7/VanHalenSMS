@@ -520,29 +520,19 @@ _devkit_SMS_setNextTileatXY:
 	jp $0006
 
 ; Data from 94C to 94C (1 bytes)
-A$_sms_manager$652:
-C$_sms_manager.c$104$1$107:
-C$_sms_manager.c$106$1$109:
-G$devkit_SMS_setTile$0$0:
 _devkit_SMS_setTile:
 	pop bc
-	
+
 ; Data from 94D to 94D (1 bytes)
-A$_sms_manager$653:
 	pop hl
-	
+
 ; Data from 94E to 94E (1 bytes)
-A$_sms_manager$654:
 	push hl
-	
+
 ; Data from 94F to 94F (1 bytes)
-A$_sms_manager$655:
 	push bc
-	
+
 ; Data from 950 to 952 (3 bytes)
-A$_sms_manager$660:
-C$_sms_manager.c$107$1$109:
-XG$devkit_SMS_setTile$0$0:
 	;.db $C3 $11 $00
 	jp $0011
 	
