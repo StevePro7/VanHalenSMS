@@ -64,7 +64,7 @@ _engine_font_manager_draw_char:
 
 ; Data from DE2 to DE4 (3 bytes)
 	;.db $CD $4C $09
-	call $094C
+	call _devkit_SMS_setTile
 
 ; Data from DE5 to DE5 (1 bytes)
 	pop af
@@ -208,7 +208,7 @@ _engine_font_manager_draw_text:
 
 ; Data from E2D to E2F (3 bytes)
 	;.db $CD $4C $09
-	call $094C
+	call _devkit_SMS_setTile
 
 ; Data from E30 to E30 (1 bytes)
 	pop af
@@ -456,7 +456,7 @@ _engine_font_manager_draw_data:
 
 ; Data from EB3 to EB5 (3 bytes)
 	;.db $CD $4C $09
-	call $094C
+	call _devkit_SMS_setTile
 
 ; Data from EB6 to EB6 (1 bytes)
 	pop af

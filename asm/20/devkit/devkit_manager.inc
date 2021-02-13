@@ -441,112 +441,84 @@ _devkit_SMS_setNextTileatXY:
 	push ix
 
 ; Data from 925 to 928 (4 bytes)
-A$_sms_manager$608:
 	;.db $DD $21 $00 $00
 	ld ix, $0000
-	
+
 ; Data from 929 to 92A (2 bytes)
-A$_sms_manager$609:
 	add ix, sp
-	
+
 ; Data from 92B to 92D (3 bytes)
-A$_sms_manager$613:
-C$_sms_manager.c$102$1$107:
 	;.db $DD $6E $05
 	ld l, (ix + $05)
-	
+
 ; Data from 92E to 92F (2 bytes)
-A$_sms_manager$614:
 	ld h, $00
-	
+
 ; Data from 930 to 930 (1 bytes)
-A$_sms_manager$615:
 	add hl, hl
-	
+
 ; Data from 931 to 931 (1 bytes)
-A$_sms_manager$616:
 	add hl, hl
-	
+
 ; Data from 932 to 932 (1 bytes)
-A$_sms_manager$617:
 	add hl, hl
-	
+
 ; Data from 933 to 933 (1 bytes)
-A$_sms_manager$618:
 	add hl, hl
-	
+
 ; Data from 934 to 934 (1 bytes)
-A$_sms_manager$619:
 	add hl, hl
-	
+
 ; Data from 935 to 935 (1 bytes)
-A$_sms_manager$620:
 	add hl, hl
-	
+
 ; Data from 936 to 936 (1 bytes)
-A$_sms_manager$621:
 	ld c, l
-	
+
 ; Data from 937 to 937 (1 bytes)
-A$_sms_manager$622:
 	ld a, h
-	
+
 ; Data from 938 to 939 (2 bytes)
-A$_sms_manager$623:
 	or $78
-	
+
 ; Data from 93A to 93A (1 bytes)
-A$_sms_manager$624:
 	ld b, a
-	
+
 ; Data from 93B to 93D (3 bytes)
-A$_sms_manager$625:
 	;.db $DD $6E $04
 	ld l, (ix + $04)
-	
+
 ; Data from 93E to 93F (2 bytes)
-A$_sms_manager$626:
 	ld h, $00
-	
+
 ; Data from 940 to 940 (1 bytes)
-A$_sms_manager$627:
 	add hl, hl
-	
+
 ; Data from 941 to 941 (1 bytes)
-A$_sms_manager$628:
 	ld a, l
-	
+
 ; Data from 942 to 942 (1 bytes)
-A$_sms_manager$629:
 	or c
-	
+
 ; Data from 943 to 943 (1 bytes)
-A$_sms_manager$630:
 	ld l, a
-	
+
 ; Data from 944 to 944 (1 bytes)
-A$_sms_manager$631:
 	ld a, h
-	
+
 ; Data from 945 to 945 (1 bytes)
-A$_sms_manager$632:
 	or b
-	
+
 ; Data from 946 to 946 (1 bytes)
-A$_sms_manager$633:
 	ld h, a
-	
+
 ; Data from 947 to 948 (2 bytes)
-A$_sms_manager$638:
-C$_sms_manager.c$103$1$107:
-XG$devkit_SMS_setNextTileatXY$0$:
 	pop ix
-	
+
 ; Data from 949 to 94B (3 bytes)
-A$_sms_manager$639:
 	;.db $C3 $06 $00
 	jp $0006
-	
+
 ; Data from 94C to 94C (1 bytes)
 A$_sms_manager$652:
 C$_sms_manager.c$104$1$107:
