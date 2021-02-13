@@ -14,5 +14,3 @@ _sfx_wrong_psg:
 	.db $C5 $4D $D0 $3B $C0 $4A $3B $C7 $49 $3B $CE $48 $D5 $3B $C5 $4D
 	.db $3B $C0 $4A $3B $C7 $49 $DA $3B $CE $48 $3B $C0 $49 $3B $C0 $40
 	.db $DF $3B $00
-	
-; Data from 1B65 to 1B6C (8 bytes)	

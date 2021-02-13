@@ -89,7 +89,7 @@ _engine_content_manager_load_spl:
 	
 ; Data from ADE to AE0 (3 bytes)	
 	;.db $CD $C5 $08
-	call $08C5
+	call _devkit_SMS_loadBGPalette
 	
 ; Data from AE1 to AE1 (1 bytes)	
 	pop af
@@ -175,7 +175,7 @@ _engine_content_manager_load_tit:
 	
 ; Data from B09 to B0B (3 bytes)	
 	;.db $CD $C5 $08
-	call $08C5
+	call _devkit_SMS_loadBGPalette
 	
 ; Data from B0C to B0C (1 bytes)	
 	pop af
@@ -285,7 +285,7 @@ _fngine_content_manager_load_tit:
 	
 ; Data from B40 to B42 (3 bytes)	
 	;.db $CD $C5 $08
-	call $08C5
+	call _devkit_SMS_loadBGPalette
 	
 ; Data from B43 to B43 (1 bytes)	
 	pop af

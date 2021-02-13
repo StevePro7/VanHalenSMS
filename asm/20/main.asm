@@ -181,6 +181,7 @@ global_pause:
 	
 ; Data from 1B65 to 1B6C (8 bytes)	
 __divuint:
+; todo disassemble
 	.db $F1 $E1 $D1 $D5 $E5 $F5 $18 $0A
 	
 ; Data from 1B6D to 1B73 (7 bytes)	
