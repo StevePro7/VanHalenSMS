@@ -5,7 +5,6 @@ _engine_font_manager_draw_char:
 ; Data from DBF to DC2 (4 bytes)
 	;.db $DD $21 $00 $00
 	ld ix, $0000
-	
 
 ; Data from DC3 to DC4 (2 bytes)
 	add ix, sp
@@ -36,7 +35,7 @@ _engine_font_manager_draw_char:
 
 ; Data from DD3 to DD5 (3 bytes)
 	;.db $CD $23 $09
-	call  $0923
+	call  _devkit_SMS_setNextTileatXY
 
 ; Data from DD6 to DD6 (1 bytes)
 	pop af
@@ -165,7 +164,7 @@ _engine_font_manager_draw_text:
 
 ; Data from E1A to E1C (3 bytes)
 	;.db $CD $23 $09
-	call $0923
+	call _devkit_SMS_setNextTileatXY
 
 ; Data from E1D to E1D (1 bytes)
 	pop af
@@ -419,7 +418,7 @@ _engine_font_manager_draw_data:
 
 ; Data from EA2 to EA4 (3 bytes)
 	;.db $CD $23 $09
-	call $0923
+	call _devkit_SMS_setNextTileatXY
 
 ; Data from EA5 to EA5 (1 bytes)
 	pop af

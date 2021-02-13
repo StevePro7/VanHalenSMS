@@ -437,12 +437,9 @@ _devkit_SMS_setSpritePaletteColo:
 	ret
 
 ; Data from 923 to 924 (2 bytes)
-A$_sms_manager$607:
-C$_sms_manager.c$100$1$105:
-G$devkit_SMS_setNextTileatXY$0$0:
 _devkit_SMS_setNextTileatXY:
 	push ix
-	
+
 ; Data from 925 to 928 (4 bytes)
 A$_sms_manager$608:
 	;.db $DD $21 $00 $00
