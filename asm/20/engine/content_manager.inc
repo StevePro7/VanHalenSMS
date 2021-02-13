@@ -32,7 +32,7 @@ _engine_content_manager_load_spl:
 	
 ; Data from AC0 to AC2 (3 bytes)	
 	;.db $21 $40 $00
-	ld hl, $0040
+	ld hl, $0040		; OPTION_TILES
 	
 ; Data from AC3 to AC3 (1 bytes)	
 	push hl

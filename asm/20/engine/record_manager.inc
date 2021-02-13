@@ -145,7 +145,6 @@ _engine_record_manager_load:
 
 ; Data from FC8 to FCA (3 bytes)
 	;.db $CD $8E $08
-	;call $088E
 	call _devkit_SMS_loadPSGaidencompress
 
 ; Data from FCB to FCB (1 bytes)
