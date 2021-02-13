@@ -197,7 +197,7 @@ _engine_content_manager_load_tit:
 	
 ; Data from B14 to B16 (3 bytes)	
 	;.db $CD $D3 $08
-	call $08D3
+	call _devkit_SMS_setBGPaletteColor
 	
 ; Data from B17 to B17 (1 bytes)	
 	pop af
@@ -307,7 +307,7 @@ _fngine_content_manager_load_tit:
 	
 ; Data from B4B to B4D (3 bytes)	
 	;.db $CD $D3 $08
-	call $08D3
+	call _devkit_SMS_setBGPaletteColor
 	
 ; Data from B4E to B4E (1 bytes)	
 	pop af

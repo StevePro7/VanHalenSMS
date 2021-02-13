@@ -246,10 +246,6 @@ _devkit_SMS_loadSpritePalette:
 		jp _SMS_loadSpritePalette
 	
 ; Data from 8D3 to 8D5 (3 bytes)
-A$_sms_manager$514:
-C$_sms_manager.c$89$1$101:
-C$_sms_manager.c$91$1$103:
-G$devkit_SMS_setBGPaletteColor$0:
 _devkit_SMS_setBGPaletteColor:
 	;.db $21 $04 $00
 	ld hl, $0004
