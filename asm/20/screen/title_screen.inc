@@ -155,11 +155,9 @@ _screen_title_screen_load:
 	call _engine_storage_manager_availabl
 
 ; Data from 130F to 130F (1 bytes)
-	;ld a, l
 	ld a, l
 
 ; Data from 1310 to 1310 (1 bytes)
-	;or a
 	or a
 
 ; Data from 1311 to 1312 (2 bytes)
