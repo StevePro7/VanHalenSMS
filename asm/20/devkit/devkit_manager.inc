@@ -641,12 +641,7 @@ _devkit_UNSAFE_SMS_copySpritesto:
 	;.db $C3 $A6 $1B
 	jp $1BA6
 
-A$_sms_manager$820:
-C$_sms_manager.c$138$1$118:
-C$_sms_manager.c$140$1$119:
-C$_sms_manager.c$141$1$119:
-G$devkit_SMS_queryPauseRequested:
-XG$devkit_SMS_queryPauseRequeste:
+
 _devkit_SMS_queryPauseRequested:
 		jp _SMS_queryPauseRequested
 

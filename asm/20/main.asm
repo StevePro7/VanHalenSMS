@@ -115,22 +115,20 @@ infinite_loop:
 		call _devkit_SMS_queryPauseRequested
 		ld a, l
 		or a
-		jr z, A$main$174
+		jr z, global_pause
 		call _devkit_SMS_resetPauseRequest
 		ld iy, Lmain.main$global_pause$1$55	; Lmain.main$global_pause$1$55 = $C000
 		ld a, (iy+0)
 		xor $01
 		ld (iy+0), a
 		bit 0, (iy+0)
-		jr z, A$main$169
+		jr z, else_clause
 		call _devkit_PSGSilenceChannels
-		jr A$main$174
+		jr global_pause
 	
-A$main$169:
-C$main.c$44$5$60:	
+else_clause:
 		call _devkit_PSGRestoreVolumes
-A$main$174:	
-C$main.c$48$3$57:
+global_pause:	
 		ld hl, Lmain.main$global_pause$1$55	; Lmain.main$global_pause$1$55 = $C000
 		bit 0, (hl)
 		jr nz, infinite_loop
