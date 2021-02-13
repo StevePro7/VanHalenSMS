@@ -8,53 +8,38 @@ _devkit_SMS_displayOn:
 _devkit_SMS_displayOff:	
 		ld hl, $0140
 		jp _SMS_VDPturnOffFeature
-	
+
 ; Data from 831 to 833 (3 bytes)
 _devkit_SMS_mapROMBank:
 	;.db $21 $02 $00
 	ld hl, $0002
 	
 ; Data from 834 to 834 (1 bytes)	
-A$_sms_manager$182:	
 	add hl, sp
-	
+
 ; Data from 835 to 835 (1 bytes)	
-A$_sms_manager$183:	
 	ld a, (hl)
-	
+
 ; Data from 836 to 838 (3 bytes)	
-A$_sms_manager$184:	
 	;.db $32 $FF $FF
 	ld ($FFFF), a
-	
+
 ; Data from 839 to 839 (1 bytes)	
-A$_sms_manager$189:	
-C$_sms_manager.c$26$1$78:	
-XG$devkit_SMS_mapROMBank$0$0:	
 	ret
 	
 ; Data from 83A to 83D (4 bytes)	
-A$_sms_manager$202:	
-C$_sms_manager.c$28$1$78:	
-C$_sms_manager.c$30$1$80:	
-G$devkit_SMS_setBGScrollX$0$0:	
-_devkit_SMS_setBGScrollX:	
+_devkit_SMS_setBGScrollX:
 	;.db $FD $21 $02 $00
 	ld iy, $0002
-	
+
 ; Data from 83E to 83F (2 bytes)	
-A$_sms_manager$203:	
 	add iy, sp
 	
 ; Data from 840 to 842 (3 bytes)	
-A$_sms_manager$204:	
 	;.db $FD $6E $00
 	ld l, (iy + $00)
 	
 ; Data from 843 to 845 (3 bytes)	
-A$_sms_manager$209:	
-C$_sms_manager.c$31$1$80:	
-XG$devkit_SMS_setBGScrollX$0$0:	
 	;.db $C3 $AC $1C
 	jp $1CAC
 	

@@ -5,7 +5,7 @@ _screen_record_screen_load:
 
 ; Data from 157B to 157D (3 bytes)
 	;.db $C3 $F9 $15
-	jp $15F9
+	jp load_record
 
 ; Data from 157E to 157F (2 bytes)
 _screen_record_screen_update:
@@ -51,7 +51,7 @@ _screen_record_screen_update:
 
 ; Data from 1595 to 1597 (3 bytes)
 	;.db $CD $F9 $15
-	call $15F9
+	call load_record
 
 ; Data from 1598 to 1599 (2 bytes)
 	;.db $3E $08
@@ -86,7 +86,7 @@ _screen_record_screen_update:
 
 ; Data from 15A7 to 15A9 (3 bytes)
 	;.db $CD $F9 $15
-	call $15F9
+	call load_record
 
 ; Data from 15AA to 15AB (2 bytes)
 	;.db $3E $10
@@ -262,6 +262,7 @@ _screen_record_screen_update:
 	ret
 
 ; static void load_record()
+load_record:
 ; Data from 15F9 to 15FB (3 bytes)
 	;.db $CD $2B $08
 	call _devkit_SMS_displayOff
