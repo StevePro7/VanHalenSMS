@@ -1,14 +1,15 @@
 ; Data from A70 to A72 (3 bytes)
 _engine_audio_manager_sfx_right:
 	;.db $21 $22 $1B
-	ld hl, $1B22
+	;ld hl, $1B22
+	ld hl, _sfx_right_psg
 
 ; Data from A73 to A73 (1 bytes)
 	push hl
 
 ; Data from A74 to A76 (3 bytes)
 	;.db $CD $8B $0A
-	call $0A8B
+	call play_sfx
 
 ; Data from A77 to A77 (1 bytes)
 	pop af
@@ -19,14 +20,14 @@ _engine_audio_manager_sfx_right:
 ; Data from A79 to A7B (3 bytes)
 _engine_audio_manager_sfx_wrong:
 	;.db $21 $42 $1B
-	ld hl, $1B42
+	ld hl, _sfx_wrong_psg
 
 ; Data from A7C to A7C (1 bytes)
 	push hl
 
 ; Data from A7D to A7F (3 bytes)
 	;.db $CD $8B $0A
-	call $0A8B
+	call play_sfx
 
 ; Data from A80 to A80 (1 bytes)
 	pop af
@@ -37,14 +38,14 @@ _engine_audio_manager_sfx_wrong:
 ; Data from A82 to A84 (3 bytes)
 _engine_audio_manager_sfx_cheat:
 	;.db $21 $FF $1A
-	ld hl, $1AFF
+	ld hl, _sfx_cheat_psg
 
 ; Data from A85 to A85 (1 bytes)
 	push hl
 
 ; Data from A86 to A88 (3 bytes)
 	;.db $CD $8B $0A
-	call $0A8B
+	call play_sfx
 
 ; Data from A89 to A89 (1 bytes)
 	pop af
@@ -52,6 +53,7 @@ _engine_audio_manager_sfx_cheat:
 ; Data from A8A to A8A (1 bytes)
 	ret
 
+ play_sfx:
 ; Data from A8B to A8D (3 bytes)
 	;.db $CD $42 $0A
 	call $0A42
