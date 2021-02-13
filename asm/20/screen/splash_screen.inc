@@ -146,7 +146,6 @@ _screen_splash_screen_update:
 	
 ; Data from 127C to 127E (3 bytes)	
 	;;.db $CD $41 $11
-	;call $1141
 	call _engine_storage_manager_erase
 	
 ; Data from 127F to 1281 (3 bytes)	
@@ -171,7 +170,7 @@ _screen_splash_screen_update:
 	
 ; Data from 128A to 128C (3 bytes)	
 	;.db $CD $E9 $0D
-	call $0DE9
+	call _engine_font_manager_draw_text
 	
 ; Data from 128D to 128D (1 bytes)	
 	;.db $F1

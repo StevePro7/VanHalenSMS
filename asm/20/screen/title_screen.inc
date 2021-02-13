@@ -31,7 +31,7 @@ _screen_title_screen_load:
 
 ; Data from 12CA to 12CC (3 bytes)
 	;.db $CD $E9 $0D
-	call $0DE9
+	call _engine_font_manager_draw_text
 
 ; Data from 12CD to 12CD (1 bytes)
 	pop af
@@ -52,7 +52,7 @@ _screen_title_screen_load:
 
 ; Data from 12D6 to 12D8 (3 bytes)
 	;.db $CD $E9 $0D
-	call $0DE9
+	call _engine_font_manager_draw_text
 
 ; Data from 12D9 to 12D9 (1 bytes)
 	pop af
@@ -73,7 +73,7 @@ _screen_title_screen_load:
 
 ; Data from 12E2 to 12E4 (3 bytes)
 	;.db $CD $E9 $0D
-	call $0DE9
+	call _engine_font_manager_draw_text
 
 ; Data from 12E5 to 12E5 (1 bytes)
 	pop af
@@ -94,7 +94,7 @@ _screen_title_screen_load:
 
 ; Data from 12EE to 12F0 (3 bytes)
 	;.db $CD $E9 $0D
-	call $0DE9
+	call _engine_font_manager_draw_text
 
 ; Data from 12F1 to 12F1 (1 bytes)
 	pop af
@@ -326,7 +326,7 @@ _screen_title_screen_update:
 
 ; Data from 1381 to 1383 (3 bytes)
 	;.db $CD $E9 $0D
-	call $0DE9
+	call _engine_font_manager_draw_text
 
 ; Data from 1384 to 1384 (1 bytes)
 	pop af
@@ -347,7 +347,7 @@ _screen_title_screen_update:
 
 ; Data from 138D to 138F (3 bytes)
 	;.db $CD $E9 $0D
-	call $0DE9
+	call _engine_font_manager_draw_text
 
 ; Data from 1390 to 1390 (1 bytes)
 	pop af
@@ -457,7 +457,7 @@ _screen_title_screen_update:
 
 ; Data from 13C5 to 13C7 (3 bytes)
 	;.db $CD $E9 $0D
-	call $0DE9
+	call _engine_font_manager_draw_text
 
 ; Data from 13C8 to 13C8 (1 bytes)
 	pop af
@@ -485,7 +485,7 @@ _screen_title_screen_update:
 
 ; Data from 13D4 to 13D6 (3 bytes)
 	;.db $CD $E9 $0D
-	call $0DE9
+	call _engine_font_manager_draw_text
 
 ; Data from 13D7 to 13D7 (1 bytes)
 	pop af
@@ -536,7 +536,7 @@ _screen_title_screen_update:
 
 ; Data from 13ED to 13EF (3 bytes)
 	;.db $CD $E9 $0D
-	call $0DE9
+	call _engine_font_manager_draw_text
 	
 
 ; Data from 13F0 to 13F0 (1 bytes)

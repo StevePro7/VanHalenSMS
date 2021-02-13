@@ -48,7 +48,7 @@ _screen_select_screen_load:
 
 ; Data from 149D to 149F (3 bytes)
 	;.db $CD $E9 $0D
-	call $0DE9
+	call _engine_font_manager_draw_text
 
 ; Data from 14A0 to 14A0 (1 bytes)
 	pop af
@@ -69,7 +69,7 @@ _screen_select_screen_load:
 
 ; Data from 14A9 to 14AB (3 bytes)
 	;.db $CD $E9 $0D
-	call $0DE9
+	call _engine_font_manager_draw_text
 
 ; Data from 14AC to 14AC (1 bytes)
 	pop af

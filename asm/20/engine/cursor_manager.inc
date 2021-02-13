@@ -269,7 +269,7 @@ _engine_cursor_manager_load:
 
 ; Data from BEA to BEC (3 bytes)
 	;.db $CD $E9 $0D
-	call $0DE9
+	call _engine_font_manager_draw_text
 
 ; Data from BED to BED (1 bytes)
 	pop af
