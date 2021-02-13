@@ -129,7 +129,7 @@ _engine_input_manager_direction:
 
 ; Data from F12 to F14 (3 bytes)
 	;.db $CD $00 $0F
-	call $0F00
+	call _engine_input_manager_move
 
 ; Data from F15 to F15 (1 bytes)
 	inc sp
@@ -155,7 +155,7 @@ _engine_input_manager_direction:
 
 ; Data from F1D to F1F (3 bytes)
 	;.db $CD $00 $0F
-	call $0F00
+	call _engine_input_manager_move
 
 ; Data from F20 to F20 (1 bytes)
 	inc sp
@@ -178,7 +178,7 @@ _engine_input_manager_direction:
 
 ; Data from F27 to F29 (3 bytes)
 	;.db $CD $00 $0F
-	call $0F00
+	call _engine_input_manager_move
 
 ; Data from F2A to F2A (1 bytes)
 	inc sp
@@ -209,7 +209,7 @@ _engine_input_manager_direction:
 
 ; Data from F34 to F36 (3 bytes)
 	;.db $CD $00 $0F
-	call $0F00
+	call _engine_input_manager_move
 
 ; Data from F37 to F37 (1 bytes)
 	inc sp

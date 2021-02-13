@@ -98,7 +98,7 @@ _screen_splash_screen_update:
 	
 ; Data from 1269 to 126A (2 bytes)	
 	;.db $3E $20
-	ld a, $20
+	ld a, $20		; input_type_fire2
 	
 ; Data from 126B to 126B (1 bytes)	
 	;.db $F5
@@ -110,7 +110,7 @@ _screen_splash_screen_update:
 	
 ; Data from 126D to 126F (3 bytes)	
 	;.db $CD $00 $0F
-	call $0F00
+	call _engine_input_manager_move
 	
 ; Data from 1270 to 1270 (1 bytes)	
 	;.db $33
