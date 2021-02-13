@@ -45,7 +45,7 @@ _engine_font_manager_draw_char:
 
 ; Data from DD8 to DDA (3 bytes)
 	;.db $21 $B8 $17
-	ld hl, $17B8
+	ld hl, _font__tilemap__bin
 
 ; Data from DDB to DDB (1 bytes)
 	ld l, (hl)
@@ -174,7 +174,7 @@ _engine_font_manager_draw_text:
 
 ; Data from E1F to E21 (3 bytes)
 	;.db $21 $B8 $17
-	ld hl, $17B8
+	ld hl, _font__tilemap__bin
 
 ; Data from E22 to E22 (1 bytes)
 	ld e, (hl)
@@ -428,7 +428,7 @@ _engine_font_manager_draw_data:
 
 ; Data from EA7 to EA9 (3 bytes)
 	;.db $21 $B8 $17
-	ld hl, $17B8
+	ld hl, _font__tilemap__bin
 
 ; Data from EAA to EAA (1 bytes)
 	ld l, (hl)
