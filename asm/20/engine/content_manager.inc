@@ -39,7 +39,6 @@ _engine_content_manager_load_spl:
 	
 ; Data from AC4 to AC6 (3 bytes)	
 	;.db $21 $57 $80
-	;ld hl, $8057
 	ld hl, _splash__tiles__psgcompr
 	
 ; Data from AC7 to AC7 (1 bytes)	
@@ -47,7 +46,7 @@ _engine_content_manager_load_spl:
 	
 ; Data from AC8 to ACA (3 bytes)	
 	;.db $CD $8E $08
-	call $088E
+	call _devkit_SMS_loadPSGaidencompress
 	
 ; Data from ACB to ACB (1 bytes)	
 	pop af
@@ -72,7 +71,7 @@ _engine_content_manager_load_spl:
 	
 ; Data from AD5 to AD7 (3 bytes)	
 	;.db $CD $A4 $08
-	call $08A4
+	call _devkit_SMS_loadSTMcompressedTil
 	
 ; Data from AD8 to AD8 (1 bytes)	
 	pop af
@@ -133,7 +132,7 @@ _engine_content_manager_load_tit:
 	
 ; Data from AF3 to AF5 (3 bytes)	
 	;.db $CD $8E $08
-	call $088E
+	call _devkit_SMS_loadPSGaidencompress
 	
 ; Data from AF6 to AF6 (1 bytes)	
 	pop af
@@ -158,7 +157,7 @@ _engine_content_manager_load_tit:
 	
 ; Data from B00 to B02 (3 bytes)	
 	;.db $CD $A4 $08
-	call $08A4
+	call _devkit_SMS_loadSTMcompressedTil
 	
 ; Data from B03 to B03 (1 bytes)	
 	pop af
@@ -243,7 +242,7 @@ _fngine_content_manager_load_tit:
 	
 ; Data from B2A to B2C (3 bytes)	
 	;.db $CD $8E $08
-	call $088E
+	call _devkit_SMS_loadPSGaidencompress
 	
 ; Data from B2D to B2D (1 bytes)	
 	pop af
@@ -268,7 +267,7 @@ _fngine_content_manager_load_tit:
 	
 ; Data from B37 to B39 (3 bytes)	
 	;.db $CD $A4 $08
-	call $08A4
+	call _devkit_SMS_loadSTMcompressedTil
 	
 ; Data from B3A to B3A (1 bytes)	
 	pop af

@@ -159,7 +159,6 @@ _engine_record_manager_load:
 
 ; Data from FD0 to FD2 (3 bytes)
 	;.db $CD $A4 $08
-	;call $08A4
 	call _devkit_SMS_loadSTMcompressedTil
 
 ; Data from FD3 to FD3 (1 bytes)
