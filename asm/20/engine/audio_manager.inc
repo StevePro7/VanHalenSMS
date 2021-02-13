@@ -56,7 +56,7 @@ _engine_audio_manager_sfx_cheat:
  play_sfx:
 ; Data from A8B to A8D (3 bytes)
 	;.db $CD $42 $0A
-	call $0A42
+	call _devkit_PSGSFXGetStatus
 
 ; Data from A8E to A8E (1 bytes)
 	ld a, l
@@ -70,7 +70,7 @@ _engine_audio_manager_sfx_cheat:
 
 ; Data from A91 to A93 (3 bytes)
 	;.db $CD $51 $0A
-	call $0A51
+	call _devkit_SFX_CHANNEL2
 
 ; Data from A94 to A94 (1 bytes)
 	;.db $65
@@ -99,7 +99,7 @@ _engine_audio_manager_sfx_cheat:
 
 ; Data from A9C to A9E (3 bytes)
 	;.db $CD $2A $0A
-	call $0A2A
+	call _devkit_PSGSFXPlay
 
 ; Data from A9F to A9F (1 bytes)
 	pop af
