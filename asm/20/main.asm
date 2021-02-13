@@ -111,7 +111,7 @@ _main:
 		call _engine_screen_manager_init
 		inc sp
 		call _devkit_SMS_displayOn
-A$main$140:
+infinite_loop:
 		call _devkit_SMS_queryPauseRequested
 		ld a, l
 		or a
@@ -133,7 +133,7 @@ A$main$174:
 C$main.c$48$3$57:
 		ld hl, Lmain.main$global_pause$1$55	; Lmain.main$global_pause$1$55 = $C000
 		bit 0, (hl)
-		jr nz, A$main$140
+		jr nz, infinite_loop
 		call _devkit_SMS_initSprites
 		call _engine_input_manager_update
 		call _engine_screen_manager_update
@@ -142,7 +142,7 @@ C$main.c$48$3$57:
 		call _devkit_SMS_copySpritestoSAT
 		call _devkit_PSGFrame
 		call _devkit_PSGSFXFrame
-		jr A$main$140
+		jr infinite_loop
 
 ; devkit
 .include "devkit/psg_manager.inc"
