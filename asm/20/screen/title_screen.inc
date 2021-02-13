@@ -149,7 +149,7 @@ _screen_title_screen_load:
 
 ; Data from 130C to 130E (3 bytes)
 	;.db $CD $D8 $10
-	call $10D8
+	call _engine_storage_manager_availabl
 
 ; Data from 130F to 130F (1 bytes)
 	;ld a, l
@@ -165,7 +165,7 @@ _screen_title_screen_load:
 
 ; Data from 1313 to 1315 (3 bytes)
 	;.db $CD $07 $11
-	call $1107
+	call _engine_storage_manager_read
 
 ; Data from 1316 to 1318 (3 bytes)
 	;.db $21 $2A $C0
