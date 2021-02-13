@@ -237,163 +237,126 @@ _devkit_SMS_loadBGPalette:
 		push hl
 		push bc
 		jp _SMS_loadBGPalette
-	
+
 _devkit_SMS_loadSpritePalette:
 		pop bc
 		pop hl
 		push hl
 		push bc
 		jp _SMS_loadSpritePalette
-	
+
 ; Data from 8D3 to 8D5 (3 bytes)
 _devkit_SMS_setBGPaletteColor:
 	;.db $21 $04 $00
 	ld hl, $0004
-	
+
 ; Data from 8D6 to 8D6 (1 bytes)
-A$_sms_manager$515:
 	add hl, sp
-	
+
 ; Data from 8D7 to 8D7 (1 bytes)
-A$_sms_manager$516:
 	ld a, (hl)
-	
+
 ; Data from 8D8 to 8D8 (1 bytes)
-A$_sms_manager$517:
 	add a, a
-	
+
 ; Data from 8D9 to 8D9 (1 bytes)
-A$_sms_manager$518:
 	add a, a
-	
+
 ; Data from 8DA to 8DC (3 bytes)
-A$_sms_manager$519:
 	;.db $21 $03 $00
 	ld hl, $0003
-	
+
 ; Data from 8DD to 8DD (1 bytes)
-A$_sms_manager$520:
 	add hl, sp
-	
+
 ; Data from 8DE to 8DE (1 bytes)
-A$_sms_manager$521:
 	or (hl)
-	
+
 ; Data from 8DF to 8DF (1 bytes)
-A$_sms_manager$522:
 	ld c, a
-	
+
 ; Data from 8E0 to 8E2 (3 bytes)
-A$_sms_manager$523:
 	;.db $21 $05 $00
 	ld hl, $0005
-	
+
 ; Data from 8E3 to 8E3 (1 bytes)
-A$_sms_manager$524:
 	add hl, sp
-	
+
 ; Data from 8E4 to 8E4 (1 bytes)
-A$_sms_manager$525:
 	ld a, (hl)
-	
+
 ; Data from 8E5 to 8E5 (1 bytes)
-A$_sms_manager$526:
 	;.db $07
 	rlca
-	
+
 ; Data from 8E6 to 8E6 (1 bytes)
-A$_sms_manager$527:
 	;.db $07
 	rlca
-	
+
 ; Data from 8E7 to 8E7 (1 bytes)
-A$_sms_manager$528:
 	;.db $07
 	rlca
-	
+
 ; Data from 8E8 to 8E8 (1 bytes)
-A$_sms_manager$529:
 	;.db $07
 	rlca
-	
+
 ; Data from 8E9 to 8EA (2 bytes)
 A$_sms_manager$530:
 	and $F0
-	
+
 ; Data from 8EB to 8EB (1 bytes)
-A$_sms_manager$531:
 	or c
-	
+
 ; Data from 8EC to 8EC (1 bytes)
-A$_sms_manager$532:
 	ld b, a
-	
+
 ; Data from 8ED to 8ED (1 bytes)
-A$_sms_manager$536:
-C$_sms_manager.c$92$1$103:
 	push bc
-	
+
 ; Data from 8EE to 8EE (1 bytes)
-A$_sms_manager$537:
 	inc sp
-	
+
 ; Data from 8EF to 8F1 (3 bytes)
-A$_sms_manager$538:
 	;.db $21 $03 $00
 	ld hl, $0003
-	
+
 ; Data from 8F2 to 8F2 (1 bytes)
-A$_sms_manager$539:
 	add hl, sp
-	
+
 ; Data from 8F3 to 8F3 (1 bytes)
-A$_sms_manager$540:
 	ld a, (hl)
-	
+
 ; Data from 8F4 to 8F4 (1 bytes)
-A$_sms_manager$541:
 	push af
-	
+
 ; Data from 8F5 to 8F5 (1 bytes)
-A$_sms_manager$542:
 	inc sp
-	
+
 ; Data from 8F6 to 8F8 (3 bytes)
-A$_sms_manager$543:
 	;.db $CD $23 $1D
 	call $1D23
-	
+
 ; Data from 8F9 to 8F9 (1 bytes)
-A$_sms_manager$544:
 	pop af
-	
+
 ; Data from 8FA to 8FA (1 bytes)
-A$_sms_manager$549:
-C$_sms_manager.c$93$1$103:
-XG$devkit_SMS_setBGPaletteColor$:
 	ret
-	
+
 ; Data from 8FB to 8FD (3 bytes)
-A$_sms_manager$562:
-C$_sms_manager.c$94$1$103:
-C$_sms_manager.c$96$1$105:
-G$devkit_SMS_setSpritePaletteCol:
 _devkit_SMS_setSpritePaletteColo:
 	;.db $21 $04 $00
 	ld hl, $0004
-	
+
 ; Data from 8FE to 8FE (1 bytes)
-A$_sms_manager$563:
 	add hl, sp
-	
+
 ; Data from 8FF to 8FF (1 bytes)
-A$_sms_manager$564:
 	ld a, (hl)
-	
+
 ; Data from 900 to 900 (1 bytes)
-A$_sms_manager$565:
 	add a, a
-	
+
 ; Data from 901 to 901 (1 bytes)
 A$_sms_manager$566:
 	add a, a
