@@ -553,7 +553,7 @@ _screen_title_screen_update:
 
 ; Data from 13F2 to 13F4 (3 bytes)
 	;.db $CD $70 $0A
-	call $0A70
+	call _engine_audio_manager_sfx_right
 
 ; Data from 13F5 to 13F7 (3 bytes)
 	;.db $21 $60 $C0

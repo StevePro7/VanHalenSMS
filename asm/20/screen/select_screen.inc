@@ -310,7 +310,7 @@ _screen_select_screen_update:
 
 ; Data from 152C to 152E (3 bytes)
 	;.db $CD $70 $0A
-	call $0A70
+	call _engine_audio_manager_sfx_right
 
 ; Data from 152F to 1531 (3 bytes)
 	;.db $21 $63 $C0
