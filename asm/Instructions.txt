@@ -98,3 +98,6 @@ call __divuint
 
 call $1EFA
 call __moduint
+
+call $0DE9
+_engine_font_manager_draw_text

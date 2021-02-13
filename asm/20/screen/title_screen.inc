@@ -9,7 +9,7 @@ _screen_title_screen_load:
 
 ; Data from 12BC to 12BE (3 bytes)
 	;.db $CD $51 $0B
-	call $0B51
+	call _engine_content_manager_load_spr
 
 ; Data from 12BF to 12C1 (3 bytes)
 	;.db $CD $E3 $0A
@@ -24,7 +24,8 @@ _screen_title_screen_load:
 
 ; Data from 12C6 to 12C8 (3 bytes)
 	;.db $21 $35 $13
-	ld hl, $1335
+	;ld hl, $1335
+	ld hl, press_start
 
 ; Data from 12C9 to 12C9 (1 bytes)
 	push hl
@@ -45,7 +46,8 @@ _screen_title_screen_load:
 
 ; Data from 12D2 to 12D4 (3 bytes)
 	;.db $21 $41 $13
-	ld hl, $1341
+	;ld hl, $1341
+	ld hl, record_label
 
 ; Data from 12D5 to 12D5 (1 bytes)
 	push hl
@@ -66,7 +68,8 @@ _screen_title_screen_load:
 
 ; Data from 12DE to 12E0 (3 bytes)
 	;.db $21 $48 $13
-	ld hl, $1348
+	;ld hl, $1348
+	ld hl, covers_label
 
 ; Data from 12E1 to 12E1 (1 bytes)
 	push hl
@@ -227,16 +230,19 @@ _screen_title_screen_load:
 	ret
 
 ; Data from 1335 to 1340 (12 bytes)
-	.db $50 $52 $45 $53 $53 $20 $53 $54 $41 $52 $54 $00
+press_start:
 	; PRESS START
+	.db $50 $52 $45 $53 $53 $20 $53 $54 $41 $52 $54 $00
 
 ; Data from 1341 to 1347 (7 bytes)
-	.db $52 $45 $43 $4F $52 $44 $00
+record_label:
 	; RECORD
+	.db $52 $45 $43 $4F $52 $44 $00
 
 ; Data from 1348 to 134E (7 bytes)
-	.db $43 $4F $56 $45 $52 $53 $00
+covers_label:
 	; COVERS
+	.db $43 $4F $56 $45 $52 $53 $00
 
 ; Data from 134F to 1353 (5 bytes)
 	.db $56 $31 $2E $30 $00
@@ -478,7 +484,8 @@ _screen_title_screen_update:
 
 ; Data from 13D0 to 13D2 (3 bytes)
 	;.db $21 $13 $14
-	ld hl, $1413
+	;ld hl, $_engine_content_manager_load_spr
+	ld hl, press_start2
 
 ; Data from 13D3 to 13D3 (1 bytes)
 	push hl
@@ -529,7 +536,8 @@ _screen_title_screen_update:
 
 ; Data from 13E9 to 13EB (3 bytes)
 	;.db $21 $13 $14
-	ld hl, $1413
+	;ld hl, $1413
+	ld hl, press_start2
 
 ; Data from 13EC to 13EC (1 bytes)
 	push hl
@@ -586,5 +594,6 @@ _screen_title_screen_update:
 	; LOCALE_BLANK_CLEAR
 
 ; Data from 1413 to 141E (12 bytes)
-	.db $50 $52 $45 $53 $53 $20 $53 $54 $41 $52 $54 $00
+press_start2:
 	; PRESS START
+	.db $50 $52 $45 $53 $53 $20 $53 $54 $41 $52 $54 $00

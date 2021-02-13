@@ -30,7 +30,7 @@ _screen_select_screen_load:
 
 ; Data from 1492 to 1494 (3 bytes)
 	;.db $CD $51 $0B
-	call $0B51
+	call _engine_content_manager_load_spr
 
 ; Data from 1495 to 1497 (3 bytes)
 	;.db $21 $06 $08
