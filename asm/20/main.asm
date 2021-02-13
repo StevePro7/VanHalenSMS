@@ -67,7 +67,7 @@ _LABEL_70_:
 		call gsinit
 		call _SMS_init
 		ei
-		call A$main$83
+		call _main
 		jp _exit
 	
 .include "content/out.inc"
@@ -82,11 +82,8 @@ _exit:
 -:	
 		halt
 		jr -
-	
-A$main$83:	
-C$main.c$3$0$0:	
-C$main.c$9$1$55:	
-G$main$0$0:	
+
+
 _main:
 		call _engine_asm_manager_clear_VRAM
 		call _devkit_SMS_init
@@ -206,7 +203,7 @@ __divu16:
 
 	
 ; Data from 21C9 to 21CA (2 bytes)	
-Finput_manager$__xinit_curr_joyp:	
+Finput_manager$__xinit_curr_joyp:
 	.db $00 $00
 	
 ; Data from 21CB to 21CC (2 bytes)	
