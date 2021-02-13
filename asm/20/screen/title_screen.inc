@@ -495,7 +495,7 @@ _screen_title_screen_update:
 
 ; Data from 13D9 to 13DA (2 bytes)
 	;.db $3E $10
-	ld a, $10
+	ld a, $10		; input_type_fire1
 
 ; Data from 13DB to 13DB (1 bytes)
 	push af

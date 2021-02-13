@@ -73,7 +73,7 @@ _screen_scroll_screen_update:
 
 ; Data from 1445 to 1446 (2 bytes)
 	;.db $3E $10
-	ld a, $10
+	ld a, $10		; input_type_fire1
 
 ; Data from 1447 to 1447 (1 bytes)
 	push af
@@ -83,7 +83,7 @@ _screen_scroll_screen_update:
 
 ; Data from 1449 to 144B (3 bytes)
 	;.db $CD $D3 $0E
-	call $0ED3
+	call _engine_input_manager_hold
 
 ; Data from 144C to 144C (1 bytes)
 	inc sp
