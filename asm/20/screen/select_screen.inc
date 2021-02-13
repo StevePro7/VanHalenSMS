@@ -262,7 +262,7 @@ _screen_select_screen_update:
 
 ; Data from 1516 to 1517 (2 bytes)
 	;.db $3E $10
-	ld a, $10
+	ld a, $10		; input_type_fire1
 
 ; Data from 1518 to 1518 (1 bytes)
 	push af
@@ -272,7 +272,7 @@ _screen_select_screen_update:
 
 ; Data from 151A to 151C (3 bytes)
 	;.db $CD $D3 $0E
-	call $0ED3
+	call _engine_input_manager_hold
 
 ; Data from 151D to 151D (1 bytes)
 	inc sp
@@ -325,7 +325,7 @@ _screen_select_screen_update:
 
 ; Data from 1535 to 1536 (2 bytes)
 	;.db $3E $04
-	ld a, $04
+	ld a, $04		; input_type_left
 
 ; Data from 1537 to 1537 (1 bytes)
 	push af
@@ -335,7 +335,7 @@ _screen_select_screen_update:
 
 ; Data from 1539 to 153B (3 bytes)
 	;.db $CD $D3 $0E
-	call $0ED3
+	call _engine_input_manager_hold
 
 ; Data from 153C to 153C (1 bytes)
 	inc sp
@@ -356,7 +356,7 @@ _screen_select_screen_update:
 
 ; Data from 1544 to 1545 (2 bytes)
 	;.db $3E $08
-	ld a, $08
+	ld a, $08		; input_type_right
 
 ; Data from 1546 to 1546 (1 bytes)
 	push af
@@ -366,7 +366,7 @@ _screen_select_screen_update:
 
 ; Data from 1548 to 154A (3 bytes)
 	;.db $CD $D3 $0E
-	call $0ED3
+	call _engine_input_manager_hold
 
 ; Data from 154B to 154B (1 bytes)
 	inc sp
@@ -387,7 +387,7 @@ _screen_select_screen_update:
 
 ; Data from 1553 to 1554 (2 bytes)
 	;.db $3E $01
-	ld a, $01
+	ld a, $01		; input_type_up
 
 ; Data from 1555 to 1555 (1 bytes)
 	push af
@@ -397,7 +397,7 @@ _screen_select_screen_update:
 
 ; Data from 1557 to 1559 (3 bytes)
 	;.db $CD $D3 $0E
-	call $0ED3
+	call _engine_input_manager_hold
 
 ; Data from 155A to 155A (1 bytes)
 	inc sp
@@ -418,7 +418,7 @@ _screen_select_screen_update:
 
 ; Data from 1562 to 1563 (2 bytes)
 	;.db $3E $02
-	ld a, $02
+	ld a, $02		; input_type_down
 
 ; Data from 1564 to 1564 (1 bytes)
 	push af
@@ -428,7 +428,7 @@ _screen_select_screen_update:
 
 ; Data from 1566 to 1568 (3 bytes)
 	;.db $CD $D3 $0E
-	call $0ED3
+	call _engine_input_manager_hold
 
 ; Data from 1569 to 1569 (1 bytes)
 	inc sp

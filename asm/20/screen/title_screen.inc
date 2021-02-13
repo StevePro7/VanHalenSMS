@@ -505,7 +505,7 @@ _screen_title_screen_update:
 
 ; Data from 13DD to 13DF (3 bytes)
 	;.db $CD $D3 $0E
-	call $0ED3
+	call _engine_input_manager_hold
 
 ; Data from 13E0 to 13E0 (1 bytes)
 	inc sp
