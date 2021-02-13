@@ -48,7 +48,7 @@ _screen_record_screen_update:
 
 ; Data from 1592 to 1594 (3 bytes)
 	;.db $CD $E1 $0F
-	call $0FE1
+	call _engine_record_manager_decrement
 
 ; Data from 1595 to 1597 (3 bytes)
 	;.db $CD $F9 $15
@@ -83,7 +83,7 @@ _screen_record_screen_update:
 
 ; Data from 15A4 to 15A6 (3 bytes)
 	;.db $CD $F0 $0F
-	call $0FF0
+	call _engine_record_manager_increment
 
 ; Data from 15A7 to 15A9 (3 bytes)
 	;.db $CD $F9 $15
@@ -198,7 +198,7 @@ _screen_record_screen_update:
 
 ; Data from 15DA to 15DC (3 bytes)
 	;.db $CD $7D $0F
-	call $0F7D
+	call _engine_record_manager_init
 
 ; Data from 15DD to 15DD (1 bytes)
 	inc sp

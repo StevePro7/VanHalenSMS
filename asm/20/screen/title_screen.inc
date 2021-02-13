@@ -142,7 +142,7 @@ _screen_title_screen_load:
 
 ; Data from 1308 to 130A (3 bytes)
 	;.db $CD $7D $0F
-	call $0F7D
+	call _engine_record_manager_init
 
 ; Data from 130B to 130B (1 bytes)
 	inc sp
@@ -182,7 +182,7 @@ _screen_title_screen_load:
 
 ; Data from 131C to 131E (3 bytes)
 	;.db $CD $7D $0F
-	call $0F7D
+	call _engine_record_manager_init
 
 ; Data from 131F to 131F (1 bytes)
 	inc sp

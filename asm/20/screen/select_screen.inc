@@ -303,7 +303,7 @@ _screen_select_screen_update:
 
 ; Data from 1528 to 152A (3 bytes)
 	;.db $CD $7D $0F
-	call $0F7D
+	call _engine_record_manager_init
 
 ; Data from 152B to 152B (1 bytes)
 	inc sp
