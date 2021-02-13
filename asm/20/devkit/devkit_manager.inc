@@ -119,27 +119,16 @@ _devkit_SMS_setSpriteMode:
 _devkit_SMS_useFirstHalfTilesfor:
 		ld l, $00
 		jp _SMS_useFirstHalfTilesforSprites
-	
+
 ; Data from 882 to 883 (2 bytes)
-A$_sms_manager$361:
-C$_sms_manager.c$63$1$90:
-C$_sms_manager.c$65$1$91:
-H$devkit_SMS_useFirstHalfTilesfo:
 _eevkit_SMS_useFirstHalfTilesfor:
 	;.db $2E $01
 	ld l, $01
-	
+
 ; Data from 884 to 886 (3 bytes)
-A$_sms_manager$366:
-C$_sms_manager.c$66$1$91:
-XG$devkit_SMS_useFirstHalfTilesf:
 	;.db $C3 $CA $1C
 	jp $1CCA
-	
-A$_sms_manager$379:
-C$_sms_manager.c$67$1$91:
-C$_sms_manager.c$69$1$93:
-G$devkit_SMS_VDPturnOnFeature$0$:
+
 _devkit_SMS_VDPturnOnFeature:
 		pop bc
 		pop hl
@@ -913,11 +902,7 @@ _devkit_SMS_getKeysStatus:
 _devkit_SPRITEMODE_NORMAL:
 		ld l, $00
 		ret
-	
-A$_sms_manager$905:
-C$_sms_manager.c$164$1$123:
-C$_sms_manager.c$166$1$124:
-G$devkit_VDPFEATURE_HIDEFIRSTCOL:
+
 _devkit_VDPFEATURE_HIDEFIRSTCOL:
 		ld hl, $0020
 		ret

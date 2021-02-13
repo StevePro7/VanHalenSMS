@@ -98,9 +98,9 @@ _main:
 		call _devkit_SMS_setSpriteMode
 		inc sp
 		call _devkit_SMS_useFirstHalfTilesfor
-		call A$_sms_manager$905
+		call _devkit_VDPFEATURE_HIDEFIRSTCOL
 		push hl
-		call A$_sms_manager$379
+		call _devkit_SMS_VDPturnOnFeature
 		pop af
 		call _engine_content_manager_load_til
 		call _engine_content_manager_load_spr
