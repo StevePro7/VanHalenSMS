@@ -535,41 +535,29 @@ _devkit_SMS_setTile:
 ; Data from 950 to 952 (3 bytes)
 	;.db $C3 $11 $00
 	jp $0011
-	
+
 ; Data from 953 to 956 (4 bytes)
-A$_sms_manager$673:
-C$_sms_manager.c$108$1$109:
-C$_sms_manager.c$110$1$111:
-G$devkit_SMS_setTilePriority$0$0:
 _devkit_SMS_setTilePriority:
 	;.db $FD $21 $02 $00
 	ld iy, $0002
-	
+
 ; Data from 957 to 958 (2 bytes)
-A$_sms_manager$674:
 	add iy, sp
-	
+
 ; Data from 959 to 95B (3 bytes)
-A$_sms_manager$675:
 	;.db $FD $6E $00
 	ld l, (iy + $00)
-	
+
 ; Data from 95C to 95D (2 bytes)
-A$_sms_manager$676:
 	ld a, $00
-	
+
 ; Data from 95E to 95F (2 bytes)
-A$_sms_manager$677:
 	or $18
-	
+
 ; Data from 960 to 960 (1 bytes)
-A$_sms_manager$678:
 	ld h, a
-	
+
 ; Data from 961 to 963 (3 bytes)
-A$_sms_manager$683:
-C$_sms_manager.c$111$1$111:
-XG$devkit_SMS_setTilePriority$0$:
 	;.db $C3 $11 $00
 	jp $0011
 
