@@ -5,7 +5,7 @@ _screen_title_screen_load:
 
 ; Data from 12B9 to 12BB (3 bytes)
 	;.db $CD $A2 $0A
-	call $0AA2
+	call _engine_content_manager_load_til
 
 ; Data from 12BC to 12BE (3 bytes)
 	;.db $CD $51 $0B

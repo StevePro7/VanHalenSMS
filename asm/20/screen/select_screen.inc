@@ -21,7 +21,7 @@ _screen_select_screen_load:
 
 ; Data from 148C to 148E (3 bytes)
 	;.db $CD $A2 $0A
-	call $0AA2
+	call _engine_content_manager_load_til
 
 ; Data from 148F to 1491 (3 bytes)
 	;.db $CD $1A $0B

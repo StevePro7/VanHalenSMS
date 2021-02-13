@@ -5,7 +5,7 @@ _screen_splash_screen_load:
 	
 ; Data from 1236 to 1238 (3 bytes)	
 	;.db $CD $A2 $0A
-	call $0AA2
+	call _engine_content_manager_load_til
 	
 ; Data from 1239 to 123B (3 bytes)	
 	;.db $CD $B8 $0A
