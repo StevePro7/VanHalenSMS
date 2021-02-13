@@ -649,37 +649,22 @@ G$devkit_SMS_queryPauseRequested:
 XG$devkit_SMS_queryPauseRequeste:
 _devkit_SMS_queryPauseRequested:
 		jp _SMS_queryPauseRequested
-	
-A$_sms_manager$837:
-C$_sms_manager.c$142$1$119:
-C$_sms_manager.c$144$1$120:
-C$_sms_manager.c$145$1$120:
-G$devkit_SMS_resetPauseRequest$0:
-XG$devkit_SMS_resetPauseRequest$:
+
 _devkit_SMS_resetPauseRequest:
 		jp _SMS_resetPauseRequest
-	
+
 ; Data from 994 to 996 (3 bytes)
-A$_sms_manager$850:
-C$_sms_manager.c$148$1$120:
-C$_sms_manager.c$150$1$121:
-G$devkit_isCollisionDetected$0$0:
 _devkit_isCollisionDetected:
 	;.db $3A $68 $C0
 	ld a, ($C068)
-	
+
 ; Data from 997 to 998 (2 bytes)
-A$_sms_manager$851:
 	and $20
-	
+
 ; Data from 999 to 999 (1 bytes)
-A$_sms_manager$852:
 	ld l, a
-	
+
 ; Data from 99A to 99A (1 bytes)
-A$_sms_manager$857:
-C$_sms_manager.c$151$1$121:
-XG$devkit_isCollisionDetected$0$:
 	ret
 
 _devkit_SMS_getKeysStatus:
