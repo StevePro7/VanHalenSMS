@@ -92,3 +92,6 @@ call _devkit_SMS_loadSTMcompressedTil
 
 call $08C5
 call _devkit_SMS_loadBGPalette
+
+call $1B65
+call __divuint

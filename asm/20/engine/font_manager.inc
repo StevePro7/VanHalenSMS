@@ -278,7 +278,6 @@ _engine_font_manager_draw_data:
 
 ; Data from E59 to E5B (3 bytes)
 	;.db $CD $65 $1B
-	;call $1B65		; todo archive in instructions
 	call __divuint
 
 ; Data from E5C to E5C (1 bytes)
