@@ -162,7 +162,7 @@ _screen_splash_screen_update:
 	
 ; Data from 1286 to 1288 (3 bytes)	
 	;.db $21 $B1 $12
-	ld hl, $12B1
+	ld hl, reset_label
 	
 ; Data from 1289 to 1289 (1 bytes)	
 	;.db $E5
@@ -243,12 +243,7 @@ _screen_splash_screen_update:
 ; Data from 12B0 to 12B0 (1 bytes)	
 	ret
 	
-; Data from 12B1 to 12B5 (5 bytes)	
-	;.db $35
-	dec (hl)
-	
-	;.db $31 $35 $30
-	ld sp, $3035
-	
-	;.db $00
-	nop
+; Data from 12B1 to 12B5 (5 bytes)
+reset_label:
+	; "5150"
+	.db $35 $31 $35 $30 $00
