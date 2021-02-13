@@ -135,7 +135,7 @@ C$main.c$48$3$57:
 		ld hl, Lmain.main$global_pause$1$55	; Lmain.main$global_pause$1$55 = $C000
 		bit 0, (hl)
 		jr nz, A$main$140
-		call A$_sms_manager$735
+		call _devkit_SMS_initSprites
 		call _engine_input_manager_update
 		call _engine_screen_manager_update
 		call A$_sms_manager$752

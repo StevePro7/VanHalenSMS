@@ -562,100 +562,70 @@ _devkit_SMS_setTilePriority:
 	jp $0011
 
 ; Data from 964 to 966 (3 bytes)
-A$_sms_manager$696:
-C$_sms_manager.c$113$1$111:
-C$_sms_manager.c$115$1$113:
-G$devkit_SMS_addSprite$0$0:
 _devkit_SMS_addSprite:
 	;.db $21 $04 $00
 	ld hl, $0004
 
 ; Data from 967 to 967 (1 bytes)
-A$_sms_manager$697:
 	add hl, sp
-	
+
 ; Data from 968 to 968 (1 bytes)
-A$_sms_manager$698:
 	ld b, (hl)
-	
+
 ; Data from 969 to 969 (1 bytes)
-A$_sms_manager$699:
 	push bc
-	
+
 ; Data from 96A to 96A (1 bytes)
-A$_sms_manager$700:
 	inc sp
-	
+
 ; Data from 96B to 96D (3 bytes)
-A$_sms_manager$701:
 	;.db $21 $04 $00
 	ld hl, $0004
-	
+
 ; Data from 96E to 96E (1 bytes)
-A$_sms_manager$702:
 	add hl, sp
-	
+
 ; Data from 96F to 96F (1 bytes)
-A$_sms_manager$703:
 	ld a, (hl)
-	
+
 ; Data from 970 to 970 (1 bytes)
-A$_sms_manager$704:
 	push af
-	
+
 ; Data from 971 to 971 (1 bytes)
-A$_sms_manager$705:
 	inc sp
-	
+
 ; Data from 972 to 974 (3 bytes)
-A$_sms_manager$706:
 	;.db $21 $04 $00
 	ld hl, $0004
-	
+
 ; Data from 975 to 975 (1 bytes)
-A$_sms_manager$707:
 	add hl, sp
-	
+
 ; Data from 976 to 976 (1 bytes)
-A$_sms_manager$708:
 	ld a, (hl)
-	
+
 ; Data from 977 to 977 (1 bytes)
-A$_sms_manager$709:
 	push af
-	
+
 ; Data from 978 to 978 (1 bytes)
-A$_sms_manager$710:
 	inc sp
-	
+
 ; Data from 979 to 97B (3 bytes)
-A$_sms_manager$711:
 	;.db $CD $7D $1D
 	call $1D7D
-	
+
 ; Data from 97C to 97C (1 bytes)
-A$_sms_manager$712:
 	pop af
-	
+
 ; Data from 97D to 97D (1 bytes)
-A$_sms_manager$713:
 	inc sp
-	
+
 ; Data from 97E to 97E (1 bytes)
-A$_sms_manager$718:
-C$_sms_manager.c$116$1$113:
-XG$devkit_SMS_addSprite$0$0:
 	ret
-	
-A$_sms_manager$735:
-C$_sms_manager.c$117$1$113:
-C$_sms_manager.c$119$1$114:
-C$_sms_manager.c$120$1$114:
-G$devkit_SMS_initSprites$0$0:
-XG$devkit_SMS_initSprites$0$0:
+
 _devkit_SMS_initSprites:
 		jp _SMS_initSprites
-	
+
 A$_sms_manager$752:
 C$_sms_manager.c$121$1$114:
 C$_sms_manager.c$123$1$115:
