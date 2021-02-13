@@ -138,8 +138,8 @@ C$main.c$48$3$57:
 		call _devkit_SMS_initSprites
 		call _engine_input_manager_update
 		call _engine_screen_manager_update
-		call A$_sms_manager$752
-		call A$_sms_manager$769
+		call _devkit_SMS_finalizeSprites
+		call _devkit_SMS_waitForVBlank
 		call A$_sms_manager$786
 		call _devkit_PSGFrame
 		call _devkit_PSGSFXFrame

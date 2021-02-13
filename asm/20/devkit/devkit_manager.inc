@@ -626,24 +626,12 @@ _devkit_SMS_addSprite:
 _devkit_SMS_initSprites:
 		jp _SMS_initSprites
 
-A$_sms_manager$752:
-C$_sms_manager.c$121$1$114:
-C$_sms_manager.c$123$1$115:
-C$_sms_manager.c$124$1$115:
-G$devkit_SMS_finalizeSprites$0$0:
-XG$devkit_SMS_finalizeSprites$0$:
 _devkit_SMS_finalizeSprites:
 		jp _SMS_finalizeSprites
-	
-A$_sms_manager$769:
-C$_sms_manager.c$125$1$115:
-C$_sms_manager.c$127$1$116:
-C$_sms_manager.c$128$1$116:
-G$devkit_SMS_waitForVBlank$0$0:
-XG$devkit_SMS_waitForVBlank$0$0:
+
 _devkit_SMS_waitForVBlank:
 		jp _SMS_waitForVBlank
-	
+
 A$_sms_manager$786:
 C$_sms_manager.c$129$1$116:
 C$_sms_manager.c$131$1$117:
