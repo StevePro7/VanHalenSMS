@@ -172,7 +172,8 @@ _screen_record_screen_update:
 
 ; Data from 15CE to 15D0 (3 bytes)
 	;.db $CD $46 $08
-	call $0846
+	;call $0846
+	call _devkit_SMS_setBGScrollY
 
 ; Data from 15D1 to 15D1 (1 bytes)
 	inc sp

@@ -42,11 +42,7 @@ _devkit_SMS_setBGScrollX:
 ; Data from 843 to 845 (3 bytes)	
 	;.db $C3 $AC $1C
 	jp $1CAC
-	
-A$_sms_manager$222:
-C$_sms_manager.c$32$1$80:	
-C$_sms_manager.c$34$1$82:	
-G$devkit_SMS_setBGScrollY$0$0:	
+
 _devkit_SMS_setBGScrollY:
 		ld iy, $0002
 		add iy, sp
