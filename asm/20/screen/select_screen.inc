@@ -25,7 +25,6 @@ _screen_select_screen_load:
 
 ; Data from 148F to 1491 (3 bytes)
 	;.db $CD $1A $0B
-	;call $0B1A
 	call _fngine_content_manager_load_tit
 
 ; Data from 1492 to 1494 (3 bytes)
@@ -34,14 +33,13 @@ _screen_select_screen_load:
 
 ; Data from 1495 to 1497 (3 bytes)
 	;.db $21 $06 $08
-	ld hl, $0806
+	ld hl, $0806	; x = $06	y = $08
 
 ; Data from 1498 to 1498 (1 bytes)
 	push hl
 
 ; Data from 1499 to 149B (3 bytes)
 	;.db $21 $D5 $14
-	;ld hl, $14D5
 	ld hl, select_record_label
 
 ; Data from 149C to 149C (1 bytes)
@@ -56,14 +54,13 @@ _screen_select_screen_load:
 
 ; Data from 14A1 to 14A3 (3 bytes)
 	;.db $21 $14 $08
-	ld hl, $0814
+	ld hl, $0814	; x = $08	y = $14 (20)
 
 ; Data from 14A4 to 14A4 (1 bytes)
 	ex (sp), hl
 
 ; Data from 14A5 to 14A7 (3 bytes)
 	;.db $21 $DC $14
-	;ld hl, $14DC
 	ld hl, select_covers_label
 
 ; Data from 14A8 to 14A8 (1 bytes)
@@ -99,7 +96,7 @@ _screen_select_screen_load:
 
 ; Data from 14B7 to 14B9 (3 bytes)
 	;.db $CD $9B $0B
-	call $0B9B
+	call _engine_cursor_manager_load
 
 ; Data from 14BA to 14BA (1 bytes)
 	inc sp
