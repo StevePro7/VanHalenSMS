@@ -8,7 +8,7 @@ _engine_storage_manager_availabl:
 
 ; Data from 10DC to 10DE (3 bytes)
 	;.db $CD $52 $08
-	call $0852
+	call _devkit_SMS_enableSRAM
 
 ; Data from 10DF to 10DF (1 bytes)
 	pop hl
@@ -87,7 +87,7 @@ _engine_storage_manager_availabl:
 
 ; Data from 1102 to 1104 (3 bytes)
 	;.db $CD $67 $08
-	call $0867
+	call _devkit_SMS_disableSRAM
 
 ; Data from 1105 to 1105 (1 bytes)
 	pop hl
@@ -105,7 +105,7 @@ _engine_storage_manager_read:
 
 ; Data from 110B to 110D (3 bytes)
 	;.db $CD $52 $08
-	call $0852
+	call _devkit_SMS_enableSRAM
 
 ; Data from 110E to 110F (2 bytes)
 	;.db $FD $E1
@@ -124,7 +124,7 @@ _engine_storage_manager_read:
 
 ; Data from 1117 to 1119 (3 bytes)
 	;.db $C3 $67 $08
-	jp $0867
+	jp _devkit_SMS_disableSRAM
 
 ; Data from 111A to 111C (3 bytes)
 _engine_storage_manager_write:
@@ -136,7 +136,7 @@ _engine_storage_manager_write:
 
 ; Data from 111E to 1120 (3 bytes)
 	;.db $CD $52 $08
-	call $0852
+	call _devkit_SMS_enableSRAM
 
 ; Data from 1121 to 1121 (1 bytes)
 	pop bc
@@ -197,7 +197,7 @@ _engine_storage_manager_write:
 
 ; Data from 113E to 1140 (3 bytes)
 	;.db $C3 $67 $08
-	jp $0867
+	jp _devkit_SMS_disableSRAM
 
 ; Data from 1141 to 1143 (3 bytes)
 _engine_storage_manager_erase:
@@ -209,7 +209,7 @@ _engine_storage_manager_erase:
 
 ; Data from 1145 to 1147 (3 bytes)
 	;.db $CD $52 $08
-	call $0852
+	call _devkit_SMS_enableSRAM
 
 ; Data from 1148 to 1148 (1 bytes)
 	pop bc
@@ -269,4 +269,4 @@ _engine_storage_manager_erase:
 
 ; Data from 1160 to 1162 (3 bytes)
 	;.db $C3 $67 $08
-	jp $0867
+	jp _devkit_SMS_disableSRAM

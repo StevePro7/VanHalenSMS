@@ -77,10 +77,6 @@ _devkit_SMS_setBGScrollY:
 		jp _SMS_setBGScrollY
 	
 ; Data from 852 to 854 (3 bytes)	
-A$_sms_manager$242:	
-C$_sms_manager.c$37$1$82:	
-C$_sms_manager.c$39$1$83:	
-G$devkit_SMS_enableSRAM$0$0:	
 _devkit_SMS_enableSRAM:	
 	;.db $21 $FC $FF
 	ld hl, $FFFC
@@ -141,10 +137,6 @@ XG$devkit_SMS_enableSRAMBank$0$0:
 	ret
 	
 ; Data from 867 to 869 (3 bytes)	
-A$_sms_manager$286:	
-C$_sms_manager.c$45$1$85:	
-C$_sms_manager.c$47$1$86:	
-G$devkit_SMS_disableSRAM$0$0:	
 _devkit_SMS_disableSRAM:	
 	;.db $21 $FC $FF
 	ld hl, $FFFC
