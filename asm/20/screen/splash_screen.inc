@@ -17,7 +17,7 @@ _screen_splash_screen_load:
 	
 ; Data from 123F to 1241 (3 bytes)	
 	;.db $21 $96 $00
-	ld hl, $0096
+	ld hl, $0096		; SPLASH_SCREEN_DELAY		150
 	
 ; Data from 1242 to 1242 (1 bytes)	
 	;.db $E5
@@ -29,7 +29,7 @@ _screen_splash_screen_load:
 	
 ; Data from 1246 to 1248 (3 bytes)	
 	;.db $21 $4B $00
-	ld hl, $004B
+	ld hl, $004B		; DELETE_SCREEN_DELAY		75
 	
 ; Data from 1249 to 1249 (1 bytes)	
 	;.db $E3
@@ -66,7 +66,7 @@ _screen_splash_screen_update:
 	
 ; Data from 1258 to 125A (3 bytes)	
 	;.db $CD $7C $11
-	call $117C
+	call _engine_delay_manager_update
 	
 ; Data from 125B to 125D (3 bytes)	
 	;.db $DD $75 $FE
@@ -130,7 +130,7 @@ _screen_splash_screen_update:
 	
 ; Data from 1275 to 1277 (3 bytes)	
 	;.db $CD $B3 $11
-	call $11B3
+	call _engine_reset_manager_update
 	
 ; Data from 1278 to 1278 (1 bytes)	
 	;.db $7D

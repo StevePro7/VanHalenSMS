@@ -291,7 +291,7 @@ _screen_title_screen_update:
 
 ; Data from 1370 to 1372 (3 bytes)
 	;.db $CD $B3 $11
-	call $11B3
+	call _engine_reset_manager_update
 
 ; Data from 1373 to 1373 (1 bytes)
 	;.db $4D
@@ -398,7 +398,7 @@ _screen_title_screen_update:
 
 ; Data from 13A6 to 13A8 (3 bytes)
 	;.db $CD $7C $11
-	call $117C
+	call _engine_delay_manager_update
 
 ; Data from 13A9 to 13AB (3 bytes)
 	;.db $DD $75 $FD

@@ -183,7 +183,7 @@ _screen_select_screen_update:
 
 ; Data from 14F2 to 14F4 (3 bytes)
 	;.db $CD $7C $11
-	call $117C
+	call _engine_delay_manager_update
 
 ; Data from 14F5 to 14F5 (1 bytes)
 	ld a, l
@@ -213,7 +213,7 @@ _screen_select_screen_update:
 
 ; Data from 1500 to 1502 (3 bytes)
 	;.db $CD $B3 $11
-	call $11B3
+	call _engine_reset_manager_update
 
 ; Data from 1503 to 1503 (1 bytes)
 	pop de
