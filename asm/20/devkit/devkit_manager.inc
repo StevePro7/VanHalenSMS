@@ -115,11 +115,7 @@ _devkit_SMS_setSpriteMode:
 		add iy, sp
 		ld l, (iy+0)
 		jp _SMS_setSpriteMode
-	
-A$_sms_manager$343:
-C$_sms_manager.c$59$1$89:
-C$_sms_manager.c$61$1$90:
-G$devkit_SMS_useFirstHalfTilesfo:
+
 _devkit_SMS_useFirstHalfTilesfor:
 		ld l, $00
 		jp _SMS_useFirstHalfTilesforSprites
