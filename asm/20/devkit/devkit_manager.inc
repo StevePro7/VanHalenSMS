@@ -97,24 +97,17 @@ _devkit_SMS_disableSRAM:
 	ld hl, $FFFC
 	
 ; Data from 86A to 86B (2 bytes)
-A$_sms_manager$287:	
 	ld (hl), $00
-	
+
 ; Data from 86C to 86C (1 bytes)
-A$_sms_manager$292:	
-C$_sms_manager.c$48$1$86:	
-XG$devkit_SMS_disableSRAM$0$0:	
 	ret
-	
+
 ; Data from 86D to 86F (3 bytes)
 _devkit_SMS_SRAM:	
 	;.db $21 $00 $80
 	ld hl, $8000
-	
+
 ; Data from 870 to 870 (1 bytes)
-A$_sms_manager$310:	
-C$_sms_manager.c$52$1$87:	
-XG$devkit_SMS_SRAM$0$0:	
 	ret
 
 _devkit_SMS_setSpriteMode:
