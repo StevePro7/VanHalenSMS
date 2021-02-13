@@ -17,7 +17,7 @@ _screen_select_screen_load:
 
 ; Data from 1489 to 148B (3 bytes)
 	;.db $CD $5A $0A
-	call $0A5A
+	call _engine_asm_manager_clear_VRAM
 
 ; Data from 148C to 148E (3 bytes)
 	;.db $CD $A2 $0A
@@ -41,7 +41,8 @@ _screen_select_screen_load:
 
 ; Data from 1499 to 149B (3 bytes)
 	;.db $21 $D5 $14
-	ld hl, $14D5
+	;ld hl, $14D5
+	ld hl, select_record_label
 
 ; Data from 149C to 149C (1 bytes)
 	push hl
@@ -62,7 +63,8 @@ _screen_select_screen_load:
 
 ; Data from 14A5 to 14A7 (3 bytes)
 	;.db $21 $DC $14
-	ld hl, $14DC
+	;ld hl, $14DC
+	ld hl, select_covers_label
 
 ; Data from 14A8 to 14A8 (1 bytes)
 	push hl
@@ -147,12 +149,16 @@ _screen_select_screen_load:
 	ret
 
 ; Data from 14D5 to 14DB (7 bytes)
-	.db $52 $45 $43 $4F $52 $44 $00
+select_record_label:
 	; RECORD
+	.db $52 $45 $43 $4F $52 $44 $00
 
+select_covers_label:
 ; Data from 14DC to 14E2 (7 bytes)
-	.db $43 $4F $56 $45 $52 $53 $00
+
 	; COVERS
+	.db $43 $4F $56 $45 $52 $53 $00
+	
 
 ; Data from 14E3 to 14E5 (3 bytes)
 _screen_select_screen_update:

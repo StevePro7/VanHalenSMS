@@ -47,7 +47,7 @@ _screen_title_screen_load:
 ; Data from 12D2 to 12D4 (3 bytes)
 	;.db $21 $41 $13
 	;ld hl, $1341
-	ld hl, record_label
+	ld hl, title_record_label
 
 ; Data from 12D5 to 12D5 (1 bytes)
 	push hl
@@ -69,7 +69,7 @@ _screen_title_screen_load:
 ; Data from 12DE to 12E0 (3 bytes)
 	;.db $21 $48 $13
 	;ld hl, $1348
-	ld hl, covers_label
+	ld hl, title_covers_label
 
 ; Data from 12E1 to 12E1 (1 bytes)
 	push hl
@@ -233,12 +233,12 @@ press_start:
 	.db $50 $52 $45 $53 $53 $20 $53 $54 $41 $52 $54 $00
 
 ; Data from 1341 to 1347 (7 bytes)
-record_label:
+title_record_label:
 	; RECORD
 	.db $52 $45 $43 $4F $52 $44 $00
 
 ; Data from 1348 to 134E (7 bytes)
-covers_label:
+title_covers_label:
 	; COVERS
 	.db $43 $4F $56 $45 $52 $53 $00
 
