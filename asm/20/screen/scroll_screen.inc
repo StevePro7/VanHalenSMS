@@ -73,7 +73,7 @@ _screen_scroll_screen_update:
 
 ; Data from 1445 to 1446 (2 bytes)
 	;.db $3E $10
-	ld a, $10		; input_type_fire1
+	ld a, $10		; input_type_fire1	16
 
 ; Data from 1447 to 1447 (1 bytes)
 	push af
@@ -143,15 +143,13 @@ _screen_scroll_screen_update:
 	or a
 
 ; Data from 1464 to 1465 (2 bytes)
-	;.db $28 $16
 	jr z, $16
 	
 ; Data from 1466 to 1466 (1 bytes)
 	push hl
 
 ; Data from 1467 to 1468 (2 bytes)
-	;.db $3E $04
-	ld a, $04
+	ld a, $04		; TOP_OFFSET	4
 
 ; Data from 1469 to 1469 (1 bytes)
 	push af
@@ -161,14 +159,14 @@ _screen_scroll_screen_update:
 
 ; Data from 146B to 146D (3 bytes)
 	;.db $CD $CA $10
-	call $10CA
+	call _engine_scroll_manager_load
 
 ; Data from 146E to 146E (1 bytes)
 	inc sp
 
 ; Data from 146F to 1470 (2 bytes)
 	;.db $3E $20
-	ld a, $20
+	ld a, $20		; TOP_SCROLL	32
 
 ; Data from 1471 to 1471 (1 bytes)
 	push af
@@ -188,7 +186,7 @@ _screen_scroll_screen_update:
 
 ; Data from 1478 to 1479 (2 bytes)
 	;.db $36 $04
-	ld (hl), $04
+	ld (hl), $04		; screen_type_select	4
 
 ; Data from 147A to 147B (2 bytes)
 	;.db $18 $02
