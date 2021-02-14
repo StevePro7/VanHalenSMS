@@ -430,9 +430,24 @@ _SMS_getKeysHeld:
 
 ; Data from 1E52 to 1E6E (29 bytes)	
 _SMS_getKeysReleased:	
-	.db $FD $21 $6B $C0 $FD $7E $00 $2F $4F $FD $7E $01 $2F $47 $79 $FD
-	.db $21 $6D $C0 $FD $A6 $00 $6F $78 $FD $A6 $01 $67 $C9
-	
+	;.db $FD $21 $6B $C0 $FD $7E $00 $2F $4F $FD $7E $01 $2F $47 $79 $FD
+	;.db $21 $6D $C0 $FD $A6 $00 $6F $78 $FD $A6 $01 $67 $C9
+	ld iy, $C06B
+	ld a, (iy + $00)
+	cpl
+	ld c, a
+	ld a, (iy + $01)
+	cpl
+	ld b, a
+	ld a, c
+	ld iy, $C06D
+	and (iy + $00)
+	ld l, a
+	ld a, b
+	and (iy + $01)
+	ld h, a
+	ret
+
 _SMS_queryPauseRequested:	
 		ld iy, PauseRequested	; PauseRequested = $C069
 		ld l, (iy+0)
