@@ -552,8 +552,16 @@ _SMS_nmi_isr:
 	
 ; Data from 1EEE to 1EF9 (12 bytes)	
 __moduchar:	
-	.db $21 $03 $00 $39 $5E $2B $6E $CD $74 $1B $EB $C9
-	
+	;.db $21 $03 $00 $39 $5E $2B $6E $CD $74 $1B $EB $C9
+	ld hl, $0003
+	add hl, sp
+	ld e, (hl)
+	dec hl
+	ld l, (hl)
+	call $1B74
+	ex de, hl
+	ret
+
 ; Data from 1EFA to 1F04 (11 bytes)	
 __moduint:	
 	.db $F1 $E1 $D1 $D5 $E5 $F5 $CD $77 $1B $EB $C9

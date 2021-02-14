@@ -101,3 +101,9 @@ call __moduint
 
 call $0DE9
 _engine_font_manager_draw_text
+
+
+
+sms_manager.inc
+add_sprite
+_SMS_loadSTMcompressedTileMapAre
