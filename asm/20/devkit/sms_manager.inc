@@ -416,9 +416,18 @@ _SMS_getKeysPressed:
 	
 ; Data from 1E3B to 1E51 (23 bytes)	
 _SMS_getKeysHeld:	
-	.db $3A $6B $C0 $FD $21 $6D $C0 $FD $A6 $00 $6F $3A $6C $C0 $FD $21
-	.db $6D $C0 $FD $A6 $01 $67 $C9
-	
+	;.db $3A $6B $C0 $FD $21 $6D $C0 $FD $A6 $00 $6F $3A $6C $C0 $FD $21
+	;.db $6D $C0 $FD $A6 $01 $67 $C9
+	ld a, ($C06B)
+	ld iy, $C06D
+	and (iy + $00)
+	ld l, a
+	ld a, ($C06C)
+	ld iy, $C06D
+	and (iy + $01)
+	ld h, a
+	ret
+
 ; Data from 1E52 to 1E6E (29 bytes)	
 _SMS_getKeysReleased:	
 	.db $FD $21 $6B $C0 $FD $7E $00 $2F $4F $FD $7E $01 $2F $47 $79 $FD
