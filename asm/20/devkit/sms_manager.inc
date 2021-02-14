@@ -261,9 +261,21 @@ _SMS_setSpriteMode:
 	
 ; Data from 1D23 to 1D36 (20 bytes)
 _SMS_setBGPaletteColor:	
-	.db $21 $02 $00 $39 $4E $06 $00 $21 $00 $C0 $09 $CF $21 $03 $00 $39
-	.db $7E $D3 $BE $C9
-	
+	;.db $21 $02 $00 $39 $4E $06 $00 $21 $00 $C0 $09 $CF $21 $03 $00 $39
+	;.db $7E $D3 $BE $C9
+	ld hl, $0002
+	add hl, sp
+	ld c, (hl)
+	ld b, $00
+	ld hl, $c000
+	add hl, bc
+	rst $08
+	ld hl, $0003
+	add hl, sp
+	ld a, (hl)
+	out ($be), a
+	ret
+
 _SMS_setSpritePaletteColor:	
 		ld hl, $0002
 		add hl, sp
