@@ -709,19 +709,30 @@ _devkit_PSGPlay:
 	
 ; Data from A0B to A14 (10 bytes)
 _devkit_PSGPlayNoRepeat:
-	.db $C1 $E1 $E5 $C5 $E5 $CD $27 $03 $F1 $C9
-	
+	;.db $C1 $E1 $E5 $C5 $E5 $CD $27 $03 $F1 $C9
+	pop bc
+	pop hl
+	push hl
+	push bc
+	push hl
+	call $0327
+	pop af
+	ret
+
 ; Data from A15 to A17 (3 bytes)
 _devkit_PSGStop:
-	.db $C3 $81 $02
+	;.db $C3 $81 $02
+	jp $0281
 	
 ; Data from A18 to A1A (3 bytes)
 _devkit_PSGResume:
-	.db $C3 $A8 $02
+	;.db $C3 $A8 $02
+	jp $02A8
 	
 ; Data from A1B to A1D (3 bytes)
 _devkit_PSGGetStatus:
-	.db $C3 $36 $03
+	;.db $C3 $36 $03
+	jp $0336
 	
 ; Data from A1E to A29 (12 bytes)
 _devkit_PSGSetMusicVolumeAttenua:
