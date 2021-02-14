@@ -460,7 +460,15 @@ _SMS_resetPauseRequest:
 	
 ; Data from 1E7D to 1E8D (17 bytes)	
 _SMS_setLineInterruptHandler:	
-	.db $21 $02 $00 $39 $7E $32 $30 $C1 $21 $03 $00 $39 $7E $32 $31 $C1
+	;.db $21 $02 $00 $39 $7E $32 $30 $C1 $21 $03 $00 $39 $7E $32 $31 $C1
+	ld hl, $0002
+	add hl, sp
+	ld a, (hl)
+	ld ($C130), a
+	ld hl, $0003
+	add hl, sp
+	ld a, (hl)
+	ld ($C131), a
 	ret
 	
 ; Data from 1E8E to 1E9C (15 bytes)	
@@ -476,8 +484,11 @@ _SMS_getVCount:
 
 ; Data from 1EA1 to 1EA4 (4 bytes)	
 _SMS_getHCount:	
-	.db $DB $7F $6F $C9
-	
+	;.db $DB $7F $6F $C9
+	in a, ($7F)
+	ld l, a
+	ret
+
 _SMS_isr:	
 		push af
 		push hl
