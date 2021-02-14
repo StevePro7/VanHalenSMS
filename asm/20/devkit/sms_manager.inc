@@ -564,8 +564,17 @@ __moduchar:
 
 ; Data from 1EFA to 1F04 (11 bytes)	
 __moduint:	
-	.db $F1 $E1 $D1 $D5 $E5 $F5 $CD $77 $1B $EB $C9
-	
+	;.db $F1 $E1 $D1 $D5 $E5 $F5 $CD $77 $1B $EB $C9
+	pop af
+	pop hl
+	pop de
+	push de
+	push hl
+	push af
+	call $1B77
+	ex de, hl
+	ret
+
 ; Data from 1F05 to 20E5 (481 bytes)	
 _SMS_loadSTMcompressedTileMapAre:	
 	.db $DD $E5 $DD $21 $00 $00 $DD $39 $21 $F0 $FF $39 $F9 $DD $36 $FE
