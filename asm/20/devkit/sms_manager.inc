@@ -469,8 +469,11 @@ _SMS_setLineCounter:
 	
 ; Data from 1E9D to 1EA0 (4 bytes)	
 _SMS_getVCount:	
-	.db $DB $7E $6F $C9
-	
+	;.db $DB $7E $6F $C9
+	in a, ($7E)
+	ld l, a
+	ret
+
 ; Data from 1EA1 to 1EA4 (4 bytes)	
 _SMS_getHCount:	
 	.db $DB $7F $6F $C9
