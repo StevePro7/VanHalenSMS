@@ -105,5 +105,5 @@ _engine_font_manager_draw_text
 
 
 sms_manager.inc
-add_sprite
+_SMS_addSprite
 _SMS_loadSTMcompressedTileMapAre
