@@ -725,20 +725,45 @@ _devkit_PSGGetStatus:
 	
 ; Data from A1E to A29 (12 bytes)
 _devkit_PSGSetMusicVolumeAttenua:
-	.db $21 $02 $00 $39 $7E $F5 $33 $CD $4E $04 $33 $C9
+	;.db $21 $02 $00 $39 $7E $F5 $33 $CD $4E $04 $33 $C9
+	ld hl, $0002
+	add hl, sp
+	ld a, (hl)
+	push af
+	inc sp
+	call $044E
+	inc sp
+	ret
 	
 ; Data from A2A to A3E (21 bytes)
 _devkit_PSGSFXPlay:
-	.db $21 $04 $00 $39 $7E $F5 $33 $21 $03 $00 $39 $4E $23 $46 $C5 $CD
-	.db $07 $06 $F1 $33 $C9
+	;.db $21 $04 $00 $39 $7E $F5 $33 $21 $03 $00 $39 $4E $23 $46 $C5 $CD
+	;.db $07 $06 $F1 $33 $C9
+	ld hl, $0004
+	add hl, sp
+	ld a, (hl)
+	push af
+	inc sp
+	ld hl, $0003
+	add hl, sp
+	ld c, (hl)
+	inc hl
+	ld b, (hl)
+	push bc
+	call $0607
+	pop af
+	inc sp
+	ret
 	
 ; Data from A3F to A41 (3 bytes)
 _devkit_PSGSFXStop:
-	.db $C3 $3D $05
+	;.db $C3 $3D $05
+	jp $053D
 	
 ; Data from A42 to A44 (3 bytes)
 _devkit_PSGSFXGetStatus:
-	.db $C3 $5A $06
+	;.db $C3 $5A $06
+	jp $065A
 	
 _devkit_PSGSilenceChannels:
 		jp _PSGSilenceChannels
