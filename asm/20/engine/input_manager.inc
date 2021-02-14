@@ -22,7 +22,7 @@ _engine_input_manager_hold:
 
 ; Data from EDA to EDD (4 bytes)
 	;.db $FD $21 $52 $C1
-	ld iy, $C152
+	ld iy, Finput_manager$curr_joypad1$0$0
 
 ; Data from EDE to EE0 (3 bytes)
 	;.db $FD $7E $00
@@ -52,7 +52,7 @@ _engine_input_manager_hold:
 
 ; Data from EEB to EEE (4 bytes)
 	;.db $FD $21 $54 $C1
-	ld iy, $C154
+	ld iy, Finput_manager$prev_joypad1$0$0
 
 ; Data from EEF to EF1 (3 bytes)
 	;.db $FD $A6 $00
@@ -99,7 +99,7 @@ _engine_input_manager_move:
 
 ; Data from F05 to F07 (3 bytes)
 	;.db $3A $52 $C1
-	ld a, ($C152)
+	ld a, (Finput_manager$curr_joypad1$0$0)
 
 ; Data from F08 to F08 (1 bytes)
 	and c
