@@ -633,7 +633,7 @@ _devkit_SMS_waitForVBlank:
 
 _devkit_SMS_copySpritestoSAT:
 		jp _UNSAFE_SMS_copySpritestoSAT
-	
+
 ; Data from 98B to 98D (3 bytes)
 
 _devkit_UNSAFE_SMS_copySpritesto:
@@ -689,15 +689,15 @@ _devkit_TILE_USE_SPRITE_PALETTE:
 	ret
 	
 ; Data from 9AD to 9BA (14 bytes)
-; todo disassemble
+;	"Steven Boland"
 	.db $53 $74 $65 $76 $65 $6E $20 $42 $6F $6C $61 $6E $64 $00
 	
 ; Data from 9BB to 9C4 (10 bytes)
-; todo disassemble
+	; "Van Halen"
 	.db $56 $61 $6E $20 $48 $61 $6C $65 $6E $00
 	
 ; Data from 9C5 to A00 (60 bytes)
-; todo disassemble
+	; "Van Halen Record Covers for the SMS Power! 2021"
 	.db $56 $61 $6E $20 $48 $61 $6C $65 $6E $20 $52 $65 $63 $6F $72 $64
 	.db $20 $43 $6F $76 $65 $72 $73 $20 $66 $6F $72 $20 $74 $68 $65 $20
 	.db $53 $4D $53 $20 $50 $6F $77 $65 $72 $21 $20 $32 $30 $32 $31 $20
