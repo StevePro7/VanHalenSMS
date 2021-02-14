@@ -130,9 +130,12 @@ _VDPReg_init:
 	
 ; Data from 1C74 to 1C7B (8 bytes)	
 _SMS_VDPType:	
-	.db $FD $21 $6A $C0 $FD $6E $00 $C9
-	
-_SMS_VDPturnOnFeature:	
+	;.db $FD $21 $6A $C0 $FD $6E $00 $C9
+	ld iy, $C06A
+	ld l, (iy + $00)
+	ret
+
+_SMS_VDPturnOnFeature:
 		ld c, l
 		ld e, h
 		ld d, $00
@@ -174,7 +177,14 @@ _SMS_VDPturnOffFeature:
 	
 ; Data from 1CAC to 1CB5 (10 bytes)	
 _SMS_setBGScrollX:	
-	.db $F3 $7D $D3 $BF $3E $88 $D3 $BF $FB $C9
+	;.db $F3 $7D $D3 $BF $3E $88 $D3 $BF $FB $C9
+	di
+	ld a, l
+	out ($bf), a
+	ld a, $88
+	out ($bf), a
+	ei
+	ret
 	
 _SMS_setBGScrollY:	
 		di
@@ -187,7 +197,13 @@ _SMS_setBGScrollY:
 	
 ; Data from 1CC0 to 1CC9 (10 bytes)
 _SMS_setBackdropColor:	
-	.db $F3 $7D $D3 $BF $3E $87 $D3 $BF $FB $C9
+	di
+	ld a, l
+	out ($bf), a
+	ld a, $87
+	out ($bf), a
+	ei
+	ret
 	
 _SMS_useFirstHalfTilesforSprites:	
 		bit 0, l
