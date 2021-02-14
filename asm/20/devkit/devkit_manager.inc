@@ -705,8 +705,16 @@ _devkit_TILE_USE_SPRITE_PALETTE:
 	
 ; Data from A01 to A0A (10 bytes)
 _devkit_PSGPlay:
-	.db $C1 $E1 $E5 $C5 $E5 $CD $F4 $02 $F1 $C9
-	
+	;.db $C1 $E1 $E5 $C5 $E5 $CD $F4 $02 $F1 $C9
+	pop bc
+	pop hl
+	push hl
+	push bc
+	push hl
+	call $02F4
+	pop af
+	ret
+
 ; Data from A0B to A14 (10 bytes)
 _devkit_PSGPlayNoRepeat:
 	;.db $C1 $E1 $E5 $C5 $E5 $CD $27 $03 $F1 $C9
