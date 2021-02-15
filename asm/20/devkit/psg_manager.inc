@@ -39,7 +39,10 @@ _PSGPlay:
 	
 ; Data from 321 to 326 (6 bytes)	
 _PSGCancelLoop:	
-	.db $21 $09 $C0 $36 $00 $C9
+	;.db $21 $09 $C0 $36 $00 $C9
+	ld hl, $C009
+	ld (hl), $00
+	ret
 	
 ; Data from 327 to 335 (15 bytes)	
 _PSGPlayNoRepeat:	
