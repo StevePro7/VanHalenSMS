@@ -24,7 +24,8 @@ _PSGStop:
 		ret
 	
 ; Data from 2A8 to 2F3 (76 bytes)	
-_PSGResume:	
+_PSGResume:
+	; todo
 	.db $3A $01 $C0 $B7 $C0 $3A $0F $C0 $F6 $90 $D3 $7F $3A $10 $C0 $F6
 	.db $B0 $D3 $7F $3A $16 $C0 $B7 $20 $17 $3A $13 $C0 $E6 $0F $F6 $C0
 	.db $D3 $7F $3A $14 $C0 $E6 $3F $D3 $7F $3A $11 $C0 $F6 $D0 $D3 $7F
@@ -32,7 +33,8 @@ _PSGResume:
 	.db $12 $C0 $F6 $F0 $D3 $7F $21 $01 $C0 $36 $01 $C9
 	
 ; Data from 2F4 to 320 (45 bytes)	
-_PSGPlay:	
+_PSGPlay:
+	; todo
 	.db $CD $81 $02 $21 $09 $C0 $36 $01 $D1 $C1 $C5 $D5 $ED $43 $02 $C0
 	.db $ED $43 $04 $C0 $ED $43 $06 $C0 $21 $08 $C0 $36 $00 $21 $0C $C0
 	.db $36 $00 $21 $0A $C0 $36 $9F $21 $01 $C0 $36 $01 $C9
@@ -46,8 +48,18 @@ _PSGCancelLoop:
 	
 ; Data from 327 to 335 (15 bytes)	
 _PSGPlayNoRepeat:	
-	.db $C1 $E1 $E5 $C5 $E5 $CD $F4 $02 $F1 $21 $09 $C0 $36 $00 $C9
-	
+	;.db $C1 $E1 $E5 $C5 $E5 $CD $F4 $02 $F1 $21 $09 $C0 $36 $00 $C9
+	pop bc
+	pop hl
+	push hl
+	push bc
+	push hl
+	call $02F4
+	pop af
+	ld hl, $C009
+	ld (hl), $00
+	ret
+
 ; Data from 336 to 33D (8 bytes)	
 _PSGGetStatus:	
 	.db $FD $21 $01 $C0 $FD $6E $00 $C9
