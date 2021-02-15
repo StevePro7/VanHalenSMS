@@ -332,7 +332,13 @@ _SMS_initSprites:
 	
 ; Data from 1D7D to 1DD1 (85 bytes)	
 _SMS_addSprite:	
-	.db $3A $2F $C1 $D6 $40 $30 $4B $FD $21 $03 $00 $FD $39 $FD $7E $00
+	;.db $3A $2F $C1 $D6 $40 $30 $4B $FD $21 $03 $00 $FD $39 $FD $7E $00
+	ld a, ($C12F)
+	sub $40
+	jr nc, $4B
+	ld iy, $0003
+	add iy, sp
+	ld a, (iy + $00)
 	.db $D6 $D1 $28 $3E $3E $6F $21 $2F $C1 $86 $4F $3E $C0 $CE $00 $47
 	.db $FD $5E $00 $1D $7B $02 $3A $2F $C1 $87 $4F $21 $AF $C0 $06 $00
 	.db $09 $FD $21 $02 $00 $FD $39 $FD $7E $00 $77 $23 $FD $21 $04 $00
