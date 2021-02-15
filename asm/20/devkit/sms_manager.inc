@@ -1,4 +1,4 @@
-_UNSAFE_SMS_copySpritestoSAT
+_UNSAFE_SMS_copySpritestoSAT:
 		ld hl, $7F00
 		rst $08	; _LABEL_8_
 		ld c, Port_VDPData
@@ -11,7 +11,7 @@ _UNSAFE_SMS_copySpritestoSAT
 		jp _OUTI128
 	
 ; Data from 1BBE to 1BDA (29 bytes)	
-_UNSAFE_SMS_VRAMmemcpy32
+_UNSAFE_SMS_VRAMmemcpy32:
 	;.db $FD $21 $02 $00 $FD $39 $FD $6E $00 $FD $7E $01 $CB $F7 $67 $CF
 	;.db $0E $BE $21 $04 $00 $39 $7E $23 $66 $6F $C3 $59 $01
 	ld iy, $0002
@@ -31,7 +31,7 @@ _UNSAFE_SMS_VRAMmemcpy32
 	jp $0159
 
 ; Data from 1BDB to 1BF7 (29 bytes)	
-_UNSAFE_SMS_VRAMmemcpy64
+_UNSAFE_SMS_VRAMmemcpy64:
 	;.db $FD $21 $02 $00 $FD $39 $FD $6E $00 $FD $7E $01 $CB $F7 $67 $CF
 	;.db $0E $BE $21 $04 $00 $39 $7E $23 $66 $6F $C3 $19 $01
 	ld iy, $0002
@@ -51,7 +51,7 @@ _UNSAFE_SMS_VRAMmemcpy64
 	jp $0119
 
 ; Data from 1BF8 to 1C14 (29 bytes)	
-_UNSAFE_SMS_VRAMmemcpy128
+_UNSAFE_SMS_VRAMmemcpy128:
 	;.db $FD $21 $02 $00 $FD $39 $FD $6E $00 $FD $7E $01 $CB $F7 $67 $CF
 	;.db $0E $BE $21 $04 $00 $39 $7E $23 $66 $6F $C3 $99 $00
 	ld iy, $0002
@@ -70,13 +70,13 @@ _UNSAFE_SMS_VRAMmemcpy128
 	ld l, a
 	jp $0099
 	
-_SMS_init
+_SMS_init:
 		ld hl, $0000
 		push hl
 		call _SMS_setSpritePaletteColor
 		pop af
 		ld c, $00
--
+-:
 		ld hl, _VDPReg_init	; _VDPReg_init = $1C69
 		ld b, $00
 		add hl, bc
@@ -96,17 +96,17 @@ _SMS_init
 		call _SMS_finalizeSprites
 		call _SMS_copySpritestoSAT
 		call _SMS_resetPauseRequest
--
+-:
 		in a, (Port_VCounter)
 		ld b, a
 		ld a, $80
 		sub b
 		jr c, -
--
+-:
 		in a, (Port_VCounter)
 		sub $80
 		jr c, -
--
+-:
 		in a, (Port_VCounter)
 		ld c, a
 		in a, (Port_VCounter)
@@ -119,17 +119,17 @@ _SMS_init
 		ld (hl), $80
 		ret
 	
-+
++:
 		ld hl, VDPType	; VDPType = $C06A
 		ld (hl), $40
 		ret
 	
 ; Data from 1C69 to 1C73 (11 bytes)	
-_VDPReg_init
+_VDPReg_init:
 	.db $04 $20 $FF $FF $FF $FF $FF $00 $00 $00 $FF
 	
 ; Data from 1C74 to 1C7B (8 bytes)	
-_SMS_VDPType
+_SMS_VDPType:
 	;.db $FD $21 $6A $C0 $FD $6E $00 $C9
 	ld iy, $C06A
 	ld l, (iy + $00)
@@ -154,7 +154,7 @@ _SMS_VDPturnOnFeature:
 		ei
 		ret
 	
-_SMS_VDPturnOffFeature
+_SMS_VDPturnOffFeature:
 		ld a, l
 		ld e, h
 		cpl
@@ -176,7 +176,7 @@ _SMS_VDPturnOffFeature
 		ret
 	
 ; Data from 1CAC to 1CB5 (10 bytes)	
-_SMS_setBGScrollX
+_SMS_setBGScrollX:
 	;.db $F3 $7D $D3 $BF $3E $88 $D3 $BF $FB $C9
 	di
 	ld a, l
@@ -186,7 +186,7 @@ _SMS_setBGScrollX
 	ei
 	ret
 	
-_SMS_setBGScrollY
+_SMS_setBGScrollY:
 		di
 		ld a, l
 		out (Port_VDPAddress), a
@@ -196,7 +196,7 @@ _SMS_setBGScrollY
 		ret
 	
 ; Data from 1CC0 to 1CC9 (10 bytes)
-_SMS_setBackdropColor
+_SMS_setBackdropColor:
 	di
 	ld a, l
 	out ($bf), a
@@ -205,15 +205,15 @@ _SMS_setBackdropColor
 	ei
 	ret
 	
-_SMS_useFirstHalfTilesforSprites
+_SMS_useFirstHalfTilesforSprites:
 		bit 0, l
 		jr z, +
 		ld c, $FB
 		jr ++
 	
-+
++:
 		ld c, $FF
-++
+++:
 		di
 		ld a, c
 		out (Port_VDPAddress), a
@@ -222,7 +222,7 @@ _SMS_useFirstHalfTilesforSprites
 		ei
 		ret
 	
-_SMS_setSpriteMode
+_SMS_setSpriteMode:
 		ld c, l
 		bit 0, c
 		jr z, +
@@ -234,14 +234,14 @@ _SMS_setSpriteMode
 		ld (hl), $10
 		jr ++
 	
-+
++:
 		push bc
 		ld hl, $0102
 		call _SMS_VDPturnOffFeature
 		pop bc
 		ld hl, spritesHeight		; spritesHeight = $C1B8
 		ld (hl), $08
-++
+++:
 		bit 1, c
 		jr z, +
 		ld hl, $0101
@@ -252,7 +252,7 @@ _SMS_setSpriteMode
 		sla (iy+0)
 		ret
 	
-+
++:
 		ld hl, $0101
 		call _SMS_VDPturnOffFeature
 		ld hl, spritesWidth	; spritesWidth = $C1B9
@@ -260,7 +260,7 @@ _SMS_setSpriteMode
 		ret
 	
 ; Data from 1D23 to 1D36 (20 bytes)
-_SMS_setBGPaletteColor
+_SMS_setBGPaletteColor:
 	;.db $21 $02 $00 $39 $4E $06 $00 $21 $00 $C0 $09 $CF $21 $03 $00 $39
 	;.db $7E $D3 $BE $C9
 	ld hl, $0002
@@ -276,7 +276,7 @@ _SMS_setBGPaletteColor
 	out ($be), a
 	ret
 
-_SMS_setSpritePaletteColor
+_SMS_setSpritePaletteColor:
 		ld hl, $0002
 		add hl, sp
 		ld c, (hl)
@@ -290,7 +290,7 @@ _SMS_setSpritePaletteColor
 		out (Port_VDPData), a
 		ret
 	
-_SMS_loadBGPalette
+_SMS_loadBGPalette:
 		ld de, Lmain.main$global_pause$1$55	; Lmain.main$global_pause$1$55 = $C000
 		ld c, Port_VDPAddress
 		di
@@ -299,12 +299,12 @@ _SMS_loadBGPalette
 		ei
 		ld b, $10
 		ld c, Port_VDPData
--
+-:
 		outi
 		jr nz, -
 		ret
 	
-_SMS_loadSpritePalette
+_SMS_loadSpritePalette:
 		ld de, PSGChan1Volume		; PSGChan1Volume = $C010
 		ld c, Port_VDPAddress
 		di
@@ -313,25 +313,25 @@ _SMS_loadSpritePalette
 		ei
 		ld b, $10
 		ld c, Port_VDPData
--
+-:
 		outi
 		jr nz, -
 		ret
 	
 ; Data from 1D73 to 1D76 (4 bytes)	
-_SMS_setColor
+_SMS_setColor:
 	;.db $7D $D3 $BE $C9
 	ld a, l
 	out ($be), a
 	ret
 	
-_SMS_initSprites
+_SMS_initSprites:
 		ld hl, SpriteNextFree	; SpriteNextFree = $C12F
 		ld (hl), $00
 		ret
 	
 ; Data from 1D7D to 1DD1 (85 bytes)	
-_SMS_addSprite
+_SMS_addSprite:
 	;.db $3A $2F $C1 $D6 $40 $30 $4B $FD $21 $03 $00 $FD $39 $FD $7E $00
 	;.db $D6 $D1 $28 $3E $3E $6F $21 $2F $C1 $86 $4F $3E $C0 $CE $00 $47
 	;.db $FD $5E $00 $1D $7B $02 $3A $2F $C1 $87 $4F $21 $AF $C0 $06 $00
@@ -385,7 +385,7 @@ _SMS_addSprite
 	ld l, $FF
 	ret
 
-_SMS_finalizeSprites
+_SMS_finalizeSprites:
 		ld a, (SpriteNextFree)	; SpriteNextFree = $C12F
 		sub $40
 		ret nc
@@ -396,12 +396,12 @@ _SMS_finalizeSprites
 		ld (hl), $D0
 		ret
 	
-_SMS_copySpritestoSAT
+_SMS_copySpritestoSAT:
 		ld hl, $7F00
 		rst $08	; _LABEL_8_
 		ld bc, SpriteTableY	; SpriteTableY = $C06F
 		ld e, $40
--
+-:
 		ld a, (bc)
 		out (Port_VDPData), a
 		inc bc
@@ -415,7 +415,7 @@ _SMS_copySpritestoSAT
 		rst $08	; _LABEL_8_
 		ld bc, SpriteTableXN	; SpriteTableXN = $C0AF
 		ld e, $80
--
+-:
 		ld a, (bc)
 		out (Port_VDPData), a
 		inc bc
@@ -427,21 +427,21 @@ _SMS_copySpritestoSAT
 		jr nz, -
 		ret
 	
-_SMS_waitForVBlank
+_SMS_waitForVBlank:
 		ld hl, VDPBlank	; VDPBlank = $C067
 		ld (hl), $00
--
+-:
 		ld hl, VDPBlank	; VDPBlank = $C067
 		bit 0, (hl)
 		jr z, -
 		ret
 	
-_SMS_getKeysStatus
+_SMS_getKeysStatus:
 		ld hl, (KeysStatus)	; KeysStatus = $C06B
 		ret
 	
 ; Data from 1E1E to 1E3A (29 bytes)	
-_SMS_getKeysPressed
+_SMS_getKeysPressed:
 	;.db $FD $21 $6D $C0 $FD $7E $00 $2F $4F $FD $7E $01 $2F $47 $FD $21
 	;.db $6B $C0 $FD $7E $00 $A1 $6F $FD $7E $01 $A0 $67 $C9
 	ld iy, $C06D
@@ -461,7 +461,7 @@ _SMS_getKeysPressed
 	ret
 	
 ; Data from 1E3B to 1E51 (23 bytes)	
-_SMS_getKeysHeld
+_SMS_getKeysHeld:
 	;.db $3A $6B $C0 $FD $21 $6D $C0 $FD $A6 $00 $6F $3A $6C $C0 $FD $21
 	;.db $6D $C0 $FD $A6 $01 $67 $C9
 	ld a, ($C06B)
@@ -475,7 +475,7 @@ _SMS_getKeysHeld
 	ret
 
 ; Data from 1E52 to 1E6E (29 bytes)	
-_SMS_getKeysReleased
+_SMS_getKeysReleased:
 	;.db $FD $21 $6B $C0 $FD $7E $00 $2F $4F $FD $7E $01 $2F $47 $79 $FD
 	;.db $21 $6D $C0 $FD $A6 $00 $6F $78 $FD $A6 $01 $67 $C9
 	ld iy, $C06B
@@ -494,18 +494,18 @@ _SMS_getKeysReleased
 	ld h, a
 	ret
 
-_SMS_queryPauseRequested
+_SMS_queryPauseRequested:
 		ld iy, PauseRequested	; PauseRequested = $C069
 		ld l, (iy+0)
 		ret
 	
-_SMS_resetPauseRequest
+_SMS_resetPauseRequest:
 		ld hl, PauseRequested	; PauseRequested = $C069
 		ld (hl), $00
 		ret
 	
 ; Data from 1E7D to 1E8D (17 bytes)	
-_SMS_setLineInterruptHandler
+_SMS_setLineInterruptHandler:
 	;.db $21 $02 $00 $39 $7E $32 $30 $C1 $21 $03 $00 $39 $7E $32 $31 $C1
 	ld hl, $0002
 	add hl, sp
@@ -518,7 +518,7 @@ _SMS_setLineInterruptHandler
 	ret
 	
 ; Data from 1E8E to 1E9C (15 bytes)	
-_SMS_setLineCounter
+_SMS_setLineCounter:
 	;.db $21 $02 $00 $39 $4E $F3 $79 $D3 $BF $3E $8A $D3 $BF $FB $C9
 	ld hl, $0002
 	add hl, sp
@@ -532,20 +532,20 @@ _SMS_setLineCounter
 	ret
 
 ; Data from 1E9D to 1EA0 (4 bytes)	
-_SMS_getVCount
+_SMS_getVCount:
 	;.db $DB $7E $6F $C9
 	in a, ($7E)
 	ld l, a
 	ret
 
 ; Data from 1EA1 to 1EA4 (4 bytes)	
-_SMS_getHCount
+_SMS_getHCount:
 	;.db $DB $7F $6F $C9
 	in a, ($7F)
 	ld l, a
 	ret
 
-_SMS_isr
+_SMS_isr:
 		push af
 		push hl
 		in a, (Port_VDPStatus)
@@ -566,7 +566,7 @@ _SMS_isr
 		ld (hl), a
 		jr ++
 	
-+
++:
 		push bc
 		push de
 		push iy
@@ -575,13 +575,13 @@ _SMS_isr
 		pop iy
 		pop de
 		pop bc
-++
+++:
 		pop hl
 		pop af
 		ei
 		reti
 	
-_SMS_nmi_isr
+_SMS_nmi_isr:
 		push af
 		push bc
 		push de
@@ -597,7 +597,7 @@ _SMS_nmi_isr
 		retn
 	
 ; Data from 1EEE to 1EF9 (12 bytes)	
-__moduchar
+__moduchar:
 	;.db $21 $03 $00 $39 $5E $2B $6E $CD $74 $1B $EB $C9
 	ld hl, $0003
 	add hl, sp
@@ -609,7 +609,7 @@ __moduchar
 	ret
 
 ; Data from 1EFA to 1F04 (11 bytes)	
-__moduint
+__moduint:
 	;.db $F1 $E1 $D1 $D5 $E5 $F5 $CD $77 $1B $EB $C9
 	pop af
 	pop hl
@@ -622,7 +622,7 @@ __moduint
 	ret
 
 ; Data from 1F05 to 20E5 (481 bytes)	
-_SMS_loadSTMcompressedTileMapAre
+_SMS_loadSTMcompressedTileMapAre:
 	.db $DD $E5 $DD $21 $00 $00 $DD $39 $21 $F0 $FF $39 $F9 $DD $36 $FE
 	.db $00 $DD $36 $FF $00 $DD $36 $F3 $00 $DD $36 $F4 $00 $DD $6E $05
 	.db $26 $00 $29 $29 $29 $29 $29 $29 $DD $75 $FC $7C $F6 $78 $DD $77
@@ -655,10 +655,10 @@ _SMS_loadSTMcompressedTileMapAre
 	.db $7E $F4 $DD $77 $FF $DD $36 $F0 $00 $C3 $66 $1F $DD $F9 $DD $E1
 	ret
 	
-___sdcc_call_hl
+___sdcc_call_hl:
 		jp (hl)
 	
-_SMS_loadPSGaidencompressedTiles
+_SMS_loadPSGaidencompressedTiles:
 		ld iy, _SMS_crt0_RST08 - 2	; _SMS_crt0_RST08 - 2 = $0004
 		add iy, sp
 		ld l, (iy+0)
@@ -678,13 +678,13 @@ _SMS_loadPSGaidencompressedTiles
 		inc ix
 		ld b, (ix+0)
 		inc ix
-_LABEL_210B_
+_LABEL_210B_:
 		push bc
 		ld b, $04
 		ld de, decompBuffer	; decompBuffer = $C132
 		ld c, (ix+0)
 		inc ix
-_LABEL_2116_
+_LABEL_2116_:
 		rlc c
 		jr nc, _LABEL_215D_
 		rlc c
@@ -717,59 +717,59 @@ _LABEL_2116_
 		jr c, +
 		cp $43
 		jr c, ++++++
-+
++:
 		ld h, a
 		ld l, (ix+0)
 		inc ix
 		jr +++
 	
-++
+++:
 		ld h, $00
 		jr +++
 	
-_LABEL_215D_
+_LABEL_215D_:
 		rlc c
 		sbc a, a
 		ld l, a
 		ld h, $FF
-+++
++++:
 		push bc
 		ld b, $08
--
+-:
 		ld a, l
 		rlc h
 		jr c, +
 		ld a, (ix+0)
 		inc ix
-+
++:
 		ld (de), a
 		inc de
 		djnz -
 		pop bc
 		jr ++++++++
 	
-_LABEL_2177_
+_LABEL_2177_:
 		ld hl, $FF00
 		jr +++++++
 	
-++++
+++++:
 		ld hl, $FFFF
 		jr +++++++
 	
-+++++
++++++:
 		ld h, (ix+0)
 		ld l, $00
 		inc ix
 		jr +++++++
 	
-++++++
+++++++:
 		ld h, (ix+0)
 		ld l, $FF
 		inc ix
-+++++++
++++++++:
 		push bc
 		ld b, $08
--
+-:
 		ld a, (iy+0)
 		inc iy
 		xor l
@@ -777,21 +777,21 @@ _LABEL_2177_
 		jr c, +
 		ld a, (ix+0)
 		inc ix
-+
++:
 		ld (de), a
 		inc de
 		djnz -
 		pop bc
-++++++++
+++++++++:
 		dec b
 		jp nz, _LABEL_2116_
 		ld de, _SMS_crt0_RST08 + 2	; _SMS_crt0_RST08 + 2 = $0008
 		ld c, e
 		ld hl, decompBuffer	; decompBuffer = $C132
---
+--:
 		ld b, $04
 		push hl
--
+-:
 		ld a, (hl)
 		out (Port_VDPData), a
 		add hl, de
