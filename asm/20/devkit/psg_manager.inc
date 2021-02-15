@@ -402,8 +402,22 @@ _PSGSFXGetStatus:
 
 ; Data from 662 to 682 (33 bytes)	
 _PSGSFXPlayLoop:
-	.db $FD $21 $04 $00 $FD $39 $FD $7E $00 $F5 $33 $FD $2B $FD $2B $FD
-	.db $6E $00 $FD $66 $01 $E5 $CD $07 $06 $F1 $33 $21 $22 $C0 $36 $01
+	;.db $FD $21 $04 $00 $FD $39 $FD $7E $00 $F5 $33 $FD $2B $FD $2B $FD
+	ld iy, $0004
+	add iy, sp
+	ld a, (iy + $00)
+	push af
+	inc sp
+	dec iy
+	dec iy
+	ld l, (iy + $00)
+	ld h, (iy + $01)
+	push hl
+	call $0607
+	pop af
+	inc sp
+	ld hl, $c022
+	ld (hl), $01
 	ret
 	
 _PSGFrame:
