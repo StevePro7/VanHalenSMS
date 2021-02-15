@@ -20,4 +20,4 @@ echo Run
 ::output.sms
 
 :: TODO delete
-cp output.sms E:\GitHub\StevePro7\Z80test\05-Utils\BinaryFileXcomp\bin\Debug\input\
+cp output.sms E:\GitHub\StevePro7\Z80test\06-Utils\BinaryFileXcomp\bin\Debug\input
