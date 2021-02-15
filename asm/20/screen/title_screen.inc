@@ -230,22 +230,22 @@ _screen_title_screen_load:
 
 ; Data from 1335 to 1340 (12 bytes)
 press_start:
-	; PRESS START
+	; "PRESS START"
 	.db $50 $52 $45 $53 $53 $20 $53 $54 $41 $52 $54 $00
 
 ; Data from 1341 to 1347 (7 bytes)
 title_record_label:
-	; RECORD
+	; "RECORD"
 	.db $52 $45 $43 $4F $52 $44 $00
 
 ; Data from 1348 to 134E (7 bytes)
 title_covers_label:
-	; COVERS
+	; "COVERS"
 	.db $43 $4F $56 $45 $52 $53 $00
 
 ; Data from 134F to 1353 (5 bytes)
 title_build_label:
-	; V1.0
+	; "V1.0"
 	.db $56 $31 $2E $30 $00
 
 ; Data from 1354 to 1355 (2 bytes)
@@ -589,11 +589,11 @@ _screen_title_screen_update:
 	ret
 
 ; Data from 1407 to 1412 (12 bytes)
+	; "           "
 	.dsb 11, $20
 	.db $00
-	; LOCALE_BLANK_CLEAR
 
 ; Data from 1413 to 141E (12 bytes)
 press_start2:
-	; PRESS START
+	; "PRESS START"
 	.db $50 $52 $45 $53 $53 $20 $53 $54 $41 $52 $54 $00

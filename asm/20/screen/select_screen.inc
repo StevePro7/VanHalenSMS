@@ -145,12 +145,12 @@ _screen_select_screen_load:
 
 ; Data from 14D5 to 14DB (7 bytes)
 select_record_label:
-	; RECORD
+	; "RECORD"
 	.db $52 $45 $43 $4F $52 $44 $00
 
 select_covers_label:
 ; Data from 14DC to 14E2 (7 bytes)
-	; COVERS
+	; "COVERS"
 	.db $43 $4F $56 $45 $52 $53 $00
 	
 
