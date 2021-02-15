@@ -380,9 +380,32 @@ _LABEL_602_:
 ; Data from 607 to 653 (77 bytes)	
 _PSGSFXPlay:
 	; todo
-	.db $CD $3D $05 $21 $22 $C0 $36 $00 $D1 $C1 $C5 $D5 $ED $43 $1B $C0
-	.db $ED $43 $1D $C0 $ED $43 $1F $C0 $21 $21 $C0 $36 $00 $21 $23 $C0
-	.db $36 $00 $21 $04 $00 $39 $4E $CB $41 $28 $05 $11 $01 $00 $18 $03
+	;.db $CD $3D $05 $21 $22 $C0 $36 $00 $D1 $C1 $C5 $D5 $ED $43 $1B $C0
+	;.db $ED $43 $1D $C0 $ED $43 $1F $C0 $21 $21 $C0 $36 $00 $21 $23 $C0
+	;.db $36 $00 $21 $04 $00 $39 $4E $CB $41 $28 $05 $11 $01 $00 $18 $03
+	call $053D
+	ld hl, $C022
+	ld (hl), $00
+	pop de
+	pop bc
+	push bc
+	push de
+	ld ($C01B), bc
+
+	ld ($C01D), bc
+	ld ($C01F), bc
+	ld hl, $C021
+	ld (hl), $00
+	ld hl, $C023
+	
+	ld (hl), $00
+	ld hl, $0004
+	add hl, sp
+	ld c, (hl)
+	bit 0, c
+	jr z, $05
+	ld de, $0001
+	jr $03
 	.db $11 $00 $00 $21 $16 $C0 $73 $CB $49 $28 $05 $01 $01 $00 $18 $03
 	.db $01 $00 $00 $21 $17 $C0 $71 $21 $1A $C0 $36 $01 $C9
 	
