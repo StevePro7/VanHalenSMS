@@ -62,8 +62,11 @@ _PSGPlayNoRepeat:
 
 ; Data from 336 to 33D (8 bytes)	
 _PSGGetStatus:	
-	.db $FD $21 $01 $C0 $FD $6E $00 $C9
-	
+	;.db $FD $21 $01 $C0 $FD $6E $00 $C9
+	ld iy, $C001
+	ld l, (iy + $00)
+	ret
+
 _PSGSilenceChannels:	
 		ld a, $9F
 		out (Port_PSG), a
