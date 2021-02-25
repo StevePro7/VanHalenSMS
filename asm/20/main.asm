@@ -6,9 +6,6 @@
 
 ;.include "content/gfx.inc"
 
-
-; This disassembly was created using Emulicious (http://www.emulicious.net)	
-
 .BANK 0 SLOT 0	
 .ORG $0000	
 
@@ -276,4 +273,5 @@ ___SMS__SEGA_signature:
 	.db $54 $4D $52 $20 $53 $45 $47 $41 $FF $FF $5C $54 $99 $99 $00 $4C
 
 
+; Banks.
 .include "engine/bank_manager.inc"
