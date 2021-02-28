@@ -107,3 +107,18 @@ _engine_font_manager_draw_text
 sms_manager.inc
 _SMS_addSprite
 _SMS_loadSTMcompressedTileMapAre
+
+
+
+.db $DD $77 $FF
+ld (ix - 1), a
+
+.db $DD $77 $FE
+ld (ix - 2), a
+
+
+.db $DD $7E $FF
+ld a, (ix - 1)
+
+.db $DD $7E $FC
+ld a, (ix - 4)

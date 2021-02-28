@@ -4,7 +4,6 @@
 .include "devkit/enum_manager.inc"
 .include "devkit/define_manager.inc"
 
-;.include "content/gfx.inc"
 
 .BANK 0 SLOT 0	
 .ORG $0000	
